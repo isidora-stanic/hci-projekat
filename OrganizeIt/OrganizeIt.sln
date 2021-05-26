@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrganizeIt", "OrganizeIt.csproj", "{254D333B-3172-4C4B-A699-724DB5621896}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrganizeIt", "OrganizeIt\OrganizeIt.csproj", "{DC3C11B7-E44E-4FBA-8B96-512E6827A434}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{254D333B-3172-4C4B-A699-724DB5621896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{254D333B-3172-4C4B-A699-724DB5621896}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{254D333B-3172-4C4B-A699-724DB5621896}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{254D333B-3172-4C4B-A699-724DB5621896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC3C11B7-E44E-4FBA-8B96-512E6827A434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC3C11B7-E44E-4FBA-8B96-512E6827A434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC3C11B7-E44E-4FBA-8B96-512E6827A434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC3C11B7-E44E-4FBA-8B96-512E6827A434}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C87EB266-61AA-4102-BB84-1FF481511980}
+		SolutionGuid = {B783EC21-FB69-4BB8-93E1-EC4AE536EBC7}
 	EndGlobalSection
 EndGlobal
