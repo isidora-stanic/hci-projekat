@@ -23,6 +23,10 @@ namespace OrganizeIt
         public MainWindow()
         {
             InitializeComponent();
+
+            var dictUsers = backend.Backend.LoadUsers();
+
+            MessageBox.Show(dictUsers.ToString());
         }
     }
 }
