@@ -102,6 +102,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="backend\Backend.cs" />
     <Compile Include="backend\social_gatherings\SocialGathering.cs" />
     <Compile Include="backend\social_gatherings\SocialGatheringCategorySuggestion.cs" />
     <Compile Include="backend\social_gatherings\SocialGatheringCollaborator.cs" />
