@@ -25,7 +25,7 @@
                 <Button Content="Prijava" Width ="200" Margin="0 20" Click="Button_Click"/>
                 <Separator Style="{StaticResource MaterialDesignSeparator}" MaxWidth ="400"/>
                 <Label x:Name = "label2" Content = "Novi korisnik?" HorizontalAlignment = "Center" FontWeight = "Light"/>
-                <Button Content="Registracija" Width ="200" Margin="0 20"/>
+                <Button Content="Registracija" Width ="200" Margin="0 20" Click="Button_Click_1"/>
             </StackPanel>
         </Border>
     </Grid>

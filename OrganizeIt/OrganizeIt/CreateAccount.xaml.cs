@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace OrganizeIt
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for CreateAccount.xaml
     /// </summary>
-    public partial class Login : Page
+    public partial class CreateAccount : Page
     {
-        public Login()
+        public CreateAccount()
         {
             InitializeComponent();
         }
@@ -28,11 +28,6 @@ namespace OrganizeIt
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-          
         }
     }
 }
