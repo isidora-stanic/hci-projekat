@@ -122,7 +122,6 @@
     <Compile Include="backend\users\Gender.cs" />
     <Compile Include="backend\users\Location.cs" />
     <Compile Include="backend\users\User.cs" />
-    <Compile Include="backend\users\UserAccount.cs" />
     <Compile Include="backend\users\UserType.cs" />
     <Compile Include="CreateAccount.xaml.cs">
       <DependentUpon>CreateAccount.xaml</DependentUpon>

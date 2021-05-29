@@ -2,6 +2,7 @@
 using OrganizeIt.backend.users;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 
 namespace OrganizeIt.backend
@@ -165,14 +166,57 @@ namespace OrganizeIt.backend
             return DataDir + "img" + Path.DirectorySeparatorChar + "users" + Path.DirectorySeparatorChar + userName + ".jpg";
         }
 
+        static string GetUserImagePath(User user)
+        {
+            return DataDir + "img" + Path.DirectorySeparatorChar + "users" + Path.DirectorySeparatorChar + user.Username + ".jpg";
+        }
+
         static string GetCollaboratorImagePath(int collaboratorID)
         {
             return DataDir + "img" + Path.DirectorySeparatorChar + "collaborators" + Path.DirectorySeparatorChar + collaboratorID + ".jpg";
+        }
+
+        static string GetCollaboratorImagePath(SocialGatheringCollaborator collaborator)
+        {
+            return DataDir + "img" + Path.DirectorySeparatorChar + "collaborators" + Path.DirectorySeparatorChar + collaborator.Id + ".jpg";
         }
 
         static int GenerateCollaboratorID()
         {
             return Collaborators.Count;
         }
+
+        static List<User> searchUsers(string searchTerm)
+        {
+            var searchTerm2 = searchTerm.ToLower();
+            var users = from user in Users.Values
+                        where (user.Address.City.ToLower().Contains(searchTerm2)
+                        || user.Address.StreetAddress.Contains(searchTerm2)
+                        || user.BirthDate.ToString().ToLower().Contains(searchTerm2)
+                        || user.PhoneNumber.ToLower().Contains(searchTerm2)
+                        || user.FirstName.ToLower().Contains(searchTerm2)
+                        || user.LastName.ToLower().Contains(searchTerm2)
+                        || user.Username.ToLower().Contains(searchTerm2)
+                        || user.Email.ToLower().Contains(searchTerm2)
+                        )
+                        select user;
+            return new List<User>(users);
+        }
+
+        static List<SocialGatheringCollaborator> searchCollaborators(string searchTerm)
+        {
+            var searchTerm2 = searchTerm.ToLower();
+            var collaborators = from collaborator in Collaborators.Values
+                                where (collaborator.Name.ToLower().Contains(searchTerm2) || collaborator.Description.ToLower().Contains(searchTerm2))
+                                select collaborator;
+            return new List<SocialGatheringCollaborator>(collaborators);
+        }
+
+        static List<User> getUsersOfType(UserType userType)
+        {
+            var users = from user in Users.Values
+                        where user.UserType == userType
+                        select user;
+            return new List<User>(users);
+        }
     }
-}
