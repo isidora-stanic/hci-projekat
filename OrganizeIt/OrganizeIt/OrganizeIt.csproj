@@ -181,12 +181,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManifestationList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NewOrganizer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManifestationList.xaml.cs">
+      <DependentUpon>ManifestationList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NewOrganizer.xaml.cs">
       <DependentUpon>NewOrganizer.xaml</DependentUpon>
     </Compile>

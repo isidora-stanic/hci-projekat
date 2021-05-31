@@ -129,3 +129,5 @@ C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\
 C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\OrganizeIt.g.resources
 C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\OrganizeIt.Properties.Resources.resources
 C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\OrganizeIt.csproj.GenerateResource.Cache
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\ManifestationList.g.cs
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\ManifestationList.baml

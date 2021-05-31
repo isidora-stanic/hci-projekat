@@ -70,9 +70,14 @@
                 <DockPanel>
 
                     <StackPanel DockPanel.Dock="Top" >
-                        <materialDesign:PackIcon HorizontalAlignment="Right" Margin="-20 0 30 0" Background="Transparent"
-                                ToolTip="Add new client" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
-                        </materialDesign:PackIcon>
+                        <WrapPanel HorizontalAlignment="Right">
+                            <materialDesign:PackIcon Margin="-20 0 30 0" Background="Transparent"
+                                    ToolTip="Add new client" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
+                            </materialDesign:PackIcon>
+                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                    ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
+                            </materialDesign:PackIcon>
+                        </WrapPanel>
                         <Separator Margin="20 0 25 25"/>
 
                         <WrapPanel Margin="20 0 0 7">
@@ -98,9 +103,14 @@
                 <DockPanel>
                     
                     <StackPanel DockPanel.Dock="Top" >
-                        <materialDesign:PackIcon HorizontalAlignment="Right" Margin="-20 0 30 0" Background="Transparent"
-                                ToolTip="Add new client" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
-                        </materialDesign:PackIcon>
+                        <WrapPanel HorizontalAlignment="Right">
+                            <materialDesign:PackIcon Margin="-20 0 30 0" Background="Transparent"
+                                    ToolTip="Add new client" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
+                            </materialDesign:PackIcon>
+                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                    ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
+                            </materialDesign:PackIcon>
+                        </WrapPanel>
                         <Separator Margin="20 0 25 25"/>
 
                         <WrapPanel  Margin="20 0 0 7">
@@ -114,11 +124,11 @@
                             <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
                         </WrapPanel>
                     </StackPanel>
-                    
+
                     <ListView x:Name="OrganizerListView" HorizontalContentAlignment="Stretch" 
                               ItemsSource="{Binding organizers, UpdateSourceTrigger=Explicit}" 
                               ItemTemplate="{StaticResource PersonTemplate}"/>
-                    
+
                 </DockPanel>
             </TabItem>
         </dragablz:TabablzControl>
