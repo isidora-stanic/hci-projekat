@@ -62,6 +62,7 @@ namespace OrganizeIt
         {
             InitializeComponent();
             allUsers = backend.Backend.LoadUsers();
+            this.DataContext = this;
             clients = new ObservableCollection<User>(allUsers.Values.Where(user => user.UserType == UserType.Client));
             organizers = new ObservableCollection<User>(allUsers.Values.Where(user => user.UserType == UserType.Organizer));
             ClientListView.ItemsSource = clients;
@@ -138,7 +139,6 @@ namespace OrganizeIt
         /* poslednji obrisani. Stack se bira u zavisnosti od aktivnog taba */
         private void DoCommand()
         {
-            MessageBox.Show("Undo");
             TabItem ti = TabCtrl.SelectedItem as TabItem;
             if (ti.Header as string == "Clients")
             {
