@@ -24,23 +24,6 @@ namespace OrganizeIt
     public partial class AccountsList : Page
     {
 
-        public class GenderToStringConverter : IValueConverter
-        {
-            public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-            {
-                if (((Gender)value) == Gender.Male)
-                    return "M";
-                return "F";
-            }
-
-            public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-            {
-                if (value.ToString() == "M")
-                    return Gender.Male;
-                return Gender.Female;
-            }
-        }
-
         private class UndoCommandObject : ICommand
         {
             private readonly AccountsList _target;
@@ -79,9 +62,11 @@ namespace OrganizeIt
         {
             InitializeComponent();
             allUsers = backend.Backend.LoadUsers();
-            _undoCommand = new UndoCommandObject(this);
             clients = new ObservableCollection<User>(allUsers.Values.Where(user => user.UserType == UserType.Client));
             organizers = new ObservableCollection<User>(allUsers.Values.Where(user => user.UserType == UserType.Organizer));
+            ClientListView.ItemsSource = clients;
+            OrganizerListView.ItemsSource = organizers;
+            _undoCommand = new UndoCommandObject(this);
         }
 
 
@@ -153,6 +138,7 @@ namespace OrganizeIt
         /* poslednji obrisani. Stack se bira u zavisnosti od aktivnog taba */
         private void DoCommand()
         {
+            MessageBox.Show("Undo");
             TabItem ti = TabCtrl.SelectedItem as TabItem;
             if (ti.Header as string == "Clients")
             {
@@ -197,7 +183,26 @@ namespace OrganizeIt
                 select organizer;
 
             ObservableCollection<User> filteredOrganizersObservable = new ObservableCollection<User>(filteredOrganizers);
-            ClientListView.ItemsSource = filteredOrganizersObservable;
+            OrganizerListView.ItemsSource = filteredOrganizersObservable;
         }
     }
+
+
+    public class GenderToStringConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (((Gender)value) == Gender.Male)
+                return "M";
+            return "F";
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value.ToString() == "M")
+                return Gender.Male;
+            return Gender.Female;
+        }
+    }
+
 }

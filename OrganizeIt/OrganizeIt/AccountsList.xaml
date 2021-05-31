@@ -51,6 +51,7 @@
             </Grid>
         </DataTemplate>
     </Page.Resources>
+    
     <Page.InputBindings>
         <KeyBinding Command="{Binding UndoCommand}">
             <KeyBinding.Gesture>
@@ -58,6 +59,7 @@
             </KeyBinding.Gesture>
         </KeyBinding>
     </Page.InputBindings>
+    
     <Grid>
         <dragablz:TabablzControl x:Name="TabCtrl" TabStripPlacement="Left" Background="White">
             <dragablz:TabablzControl.InterTabController>
