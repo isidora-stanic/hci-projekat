@@ -167,6 +167,16 @@ namespace OrganizeIt
                     || client.Username.ToUpper().Contains(query.ToUpper().Trim())
                 select client;
 
+            //List<User> filteredUsers = new List<User>();
+            //foreach (User client in clients)
+            //{
+            //    if (client.FirstName.ToUpper().Contains(query.ToUpper().Trim())
+            //        || client.LastName.ToUpper().Contains(query.ToUpper().Trim())
+            //        || client.Email.ToUpper().Contains(query.ToUpper().Trim())
+            //        || client.Username.ToUpper().Contains(query.ToUpper().Trim()))
+            //        filteredUsers.Add(client);
+            //}
+
             ObservableCollection<User> filteredClientsObservable = new ObservableCollection<User>(filteredClients);
             ClientListView.ItemsSource = filteredClientsObservable;
         }

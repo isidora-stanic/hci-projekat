@@ -3,16 +3,19 @@
     "UserType": 0,
     "Username": "admin",
     "Password": "123",
-    "FirstName": null,
-    "LastName": null,
-    "Address": null,
+    "FirstName": "Admin",
+    "LastName": "Adminic",
+    "Address": {
+      "City": "Valjevo",
+      "StreetAddress": "Hajduk Veljka 3"
+    },
     "Gender": 0,
     "BirthDate": "0001-01-01T00:00:00",
-    "PhoneNumber": null,
-    "Email": null,
-    "SocialGatherings": null,
-    "SocialGatheringSuggestions": null,
-    "SocialGatheringSuggestionReplies": null,
+    "PhoneNumber": "\u002B3816750876874",
+    "Email": "Admin@Admin.admin",
+    "SocialGatherings": [ ],
+    "SocialGatheringSuggestions": [ ],
+    "SocialGatheringSuggestionReplies": [ ],
     "ToDoCards": null
   },
   "djole-LOZ": {

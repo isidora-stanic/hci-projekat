@@ -68,37 +68,57 @@
 
             <TabItem Header="Clients">
                 <DockPanel>
-                    <WrapPanel DockPanel.Dock="Top" Margin="20 0 0 7">
-                        <TextBox Grid.Column="0"
-                                x:Name="ClientSearch"
-                                MinWidth="500"
-                                FontSize="20"
-                                materialDesign:HintAssist.Hint="Search person"
-                                VerticalAlignment="Center" CaretBrush="{x:Null}" 
-                                TextChanged="ClientSearch_TextChanged"/>
-                        <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
-                    </WrapPanel>
+
+                    <StackPanel DockPanel.Dock="Top" >
+                        <materialDesign:PackIcon HorizontalAlignment="Right" Margin="-20 0 30 0" Background="Transparent"
+                                ToolTip="Add new client" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
+                        </materialDesign:PackIcon>
+                        <Separator Margin="20 0 25 25"/>
+
+                        <WrapPanel Margin="20 0 0 7">
+                            <TextBox Grid.Column="0"
+                                    x:Name="ClientSearch"
+                                    MinWidth="500"
+                                    FontSize="20"
+                                    materialDesign:HintAssist.Hint="Search person"
+                                    VerticalAlignment="Center" CaretBrush="{x:Null}" 
+                                    TextChanged="ClientSearch_TextChanged"/>
+                            <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
+                        </WrapPanel>
+                    </StackPanel>
+
                     <ListView x:Name="ClientListView" HorizontalContentAlignment="Stretch" 
-                              ItemsSource="{Binding clients, UpdateSourceTrigger=Explicit}" 
-                              ItemTemplate="{StaticResource PersonTemplate}"/>
+                            ItemsSource="{Binding clients, UpdateSourceTrigger=Explicit}" 
+                            ItemTemplate="{StaticResource PersonTemplate}"/>
+                    
                 </DockPanel>
             </TabItem>
 
             <TabItem Header="Organizers">
                 <DockPanel>
-                    <WrapPanel DockPanel.Dock="Top" Margin="20 0 0 7">
-                        <TextBox Grid.Column="0"
+                    
+                    <StackPanel DockPanel.Dock="Top" >
+                        <materialDesign:PackIcon HorizontalAlignment="Right" Margin="-20 0 30 0" Background="Transparent"
+                                ToolTip="Add new client" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
+                        </materialDesign:PackIcon>
+                        <Separator Margin="20 0 25 25"/>
+
+                        <WrapPanel  Margin="20 0 0 7">
+                            <TextBox Grid.Column="0"
                                 x:Name="OrganizerSearch"
                                 MinWidth="500"
                                 FontSize="20"
                                 materialDesign:HintAssist.Hint="Search person"
                                 VerticalAlignment="Center" CaretBrush="{x:Null}" 
                                 TextChanged="OrganizerSearch_TextChanged"/>
-                        <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
-                    </WrapPanel>
+                            <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
+                        </WrapPanel>
+                    </StackPanel>
+                    
                     <ListView x:Name="OrganizerListView" HorizontalContentAlignment="Stretch" 
                               ItemsSource="{Binding organizers, UpdateSourceTrigger=Explicit}" 
                               ItemTemplate="{StaticResource PersonTemplate}"/>
+                    
                 </DockPanel>
             </TabItem>
         </dragablz:TabablzControl>
