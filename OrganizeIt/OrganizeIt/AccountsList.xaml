@@ -1,0 +1,136 @@
+﻿<Page x:Class="OrganizeIt.AccountsList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+      xmlns:local="clr-namespace:OrganizeIt"
+      xmlns:backend="clr-namespace:OrganizeIt.backend.users"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="AccountsList">
+    <Page.Resources>
+        <local:GenderToStringConverter x:Key="GenderToStringConverter" />
+        <DataTemplate x:Key="PersonTemplate" DataType="{x:Type backend:User}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock FontSize="20" Text="{Binding Path=Username}" />
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Name: " />
+                        <TextBlock FontSize="14" Text="{Binding Path=FirstName}" />
+                        <TextBlock FontSize="14" Text="{Binding Path=LastName}" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Gender: " />
+                        <TextBlock FontSize="14" Text="{Binding Path=Gender, Converter={StaticResource GenderToStringConverter}}" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Phone No: " />
+                        <TextBlock FontSize="14" Text="{Binding Path=PhoneNumber}" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Email: " />
+                        <TextBlock FontSize="14" Text="{Binding Path=Email}" />
+                    </WrapPanel>
+                </StackPanel>
+                <WrapPanel Grid.Column="2" HorizontalAlignment="Right">
+                    <materialDesign:PackIcon x:Name="DeleteButton" 
+                                         Margin="15" FontSize="20" Kind="GarbageCan" MouseDown="DeleteButton_MouseDown"
+                                         Width="20" Height="20" Background="Transparent"></materialDesign:PackIcon>
+                    <Separator></Separator>
+                    <materialDesign:PackIcon x:Name="EditButton"  
+                                         Margin="15" FontSize="20" Kind="Pencil" MouseDown="EditButton_MouseDown"
+                                         Width="20" Height="20" Background="Transparent"></materialDesign:PackIcon>
+                </WrapPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    
+    <Page.InputBindings>
+        <KeyBinding Command="{Binding UndoCommand}">
+            <KeyBinding.Gesture>
+                <KeyGesture>Ctrl+Z</KeyGesture>
+            </KeyBinding.Gesture>
+        </KeyBinding>
+    </Page.InputBindings>
+    
+    <Grid>
+        <dragablz:TabablzControl x:Name="TabCtrl" TabStripPlacement="Left" Background="White">
+            <dragablz:TabablzControl.InterTabController>
+                <dragablz:InterTabController/>
+            </dragablz:TabablzControl.InterTabController>
+
+            <TabItem Header="Clients">
+                <DockPanel>
+
+                    <StackPanel DockPanel.Dock="Top" >
+                        <WrapPanel HorizontalAlignment="Right">
+                            <materialDesign:PackIcon Margin="-20 0 30 0" Background="Transparent"
+                                    ToolTip="Add new client" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
+                            </materialDesign:PackIcon>
+                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                    ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
+                            </materialDesign:PackIcon>
+                        </WrapPanel>
+                        <Separator Margin="20 0 25 25"/>
+
+                        <WrapPanel Margin="20 0 0 7">
+                            <TextBox Grid.Column="0"
+                                    x:Name="ClientSearch"
+                                    MinWidth="500"
+                                    FontSize="20"
+                                    materialDesign:HintAssist.Hint="Search person"
+                                    VerticalAlignment="Center" CaretBrush="{x:Null}" 
+                                    TextChanged="ClientSearch_TextChanged"/>
+                            <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
+                        </WrapPanel>
+                    </StackPanel>
+
+                    <ListView x:Name="ClientListView" HorizontalContentAlignment="Stretch" 
+                            ItemsSource="{Binding clients, UpdateSourceTrigger=Explicit}" 
+                            ItemTemplate="{StaticResource PersonTemplate}"/>
+                    
+                </DockPanel>
+            </TabItem>
+
+            <TabItem Header="Organizers">
+                <DockPanel>
+                    
+                    <StackPanel DockPanel.Dock="Top" >
+                        <WrapPanel HorizontalAlignment="Right">
+                            <materialDesign:PackIcon Margin="-20 0 30 0" Background="Transparent"
+                                    ToolTip="Add new client" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
+                            </materialDesign:PackIcon>
+                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                    ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
+                            </materialDesign:PackIcon>
+                        </WrapPanel>
+                        <Separator Margin="20 0 25 25"/>
+
+                        <WrapPanel  Margin="20 0 0 7">
+                            <TextBox Grid.Column="0"
+                                x:Name="OrganizerSearch"
+                                MinWidth="500"
+                                FontSize="20"
+                                materialDesign:HintAssist.Hint="Search person"
+                                VerticalAlignment="Center" CaretBrush="{x:Null}" 
+                                TextChanged="OrganizerSearch_TextChanged"/>
+                            <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
+                        </WrapPanel>
+                    </StackPanel>
+
+                    <ListView x:Name="OrganizerListView" HorizontalContentAlignment="Stretch" 
+                              ItemsSource="{Binding organizers, UpdateSourceTrigger=Explicit}" 
+                              ItemTemplate="{StaticResource PersonTemplate}"/>
+
+                </DockPanel>
+            </TabItem>
+        </dragablz:TabablzControl>
+    </Grid>
+</Page>
