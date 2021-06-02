@@ -1,0 +1,112 @@
+﻿<Page x:Class="OrganizeIt.EventCollabsCheckList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:OrganizeIt"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BiranjeSaradnika">
+    <Page.Resources>
+        <DataTemplate x:Key="SaradnikTemplate">
+            <DockPanel>
+
+                <ScrollViewer Background="White" Margin="20 5" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Click="CheckBox_MouseDown" 
+                                  IsChecked="{Binding IsSelected}"
+                                  Style="{DynamicResource MaterialDesign}" Margin="0 0" Grid.Column="1" HorizontalAlignment="Right">
+                            <CheckBox.LayoutTransform>
+                                <ScaleTransform ScaleX="4" ScaleY="4" />
+                            </CheckBox.LayoutTransform>
+                        </CheckBox>
+                        <StackPanel Width="500" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left">
+                            <TextBlock Text="{Binding Collaborator.Name}" FontSize="20" VerticalAlignment="Center" />
+                            <TextBlock Text="{Binding Collaborator.Description}" FontSize="14" Foreground="Navy" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+            </DockPanel>
+        </DataTemplate>
+        <Style x:Key="LvItemStyle" TargetType="ListViewItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <Border x:Name="border" Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Disabled" />
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <VisualState x:Name="Unselected" />
+                                    <VisualState x:Name="Selected">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="border"
+                                                              Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
+                                                <EasingColorKeyFrame KeyTime="0" Value="Transparent" />
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="SelectedUnfocused">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="border"
+                                                              Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
+                                                <EasingColorKeyFrame KeyTime="0" Value="Transparent" />
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <DockPanel>
+            <Grid DockPanel.Dock="Top">
+                <StackPanel  HorizontalAlignment="Center" Margin="20" Orientation="Horizontal">
+                    <TextBox Grid.Column="0"
+                            x:Name="TbxSearch"
+                            MinWidth="500"
+                            FontSize="20"
+                            materialDesign:HintAssist.Hint="Traži saradnika"
+                            VerticalAlignment="Center" CaretBrush="{x:Null}" TextChanged="TbxSearch_TextChanged">
+
+                        <!--<TextBox.Style>
+                                <Style TargetType="TextBox">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=TbxSearch, Path=IsFocused}" Value="True">
+                                            <Setter Property="Tag" Value="WindowClose"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ElementName=TbxSearch, Path=IsFocused}" Value="False">
+                                            <Setter Property="Tag" Value="Magnify"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBox.Style> Kind kod dugmeta {Binding Path=Tag,ElementName=TbxSearch}-->
+                    </TextBox>
+                    <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
+                </StackPanel>
+            </Grid>
+            <Grid DockPanel.Dock="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Cancel_btn" Click="Cancel_btn_Click" Style="{DynamicResource MaterialDesignOutlinedButton}" Foreground="#666666" BorderThickness="2" Margin="10" Grid.Column="0">Otkaži</Button>
+                <Button x:Name="Ok_btn" Click="Ok_btn_Click" Margin="10" Grid.Column="2">Potvrdi izbor</Button>
+            </Grid>
+            <ListView x:Name="listaSaradnika" ItemContainerStyle="{StaticResource LvItemStyle}" HorizontalAlignment="Center" ItemsSource="{Binding PretrazeniSaradnici, Mode=OneWay, UpdateSourceTrigger=Explicit}" ItemTemplate="{StaticResource SaradnikTemplate}"></ListView>
+        </DockPanel>
+    </Grid>
+</Page>
