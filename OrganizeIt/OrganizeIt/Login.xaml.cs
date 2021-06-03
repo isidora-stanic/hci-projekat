@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OrganizeIt.backend;
+using OrganizeIt.backend.users;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +22,26 @@ namespace OrganizeIt
     /// </summary>
     public partial class Login : Page
     {
+        private Backend Backend;
         public Login()
         {
             InitializeComponent();
+            Backend = new Backend();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AccountsList());
+            Dictionary<string, User>  users = Backend.LoadUsers();
+            User user = Backend.LogIn(this.username.Text, this.password.Password, users);
+            if (user == null)
+                NavigationService.Navigate(new NewSaradnik());
+            else if (user.UserType.Equals(UserType.Administrator))
+                NavigationService.Navigate(new AccountsList());
+            else if (user.UserType.Equals(UserType.Organizer))
+                NavigationService.Navigate(new CreateAccount());
+            else if (user.UserType.Equals(UserType.Client))
+                NavigationService.Navigate(new CreateAccount());
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
