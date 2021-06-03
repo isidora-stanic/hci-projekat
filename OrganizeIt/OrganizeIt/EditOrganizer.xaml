@@ -14,29 +14,29 @@
         <Border Margin="15" MinWidth="600" MinHeight="00" Background="White" VerticalAlignment="Center" Padding="10" CornerRadius="10" MaxWidth="800">
             <StackPanel>
                 <Image Height="100"  Source="C:\Users\Jovana\Desktop\sl.PNG"/>
-                <TextBox materialDesign:HintAssist.Hint="Korisničko ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="username"  Margin="200 0 200 5"/>
+                <TextBox materialDesign:HintAssist.Hint="Korisničko ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="username" Text="{Binding Username, Mode = TwoWay}" Margin="200 0 200 5"/>
                 <Grid Margin="0 0 0 20">
-                    <TextBox materialDesign:HintAssist.Hint="Ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 0 401 5"/>
-                    <TextBox materialDesign:HintAssist.Hint="Prezime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="401 0 0 5"/>
+                    <TextBox materialDesign:HintAssist.Hint="Ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding FirstName, Mode = TwoWay}" Margin="0 0 401 5"/>
+                    <TextBox materialDesign:HintAssist.Hint="Prezime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding LastName, Mode = TwoWay}" Margin="401 0 0 5"/>
                 </Grid>
                 <Grid Margin="0 0 0 20">
-                    <ComboBox materialDesign:HintAssist.Hint="Pol" Margin="0 10 401 5">
+                    <ComboBox materialDesign:HintAssist.Hint="Pol" Margin="0 10 401 5" x:Name="pol">
                         <ComboBoxItem>Ženski</ComboBoxItem>
                         <ComboBoxItem IsSelected="True">Muški</ComboBoxItem>
                     </ComboBox>
-                    <DatePicker  materialDesign:HintAssist.Hint="Datum rodjenja" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="401 0 0 5"/>
+                    <DatePicker  materialDesign:HintAssist.Hint="Datum rodjenja" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Text="{Binding BirthDate, Mode = TwoWay}" Margin="401 0 0 5"/>
                 </Grid>
                 <Grid Margin="0 0 0 20">
-                    <TextBox materialDesign:HintAssist.Hint="Grad" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 0 401 5"/>
-                    <TextBox materialDesign:HintAssist.Hint="Adresa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="401 0 0 5"/>
+                    <TextBox materialDesign:HintAssist.Hint="Grad" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Address.City, Mode = TwoWay}" Margin="0 0 401 5"/>
+                    <TextBox materialDesign:HintAssist.Hint="Adresa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Address.StreetAddress, Mode = TwoWay}" Margin="401 0 0 5"/>
                 </Grid>
                 <Grid Margin="0 0 0 20">
-                    <TextBox materialDesign:HintAssist.Hint="Telefon" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Username, Mode = TwoWay}" Margin="0 0 401 5"/>
-                    <TextBox materialDesign:HintAssist.Hint="E-mail" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="401 0 0 5"/>
+                    <TextBox materialDesign:HintAssist.Hint="Telefon" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding PhoneNumber, Mode = TwoWay}" Margin="0 0 401 5"/>
+                    <TextBox materialDesign:HintAssist.Hint="E-mail" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Email, Mode = TwoWay}" Margin="401 0 0 5"/>
                 </Grid>
 
                 <Grid Margin="0 0 0 20">
-                    <Button HorizontalAlignment="Left" Content="Otkaži" Width ="200" Margin="0 0 401 5"/>
+                    <Button HorizontalAlignment="Left" Content="Otkaži" Width ="200" Margin="0 0 401 5" Click="Button_Click_1"/>
                     <Button HorizontalAlignment="Right" Content="Izmeni organizatora" Width ="200"  Margin="401 0 0 5" Click="Button_Click"/>
                 </Grid>
                    

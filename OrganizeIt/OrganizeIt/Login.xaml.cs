@@ -34,14 +34,13 @@ namespace OrganizeIt
             Dictionary<string, User>  users = Backend.LoadUsers();
             User user = Backend.LogIn(this.username.Text, this.password.Password, users);
             if (user == null)
-                NavigationService.Navigate(new EditOrganizer());
+                NavigationService.Navigate(new CreateAccount());  //NavigationService.Navigate(new EditOrganizer());
             else if (user.UserType.Equals(UserType.Administrator))
                 NavigationService.Navigate(new AccountsList());
             else if (user.UserType.Equals(UserType.Organizer))
                 NavigationService.Navigate(new CreateAccount());
             else if (user.UserType.Equals(UserType.Client))
                 NavigationService.Navigate(new CreateAccount());
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

@@ -131,7 +131,8 @@ namespace OrganizeIt
         private void EditButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             User v = (User)((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
-            MessageBox.Show($"Editing venue {v.Username}");
+            NavigationService.Navigate(new EditOrganizer(v, allUsers));
+            //MessageBox.Show($"Editing venue {v.Username}");
         }
 
         /* Ova funkcija se poziva kada se pozove Undo komanda */
