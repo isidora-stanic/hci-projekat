@@ -60,8 +60,8 @@ namespace OrganizeIt
         {
             MainWindowSekcije = new ObservableCollection<SocialGatheringCategorySuggestion>();
             SocialGatheringCategorySuggestion muzika = new SocialGatheringCategorySuggestion { Id=counterForIds++.ToString(), CategoryTitle="Muzika", SuggestedCollaborators=new ObservableCollection<SocialGatheringCollaborator>() };
-            SocialGatheringCollaborator sc1 = new SocialGatheringCollaborator { Id = "saradnik1", Name = "MC Stojan", Description = "smesan DJ" };
-            SocialGatheringCollaborator sc2 = new SocialGatheringCollaborator { Id = "saradnik2", Name = "DJ Stasa", Description = "dobar DJ" };
+            SocialGatheringCollaborator sc1 = new SocialGatheringCollaborator { Id = 1, Name = "MC Stojan", Description = "smesan DJ" };
+            SocialGatheringCollaborator sc2 = new SocialGatheringCollaborator { Id = 1, Name = "DJ Stasa", Description = "dobar DJ" };
             muzika.SuggestedCollaborators.Add(sc1);
             muzika.SuggestedCollaborators.Add(sc2);
             MainWindowSekcije.Add(muzika);

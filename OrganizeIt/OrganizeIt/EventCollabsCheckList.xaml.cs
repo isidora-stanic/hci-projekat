@@ -45,10 +45,10 @@ namespace OrganizeIt
         public void InitSaradnici()
         {
             // ovde trebaju podaci iz baze
-            SocialGatheringCollaborator sc1 = new SocialGatheringCollaborator { Id = "saradnik1", Name = "MC Stojan", Description = "smesan DJ" };
-            SocialGatheringCollaborator sc2 = new SocialGatheringCollaborator { Id = "saradnik2", Name = "DJ Stasa", Description = "dobar DJ" };
-            SocialGatheringCollaborator sc3 = new SocialGatheringCollaborator { Id = "saradnik3", Name = "MJ Krmak", Description = "debeo DJ" };
-            SocialGatheringCollaborator sc4 = new SocialGatheringCollaborator { Id = "saradnik4", Name = "Mimi Mercedes", Description = "Guda iz Huda" };
+            SocialGatheringCollaborator sc1 = new SocialGatheringCollaborator { Id = 1, Name = "MC Stojan", Description = "smesan DJ" };
+            SocialGatheringCollaborator sc2 = new SocialGatheringCollaborator { Id = 2, Name = "DJ Stasa", Description = "dobar DJ" };
+            SocialGatheringCollaborator sc3 = new SocialGatheringCollaborator { Id = 3, Name = "MJ Krmak", Description = "debeo DJ" };
+            SocialGatheringCollaborator sc4 = new SocialGatheringCollaborator { Id = 4, Name = "Mimi Mercedes", Description = "Guda iz Huda" };
 
             // ovde se prave DTO-ovi
 
@@ -66,7 +66,7 @@ namespace OrganizeIt
             PretrazeniSaradnici = new List<SaradnikSelectDTO>();
             foreach (SaradnikSelectDTO s in SviSaradnici)
             {
-                if (s.Collaborator.Name.ToLower().Contains(ukucano.ToLower()) || s.Collaborator.Description.Contains(ukucano.ToLower()) || s.Collaborator.Id.Contains(ukucano.ToLower()))
+                if (s.Collaborator.Name.ToLower().Contains(ukucano.ToLower()) || s.Collaborator.Description.Contains(ukucano.ToLower()) || s.Collaborator.Id.ToString().Contains(ukucano.ToLower()))
                 {
                     PretrazeniSaradnici.Add(s);
                 }
