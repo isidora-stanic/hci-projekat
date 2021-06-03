@@ -185,7 +185,6 @@
     <Compile Include="backend\users\Gender.cs" />
     <Compile Include="backend\users\Location.cs" />
     <Compile Include="backend\users\User.cs" />
-    <Compile Include="backend\users\UserAccount.cs" />
     <Compile Include="backend\users\UserType.cs" />
     <Compile Include="CreateAccount.xaml.cs">
       <DependentUpon>CreateAccount.xaml</DependentUpon>
@@ -249,6 +248,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="backend\data\collaborators.json" />
     <None Include="backend\data\users.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -270,6 +270,24 @@
     <Resource Include="backend\data\img\users\sinisa.ivankovic.jpg" />
     <Resource Include="backend\data\img\users\suncana.zora.jpg" />
     <Resource Include="backend\data\img\users\zvezdaaa16.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="backend\data\img\collaborators\0.jpg" />
+    <Resource Include="backend\data\img\collaborators\1.jpg" />
+    <Resource Include="backend\data\img\collaborators\10.jpg" />
+    <Resource Include="backend\data\img\collaborators\11.jpg" />
+    <Resource Include="backend\data\img\collaborators\12.jpg" />
+    <Resource Include="backend\data\img\collaborators\13.jpg" />
+    <Resource Include="backend\data\img\collaborators\14.jpg" />
+    <Resource Include="backend\data\img\collaborators\2.jpg" />
+    <Resource Include="backend\data\img\collaborators\3.jpg" />
+    <Resource Include="backend\data\img\collaborators\4.jpg" />
+    <Resource Include="backend\data\img\collaborators\5.jpg" />
+    <Resource Include="backend\data\img\collaborators\6.jpg" />
+    <Resource Include="backend\data\img\collaborators\7.jpg" />
+    <Resource Include="backend\data\img\collaborators\8.jpg" />
+    <Resource Include="backend\data\img\collaborators\9.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />
