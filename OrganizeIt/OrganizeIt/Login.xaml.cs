@@ -34,7 +34,7 @@ namespace OrganizeIt
             Dictionary<string, User>  users = Backend.LoadUsers();
             User user = Backend.LogIn(this.username.Text, this.password.Password, users);
             if (user == null)
-                NavigationService.Navigate(new NewSaradnik());
+                NavigationService.Navigate(new EditOrganizer());
             else if (user.UserType.Equals(UserType.Administrator))
                 NavigationService.Navigate(new AccountsList());
             else if (user.UserType.Equals(UserType.Organizer))

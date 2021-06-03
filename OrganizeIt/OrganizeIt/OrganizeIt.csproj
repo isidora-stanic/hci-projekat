@@ -142,6 +142,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="EditOrganizer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditSaradnik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EventCollabsCheckList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -181,6 +189,12 @@
     <Compile Include="backend\users\UserType.cs" />
     <Compile Include="CreateAccount.xaml.cs">
       <DependentUpon>CreateAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditOrganizer.xaml.cs">
+      <DependentUpon>EditOrganizer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditSaradnik.xaml.cs">
+      <DependentUpon>EditSaradnik.xaml</DependentUpon>
     </Compile>
     <Compile Include="EventCollabsCheckList.xaml.cs">
       <DependentUpon>EventCollabsCheckList.xaml</DependentUpon>

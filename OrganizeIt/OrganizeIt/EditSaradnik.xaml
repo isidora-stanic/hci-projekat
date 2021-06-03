@@ -1,27 +1,27 @@
-﻿<Page x:Class="OrganizeIt.NewSaradnik"
+﻿<Page x:Class="OrganizeIt.EditSaradnik"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:OrganizeIt"
-      mc:Ignorable="d" 
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="NewSaradnik">
+      Title="EditSaradnik">
 
     <Grid Background="White">
         <Button Content="Nazad" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFlatButton}"/>
         <Border Margin="15" MinWidth="600" MinHeight="00" Background="White" VerticalAlignment="Center" Padding="10" CornerRadius="10" MaxWidth="800">
             <StackPanel>
                 <Image Height="100"  Source="C:\Users\Jovana\Desktop\sl.PNG"/>
-                
+
                 <Grid Margin="0 0 0 20">
                     <TextBox materialDesign:HintAssist.Hint="Naziv" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 0 401 5"/>
                     <TextBox materialDesign:HintAssist.Hint="Telefon" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="401 0 0 5"/>
                 </Grid>
 
                 <Grid Margin="0 0 0 20">
-                    <TextBox materialDesign:HintAssist.Hint="Grad" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 0 401 5" />
+                    <TextBox materialDesign:HintAssist.Hint="Grad" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 0 401 5"/>
                     <TextBox materialDesign:HintAssist.Hint="Adresa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="401 0 0 5"/>
                 </Grid>
 
@@ -34,13 +34,10 @@
                   materialDesign:HintAssist.Hint="Opis"
                    Margin="0 0 0 20"
 >
-                    
+
                 </TextBox>
 
-                <Grid Margin="0 0 0 20" >
-                    <Button HorizontalAlignment="Left" Content="Otkaži" Width ="200" Margin="0 0 401 5"/>
-                    <Button HorizontalAlignment="Right" Content="Dodaj saradnika" Width ="200"  Margin="401 0 0 5"/>
-                </Grid>
+                <Button Content="Izmeni organizatora" Width ="200" Margin="0 20" />
 
             </StackPanel>
         </Border>
