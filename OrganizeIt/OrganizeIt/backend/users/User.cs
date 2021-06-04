@@ -24,15 +24,15 @@ namespace OrganizeIt.backend.users
         public string Email { get; set; }
 
         [JsonIgnore]
-        public List<SocialGathering> SocialGatherings { get; set; }
+        public List<SocialGathering> SocialGatherings { get; set; } = new List<SocialGathering>();
 
         [JsonIgnore]
-        public List<SocialGatheringSuggestion> SocialGatheringSuggestions { get; set; }
+        public List<SocialGatheringSuggestion> SocialGatheringSuggestions { get; set; } = new List<SocialGatheringSuggestion>();
 
         [JsonIgnore]
-        public List<SocialGatheringSuggestionReply> SocialGatheringSuggestionReplies { get; set; }
+        public List<SocialGatheringSuggestionReply> SocialGatheringSuggestionReplies { get; set; } = new List<SocialGatheringSuggestionReply>();
 
         // samo za organizatore, null ako je client
-        public List<ToDoCard> ToDoCards { get; set; }
+        public List<ToDoCard> ToDoCards { get; set; } = new List<ToDoCard>();
     }
 }

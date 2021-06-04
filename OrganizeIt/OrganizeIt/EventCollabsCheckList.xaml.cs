@@ -45,17 +45,20 @@ namespace OrganizeIt
         public void InitSaradnici()
         {
             // ovde trebaju podaci iz baze
-            SocialGatheringCollaborator sc1 = new SocialGatheringCollaborator { Id = 1, Name = "MC Stojan", Description = "smesan DJ" };
-            SocialGatheringCollaborator sc2 = new SocialGatheringCollaborator { Id = 2, Name = "DJ Stasa", Description = "dobar DJ" };
-            SocialGatheringCollaborator sc3 = new SocialGatheringCollaborator { Id = 3, Name = "MJ Krmak", Description = "debeo DJ" };
-            SocialGatheringCollaborator sc4 = new SocialGatheringCollaborator { Id = 4, Name = "Mimi Mercedes", Description = "Guda iz Huda" };
+            //SocialGatheringCollaborator sc1 = new SocialGatheringCollaborator { Id = 1, Name = "MC Stojan", Description = "smesan DJ" };
+            //SocialGatheringCollaborator sc2 = new SocialGatheringCollaborator { Id = 2, Name = "DJ Stasa", Description = "dobar DJ" };
+            //SocialGatheringCollaborator sc3 = new SocialGatheringCollaborator { Id = 3, Name = "MJ Krmak", Description = "debeo DJ" };
+            //SocialGatheringCollaborator sc4 = new SocialGatheringCollaborator { Id = 4, Name = "Mimi Mercedes", Description = "Guda iz Huda" };
+
+            SviSaradniciNormalni = backend.Backend.LoadCollaborators().Values.ToList();
 
             // ovde se prave DTO-ovi
 
-            SviSaradniciNormalni.Add(sc1);
-            SviSaradniciNormalni.Add(sc2);
-            SviSaradniciNormalni.Add(sc3);
-            SviSaradniciNormalni.Add(sc4);
+
+            //SviSaradniciNormalni.Add(sc1);
+            //SviSaradniciNormalni.Add(sc2);
+            //SviSaradniciNormalni.Add(sc3);
+            //SviSaradniciNormalni.Add(sc4);
 
             ProdjiListuINamestiBulove();
 

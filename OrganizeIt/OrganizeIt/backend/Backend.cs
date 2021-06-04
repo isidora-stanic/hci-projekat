@@ -68,32 +68,32 @@ namespace OrganizeIt.backend
             return JsonSerializer.Deserialize<Dictionary<int, SocialGatheringCollaborator>>(jsonString);
         }
 
-        static string GetUserImagePath(string userName)
+        public static string GetUserImagePath(string userName)
         {
             return DataDir + "img" + Path.DirectorySeparatorChar + "users" + Path.DirectorySeparatorChar + userName + ".jpg";
         }
 
-        static string GetUserImagePath(User user)
+        public static string GetUserImagePath(User user)
         {
             return DataDir + "img" + Path.DirectorySeparatorChar + "users" + Path.DirectorySeparatorChar + user.Username + ".jpg";
         }
 
-        static string GetCollaboratorImagePath(int collaboratorID)
+        public static string GetCollaboratorImagePath(int collaboratorID)
         {
             return DataDir + "img" + Path.DirectorySeparatorChar + "collaborators" + Path.DirectorySeparatorChar + collaboratorID + ".jpg";
         }
 
-        static string GetCollaboratorImagePath(SocialGatheringCollaborator collaborator)
+        public static string GetCollaboratorImagePath(SocialGatheringCollaborator collaborator)
         {
             return DataDir + "img" + Path.DirectorySeparatorChar + "collaborators" + Path.DirectorySeparatorChar + collaborator.Id + ".jpg";
         }
 
-        static int GenerateCollaboratorID()
+        public static int GenerateCollaboratorID()
         {
             return Collaborators.Count;
         }
 
-        static List<User> searchUsers(string searchTerm)
+        public static List<User> searchUsers(string searchTerm)
         {
             var searchTerm2 = searchTerm.ToLower();
             var users = from user in Users.Values
@@ -110,7 +110,7 @@ namespace OrganizeIt.backend
             return new List<User>(users);
         }
 
-        static List<SocialGatheringCollaborator> searchCollaborators(string searchTerm)
+        public static List<SocialGatheringCollaborator> searchCollaborators(string searchTerm)
         {
             var searchTerm2 = searchTerm.ToLower();
             var collaborators = from collaborator in Collaborators.Values
@@ -119,7 +119,7 @@ namespace OrganizeIt.backend
             return new List<SocialGatheringCollaborator>(collaborators);
         }
 
-        static List<User> getUsersOfType(UserType userType)
+        public static List<User> getUsersOfType(UserType userType)
         {
             var users = from user in Users.Values
                         where user.UserType == userType
@@ -127,13 +127,17 @@ namespace OrganizeIt.backend
             return new List<User>(users);
         }
 
-        static void saveSocialGatherings(Dictionary<string, User> usersDict)
+        public static void saveSocialGatherings(Dictionary<string, User> usersDict)
         {
             var clientsList = getUsersOfType(UserType.Client);
             var socialGatheringsDict = new Dictionary<int, SocialGathering>();
             var num = 0;
             foreach (var client in clientsList)
             {
+                if (client.SocialGatherings == null)
+                {
+                    continue;
+                }
                 foreach (var socialGathering in client.SocialGatherings)
                 {
                     socialGatheringsDict.Add(num, socialGathering);
@@ -146,7 +150,7 @@ namespace OrganizeIt.backend
             File.WriteAllText(socialGatheringsDataDir, socialGatheringsString);
         }
 
-        static void loadSocialGatherings(Dictionary<string, User> usersDict)
+        public static void loadSocialGatherings(Dictionary<string, User> usersDict)
         {
             var socialGatheringsDataDir = DataDir + Path.DirectorySeparatorChar + "social_gatherings.json";
             var jsonString = File.ReadAllText(socialGatheringsDataDir);

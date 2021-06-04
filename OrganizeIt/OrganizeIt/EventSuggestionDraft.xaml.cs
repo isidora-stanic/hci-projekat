@@ -105,6 +105,20 @@ namespace OrganizeIt
         private void PosaljiBtn_Click(object sender, RoutedEventArgs e)
         {
             Predlog.CategorySuggestions = MainWindowSekcije.ToList();
+
+            var users = backend.Backend.LoadUsers();
+            var user = backend.Backend.LoggedInUser;
+            if (user == null) { user = users["mmartinovic"]; }
+            var cl = users["jadranka88"];
+            var manif = new SocialGathering {Client = cl , Organizer = user, DateTime = DateTime.Now, Description = "blabla opis", Name="Proslava bree", NumberOfGuests=3, RequestDate= DateTime.Now, SocialGatheringSuggestions = new List<SocialGatheringSuggestion>()};
+            manif.SocialGatheringSuggestions.Add(Predlog);
+            cl.SocialGatherings.Add(manif);
+            Predlog.SocialGathering = manif;
+            Predlog.Organizer = user;
+            Predlog.Client = cl;
+
+            backend.Backend.saveSocialGatherings(users);
+
             NavigationService.Navigate(new EventSuggestionView(Predlog));
         }
     }
