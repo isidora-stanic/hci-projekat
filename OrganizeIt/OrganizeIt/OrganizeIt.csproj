@@ -271,7 +271,10 @@
     <Resource Include="backend\data\img\users\suncana.zora.jpg" />
     <Resource Include="backend\data\img\users\zvezdaaa16.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="backend\data\social_gatherings\replies\" />
+    <Folder Include="backend\data\social_gatherings\suggestions\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="backend\data\img\collaborators\0.jpg" />
     <Resource Include="backend\data\img\collaborators\1.jpg" />

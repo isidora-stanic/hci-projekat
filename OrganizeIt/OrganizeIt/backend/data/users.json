@@ -1,1 +1,249 @@
-{"admin":{"UserType":2,"Username":"admin","Password":"123","FirstName":"Admin","LastName":"Adminic","Address":{"City":"Valjevo","StreetAddress":"Hajduk Veljka 3"},"Gender":0,"BirthDate":"0001-01-01T00:00:00","PhoneNumber":"\u002B3816750876874","Email":"Admin@Admin.admin","SocialGatherings":[],"SocialGatheringSuggestions":[],"SocialGatheringSuggestionReplies":[],"ToDoCards":null},"djole-LOZ":{"UserType":0,"Username":"djole-LOZ","Password":"loznicausrcu","FirstName":"\u0110or\u0111e","LastName":"Bogdanovi\u0107","Address":{"City":"Loznica","StreetAddress":"Svetog Save 7"},"Gender":0,"BirthDate":"1960-01-18T00:00:00","PhoneNumber":"\u002B381689065303","Email":"djordje_ivankovic@loznica.rs","SocialGatherings":[],"SocialGatheringSuggestions":[],"SocialGatheringSuggestionReplies":[],"ToDoCards":null},"jadranka88":{"UserType":0,"Username":"jadranka88","Password":"dLnQ9CEd","FirstName":"Jadranka","LastName":"Marjanovi\u0107","Address":{"City":"Valjevo","StreetAddress":"Hajduk Veljka 3"},"Gender":1,"BirthDate":"1988-05-25T00:00:00","PhoneNumber":"\u002B3816750876874","Email":"jadranka88@yahoo.com","SocialGatherings":[],"SocialGatheringSuggestions":[],"SocialGatheringSuggestionReplies":[],"ToDoCards":null},"kovacevicD":{"UserType":0,"Username":"kovacevicD","Password":"bezbednasifra13","FirstName":"Dragica","LastName":"Kova\u010Devi\u0107","Address":{"City":"Leskovac","StreetAddress":"Jug Bogdanova 4"},"Gender":1,"BirthDate":"1972-07-10T00:00:00","PhoneNumber":"\u002B381619029275","Email":"kovacevicd@outlook.com","SocialGatherings":[],"SocialGatheringSuggestions":[],"SocialGatheringSuggestionReplies":[],"ToDoCards":null},"sinisa.ivankovic":{"UserType":0,"Username":"sinisa.ivankovic","Password":"idegas","FirstName":"Sini\u0161a","LastName":"Ivankovi\u0107","Address":{"City":"Subotica","StreetAddress":"Svete Katarine 5"},"Gender":0,"BirthDate":"1992-01-17T00:00:00","PhoneNumber":"\u002B381618444804","Email":"sinisa.ivankovic@gmail.com","SocialGatherings":[],"SocialGatheringSuggestions":[],"SocialGatheringSuggestionReplies":[],"ToDoCards":null},"suncana.zora":{"UserType":0,"Username":"suncana.zora","Password":"novisadnajjaci","FirstName":"Sun\u010Dica","LastName":"Zori\u0107","Address":{"City":"Zrenjanin","StreetAddress":"Vase Staji\u0107a 15"},"Gender":0,"BirthDate":"1985-11-07T00:00:00","PhoneNumber":"\u002B3816716040404","Email":"suncicazoric@gmail.com","SocialGatherings":[],"SocialGatheringSuggestions":[],"SocialGatheringSuggestionReplies":[],"ToDoCards":null},"aljox":{"UserType":1,"Username":"aljox","Password":"samobiznis","FirstName":"Aljo\u0161a","LastName":"Filipovi\u0107","Address":{"City":"\u0160abac","StreetAddress":"Takovska 3"},"Gender":0,"BirthDate":"1971-07-07T00:00:00","PhoneNumber":"\u002B381664224652","Email":"alj0x@blockchain.info","SocialGatherings":[],"SocialGatheringSuggestions":[],"SocialGatheringSuggestionReplies":[],"ToDoCards":[]},"mmartinovic":{"UserType":1,"Username":"mmartinovic","Password":"rokzasok","FirstName":"Miroslav","LastName":"Martinovi\u0107","Address":{"City":"Zrenjanin","StreetAddress":"Travni\u010Dka 8"},"Gender":0,"BirthDate":"1981-04-10T00:00:00","PhoneNumber":"\u002B381676432855","Email":"martinovic.miroslav@sok.rs","SocialGatherings":[],"SocialGatheringSuggestions":[],"SocialGatheringSuggestionReplies":[],"ToDoCards":[]},"knezevicborislava":{"UserType":1,"Username":"knezevicborislava","Password":"jnm6pcbwre","FirstName":"Borislava","LastName":"Kne\u017Eevi\u0107","Address":{"City":"Novi Sad","StreetAddress":"Balzakova 42"},"Gender":1,"BirthDate":"1960-03-24T00:00:00","PhoneNumber":"\u002B381676432855","Email":"knezevicborislava@neobee.net","SocialGatherings":[],"SocialGatheringSuggestions":[],"SocialGatheringSuggestionReplies":[],"ToDoCards":[]},"milos.stankic":{"UserType":1,"Username":"milos.stankic","Password":"borislava\u003C3","FirstName":"Milo\u0161","LastName":"Stanki\u0107","Address":{"City":"Novi Sad","StreetAddress":"Balzakova 43"},"Gender":0,"BirthDate":"1958-03-24T00:00:00","PhoneNumber":"\u002B381693740603","Email":"milos.stankic@yahoo.com","SocialGatherings":[],"SocialGatheringSuggestions":[],"SocialGatheringSuggestionReplies":[],"ToDoCards":[]},"zvezdaaa16":{"UserType":1,"Username":"zvezdaaa16","Password":"rawrXD","FirstName":"Zvezdana","LastName":"Kova\u010D","Address":{"City":"Beograd","StreetAddress":"Knez Mihajlova 14"},"Gender":1,"BirthDate":"1993-06-13T00:00:00","PhoneNumber":"\u002B381693740603","Email":"kzzzvezdana@rocketmail.com","SocialGatherings":[],"SocialGatheringSuggestions":[],"SocialGatheringSuggestionReplies":[],"ToDoCards":[]}}
+{
+  "admin": {
+    "UserType": 2,
+    "Username": "admin",
+    "Password": "123",
+    "FirstName": "Admin",
+    "LastName": "Adminic",
+    "Address": {
+      "City": "Valjevo",
+      "StreetAddress": "Hajduk Veljka 3"
+    },
+    "Gender": 0,
+    "BirthDate": "0001-01-01T00:00:00",
+    "PhoneNumber": "\u002B3816750876874",
+    "Email": "Admin@Admin.admin",
+    "SocialGatherings": [
+    ],
+    "SocialGatheringSuggestions": [
+    ],
+    "SocialGatheringSuggestionReplies": [
+    ],
+    "ToDoCards": null
+  },
+  "djole-LOZ": {
+    "UserType": 0,
+    "Username": "djole-LOZ",
+    "Password": "loznicausrcu",
+    "FirstName": "\u0110or\u0111e",
+    "LastName": "Bogdanovi\u0107",
+    "Address": {
+      "City": "Loznica",
+      "StreetAddress": "Svetog Save 7"
+    },
+    "Gender": 0,
+    "BirthDate": "1964-04-06T00:00:00",
+    "PhoneNumber": "\u002B381689065303",
+    "Email": "djordje_ivankovic@loznica.rs",
+    "SocialGatherings": [
+    ],
+    "SocialGatheringSuggestions": [
+    ],
+    "SocialGatheringSuggestionReplies": [
+    ],
+    "ToDoCards": null
+  },
+  "jadranka88": {
+    "UserType": 0,
+    "Username": "jadranka88",
+    "Password": "dLnQ9CEd",
+    "FirstName": "Jadranka",
+    "LastName": "Marjanovi\u0107",
+    "Address": {
+      "City": "Valjevo",
+      "StreetAddress": "Hajduk Veljka 3"
+    },
+    "Gender": 1,
+    "BirthDate": "1988-05-25T00:00:00",
+    "PhoneNumber": "\u002B3816750876874",
+    "Email": "jadranka88@yahoo.com",
+    "SocialGatherings": [
+    ],
+    "SocialGatheringSuggestions": [
+    ],
+    "SocialGatheringSuggestionReplies": [
+    ],
+    "ToDoCards": null
+  },
+  "kovacevicD": {
+    "UserType": 0,
+    "Username": "kovacevicD",
+    "Password": "bezbednasifra13",
+    "FirstName": "Dragica",
+    "LastName": "Kova\u010Devi\u0107",
+    "Address": {
+      "City": "Leskovac",
+      "StreetAddress": "Jug Bogdanova 4"
+    },
+    "Gender": 1,
+    "BirthDate": "1972-07-10T00:00:00",
+    "PhoneNumber": "\u002B381619029275",
+    "Email": "kovacevicd@outlook.com",
+    "SocialGatherings": [
+    ],
+    "SocialGatheringSuggestions": [
+    ],
+    "SocialGatheringSuggestionReplies": [
+    ],
+    "ToDoCards": null
+  },
+  "sinisa.ivankovic": {
+    "UserType": 0,
+    "Username": "sinisa.ivankovic",
+    "Password": "idegas",
+    "FirstName": "Sini\u0161a",
+    "LastName": "Ivankovi\u0107",
+    "Address": {
+      "City": "Subotica",
+      "StreetAddress": "Svete Katarine 5"
+    },
+    "Gender": 0,
+    "BirthDate": "1992-01-17T00:00:00",
+    "PhoneNumber": "\u002B381618444804",
+    "Email": "sinisa.ivankovic@gmail.com",
+    "SocialGatherings": [
+    ],
+    "SocialGatheringSuggestions": [
+    ],
+    "SocialGatheringSuggestionReplies": [
+    ],
+    "ToDoCards": null
+  },
+  "suncana.zora": {
+    "UserType": 0,
+    "Username": "suncana.zora",
+    "Password": "novisadnajjaci",
+    "FirstName": "Sun\u010Dica",
+    "LastName": "Zori\u0107",
+    "Address": {
+      "City": "Zrenjanin",
+      "StreetAddress": "Vase Staji\u0107a 15"
+    },
+    "Gender": 0,
+    "BirthDate": "1985-11-07T00:00:00",
+    "PhoneNumber": "\u002B3816716040404",
+    "Email": "suncicazoric@gmail.com",
+    "SocialGatherings": [
+    ],
+    "SocialGatheringSuggestions": [
+    ],
+    "SocialGatheringSuggestionReplies": [
+    ],
+    "ToDoCards": null
+  },
+  "aljox": {
+    "UserType": 1,
+    "Username": "aljox",
+    "Password": "samobiznis",
+    "FirstName": "Aljo\u0161a",
+    "LastName": "Filipovi\u0107",
+    "Address": {
+      "City": "\u0160abac",
+      "StreetAddress": "Takovska 3"
+    },
+    "Gender": 0,
+    "BirthDate": "1971-07-07T00:00:00",
+    "PhoneNumber": "\u002B381664224652",
+    "Email": "alj0x@blockchain.info",
+    "SocialGatherings": [
+    ],
+    "SocialGatheringSuggestions": [
+    ],
+    "SocialGatheringSuggestionReplies": [
+    ],
+    "ToDoCards": [
+    ]
+  },
+  "mmartinovic": {
+    "UserType": 1,
+    "Username": "mmartinovic",
+    "Password": "rokzasok",
+    "FirstName": "Miroslav",
+    "LastName": "Martinovi\u0107",
+    "Address": {
+      "City": "Zrenjanin",
+      "StreetAddress": "Travni\u010Dka 8"
+    },
+    "Gender": 0,
+    "BirthDate": "1981-04-10T00:00:00",
+    "PhoneNumber": "\u002B381676432855",
+    "Email": "martinovic.miroslav@sok.rs",
+    "SocialGatherings": [
+    ],
+    "SocialGatheringSuggestions": [
+    ],
+    "SocialGatheringSuggestionReplies": [
+    ],
+    "ToDoCards": [
+    ]
+  },
+  "knezevicborislava": {
+    "UserType": 1,
+    "Username": "knezevicborislava",
+    "Password": "jnm6pcbwre",
+    "FirstName": "Borislava",
+    "LastName": "Kne\u017Eevi\u0107",
+    "Address": {
+      "City": "Novi Sad",
+      "StreetAddress": "Balzakova 42"
+    },
+    "Gender": 1,
+    "BirthDate": "1960-03-24T00:00:00",
+    "PhoneNumber": "\u002B381676432855",
+    "Email": "knezevicborislava@neobee.net",
+    "SocialGatherings": [
+    ],
+    "SocialGatheringSuggestions": [
+    ],
+    "SocialGatheringSuggestionReplies": [
+    ],
+    "ToDoCards": [
+    ]
+  },
+  "milos.stankic": {
+    "UserType": 1,
+    "Username": "milos.stankic",
+    "Password": "borislava\u003C3",
+    "FirstName": "Milo\u0161",
+    "LastName": "Stanki\u0107",
+    "Address": {
+      "City": "Novi Sad",
+      "StreetAddress": "Balzakova 43"
+    },
+    "Gender": 0,
+    "BirthDate": "1958-03-24T00:00:00",
+    "PhoneNumber": "\u002B381693740603",
+    "Email": "milos.stankic@yahoo.com",
+    "SocialGatherings": [
+    ],
+    "SocialGatheringSuggestions": [
+    ],
+    "SocialGatheringSuggestionReplies": [
+    ],
+    "ToDoCards": [
+    ]
+  },
+  "zvezdaaa16": {
+    "UserType": 1,
+    "Username": "zvezdaaa16",
+    "Password": "rawrXD",
+    "FirstName": "Zvezdana",
+    "LastName": "Kova\u010D",
+    "Address": {
+      "City": "Beograd",
+      "StreetAddress": "Knez Mihajlova 14"
+    },
+    "Gender": 1,
+    "BirthDate": "1993-06-13T00:00:00",
+    "PhoneNumber": "\u002B381693740603",
+    "Email": "kzzzvezdana@rocketmail.com",
+    "SocialGatherings": [
+    ],
+    "SocialGatheringSuggestions": [
+    ],
+    "SocialGatheringSuggestionReplies": [
+    ],
+    "ToDoCards": [
+    ]
+  }
+}
