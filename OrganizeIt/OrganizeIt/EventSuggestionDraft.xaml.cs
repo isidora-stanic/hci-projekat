@@ -111,6 +111,7 @@ namespace OrganizeIt
             var cl = users["jadranka88"];
             var manif = new SocialGathering { Client = cl, Organizer = user, DateTime = DateTime.Now, Description = "blabla opis", Name = "Proslava bree", NumberOfGuests = 3, RequestDate = DateTime.Now, SocialGatheringSuggestions = new List<SocialGatheringSuggestion>() };
             manif.SocialGatheringSuggestions.Add(Predlog);
+            backend.Backend.loadSocialGatherings(users);
             cl.SocialGatherings.Add(manif);
             Predlog.SocialGathering = manif;
             Predlog.Organizer = user;
@@ -118,7 +119,11 @@ namespace OrganizeIt
 
             backend.Backend.saveSocialGatherings(users);
 
-            NavigationService.Navigate(new EventSuggestionView(Predlog));
+            // ovo ce ici u drugi prozor--------------
+            backend.Backend.loadSocialGatherings(users);
+            cl = users["jadranka88"];
+
+            NavigationService.Navigate(new EventSuggestionView(cl.SocialGatherings[0].SocialGatheringSuggestions[0]));
         }
     }
 
