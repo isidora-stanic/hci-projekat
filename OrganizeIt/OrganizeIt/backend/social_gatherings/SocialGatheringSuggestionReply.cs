@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace OrganizeIt.backend.social_gatherings
 {
     public class SocialGatheringSuggestionReply
     {
         public DateTime ReplyDate { get; set; }
+
+        [JsonIgnore]
         public SocialGatheringSuggestion SocialGatheringSuggestion { get; set; }
 
         public Dictionary<SocialGatheringCategorySuggestion, SocialGatheringCollaborator> AcceptedCollaborators

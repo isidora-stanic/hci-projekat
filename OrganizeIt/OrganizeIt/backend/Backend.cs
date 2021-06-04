@@ -219,5 +219,63 @@ namespace OrganizeIt.backend
                         select user;
             return new List<User>(users);
         }
+
+        static void saveSocialGatherings(Dictionary<string, User> usersDict)
+        {
+            var clientsList = getUsersOfType(UserType.Client);
+            var socialGatheringsDict = new Dictionary<int, SocialGathering>();
+            var num = 0;
+            foreach (var client in clientsList)
+            {
+                foreach (var socialGathering in client.SocialGatherings)
+                {
+                    socialGatheringsDict.Add(num, socialGathering);
+                    num++;
+                }
+            }
+
+            var socialGatheringsDataDir = DataDir + Path.DirectorySeparatorChar + "social_gatherings.json";
+            var socialGatheringsString = JsonSerializer.Serialize(socialGatheringsDict);
+            File.WriteAllText(socialGatheringsDataDir, socialGatheringsString);
+        }
+
+        static void loadSocialGatherings(Dictionary<string, User> usersDict)
+        {
+            var socialGatheringsDataDir = DataDir + Path.DirectorySeparatorChar + "social_gatherings.json";
+            var jsonString = File.ReadAllText(socialGatheringsDataDir);
+            var socialGatheringsDict = JsonSerializer.Deserialize<Dictionary<int, SocialGathering>>(jsonString);
+
+            foreach (var socialGathering in socialGatheringsDict.Values)
+            {
+                var client = usersDict[socialGathering.ClientUsername];
+                socialGathering.Client = client;
+
+                var organizer = usersDict[socialGathering.OrganizerUsername];
+                socialGathering.Organizer = organizer;
+
+                client.SocialGatherings.Add(socialGathering);
+                organizer.SocialGatherings.Add(socialGathering);
+
+                foreach (var suggestion in socialGathering.SocialGatheringSuggestions)
+                {
+                    suggestion.SocialGathering = socialGathering;
+                    foreach (var reply in suggestion.SuggestionReplies)
+                    {
+                        reply.SocialGatheringSuggestion = suggestion;
+                        client.SocialGatheringSuggestionReplies.Add(reply);
+                        organizer.SocialGatheringSuggestionReplies.Add(reply);
+                    }
+                    client.SocialGatheringSuggestions.Add(suggestion);
+                    organizer.SocialGatheringSuggestions.Add(suggestion);
+                }
+            }
+        }
+
+        static List<SocialGathering> loadSocialGatheringsList(string username)
+        {
+            var socialGatheringsDataDir = DataDir + Path.DirectorySeparatorChar + "social_gatherings" + Path.DirectorySeparatorChar + username + ".json";
+            var jsonString = File.ReadAllText(socialGatheringsDataDir);
+            return JsonSerializer.Deserialize<List<SocialGathering>>(jsonString);
+        }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using OrganizeIt.backend.social_gatherings;
 using OrganizeIt.backend.todo;
 
@@ -22,8 +23,13 @@ namespace OrganizeIt.backend.users
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
 
+        [JsonIgnore]
         public List<SocialGathering> SocialGatherings { get; set; }
+
+        [JsonIgnore]
         public List<SocialGatheringSuggestion> SocialGatheringSuggestions { get; set; }
+
+        [JsonIgnore]
         public List<SocialGatheringSuggestionReply> SocialGatheringSuggestionReplies { get; set; }
 
         // samo za organizatore, null ako je client

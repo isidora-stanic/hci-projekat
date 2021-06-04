@@ -1,6 +1,7 @@
+using OrganizeIt.backend.users;
 using System;
 using System.Collections.Generic;
-using OrganizeIt.backend.users;
+using System.Text.Json.Serialization;
 
 namespace OrganizeIt.backend.social_gatherings
 {
@@ -18,9 +19,17 @@ namespace OrganizeIt.backend.social_gatherings
         // izmeniti po potrebi
         public List<string> GuestList { get; set; }
 
-        public User Organizer { get; set; }
-        public User Client { get; set; }
+        // potrebno zbog ucitavanja
+        public string OrganizerUsername { get; set; }
 
-        public List<SocialGatheringSuggestion> EventSuggestions { get; set; }
+        public string ClientUsername { get; set; }
+
+        [JsonIgnore]
+        public User Organizer { get { return Organizer; } set { Organizer = value; OrganizerUsername = value.Username; } }
+
+        [JsonIgnore]
+        public User Client { get { return Client; } set { Client = value; OrganizerUsername = value.Username; } }
+
+        public List<SocialGatheringSuggestion> SocialGatheringSuggestions { get; set; }
     }
 }
