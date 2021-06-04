@@ -89,7 +89,7 @@
                     </Grid.ColumnDefinitions>
                     <Button Margin="10" Grid.Column="0" Style="{DynamicResource MaterialDesignOutlinedButton}">Otkaži</Button>
                     <Button Margin="10" Grid.Column="1" Style="{DynamicResource MaterialDesignOutlinedButton}">Sačuvaj predlog</Button>
-                    <Button Margin="10" Grid.Column="2">Pošalji predlog</Button>
+                    <Button x:Name="PosaljiBtn" Margin="10" Grid.Column="2" Click="PosaljiBtn_Click">Pošalji predlog</Button>
                 </Grid>
             </StackPanel>
             <ScrollViewer Background="White" Margin="10" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">

@@ -56,7 +56,7 @@ namespace OrganizeIt
             DataContext = this;
         }
 
-        public ObservableCollection<SocialGatheringCategorySuggestion> InitializeMainWindowSekcije()
+        /*public ObservableCollection<SocialGatheringCategorySuggestion> InitializeMainWindowSekcije()
         {
             MainWindowSekcije = new ObservableCollection<SocialGatheringCategorySuggestion>();
             SocialGatheringCategorySuggestion muzika = new SocialGatheringCategorySuggestion { Id=counterForIds++.ToString(), CategoryTitle="Muzika", SuggestedCollaborators=new ObservableCollection<SocialGatheringCollaborator>() };
@@ -68,11 +68,15 @@ namespace OrganizeIt
             MainWindowSekcije.Add(new SocialGatheringCategorySuggestion { Id = counterForIds++.ToString(), CategoryTitle ="Prostor", SuggestedCollaborators = new ObservableCollection<SocialGatheringCollaborator>() });
             MainWindowSekcije.Add(new SocialGatheringCategorySuggestion { Id = counterForIds++.ToString(), CategoryTitle = "Dekoracija", SuggestedCollaborators = new ObservableCollection<SocialGatheringCollaborator>() });
             return MainWindowSekcije;
-        }
+        }*/
 
         public void DodajSekciju()
         {
-            MainWindowSekcije.Add(new SocialGatheringCategorySuggestion { Id = counterForIds++.ToString(), CategoryTitle = "", SuggestedCollaborators = new ObservableCollection<SocialGatheringCollaborator>() });
+            MainWindowSekcije.Add(new SocialGatheringCategorySuggestion { 
+                Id = counterForIds++.ToString(), 
+                CategoryTitle = "", 
+                SuggestedCollaborators = new ObservableCollection<SocialGatheringCollaborator>() 
+            });
         }
 
         public void UkloniSekciju(SocialGatheringCategorySuggestion sc)
@@ -96,6 +100,12 @@ namespace OrganizeIt
             SocialGatheringCategorySuggestion sekcija = (SocialGatheringCategorySuggestion)((Button)sender).DataContext;
             Predlog.CategorySuggestions = MainWindowSekcije.ToList();
             NavigationService.Navigate(new EventCollabsCheckList(this, sekcija));
+        }
+
+        private void PosaljiBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Predlog.CategorySuggestions = MainWindowSekcije.ToList();
+            NavigationService.Navigate(new EventSuggestionView(Predlog));
         }
     }
 

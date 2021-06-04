@@ -154,7 +154,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="EventCollabsOptionsCheckList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EventSuggestionDraft.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventSuggestionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -198,8 +206,14 @@
     <Compile Include="EventCollabsCheckList.xaml.cs">
       <DependentUpon>EventCollabsCheckList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EventCollabsOptionsCheckList.xaml.cs">
+      <DependentUpon>EventCollabsOptionsCheckList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EventSuggestionDraft.xaml.cs">
       <DependentUpon>EventSuggestionDraft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventSuggestionView.xaml.cs">
+      <DependentUpon>EventSuggestionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
