@@ -119,9 +119,9 @@ namespace OrganizeIt.backend
             return new List<SocialGatheringCollaborator>(collaborators);
         }
 
-        public static List<User> getUsersOfType(UserType userType)
+        public static List<User> getUsersOfType(UserType userType, Dictionary<string, User> usersDict)
         {
-            var users = from user in Users.Values
+            var users = from user in usersDict.Values
                         where user.UserType == userType
                         select user;
             return new List<User>(users);
@@ -129,7 +129,7 @@ namespace OrganizeIt.backend
 
         public static void saveSocialGatherings(Dictionary<string, User> usersDict)
         {
-            var clientsList = getUsersOfType(UserType.Client);
+            var clientsList = getUsersOfType(UserType.Client, usersDict);
             var socialGatheringsDict = new Dictionary<int, SocialGathering>();
             var num = 0;
             foreach (var client in clientsList)
@@ -170,6 +170,8 @@ namespace OrganizeIt.backend
                 foreach (var suggestion in socialGathering.SocialGatheringSuggestions)
                 {
                     suggestion.SocialGathering = socialGathering;
+                    suggestion.Client = client;
+                    suggestion.Organizer = organizer;
                     foreach (var reply in suggestion.SuggestionReplies)
                     {
                         reply.SocialGatheringSuggestion = suggestion;

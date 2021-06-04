@@ -1,1 +1,44 @@
-{}
+{
+  "0": {
+    "RequestDate": "2021-06-04T22:02:15.7606532+02:00",
+    "Name": "Proslava bree",
+    "Type": null,
+    "DateTime": "2021-06-04T22:02:15.7606532+02:00",
+    "NumberOfGuests": 3,
+    "Description": "blabla opis",
+    "GuestList": null,
+    "OrganizerUsername": "mmartinovic",
+    "ClientUsername": "jadranka88",
+    "SocialGatheringSuggestions": [
+      {
+        "SuggestionDate": "0001-01-01T00:00:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "aaaa",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Fabrika kiflica",
+                "Id": 0,
+                "Description": "Uvek sve\u017Ee kiflice\nDoma\u0107e kiflice bez aditiva i industrijskog kvasca, uvek sve\u017Ee, ru\u010Dno motane i bogato punjene.\nUkoliko se odlu\u010Dite za 4 ili vi\u0161e kilograma, ne morate da razmi\u0161ljate o pla\u0107anju dostave, bi\u0107e besplatna na teritoriji grada. Naravno, ukoliko vam je lak\u0161e, va\u0161e spremne i vru\u0107e kiflice vas mogu \u010Dekati i kod nas u Bra\u0107e Ribnikar 56. Uverite se sami u kvalitet na\u0161ih proizvoda."
+              },
+              {
+                "Name": "Catering\u002B",
+                "Id": 1,
+                "Description": "Profesionalna usluga keteringa\nSve\u017Ee, brzo, ukusno\nNa tr\u017Ei\u0161tu Srbije postojimo od 2003. godine. Od samog osnivanja cilj na\u0161eg poslovanja je obezbe\u0111ivanje usluga keteringa na najvi\u0161em nivou za klijente koji prepoznaju kvalitet. Stoga smo posebnu pa\u017Enju posvetili infrastrukturi i organizaciji poslovanja. Posedujemo savremenu kuhinju velikog kapaciteta, opremljenu najkvalitetnijom profesionalnom opremom, koja ispunjava sve HACCP standarde za pripremu hrane.\nZa vas kuvamo i organizujemo, kada planirate:\n-koktele, proslave, poslovne ru\u010Dkove i sve\u010Dane ve\u010Dere na lokacijama po \u017Eelji, uz uslugu profesionalnih i uniformisanih konobara\n-ishranu zaposlenih na dnevnoj bazi(sa pripremom u na\u0161oj kuhinji za manji broj ljudi i sa pripremom u kuhinji na lokaciji za ve\u0107i broj ljudi)\n-organizaciju dnevne dostave pi\u0107a, sokova, kafe, sanitarnih proizvoda, kao i svih ostalih proizvoda iz maloprodajne lokacije klijenata, po maloprodajnim cenama."
+              },
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": []
+      }
+    ]
+  }
+}

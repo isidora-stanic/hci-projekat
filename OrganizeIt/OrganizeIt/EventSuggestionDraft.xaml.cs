@@ -33,8 +33,6 @@ namespace OrganizeIt
             counterForIds = 0;
             InitializeComponent();
 
-            
-
             //InitializeMainWindowSekcije();
             MainWindowSekcije = new ObservableCollection<SocialGatheringCategorySuggestion>();
 
@@ -72,10 +70,11 @@ namespace OrganizeIt
 
         public void DodajSekciju()
         {
-            MainWindowSekcije.Add(new SocialGatheringCategorySuggestion { 
-                Id = counterForIds++.ToString(), 
-                CategoryTitle = "", 
-                SuggestedCollaborators = new ObservableCollection<SocialGatheringCollaborator>() 
+            MainWindowSekcije.Add(new SocialGatheringCategorySuggestion
+            {
+                Id = counterForIds++.ToString(),
+                CategoryTitle = "",
+                SuggestedCollaborators = new ObservableCollection<SocialGatheringCollaborator>()
             });
         }
 
@@ -110,7 +109,7 @@ namespace OrganizeIt
             var user = backend.Backend.LoggedInUser;
             if (user == null) { user = users["mmartinovic"]; }
             var cl = users["jadranka88"];
-            var manif = new SocialGathering {Client = cl , Organizer = user, DateTime = DateTime.Now, Description = "blabla opis", Name="Proslava bree", NumberOfGuests=3, RequestDate= DateTime.Now, SocialGatheringSuggestions = new List<SocialGatheringSuggestion>()};
+            var manif = new SocialGathering { Client = cl, Organizer = user, DateTime = DateTime.Now, Description = "blabla opis", Name = "Proslava bree", NumberOfGuests = 3, RequestDate = DateTime.Now, SocialGatheringSuggestions = new List<SocialGatheringSuggestion>() };
             manif.SocialGatheringSuggestions.Add(Predlog);
             cl.SocialGatherings.Add(manif);
             Predlog.SocialGathering = manif;
@@ -126,7 +125,6 @@ namespace OrganizeIt
     [ValueConversion(typeof(ObservableCollection<SocialGatheringCollaborator>), typeof(string))]
     public class ListToStringConverter : IValueConverter
     {
-
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (targetType != typeof(string))
@@ -145,5 +143,4 @@ namespace OrganizeIt
             throw new NotImplementedException();
         }
     }
-
 }

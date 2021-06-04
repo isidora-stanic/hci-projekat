@@ -16,10 +16,12 @@ namespace OrganizeIt.backend.social_gatherings
         public SocialGatheringSeating SocialGatheringSeating { get; set; } // prazna klasa za sad
 
         // brisati ako je visak
+        [JsonIgnore]
         public User Organizer { get; set; }
 
+        [JsonIgnore]
         public User Client { get; set; }
 
-        public List<SocialGatheringSuggestionReply> SuggestionReplies { get; set; }
+        public List<SocialGatheringSuggestionReply> SuggestionReplies { get; set; } = new List<SocialGatheringSuggestionReply>();
     }
 }
