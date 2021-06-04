@@ -219,3 +219,5 @@ C:\Users\Jovana\Source\Repos\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\Organi
 C:\Users\Jovana\Source\Repos\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\OrganizeIt.csproj.CopyComplete
 C:\Users\Jovana\Source\Repos\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\OrganizeIt.exe
 C:\Users\Jovana\Source\Repos\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\OrganizeIt.pdb
+C:\Users\isido\source\repos\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\EventSuggestionView.g.cs
+C:\Users\isido\source\repos\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\EventSuggestionView.baml

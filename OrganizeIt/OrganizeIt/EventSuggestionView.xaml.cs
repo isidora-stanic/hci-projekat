@@ -43,7 +43,7 @@ namespace OrganizeIt
             Predlog = predlog;
             Odgovor = new SocialGatheringSuggestionReply {
                 CategoryComments = new Dictionary<SocialGatheringCategorySuggestion, string>(),
-                AllAccepted = false,
+                SuggestionsAccepted = false,
                 ReplyDate = DateTime.Now,
                 SocialGatheringSuggestion = Predlog
             };
@@ -61,9 +61,8 @@ namespace OrganizeIt
 
             Odgovor = new SocialGatheringSuggestionReply
             {
-                AcceptedCollaborators = new Dictionary<SocialGatheringCategorySuggestion, SocialGatheringCollaborator>(),
                 CategoryComments = new Dictionary<SocialGatheringCategorySuggestion, string>(),
-                AllAccepted = true,
+                SuggestionsAccepted = true,
                 ReplyDate = DateTime.Now,
                 SocialGatheringSuggestion = Predlog
             };
@@ -103,7 +102,7 @@ namespace OrganizeIt
         {
             // cuvanje odgovora i navigacija do sledeceg prozora
             NamestiOdgovor();
-            Odgovor.AllAccepted = true;
+            Odgovor.SuggestionsAccepted = true;
             MessageBox.Show("Slanje (cuvanje) odgovora i prihvatanje");
         }
 
