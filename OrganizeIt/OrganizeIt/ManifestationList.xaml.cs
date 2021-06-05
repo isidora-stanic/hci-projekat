@@ -81,5 +81,11 @@ namespace OrganizeIt
                 = new ObservableCollection<SocialGatheringSuggestion>(filteredSuggestions);
             SuggestionListView.ItemsSource = filteredSuggestionsObservable;
         }
+
+        private void SuggestionListView_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            SocialGatheringSuggestion selectedSuggestion = (sender as ListView).SelectedItem as SocialGatheringSuggestion;
+            NavigationService.Navigate(new EventSuggestionView(selectedSuggestion));
+        }
     }
 }

@@ -7,6 +7,7 @@
       xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
       xmlns:local="clr-namespace:OrganizeIt"
       xmlns:backend="clr-namespace:OrganizeIt.backend.users"
+      xmlns:colaborators="clr-namespace:OrganizeIt.backend.social_gatherings"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
       Title="AccountsList">
@@ -50,6 +51,32 @@
                 </WrapPanel>
             </Grid>
         </DataTemplate>
+        
+        <DataTemplate x:Key="CollaboratorTemplate" DataType="{x:Type colaborators:SocialGatheringCollaborator}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock FontSize="20" Text="{Binding Path=Name}" />
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Opis: " />
+                        <TextBlock FontSize="14" MaxWidth="500" TextWrapping="Wrap" Text="{Binding Path=Description}" />
+                    </WrapPanel>
+                </StackPanel>
+                <WrapPanel Grid.Column="2" HorizontalAlignment="Right">
+                    <materialDesign:PackIcon x:Name="DeleteCollabButton" 
+                                         Margin="15" FontSize="20" Kind="GarbageCan" MouseDown="DeleteCollabButton_MouseDown"
+                                         Width="20" Height="20" Background="Transparent"></materialDesign:PackIcon>
+                    <Separator></Separator>
+                    <materialDesign:PackIcon x:Name="EditCollabButton"  
+                                         Margin="15" FontSize="20" Kind="Pencil" MouseDown="EditCollabButton_MouseDown"
+                                         Width="20" Height="20" Background="Transparent"></materialDesign:PackIcon>
+                </WrapPanel>
+            </Grid>
+        </DataTemplate>
     </Page.Resources>
     
     <Page.InputBindings>
@@ -66,15 +93,17 @@
                 <dragablz:InterTabController/>
             </dragablz:TabablzControl.InterTabController>
 
-            <TabItem Header="Clients">
+            <TabItem Header="Klijenti">
                 <DockPanel>
 
                     <StackPanel DockPanel.Dock="Top" >
                         <WrapPanel HorizontalAlignment="Right">
-                            <materialDesign:PackIcon Margin="-20 0 30 0" Background="Transparent"
+                            <materialDesign:PackIcon x:Name="AddClientIcon" MouseDown="AddClientIcon_MouseDown"
+                                    Margin="-20 0 30 0" Background="Transparent"
                                     ToolTip="Dodaj klijenta" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
                             </materialDesign:PackIcon>
-                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                            <materialDesign:PackIcon x:Name="LogoutIcon1" MouseDown="LogoutIcon_MouseDown"
+                                    Margin="-10 3 30 0" Background="Transparent"
                                     ToolTip="Odjava" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
@@ -99,15 +128,18 @@
                 </DockPanel>
             </TabItem>
 
-            <TabItem Header="Organizers">
+            
+            <TabItem Header="Organizatori">
                 <DockPanel>
                     
                     <StackPanel DockPanel.Dock="Top" >
                         <WrapPanel HorizontalAlignment="Right">
-                            <materialDesign:PackIcon Margin="-20 0 30 0" Background="Transparent"
+                            <materialDesign:PackIcon x:Name="AddOrganizerIcon" MouseDown="AddOrganizerIcon_MouseDown"
+                                    Margin="-20 0 30 0" Background="Transparent"
                                     ToolTip="Dodaj organizatora" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
                             </materialDesign:PackIcon>
-                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                            <materialDesign:PackIcon x:Name="LogoutIcon2" MouseDown="LogoutIcon_MouseDown"
+                                    Margin="-10 3 30 0" Background="Transparent"
                                     ToolTip="Odjava" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
@@ -128,6 +160,42 @@
                     <ListView x:Name="OrganizerListView" HorizontalContentAlignment="Stretch" 
                               ItemsSource="{Binding organizers, UpdateSourceTrigger=Explicit}" 
                               ItemTemplate="{StaticResource PersonTemplate}"/>
+
+                </DockPanel>
+            </TabItem>
+
+            
+            <TabItem Header="Saradnici">
+                <DockPanel>
+
+                    <StackPanel DockPanel.Dock="Top" >
+                        <WrapPanel HorizontalAlignment="Right">
+                            <materialDesign:PackIcon x:Name="AddCollaboratorIcon" MouseDown="AddCollaboratorIcon_MouseDown"
+                                    Margin="-20 0 30 0" Background="Transparent"
+                                    ToolTip="Dodaj organizatora" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
+                            </materialDesign:PackIcon>
+                            <materialDesign:PackIcon x:Name="LogoutIcon3" MouseDown="LogoutIcon_MouseDown"
+                                    Margin="-10 3 30 0" Background="Transparent"
+                                    ToolTip="Odjava" FontSize="20" Kind="Logout" Width="30" Height="30">
+                            </materialDesign:PackIcon>
+                        </WrapPanel>
+                        <Separator Margin="20 0 25 25"/>
+
+                        <WrapPanel  Margin="20 0 0 7">
+                            <TextBox Grid.Column="0"
+                                x:Name="CollaboratorSearch"
+                                MinWidth="500"
+                                FontSize="20"
+                                materialDesign:HintAssist.Hint="Pretrazi saradnike..."
+                                VerticalAlignment="Center" CaretBrush="{x:Null}" 
+                                TextChanged="CollaboratorSearch_TextChanged"/>
+                            <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
+                        </WrapPanel>
+                    </StackPanel>
+
+                    <ListView x:Name="CollaboratorListView" HorizontalContentAlignment="Stretch" 
+                              ItemsSource="{Binding collaborators, UpdateSourceTrigger=Explicit}" 
+                              ItemTemplate="{StaticResource CollaboratorTemplate}"/>
 
                 </DockPanel>
             </TabItem>

@@ -114,7 +114,8 @@
 
 					<ListView x:Name="SuggestionListView" HorizontalContentAlignment="Stretch"
                               ItemsSource="{Binding suggestions, UpdateSourceTrigger=Explicit}"
-                              ItemTemplate="{StaticResource SocialGatheringSuggestionTemplate}" />
+                              ItemTemplate="{StaticResource SocialGatheringSuggestionTemplate}" 
+                              PreviewMouseLeftButtonUp="SuggestionListView_PreviewMouseLeftButtonUp"/>
 				</DockPanel>
 			</TabItem>
         </dragablz:TabablzControl>
