@@ -34,5 +34,7 @@ namespace OrganizeIt.backend.social_gatherings
         public User Client { get { return _client; } set { _client = value; ClientUsername = _client.Username; } }
 
         public List<SocialGatheringSuggestion> SocialGatheringSuggestions { get; set; }
+
+        public bool AcceptedSuggestions { get; set; }
     }
 }

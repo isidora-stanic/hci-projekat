@@ -13,7 +13,13 @@ namespace OrganizeIt.backend.social_gatherings
 
         public Dictionary<SocialGatheringCategorySuggestion, string> CategoryComments { get; set; }
 
+        private bool _suggestionsAccepted;
+
         // true ako su prihvaceni svi predlozi
-        public bool SuggestionsAccepted { get; set; }
+        public bool SuggestionsAccepted
+        {
+            get { return _suggestionsAccepted; }
+            set { _suggestionsAccepted = value; SocialGatheringSuggestion.SocialGathering.AcceptedSuggestions = _suggestionsAccepted; }
+        }
     }
 }

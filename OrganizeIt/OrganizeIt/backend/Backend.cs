@@ -183,5 +183,45 @@ namespace OrganizeIt.backend
                 }
             }
         }
+
+        public static void AddGathering(SocialGathering socialGathering)
+        {
+            var client = socialGathering.Client;
+            var organizer = socialGathering.Organizer;
+
+            client.SocialGatherings.Add(socialGathering);
+            organizer.SocialGatherings.Add(socialGathering);
+        }
+
+        public static void AddSuggestion(SocialGatheringSuggestion socialGatheringSuggestion, SocialGathering socialGathering)
+        {
+            var client = socialGathering.Client;
+            var organizer = socialGathering.Organizer;
+
+            socialGathering.SocialGatheringSuggestions.Add(socialGatheringSuggestion);
+
+            client.SocialGatheringSuggestions.Add(socialGatheringSuggestion);
+            organizer.SocialGatheringSuggestions.Add(socialGatheringSuggestion);
+        }
+
+        public static void AddSuggestionReply(SocialGatheringSuggestionReply socialGatheringSuggestionReply, SocialGatheringSuggestion socialGatheringSuggestion)
+        {
+            var socialGathering = socialGatheringSuggestion.SocialGathering;
+            var client = socialGathering.Client;
+            var organizer = socialGathering.Organizer;
+
+            socialGatheringSuggestion.SuggestionReplies.Add(socialGatheringSuggestionReply);
+
+            client.SocialGatheringSuggestionReplies.Add(socialGatheringSuggestionReply);
+            organizer.SocialGatheringSuggestionReplies.Add(socialGatheringSuggestionReply);
+        }
+
+        public static List<SocialGathering> GetGatheringsByStatus(List<SocialGathering> socialGatherings, bool acceptedSuggestions)
+        {
+            var gatherings = from gathering in socialGatherings
+                             where gathering.AcceptedSuggestions == acceptedSuggestions
+                             select gathering;
+            return new List<SocialGathering>(gatherings);
+        }
     }
 }
