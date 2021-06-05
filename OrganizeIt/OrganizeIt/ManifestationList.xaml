@@ -35,6 +35,23 @@
                 </StackPanel>
             </Grid>
         </DataTemplate>
+
+		<DataTemplate x:Key="SocialGatheringSuggestionTemplate" DataType="{x:Type backend:SocialGatheringSuggestion}">
+			<Grid>
+			    <Grid.ColumnDefinitions>
+				    <ColumnDefinition />
+				    <ColumnDefinition />
+				    <ColumnDefinition />
+			    </Grid.ColumnDefinitions>
+				<StackPanel Grid.Column="0">
+			        <TextBlock FontSize="20" Text="{Binding Path=SocialGathering.Name}" />
+			        <WrapPanel>
+				        <TextBlock FontSize="14" FontWeight="Bold" Text="Date: " />
+				        <TextBlock FontSize="14" Text="{Binding Path=SuggestionDate, StringFormat=f}" />
+			        </WrapPanel>
+				</StackPanel>
+			</Grid>
+		</DataTemplate>
                       
     </Page.Resources>
     <Grid>
@@ -73,6 +90,33 @@
                               ItemTemplate="{StaticResource SocialGatheringTemplate}" />
                 </DockPanel>
             </TabItem>
+
+			<TabItem Header="SUGGESTIONS">
+				<DockPanel>
+					<StackPanel DockPanel.Dock="Top">
+						<WrapPanel HorizontalAlignment="Right">
+							<materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
+							</materialDesign:PackIcon>
+						</WrapPanel>
+						<Separator Margin="20 0 25 25"/>
+						<WrapPanel Margin="20 0 0 7">
+							<TextBox Grid.Column="0"
+                                    x:Name="SuggestionsSearch"
+                                    MinWidth="500"
+                                    FontSize="20"
+                                    materialDesign:HintAssist.Hint="Search suggestions..."
+                                    VerticalAlignment="Center" CaretBrush="{x:Null}"
+                                    TextChanged="SuggestionSearch_TextChanged"/>
+							<materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
+						</WrapPanel>
+					</StackPanel>
+
+					<ListView x:Name="SuggestionListView" HorizontalContentAlignment="Stretch"
+                              ItemsSource="{Binding suggestions, UpdateSourceTrigger=Explicit}"
+                              ItemTemplate="{StaticResource SocialGatheringSuggestionTemplate}" />
+				</DockPanel>
+			</TabItem>
         </dragablz:TabablzControl>
     </Grid>
 </Page>

@@ -1,8 +1,8 @@
 {
   "0": {
     "RequestDate": "2021-06-04T22:08:12.6546407+02:00",
-    "Name": "Proslava bree",
-    "Type": null,
+    "Name": "Jadrankina Proslava 1",
+    "Type": "Rodjendan",
     "DateTime": "2021-06-04T22:08:12.6536368+02:00",
     "NumberOfGuests": 3,
     "Description": "blabla opis",
@@ -55,8 +55,8 @@
   },
   "1": {
     "RequestDate": "2021-06-04T22:10:31.4334102+02:00",
-    "Name": "Proslava bree",
-    "Type": null,
+    "Name": "Jacina Proslava 2",
+    "Type": "Zurka",
     "DateTime": "2021-06-04T22:10:31.4334102+02:00",
     "NumberOfGuests": 3,
     "Description": "blabla opis",

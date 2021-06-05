@@ -41,7 +41,7 @@ namespace OrganizeIt
             else if (user.UserType.Equals(UserType.Organizer))
                 NavigationService.Navigate(new CreateAccount());
             else if (user.UserType.Equals(UserType.Client))
-                NavigationService.Navigate(new CreateAccount());
+                NavigationService.Navigate(new ManifestationList());
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

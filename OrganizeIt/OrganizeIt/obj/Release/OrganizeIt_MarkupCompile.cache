@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\isido\Source\Repos\hci-projekat\OrganizeIt\OrganizeIt\obj\Release\
+C:\Users\Matija\source\repos\hci-projekat\OrganizeIt\OrganizeIt\obj\Release\
 OrganizeIt
 none
 false
 TRACE
-C:\Users\isido\Source\Repos\hci-projekat\OrganizeIt\OrganizeIt\App.xaml
-11-1571764984
+C:\Users\Matija\source\repos\hci-projekat\OrganizeIt\OrganizeIt\App.xaml
+121638607916
 
-28331973931
-261330972650
-AccountsList.xaml;CreateAccount.xaml;EditOrganizer.xaml;EditSaradnik.xaml;EventCollabsCheckList.xaml;EventSuggestionDraft.xaml;Login.xaml;MainWindow.xaml;ManifestationList.xaml;NewOrganizer.xaml;NewSaradnik.xaml;
+291846342248
+26-1962653363
+AccountsList.xaml;CreateAccount.xaml;EditOrganizer.xaml;EditSaradnik.xaml;EventCollabsCheckList.xaml;EventSuggestionDraft.xaml;EventSuggestionView.xaml;Login.xaml;MainWindow.xaml;ManifestationList.xaml;NewOrganizer.xaml;NewSaradnik.xaml;
 
 True
 
