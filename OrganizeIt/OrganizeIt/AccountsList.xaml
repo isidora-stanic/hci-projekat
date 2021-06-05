@@ -22,16 +22,16 @@
                 <StackPanel Grid.Column="0">
                     <TextBlock FontSize="20" Text="{Binding Path=Username}" />
                     <WrapPanel>
-                        <TextBlock FontSize="14" FontWeight="Bold" Text="Name: " />
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Ime: " />
                         <TextBlock FontSize="14" Text="{Binding Path=FirstName}" />
                         <TextBlock FontSize="14" Text="{Binding Path=LastName}" />
                     </WrapPanel>
                     <WrapPanel>
-                        <TextBlock FontSize="14" FontWeight="Bold" Text="Gender: " />
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Pol: " />
                         <TextBlock FontSize="14" Text="{Binding Path=Gender, Converter={StaticResource GenderToStringConverter}}" />
                     </WrapPanel>
                     <WrapPanel>
-                        <TextBlock FontSize="14" FontWeight="Bold" Text="Phone No: " />
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Broj tel.: " />
                         <TextBlock FontSize="14" Text="{Binding Path=PhoneNumber}" />
                     </WrapPanel>
                     <WrapPanel>
@@ -72,10 +72,10 @@
                     <StackPanel DockPanel.Dock="Top" >
                         <WrapPanel HorizontalAlignment="Right">
                             <materialDesign:PackIcon Margin="-20 0 30 0" Background="Transparent"
-                                    ToolTip="Add new client" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
+                                    ToolTip="Dodaj klijenta" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
                             </materialDesign:PackIcon>
                             <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
-                                    ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
+                                    ToolTip="Odjava" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
                         <Separator Margin="20 0 25 25"/>
@@ -85,7 +85,7 @@
                                     x:Name="ClientSearch"
                                     MinWidth="500"
                                     FontSize="20"
-                                    materialDesign:HintAssist.Hint="Search person"
+                                    materialDesign:HintAssist.Hint="Pretrazi klijente..."
                                     VerticalAlignment="Center" CaretBrush="{x:Null}" 
                                     TextChanged="ClientSearch_TextChanged"/>
                             <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
@@ -105,10 +105,10 @@
                     <StackPanel DockPanel.Dock="Top" >
                         <WrapPanel HorizontalAlignment="Right">
                             <materialDesign:PackIcon Margin="-20 0 30 0" Background="Transparent"
-                                    ToolTip="Add new client" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
+                                    ToolTip="Dodaj organizatora" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
                             </materialDesign:PackIcon>
                             <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
-                                    ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
+                                    ToolTip="Odjava" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
                         <Separator Margin="20 0 25 25"/>
@@ -118,7 +118,7 @@
                                 x:Name="OrganizerSearch"
                                 MinWidth="500"
                                 FontSize="20"
-                                materialDesign:HintAssist.Hint="Search person"
+                                materialDesign:HintAssist.Hint="Pretrazi organizatore..."
                                 VerticalAlignment="Center" CaretBrush="{x:Null}" 
                                 TextChanged="OrganizerSearch_TextChanged"/>
                             <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>

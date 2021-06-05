@@ -21,15 +21,15 @@
                 <StackPanel Grid.Column="0">
                     <TextBlock FontSize="20" Text="{Binding Path=Name}" />
                     <WrapPanel>
-                        <TextBlock FontSize="14" FontWeight="Bold" Text="Type: " />
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Tip proslave: " />
                         <TextBlock FontSize="14" Text="{Binding Path=Type}" />
                     </WrapPanel>
                     <WrapPanel>
-                        <TextBlock FontSize="14" FontWeight="Bold" Text="Guests: " />
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Gostiju: " />
                         <TextBlock FontSize="14" Text="{Binding Path=NumberOfGuests}" />
                     </WrapPanel>
                     <WrapPanel>
-                        <TextBlock FontSize="14" FontWeight="Bold" Text="Date: " />
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Datum odrzavanja: " />
                         <TextBlock FontSize="14" Text="{Binding Path=DateTime, StringFormat=f}" />
                     </WrapPanel>
                 </StackPanel>
@@ -46,7 +46,7 @@
 				<StackPanel Grid.Column="0">
 			        <TextBlock FontSize="20" Text="{Binding Path=SocialGathering.Name}" />
 			        <WrapPanel>
-				        <TextBlock FontSize="14" FontWeight="Bold" Text="Date: " />
+				        <TextBlock FontSize="14" FontWeight="Bold" Text="Datum: " />
 				        <TextBlock FontSize="14" Text="{Binding Path=SuggestionDate, StringFormat=f}" />
 			        </WrapPanel>
 				</StackPanel>
@@ -60,7 +60,7 @@
                 <dragablz:InterTabController/>
             </dragablz:TabablzControl.InterTabController>
 
-            <TabItem Header="GATHERINGS">
+            <TabItem Header="PROSLAVE">
                 <DockPanel>
 
                     <StackPanel DockPanel.Dock="Top">
@@ -78,7 +78,7 @@
                                     x:Name="ManifestationSearch"
                                     MinWidth="500"
                                     FontSize="20"
-                                    materialDesign:HintAssist.Hint="Search social gatherings..."
+                                    materialDesign:HintAssist.Hint="Pretrazuj proslave..."
                                     VerticalAlignment="Center" CaretBrush="{x:Null}" 
                                     TextChanged="ManifestationSearch_TextChanged"/>
                             <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
@@ -91,7 +91,7 @@
                 </DockPanel>
             </TabItem>
 
-			<TabItem Header="SUGGESTIONS">
+			<TabItem Header="PREDLOZI">
 				<DockPanel>
 					<StackPanel DockPanel.Dock="Top">
 						<WrapPanel HorizontalAlignment="Right">
@@ -105,7 +105,7 @@
                                     x:Name="SuggestionsSearch"
                                     MinWidth="500"
                                     FontSize="20"
-                                    materialDesign:HintAssist.Hint="Search suggestions..."
+                                    materialDesign:HintAssist.Hint="Pretrazuj predloge..."
                                     VerticalAlignment="Center" CaretBrush="{x:Null}"
                                     TextChanged="SuggestionSearch_TextChanged"/>
 							<materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
