@@ -146,7 +146,7 @@ namespace OrganizeIt.backend
                 }
             }
 
-            var socialGatheringsDataDir = DataDir + Path.DirectorySeparatorChar + "social_gatherings.json";
+            var socialGatheringsDataDir = DataDir + "social_gatherings.json";
             var socialGatheringsString = JsonSerializer.Serialize(socialGatheringsDict, serializerOptions);
             File.WriteAllText(socialGatheringsDataDir, socialGatheringsString);
         }
@@ -232,14 +232,14 @@ namespace OrganizeIt.backend
             {
                 dict.Add(card.Organizer.Username, card);
             }
-            var todoDataDir = DataDir + Path.DirectorySeparatorChar + "todo.json";
+            var todoDataDir = DataDir + "todo.json";
             var toDoString = JsonSerializer.Serialize(dict, serializerOptions);
             File.WriteAllText(todoDataDir, toDoString);
         }
 
         public static List<ToDoCard> LoadTodoList(Dictionary<string, User> usersDict)
         {
-            var todoDataDir = DataDir + Path.DirectorySeparatorChar + "todo.json";
+            var todoDataDir = DataDir + "todo.json";
             var jsonString = File.ReadAllText(todoDataDir);
             var todoCardDict = JsonSerializer.Deserialize<Dictionary<string, ToDoCard>>(jsonString);
 
