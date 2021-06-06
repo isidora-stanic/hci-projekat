@@ -32,7 +32,7 @@
                     <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal">
                         <materialDesign:PackIcon Margin="0 25 0 0" Foreground="{StaticResource PrimaryHueLightBrush}" Kind="Comment"></materialDesign:PackIcon>
                         <TextBox TextWrapping="Wrap"
-                                 AcceptsReturn="True"
+                                 AcceptsReturn="True" AcceptsTab="True"
                                  VerticalScrollBarVisibility="auto"
                                  HorizontalAlignment="Stretch"
                                  materialDesign:HintAssist.Hint="Komentar"
