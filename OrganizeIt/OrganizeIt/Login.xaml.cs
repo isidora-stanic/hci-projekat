@@ -23,6 +23,7 @@ namespace OrganizeIt
     public partial class Login : Page
     {
         private Backend Backend;
+
         public Login()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace OrganizeIt
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Dictionary<string, User>  users = Backend.LoadUsers();
+            Dictionary<string, User> users = Backend.LoadUsers();
             User user = Backend.LogIn(this.username.Text, this.password.Password, users);
             if (user == null)
                 NavigationService.Navigate(new CreateAccount());  //NavigationService.Navigate(new EditOrganizer());
@@ -40,7 +41,7 @@ namespace OrganizeIt
             else if (user.UserType.Equals(UserType.Organizer))
                 NavigationService.Navigate(new CreateAccount());
             else if (user.UserType.Equals(UserType.Client))
-                NavigationService.Navigate(new CreateAccount());
+                NavigationService.Navigate(new ManifestationList());
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

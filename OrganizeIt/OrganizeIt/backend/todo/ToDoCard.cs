@@ -1,4 +1,5 @@
 using OrganizeIt.backend.users;
+using System.Text.Json.Serialization;
 
 namespace OrganizeIt.backend.todo
 {
@@ -9,6 +10,7 @@ namespace OrganizeIt.backend.todo
         public string Description { get; set; }
 
         //obrisati ako je viska
+        [JsonIgnore]
         public User Organizer { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using OrganizeIt.backend.social_gatherings;
+using OrganizeIt.backend.todo;
 using OrganizeIt.backend.users;
 using System.Collections.Generic;
 using System.IO;
@@ -68,32 +69,32 @@ namespace OrganizeIt.backend
             return JsonSerializer.Deserialize<Dictionary<int, SocialGatheringCollaborator>>(jsonString);
         }
 
-        static string GetUserImagePath(string userName)
+        public static string GetUserImagePath(string userName)
         {
             return DataDir + "img" + Path.DirectorySeparatorChar + "users" + Path.DirectorySeparatorChar + userName + ".jpg";
         }
 
-        static string GetUserImagePath(User user)
+        public static string GetUserImagePath(User user)
         {
             return DataDir + "img" + Path.DirectorySeparatorChar + "users" + Path.DirectorySeparatorChar + user.Username + ".jpg";
         }
 
-        static string GetCollaboratorImagePath(int collaboratorID)
+        public static string GetCollaboratorImagePath(int collaboratorID)
         {
             return DataDir + "img" + Path.DirectorySeparatorChar + "collaborators" + Path.DirectorySeparatorChar + collaboratorID + ".jpg";
         }
 
-        static string GetCollaboratorImagePath(SocialGatheringCollaborator collaborator)
+        public static string GetCollaboratorImagePath(SocialGatheringCollaborator collaborator)
         {
             return DataDir + "img" + Path.DirectorySeparatorChar + "collaborators" + Path.DirectorySeparatorChar + collaborator.Id + ".jpg";
         }
 
-        static int GenerateCollaboratorID()
+        public static int GenerateCollaboratorID()
         {
             return Collaborators.Count;
         }
 
-        static List<User> searchUsers(string searchTerm)
+        public static List<User> searchUsers(string searchTerm)
         {
             var searchTerm2 = searchTerm.ToLower();
             var users = from user in Users.Values
@@ -110,7 +111,7 @@ namespace OrganizeIt.backend
             return new List<User>(users);
         }
 
-        static List<SocialGatheringCollaborator> searchCollaborators(string searchTerm)
+        public static List<SocialGatheringCollaborator> searchCollaborators(string searchTerm)
         {
             var searchTerm2 = searchTerm.ToLower();
             var collaborators = from collaborator in Collaborators.Values
@@ -119,21 +120,25 @@ namespace OrganizeIt.backend
             return new List<SocialGatheringCollaborator>(collaborators);
         }
 
-        static List<User> getUsersOfType(UserType userType)
+        public static List<User> getUsersOfType(UserType userType, Dictionary<string, User> usersDict)
         {
-            var users = from user in Users.Values
+            var users = from user in usersDict.Values
                         where user.UserType == userType
                         select user;
             return new List<User>(users);
         }
 
-        static void saveSocialGatherings(Dictionary<string, User> usersDict)
+        public static void saveSocialGatherings(Dictionary<string, User> usersDict)
         {
-            var clientsList = getUsersOfType(UserType.Client);
+            var clientsList = getUsersOfType(UserType.Client, usersDict);
             var socialGatheringsDict = new Dictionary<int, SocialGathering>();
             var num = 0;
             foreach (var client in clientsList)
             {
+                if (client.SocialGatherings == null)
+                {
+                    continue;
+                }
                 foreach (var socialGathering in client.SocialGatherings)
                 {
                     socialGatheringsDict.Add(num, socialGathering);
@@ -146,7 +151,7 @@ namespace OrganizeIt.backend
             File.WriteAllText(socialGatheringsDataDir, socialGatheringsString);
         }
 
-        static void loadSocialGatherings(Dictionary<string, User> usersDict)
+        public static void loadSocialGatherings(Dictionary<string, User> usersDict)
         {
             var socialGatheringsDataDir = DataDir + Path.DirectorySeparatorChar + "social_gatherings.json";
             var jsonString = File.ReadAllText(socialGatheringsDataDir);
@@ -166,6 +171,8 @@ namespace OrganizeIt.backend
                 foreach (var suggestion in socialGathering.SocialGatheringSuggestions)
                 {
                     suggestion.SocialGathering = socialGathering;
+                    suggestion.Client = client;
+                    suggestion.Organizer = organizer;
                     foreach (var reply in suggestion.SuggestionReplies)
                     {
                         reply.SocialGatheringSuggestion = suggestion;
@@ -176,6 +183,104 @@ namespace OrganizeIt.backend
                     organizer.SocialGatheringSuggestions.Add(suggestion);
                 }
             }
+        }
+
+        public static void AddGathering(SocialGathering socialGathering)
+        {
+            var client = socialGathering.Client;
+            var organizer = socialGathering.Organizer;
+
+            client.SocialGatherings.Add(socialGathering);
+            organizer.SocialGatherings.Add(socialGathering);
+        }
+
+        public static void AddSuggestion(SocialGatheringSuggestion socialGatheringSuggestion, SocialGathering socialGathering)
+        {
+            var client = socialGathering.Client;
+            var organizer = socialGathering.Organizer;
+
+            socialGathering.SocialGatheringSuggestions.Add(socialGatheringSuggestion);
+
+            client.SocialGatheringSuggestions.Add(socialGatheringSuggestion);
+            organizer.SocialGatheringSuggestions.Add(socialGatheringSuggestion);
+        }
+
+        public static void AddSuggestionReply(SocialGatheringSuggestionReply socialGatheringSuggestionReply, SocialGatheringSuggestion socialGatheringSuggestion)
+        {
+            var socialGathering = socialGatheringSuggestion.SocialGathering;
+            var client = socialGathering.Client;
+            var organizer = socialGathering.Organizer;
+
+            socialGatheringSuggestion.SuggestionReplies.Add(socialGatheringSuggestionReply);
+
+            client.SocialGatheringSuggestionReplies.Add(socialGatheringSuggestionReply);
+            organizer.SocialGatheringSuggestionReplies.Add(socialGatheringSuggestionReply);
+        }
+
+        public static List<SocialGathering> GetGatheringsByStatus(List<SocialGathering> socialGatherings, bool acceptedSuggestions)
+        {
+            var gatherings = from gathering in socialGatherings
+                             where gathering.AcceptedSuggestions == acceptedSuggestions
+                             select gathering;
+            return new List<SocialGathering>(gatherings);
+        }
+
+        public static void SaveTodoList(List<ToDoCard> toDoCards)
+        {
+            var dict = new Dictionary<string, ToDoCard>();
+            foreach (var card in toDoCards)
+            {
+                dict.Add(card.Organizer.Username, card);
+            }
+            var todoDataDir = DataDir + Path.DirectorySeparatorChar + "todo.json";
+            var toDoString = JsonSerializer.Serialize(dict, serializerOptions);
+            File.WriteAllText(todoDataDir, toDoString);
+        }
+
+        public static List<ToDoCard> LoadTodoList(Dictionary<string, User> usersDict)
+        {
+            var todoDataDir = DataDir + Path.DirectorySeparatorChar + "todo.json";
+            var jsonString = File.ReadAllText(todoDataDir);
+            var todoCardDict = JsonSerializer.Deserialize<Dictionary<string, ToDoCard>>(jsonString);
+
+            foreach (var organizerUsername in todoCardDict.Keys)
+            {
+                todoCardDict[organizerUsername].Organizer = usersDict[organizerUsername];
+            }
+
+            return new List<ToDoCard>(todoCardDict.Values);
+        }
+
+        public static List<ToDoCard> GetTodoCardByStatus(List<ToDoCard> todoCards, ToDoStatus status)
+        {
+            var toDoCards = from card in todoCards
+                            where card.Status == status
+                            select card;
+            return new List<ToDoCard>(toDoCards);
+        }
+
+        public static List<ToDoCard> GetTodoCardByStatusForOrganizer(List<ToDoCard> todoCards, ToDoStatus status, string organizerUsername)
+        {
+            var toDoCards = from card in todoCards
+                            where card.Status == status && card.Organizer.Username == organizerUsername
+                            select card;
+            return new List<ToDoCard>(toDoCards);
+        }
+
+        public static List<ToDoCard> GetToDoCardsForOrganizer(List<ToDoCard> todoCards, User organizer)
+        {
+            var toDoCards = from card in todoCards
+                            where card.Organizer.Username == organizer.Username
+                            select card;
+            return new List<ToDoCard>(toDoCards);
+        }
+
+        public static List<ToDoCard> GetToDoCardsForOrganizer(List<ToDoCard> todoCards, string organizerUsername)
+        {
+            var toDoCards = from card in todoCards
+                            where card.Organizer.Username == organizerUsername
+                            select card;
+            return new List<ToDoCard>(toDoCards);
         }
     }
 }

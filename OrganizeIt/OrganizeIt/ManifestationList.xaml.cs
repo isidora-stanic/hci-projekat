@@ -23,77 +23,39 @@ namespace OrganizeIt
     public partial class ManifestationList : Page
     {
         public ObservableCollection<SocialGathering> socialGatherings = new ObservableCollection<SocialGathering>();
+        public ObservableCollection<SocialGatheringSuggestion> suggestions = new ObservableCollection<SocialGatheringSuggestion>();
 
-        public SocialGathering gath1 = new SocialGathering
-        {
-            Name = "Man1",
-            Type = "Koncert",
-            DateTime = new DateTime(),
-            NumberOfGuests = 100,
-            Description = "AAA"
-        };
-
-        public SocialGathering gath2 = new SocialGathering
-        {
-            Name = "Mangath2",
-            Type = "Babine",
-            DateTime = new DateTime(),
-            NumberOfGuests = 100,
-            Description = "AAA"
-        };
-
-        public SocialGathering gath3 = new SocialGathering
-        {
-            Name = "Mangath3",
-            Type = "Rodjendan",
-            DateTime = new DateTime(),
-            NumberOfGuests = 100,
-            Description = "AAA"
-        };
-
-        public SocialGathering gath4 = new SocialGathering
-        {
-            Name = "Mangath4",
-            Type = "Koncert",
-            DateTime = new DateTime(),
-            NumberOfGuests = 100,
-            Description = "AAA"
-        };
-
-        public SocialGathering gath5 = new SocialGathering
-        {
-            Name = "Mangath5",
-            Type = "Zurka",
-            DateTime = new DateTime(),
-            NumberOfGuests = 100,
-            Description = "AAA"
-        };
-
-        public SocialGathering gath6 = new SocialGathering
-        {
-            Name = "Man1gath6",
-            Type = "Koncert",
-            DateTime = new DateTime(),
-            NumberOfGuests = 100,
-            Description = "AAA"
-        };
 
         public ManifestationList()
         {
             InitializeComponent();
-            socialGatherings.Add(gath1);
-            socialGatherings.Add(gath2);
-            socialGatherings.Add(gath3);
-            socialGatherings.Add(gath4);
-            socialGatherings.Add(gath5);
-            socialGatherings.Add(gath6);
+            var users =  backend.Backend.LoadUsers();
+            backend.Backend.loadSocialGatherings(users);
+
+            this.socialGatherings 
+                = new ObservableCollection<SocialGathering> (
+                    users[backend.Backend.LoggedInUser.Username].SocialGatherings
+                    );
+
+            foreach (SocialGathering sg in socialGatherings)
+            {
+                foreach (SocialGatheringSuggestion sgs in sg.SocialGatheringSuggestions)
+                    suggestions.Add(sgs);
+            }
+
             this.DataContext = this;
             ManifestationListView.ItemsSource = socialGatherings;
+            SuggestionListView.ItemsSource = suggestions;
         }
 
         private void ManifestationSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             SearchSocialGatherings(ManifestationSearch.Text);
+        }
+
+        private void SuggestionSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SearchSuggestions(SuggestionsSearch.Text);
         }
 
         public void SearchSocialGatherings(string query)
@@ -106,6 +68,24 @@ namespace OrganizeIt
 
             ObservableCollection<SocialGathering> filteredGatheringsObservable = new ObservableCollection<SocialGathering>(filteredGatherings);
             ManifestationListView.ItemsSource = filteredGatheringsObservable;
+        }
+
+        public void SearchSuggestions(string query)
+        {
+            var filteredSuggestions = 
+                from suggestion in suggestions
+                where suggestion.SocialGathering.Name.ToUpper().Contains(query.Trim().ToUpper())
+                select suggestion;
+
+            ObservableCollection<SocialGatheringSuggestion> filteredSuggestionsObservable 
+                = new ObservableCollection<SocialGatheringSuggestion>(filteredSuggestions);
+            SuggestionListView.ItemsSource = filteredSuggestionsObservable;
+        }
+
+        private void SuggestionListView_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            SocialGatheringSuggestion selectedSuggestion = (sender as ListView).SelectedItem as SocialGatheringSuggestion;
+            NavigationService.Navigate(new EventSuggestionView(selectedSuggestion));
         }
     }
 }

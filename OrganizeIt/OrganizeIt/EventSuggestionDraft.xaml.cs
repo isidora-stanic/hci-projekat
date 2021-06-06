@@ -33,8 +33,6 @@ namespace OrganizeIt
             counterForIds = 0;
             InitializeComponent();
 
-            
-
             //InitializeMainWindowSekcije();
             MainWindowSekcije = new ObservableCollection<SocialGatheringCategorySuggestion>();
 
@@ -72,10 +70,11 @@ namespace OrganizeIt
 
         public void DodajSekciju()
         {
-            MainWindowSekcije.Add(new SocialGatheringCategorySuggestion { 
-                Id = counterForIds++.ToString(), 
-                CategoryTitle = "", 
-                SuggestedCollaborators = new ObservableCollection<SocialGatheringCollaborator>() 
+            MainWindowSekcije.Add(new SocialGatheringCategorySuggestion
+            {
+                Id = counterForIds++.ToString(),
+                CategoryTitle = "",
+                SuggestedCollaborators = new ObservableCollection<SocialGatheringCollaborator>()
             });
         }
 
@@ -105,14 +104,32 @@ namespace OrganizeIt
         private void PosaljiBtn_Click(object sender, RoutedEventArgs e)
         {
             Predlog.CategorySuggestions = MainWindowSekcije.ToList();
-            NavigationService.Navigate(new EventSuggestionView(Predlog));
+
+            var users = backend.Backend.LoadUsers();
+            var user = backend.Backend.LoggedInUser;
+            if (user == null) { user = users["mmartinovic"]; }
+            var cl = users["jadranka88"];
+            var manif = new SocialGathering { Client = cl, Organizer = user, DateTime = DateTime.Now, Description = "blabla opis", Name = "Proslava bree", NumberOfGuests = 3, RequestDate = DateTime.Now, SocialGatheringSuggestions = new List<SocialGatheringSuggestion>() };
+            manif.SocialGatheringSuggestions.Add(Predlog);
+            backend.Backend.loadSocialGatherings(users);
+            cl.SocialGatherings.Add(manif);
+            Predlog.SocialGathering = manif;
+            Predlog.Organizer = user;
+            Predlog.Client = cl;
+
+            backend.Backend.saveSocialGatherings(users);
+
+            // ovo ce ici u drugi prozor--------------
+            backend.Backend.loadSocialGatherings(users);
+            cl = users["jadranka88"];
+
+            NavigationService.Navigate(new EventSuggestionView(cl.SocialGatherings[0].SocialGatheringSuggestions[0]));
         }
     }
 
     [ValueConversion(typeof(ObservableCollection<SocialGatheringCollaborator>), typeof(string))]
     public class ListToStringConverter : IValueConverter
     {
-
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (targetType != typeof(string))
@@ -131,5 +148,4 @@ namespace OrganizeIt
             throw new NotImplementedException();
         }
     }
-
 }

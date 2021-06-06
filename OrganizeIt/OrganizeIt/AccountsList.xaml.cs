@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Globalization;
+using OrganizeIt.backend.social_gatherings;
 
 namespace OrganizeIt
 {
@@ -53,20 +54,29 @@ namespace OrganizeIt
 
         public ObservableCollection<User> clients = new ObservableCollection<User>();
         public ObservableCollection<User> organizers = new ObservableCollection<User>();
+        public ObservableCollection<SocialGatheringCollaborator> collaborators = new ObservableCollection<SocialGatheringCollaborator>();
+
         public Dictionary<string, User> allUsers;
 
         public Stack<User> deletedClients = new Stack<User>();
         public Stack<User> deletedOrganizers = new Stack<User>();
+        public Stack<SocialGatheringCollaborator> deletedColaborators = new Stack<SocialGatheringCollaborator>();
 
         public AccountsList()
         {
             InitializeComponent();
             allUsers = backend.Backend.LoadUsers();
+            var collabDict = backend.Backend.LoadCollaborators().Values.ToList();
+            collaborators = new ObservableCollection<SocialGatheringCollaborator>(collabDict);
             this.DataContext = this;
+
             clients = new ObservableCollection<User>(allUsers.Values.Where(user => user.UserType == UserType.Client));
             organizers = new ObservableCollection<User>(allUsers.Values.Where(user => user.UserType == UserType.Organizer));
+
             ClientListView.ItemsSource = clients;
             OrganizerListView.ItemsSource = organizers;
+            CollaboratorListView.ItemsSource = collaborators;
+
             _undoCommand = new UndoCommandObject(this);
         }
 
@@ -83,6 +93,12 @@ namespace OrganizeIt
             SearchOrganizers(OrganizerSearch.Text);
         }
 
+        /* Funkija za promenu teksta pri pretrazi klijenata */
+        private void CollaboratorSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SearchCollaborators(CollaboratorSearch.Text);
+        }
+
         /* Funkcija za brisanje korisnika, poziva se pri klikom na ikonicu */
         /* Gleda tip korisnika, i na osnovu toga brise iz odredjene liste */
         /* Na osnovu tipa ubacuje u stack obrisanih, kako bi mogao undo */
@@ -90,8 +106,8 @@ namespace OrganizeIt
         {
             User u = (User)((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
 
-            string messageBoxText = $"Do you want to delete user {u.Username}?";
-            string caption = "Delete user";
+            string messageBoxText = $"Da li zelite da izbrisete korisnika {u.Username}?";
+            string caption = "Brisanje korisnika";
             MessageBoxButton btn = MessageBoxButton.YesNo;
             MessageBoxImage img = MessageBoxImage.Question;
 
@@ -127,13 +143,51 @@ namespace OrganizeIt
             }
         }
 
+        /* Doscstring 
+         * Funkcija za brisanje saradnika iz liste saradnika
+         */
+        private void DeleteCollabButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            SocialGatheringCollaborator u = (SocialGatheringCollaborator)
+                ((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
+
+            string messageBoxText = $"Da li zelite da izbrisete korisnika {u.Name}?";
+            string caption = "Brisanje korisnika";
+            MessageBoxButton btn = MessageBoxButton.YesNo;
+            MessageBoxImage img = MessageBoxImage.Question;
+
+            var result = MessageBox.Show(messageBoxText, caption, btn, img, MessageBoxResult.No);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                foreach (SocialGatheringCollaborator collab in collaborators)
+                {
+                    if (collab.Id == u.Id)
+                    {
+                        collaborators.Remove(collab);
+                        CollaboratorListView.ItemsSource = collaborators;
+                        deletedColaborators.Push(u);
+                        break;
+                    }
+                }
+            }
+        }
+
         /* Funkcija koja se poziva kad se odabere izmena korisnika */
         private void EditButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             User v = (User)((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
             NavigationService.Navigate(new EditOrganizer(v, allUsers));
-            //MessageBox.Show($"Editing venue {v.Username}");
         }
+
+        /* Funkcija koja se pozove kad se odabere izmena saradnika */
+        private void EditCollabButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            SocialGatheringCollaborator collab 
+                = (SocialGatheringCollaborator)((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
+            NavigationService.Navigate(new EditSaradnik()); //collab
+        }
+        
 
         /* Ova funkcija se poziva kada se pozove Undo komanda */
         /* Pozivom ove komande se sa steka vraca u listu korisnika */
@@ -141,18 +195,25 @@ namespace OrganizeIt
         private void DoCommand()
         {
             TabItem ti = TabCtrl.SelectedItem as TabItem;
-            if (ti.Header as string == "Clients")
+            if (ti.Header as string == "Klijenti")
             {
                 if (deletedClients.Count != 0)
                 {
                     clients.Add(deletedClients.Pop());
                 }
             }
-            else if (ti.Header as string == "Organizers")
+            else if (ti.Header as string == "Organizatori")
             {
                 if (deletedOrganizers.Count != 0)
                 {
                     organizers.Add(deletedOrganizers.Pop());
+                }
+            }
+            else if (ti.Header as string == "Saradnici")
+            {
+                if (deletedColaborators.Count != 0)
+                {
+                    collaborators.Add(deletedColaborators.Pop());
                 }
             }
         }
@@ -167,16 +228,6 @@ namespace OrganizeIt
                     || client.Email.ToUpper().Contains(query.ToUpper().Trim())
                     || client.Username.ToUpper().Contains(query.ToUpper().Trim())
                 select client;
-
-            //List<User> filteredUsers = new List<User>();
-            //foreach (User client in clients)
-            //{
-            //    if (client.FirstName.ToUpper().Contains(query.ToUpper().Trim())
-            //        || client.LastName.ToUpper().Contains(query.ToUpper().Trim())
-            //        || client.Email.ToUpper().Contains(query.ToUpper().Trim())
-            //        || client.Username.ToUpper().Contains(query.ToUpper().Trim()))
-            //        filteredUsers.Add(client);
-            //}
 
             ObservableCollection<User> filteredClientsObservable = new ObservableCollection<User>(filteredClients);
             ClientListView.ItemsSource = filteredClientsObservable;
@@ -196,6 +247,50 @@ namespace OrganizeIt
             ObservableCollection<User> filteredOrganizersObservable = new ObservableCollection<User>(filteredOrganizers);
             OrganizerListView.ItemsSource = filteredOrganizersObservable;
         }
+
+        public void SearchCollaborators(string query)
+        {
+            var filteredCollaborators =
+                from collaborator in collaborators
+                where collaborator.Name.ToUpper().Contains(query.ToUpper().Trim())
+                select collaborator;
+
+            ObservableCollection<SocialGatheringCollaborator> filteredCollaboratorsObservable
+                = new ObservableCollection<SocialGatheringCollaborator>(filteredCollaborators);
+            CollaboratorListView.ItemsSource = filteredCollaboratorsObservable;
+        }
+
+
+        private void AddClientIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Not yet implemented");
+        }
+
+        private void AddOrganizerIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new NewOrganizer());
+        }
+
+        private void AddCollaboratorIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new NewSaradnik());
+        }
+
+        private void LogoutIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            string messageBoxText = $"Da li zelite da se odjavite";
+            string caption = "Odjava";
+            MessageBoxButton btn = MessageBoxButton.YesNo;
+            MessageBoxImage img = MessageBoxImage.Question;
+
+            var result = MessageBox.Show(messageBoxText, caption, btn, img, MessageBoxResult.No);
+            if (result == MessageBoxResult.No)
+                return;
+
+            backend.Backend.LoggedInUser = null;
+            NavigationService.Navigate(new Login());
+        }
+
     }
 
 

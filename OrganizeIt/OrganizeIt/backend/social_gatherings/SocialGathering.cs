@@ -24,12 +24,17 @@ namespace OrganizeIt.backend.social_gatherings
 
         public string ClientUsername { get; set; }
 
-        [JsonIgnore]
-        public User Organizer { get { return Organizer; } set { Organizer = value; OrganizerUsername = value.Username; } }
+        private User _organizer;
+        private User _client;
 
         [JsonIgnore]
-        public User Client { get { return Client; } set { Client = value; OrganizerUsername = value.Username; } }
+        public User Organizer { get { return _organizer; } set { _organizer = value; OrganizerUsername = _organizer.Username; } }
+
+        [JsonIgnore]
+        public User Client { get { return _client; } set { _client = value; ClientUsername = _client.Username; } }
 
         public List<SocialGatheringSuggestion> SocialGatheringSuggestions { get; set; }
+
+        public bool AcceptedSuggestions { get; set; }
     }
 }

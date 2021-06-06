@@ -13,12 +13,6 @@
     "BirthDate": "0001-01-01T00:00:00",
     "PhoneNumber": "\u002B3816750876874",
     "Email": "Admin@Admin.admin",
-    "SocialGatherings": [
-    ],
-    "SocialGatheringSuggestions": [
-    ],
-    "SocialGatheringSuggestionReplies": [
-    ],
     "ToDoCards": null
   },
   "djole-LOZ": {
@@ -35,18 +29,12 @@
     "BirthDate": "1964-04-06T00:00:00",
     "PhoneNumber": "\u002B381689065303",
     "Email": "djordje_ivankovic@loznica.rs",
-    "SocialGatherings": [
-    ],
-    "SocialGatheringSuggestions": [
-    ],
-    "SocialGatheringSuggestionReplies": [
-    ],
     "ToDoCards": null
   },
   "jadranka88": {
     "UserType": 0,
     "Username": "jadranka88",
-    "Password": "dLnQ9CEd",
+    "Password": "123",
     "FirstName": "Jadranka",
     "LastName": "Marjanovi\u0107",
     "Address": {
@@ -54,15 +42,9 @@
       "StreetAddress": "Hajduk Veljka 3"
     },
     "Gender": 1,
-    "BirthDate": "1988-05-25T00:00:00",
+    "BirthDate": "2021-11-06T00:00:00",
     "PhoneNumber": "\u002B3816750876874",
     "Email": "jadranka88@yahoo.com",
-    "SocialGatherings": [
-    ],
-    "SocialGatheringSuggestions": [
-    ],
-    "SocialGatheringSuggestionReplies": [
-    ],
     "ToDoCards": null
   },
   "kovacevicD": {
@@ -79,12 +61,6 @@
     "BirthDate": "1972-07-10T00:00:00",
     "PhoneNumber": "\u002B381619029275",
     "Email": "kovacevicd@outlook.com",
-    "SocialGatherings": [
-    ],
-    "SocialGatheringSuggestions": [
-    ],
-    "SocialGatheringSuggestionReplies": [
-    ],
     "ToDoCards": null
   },
   "sinisa.ivankovic": {
@@ -101,12 +77,6 @@
     "BirthDate": "1992-01-17T00:00:00",
     "PhoneNumber": "\u002B381618444804",
     "Email": "sinisa.ivankovic@gmail.com",
-    "SocialGatherings": [
-    ],
-    "SocialGatheringSuggestions": [
-    ],
-    "SocialGatheringSuggestionReplies": [
-    ],
     "ToDoCards": null
   },
   "suncana.zora": {
@@ -123,12 +93,6 @@
     "BirthDate": "1985-11-07T00:00:00",
     "PhoneNumber": "\u002B3816716040404",
     "Email": "suncicazoric@gmail.com",
-    "SocialGatherings": [
-    ],
-    "SocialGatheringSuggestions": [
-    ],
-    "SocialGatheringSuggestionReplies": [
-    ],
     "ToDoCards": null
   },
   "aljox": {
@@ -145,14 +109,7 @@
     "BirthDate": "1971-07-07T00:00:00",
     "PhoneNumber": "\u002B381664224652",
     "Email": "alj0x@blockchain.info",
-    "SocialGatherings": [
-    ],
-    "SocialGatheringSuggestions": [
-    ],
-    "SocialGatheringSuggestionReplies": [
-    ],
-    "ToDoCards": [
-    ]
+    "ToDoCards": []
   },
   "mmartinovic": {
     "UserType": 1,
@@ -168,14 +125,7 @@
     "BirthDate": "1981-04-10T00:00:00",
     "PhoneNumber": "\u002B381676432855",
     "Email": "martinovic.miroslav@sok.rs",
-    "SocialGatherings": [
-    ],
-    "SocialGatheringSuggestions": [
-    ],
-    "SocialGatheringSuggestionReplies": [
-    ],
-    "ToDoCards": [
-    ]
+    "ToDoCards": []
   },
   "knezevicborislava": {
     "UserType": 1,
@@ -191,14 +141,7 @@
     "BirthDate": "1960-03-24T00:00:00",
     "PhoneNumber": "\u002B381676432855",
     "Email": "knezevicborislava@neobee.net",
-    "SocialGatherings": [
-    ],
-    "SocialGatheringSuggestions": [
-    ],
-    "SocialGatheringSuggestionReplies": [
-    ],
-    "ToDoCards": [
-    ]
+    "ToDoCards": []
   },
   "milos.stankic": {
     "UserType": 1,
@@ -214,14 +157,7 @@
     "BirthDate": "1958-03-24T00:00:00",
     "PhoneNumber": "\u002B381693740603",
     "Email": "milos.stankic@yahoo.com",
-    "SocialGatherings": [
-    ],
-    "SocialGatheringSuggestions": [
-    ],
-    "SocialGatheringSuggestionReplies": [
-    ],
-    "ToDoCards": [
-    ]
+    "ToDoCards": []
   },
   "zvezdaaa16": {
     "UserType": 1,
@@ -237,13 +173,6 @@
     "BirthDate": "1993-06-13T00:00:00",
     "PhoneNumber": "\u002B381693740603",
     "Email": "kzzzvezdana@rocketmail.com",
-    "SocialGatherings": [
-    ],
-    "SocialGatheringSuggestions": [
-    ],
-    "SocialGatheringSuggestionReplies": [
-    ],
-    "ToDoCards": [
-    ]
+    "ToDoCards": []
   }
 }
