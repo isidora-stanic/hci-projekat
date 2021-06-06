@@ -151,7 +151,7 @@ namespace OrganizeIt.backend
             File.WriteAllText(socialGatheringsDataDir, socialGatheringsString);
         }
 
-        public static void loadSocialGatherings(Dictionary<string, User> usersDict)
+        public static Dictionary<int, SocialGathering> loadSocialGatherings(Dictionary<string, User> usersDict)
         {
             var socialGatheringsDataDir = DataDir + Path.DirectorySeparatorChar + "social_gatherings.json";
             var jsonString = File.ReadAllText(socialGatheringsDataDir);
@@ -183,6 +183,8 @@ namespace OrganizeIt.backend
                     organizer.SocialGatheringSuggestions.Add(suggestion);
                 }
             }
+
+            return socialGatheringsDict;
         }
 
         public static void AddGathering(SocialGathering socialGathering)

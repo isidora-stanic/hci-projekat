@@ -8,7 +8,7 @@
       xmlns:local="clr-namespace:OrganizeIt"
       xmlns:soical="clr-namespace:OrganizeIt.backend.social_gatherings"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="500"
+      d:DesignHeight="300" d:DesignWidth="800"
       Title="OrganizerHomePage">
     <Page.Resources>
         <DataTemplate x:Key="RequestTemplate" DataType="{x:Type soical:SocialGathering}">
@@ -20,6 +20,10 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
                     <TextBlock Text="{Binding Path=Name}" FontSize="20" />
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Klijent: " />
+                        <TextBlock FontSize="14" Text="{Binding Path=ClientUsername}" />
+                    </WrapPanel>
                     <WrapPanel>
                         <TextBlock FontSize="14" FontWeight="Bold" Text="Vreme odrzavanja: " />
                         <TextBlock FontSize="14" Text="{Binding Path=DateTime, StringFormat=f}" />
@@ -49,7 +53,6 @@
             </dragablz:TabablzControl.InterTabController>
             <TabItem Header="Zahtevi">
                 <DockPanel>
-
                     <StackPanel DockPanel.Dock="Top">
                         <WrapPanel HorizontalAlignment="Right">
                             <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
@@ -62,17 +65,50 @@
                                     x:Name="RequestSearch"
                                     MinWidth="500"
                                     FontSize="20"
-                                    materialDesign:HintAssist.Hint="Pretrazuj zahteev..."
+                                    materialDesign:HintAssist.Hint="Pretrazuj zahteve..."
                                     VerticalAlignment="Center" CaretBrush="{x:Null}" 
                                     TextChanged="RequestSearch_TextChanged"/>
                             <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
                         </WrapPanel>
                     </StackPanel>
 
-                    <ListView x:Name="ManifestationListView" HorizontalContentAlignment="Stretch"
-                              ItemsSource="{Binding socialGatherings, UpdateSourceTrigger=Explicit}"
+                    <ListView x:Name="RequestListView" HorizontalContentAlignment="Stretch"
+                              MouseDoubleClick="RequestListView_MouseDoubleClick"
+                              ItemsSource="{Binding requests, UpdateSourceTrigger=Explicit}"
                               ItemTemplate="{StaticResource RequestTemplate}" />
                 </DockPanel>
+            </TabItem>
+
+            <TabItem Header="Odgovori">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top">
+                        <WrapPanel HorizontalAlignment="Right">
+                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
+                            </materialDesign:PackIcon>
+                        </WrapPanel>
+                        <Separator Margin="20 0 25 25"/>
+                        <WrapPanel Margin="20 0 0 7">
+                            <TextBox Grid.Column="0"
+                                    x:Name="ResponseSearch"
+                                    MinWidth="500"
+                                    FontSize="20"
+                                    materialDesign:HintAssist.Hint="Pretrazuj odgovore..."
+                                    VerticalAlignment="Center" CaretBrush="{x:Null}" 
+                                    TextChanged="ResponseSearch_TextChanged"/>
+                            <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
+                        </WrapPanel>
+                    </StackPanel>
+
+                    <ListView x:Name="ResponseListView" HorizontalContentAlignment="Stretch"
+                              MouseDoubleClick="ResponseListView_MouseDoubleClick"
+                              ItemsSource="{Binding requests, UpdateSourceTrigger=Explicit}"
+                              ItemTemplate="{StaticResource RequestTemplate}" />
+                </DockPanel>
+            </TabItem>
+
+            <TabItem Header="ToDo">
+                
             </TabItem>
         </dragablz:TabablzControl>
     </Grid>

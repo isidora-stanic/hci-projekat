@@ -263,6 +263,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="backend\data\collaborators.json" />
+    <None Include="backend\data\social_gatherings.json" />
     <None Include="backend\data\users.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
