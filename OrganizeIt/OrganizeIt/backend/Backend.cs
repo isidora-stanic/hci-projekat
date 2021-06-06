@@ -1,4 +1,5 @@
 ﻿using OrganizeIt.backend.social_gatherings;
+using OrganizeIt.backend.todo;
 using OrganizeIt.backend.users;
 using System.Collections.Generic;
 using System.IO;
@@ -222,6 +223,64 @@ namespace OrganizeIt.backend
                              where gathering.AcceptedSuggestions == acceptedSuggestions
                              select gathering;
             return new List<SocialGathering>(gatherings);
+        }
+
+        public static void SaveTodoList(List<ToDoCard> toDoCards)
+        {
+            var dict = new Dictionary<string, ToDoCard>();
+            foreach (var card in toDoCards)
+            {
+                dict.Add(card.Organizer.Username, card);
+            }
+            var todoDataDir = DataDir + Path.DirectorySeparatorChar + "todo.json";
+            var toDoString = JsonSerializer.Serialize(dict, serializerOptions);
+            File.WriteAllText(todoDataDir, toDoString);
+        }
+
+        public static List<ToDoCard> LoadTodoList(Dictionary<string, User> usersDict)
+        {
+            var todoDataDir = DataDir + Path.DirectorySeparatorChar + "todo.json";
+            var jsonString = File.ReadAllText(todoDataDir);
+            var todoCardDict = JsonSerializer.Deserialize<Dictionary<string, ToDoCard>>(jsonString);
+
+            foreach (var organizerUsername in todoCardDict.Keys)
+            {
+                todoCardDict[organizerUsername].Organizer = usersDict[organizerUsername];
+            }
+
+            return new List<ToDoCard>(todoCardDict.Values);
+        }
+
+        public static List<ToDoCard> GetTodoCardByStatus(List<ToDoCard> todoCards, ToDoStatus status)
+        {
+            var toDoCards = from card in todoCards
+                            where card.Status == status
+                            select card;
+            return new List<ToDoCard>(toDoCards);
+        }
+
+        public static List<ToDoCard> GetTodoCardByStatusForOrganizer(List<ToDoCard> todoCards, ToDoStatus status, string organizerUsername)
+        {
+            var toDoCards = from card in todoCards
+                            where card.Status == status && card.Organizer.Username == organizerUsername
+                            select card;
+            return new List<ToDoCard>(toDoCards);
+        }
+
+        public static List<ToDoCard> GetToDoCardsForOrganizer(List<ToDoCard> todoCards, User organizer)
+        {
+            var toDoCards = from card in todoCards
+                            where card.Organizer.Username == organizer.Username
+                            select card;
+            return new List<ToDoCard>(toDoCards);
+        }
+
+        public static List<ToDoCard> GetToDoCardsForOrganizer(List<ToDoCard> todoCards, string organizerUsername)
+        {
+            var toDoCards = from card in todoCards
+                            where card.Organizer.Username == organizerUsername
+                            select card;
+            return new List<ToDoCard>(toDoCards);
         }
     }
 }
