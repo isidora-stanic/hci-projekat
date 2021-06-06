@@ -1,0 +1,79 @@
+﻿<Page x:Class="OrganizeIt.OrganizerHomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+      xmlns:local="clr-namespace:OrganizeIt"
+      xmlns:soical="clr-namespace:OrganizeIt.backend.social_gatherings"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="500"
+      Title="OrganizerHomePage">
+    <Page.Resources>
+        <DataTemplate x:Key="RequestTemplate" DataType="{x:Type soical:SocialGathering}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="{Binding Path=Name}" FontSize="20" />
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Vreme odrzavanja: " />
+                        <TextBlock FontSize="14" Text="{Binding Path=DateTime, StringFormat=f}" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Broj gostiju: " />
+                        <TextBlock FontSize="14" Text="{Binding Path=NumberOfGuests}" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Tip proslave: " />
+                        <TextBlock FontSize="14" Text="{Binding Path=Type}" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Opis: " />
+                        <TextBlock FontSize="14" Text="{Binding Path=Description}" />
+                    </WrapPanel>
+                    <TextBlock FontSize="14" FontWeight="Light" Text="Dvoklik za detalje..." />
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid>
+        <dragablz:TabablzControl x:Name="TabCtrl" TabStripPlacement="Left" Background="White">
+            <dragablz:TabablzControl.InterTabController>
+                <dragablz:InterTabController/>
+            </dragablz:TabablzControl.InterTabController>
+            <TabItem Header="Zahtevi">
+                <DockPanel>
+
+                    <StackPanel DockPanel.Dock="Top">
+                        <WrapPanel HorizontalAlignment="Right">
+                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
+                            </materialDesign:PackIcon>
+                        </WrapPanel>
+                        <Separator Margin="20 0 25 25"/>
+                        <WrapPanel Margin="20 0 0 7">
+                            <TextBox Grid.Column="0"
+                                    x:Name="RequestSearch"
+                                    MinWidth="500"
+                                    FontSize="20"
+                                    materialDesign:HintAssist.Hint="Pretrazuj zahteev..."
+                                    VerticalAlignment="Center" CaretBrush="{x:Null}" 
+                                    TextChanged="RequestSearch_TextChanged"/>
+                            <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
+                        </WrapPanel>
+                    </StackPanel>
+
+                    <ListView x:Name="ManifestationListView" HorizontalContentAlignment="Stretch"
+                              ItemsSource="{Binding socialGatherings, UpdateSourceTrigger=Explicit}"
+                              ItemTemplate="{StaticResource RequestTemplate}" />
+                </DockPanel>
+            </TabItem>
+        </dragablz:TabablzControl>
+    </Grid>
+</Page>
