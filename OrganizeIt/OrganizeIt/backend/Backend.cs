@@ -196,11 +196,14 @@ namespace OrganizeIt.backend
 
         public static void AddGathering(SocialGathering socialGathering)
         {
-            var client = socialGathering.Client;
-            var organizer = socialGathering.Organizer;
-
-            client.SocialGatherings.Add(socialGathering);
-            organizer.SocialGatherings.Add(socialGathering);
+            var users = LoadUsers();
+            loadSocialGatherings(users);
+            users[socialGathering.Client.Username].SocialGatherings.Add(socialGathering);
+            users[socialGathering.Organizer.Username].SocialGatherings.Add(socialGathering);
+            //socialGathering.Client.SocialGatherings.Add(socialGathering);
+            //socialGathering.Organizer.SocialGatherings.Add(socialGathering);
+            SaveUsers(users);
+            saveSocialGatherings(users);
         }
 
         public static void AddSuggestion(SocialGatheringSuggestion socialGatheringSuggestion, SocialGathering socialGathering)

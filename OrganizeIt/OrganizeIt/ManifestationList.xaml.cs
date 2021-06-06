@@ -87,5 +87,10 @@ namespace OrganizeIt
             SocialGatheringSuggestion selectedSuggestion = (sender as ListView).SelectedItem as SocialGatheringSuggestion;
             NavigationService.Navigate(new EventSuggestionView(selectedSuggestion));
         }
+
+        private void DodajManifBtn_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new NewEventForm());
+        }
     }
 }
