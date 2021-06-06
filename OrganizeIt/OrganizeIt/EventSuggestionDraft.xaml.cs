@@ -125,6 +125,16 @@ namespace OrganizeIt
 
             NavigationService.Navigate(new EventSuggestionView(cl.SocialGatherings[0].SocialGatheringSuggestions[0]));
         }
+
+        private void OtkaziBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void SacuvajNeSalji_Click(object sender, RoutedEventArgs e)
+        {
+            // ako implementiramo draft (nije obavezno, vrv necemo)
+        }
     }
 
     [ValueConversion(typeof(ObservableCollection<SocialGatheringCollaborator>), typeof(string))]

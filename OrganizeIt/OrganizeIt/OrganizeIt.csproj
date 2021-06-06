@@ -219,6 +219,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NewEventForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NewOrganizer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -227,16 +231,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="OrganizersCheckList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ManifestationList.xaml.cs">
       <DependentUpon>ManifestationList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewEventForm.xaml.cs">
+      <DependentUpon>NewEventForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewOrganizer.xaml.cs">
       <DependentUpon>NewOrganizer.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewSaradnik.xaml.cs">
       <DependentUpon>NewSaradnik.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizersCheckList.xaml.cs">
+      <DependentUpon>OrganizersCheckList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -256,6 +270,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="backend\data\collaborators.json" />
+    <None Include="backend\data\social_gatherings.json" />
     <None Include="backend\data\users.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

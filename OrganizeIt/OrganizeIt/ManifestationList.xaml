@@ -65,7 +65,7 @@
 
                     <StackPanel DockPanel.Dock="Top">
                         <WrapPanel HorizontalAlignment="Right">
-                            <materialDesign:PackIcon Margin="-20 0 30 0" Background="Transparent"
+                            <materialDesign:PackIcon x:Name="DodajManifBtn" Margin="-20 0 30 0" Background="Transparent" MouseDown="DodajManifBtn_MouseDown"
                                 ToolTip="Add new manifestation" FontSize="20" Kind="PlusBoxOutline" Width="35" Height="35">
                             </materialDesign:PackIcon>
                             <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
