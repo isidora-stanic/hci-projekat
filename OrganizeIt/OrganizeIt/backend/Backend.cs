@@ -234,11 +234,17 @@ namespace OrganizeIt.backend
                     suggestion.SocialGathering = socialGathering;
                     suggestion.Client = client;
                     suggestion.Organizer = organizer;
+
+                    socialGathering.AcceptedSuggestions = false;
+
                     foreach (var reply in suggestion.SuggestionReplies)
                     {
                         reply.SocialGatheringSuggestion = suggestion;
                         client.SocialGatheringSuggestionReplies.Add(reply);
                         organizer.SocialGatheringSuggestionReplies.Add(reply);
+
+                        if (reply.SuggestionsAccepted)
+                            socialGathering.AcceptedSuggestions = reply.SuggestionsAccepted;
                     }
                     client.SocialGatheringSuggestions.Add(suggestion);
                     organizer.SocialGatheringSuggestions.Add(suggestion);
@@ -306,13 +312,13 @@ namespace OrganizeIt.backend
 
             var gatheringsOrganizer = Users[organizerUsername].SocialGatherings;
 
-            foreach (var gathering in gatheringsOrganizer)
+            /*foreach (var gathering in gatheringsOrganizer)
             {
                 if (gathering.RequestDate == socialGathering.RequestDate)
                 {
                     gathering.SocialGatheringSuggestions.Add(socialGatheringSuggestion);
                 }
-            }
+            }*/
 
             Users[clientUsername].SocialGatherings = gatheringsClient;
             Users[organizerUsername].SocialGatherings = gatheringsOrganizer;
@@ -343,7 +349,7 @@ namespace OrganizeIt.backend
 
             var gatheringsOrganizer = Users[organizerUsername].SocialGatherings;
 
-            foreach (var gathering in gatheringsOrganizer)
+            /*foreach (var gathering in gatheringsOrganizer)
             {
                 if (gathering.RequestDate == socialGatheringSuggestion.SocialGathering.RequestDate)
                 {
@@ -355,7 +361,7 @@ namespace OrganizeIt.backend
                         }
                     }
                 }
-            }
+            }*/
 
             Users[clientUsername].SocialGatherings = gatheringsClient;
             Users[organizerUsername].SocialGatherings = gatheringsOrganizer;

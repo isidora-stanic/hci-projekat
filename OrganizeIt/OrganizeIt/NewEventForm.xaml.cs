@@ -45,6 +45,28 @@ namespace OrganizeIt
             DataContext = this;
         }
 
+        public NewEventForm(SocialGathering proslava)
+        {
+            InitializeComponent();
+            Proslava = new SocialGathering
+            {
+                AcceptedSuggestions = false,
+                Client = backend.Backend.LoggedInUser,
+                ClientUsername = backend.Backend.LoggedInUser.Username,
+                Organizer = proslava.Organizer,
+                RequestDate = DateTime.Now,
+                DateTime = DateTime.Now,
+                Description = proslava.Description,
+                Name = proslava.Name,
+                GuestList = new List<string>(),
+                NumberOfGuests = 0,
+                SocialGatheringSuggestions = new List<SocialGatheringSuggestion>(),
+                Type = proslava.Type
+            };
+            // Organizer = null, OrganizerUsername = "",
+            DataContext = this;
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (Proslava.Name.Length == 0)

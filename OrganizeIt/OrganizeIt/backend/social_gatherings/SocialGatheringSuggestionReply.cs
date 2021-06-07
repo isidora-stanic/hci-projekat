@@ -19,7 +19,7 @@ namespace OrganizeIt.backend.social_gatherings
         public bool SuggestionsAccepted
         {
             get { return _suggestionsAccepted; }
-            set { _suggestionsAccepted = value; SocialGatheringSuggestion.SocialGathering.AcceptedSuggestions = _suggestionsAccepted; }
+            set { _suggestionsAccepted = value; }
         }
     }
 }

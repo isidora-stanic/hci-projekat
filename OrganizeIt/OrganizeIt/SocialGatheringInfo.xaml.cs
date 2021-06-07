@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrganizeIt.backend.social_gatherings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,19 @@ namespace OrganizeIt
     /// </summary>
     public partial class SocialGatheringInfo : Page
     {
-        public SocialGatheringInfo()
+        public SocialGathering Proslava { get; set; }
+        public string SlikaKlijenta { get; set; }
+        public SocialGatheringInfo(SocialGathering proslava)
         {
+            Proslava = proslava;
+            SlikaKlijenta = backend.Backend.GetUserImagePath(Proslava.Client.Username);
             InitializeComponent();
+            DataContext = this;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EventSuggestionDraft(Proslava));
         }
     }
 }
