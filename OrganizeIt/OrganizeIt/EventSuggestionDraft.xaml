@@ -18,27 +18,22 @@
                 <CheckBox Content="{Binding Name}"></CheckBox>
             </StackPanel>
         </DataTemplate>
+        
         <DataTemplate x:Key="SekcijaTemplate">
-            <Border BorderBrush="AliceBlue" CornerRadius="10" BorderThickness="3" Margin="0 10">
-                <StackPanel>
-                    
-                    <DockPanel>
-                        <TextBox DockPanel.Dock="Top" Width="500" FontSize="24" materialDesign:HintAssist.Hint="Naziv sekcije" HorizontalAlignment="Center" Text="{Binding CategoryTitle,Mode=TwoWay}" />
-                        
-                        <Button DockPanel.Dock="Bottom" Click="Dodaj_saradnike_btn_Click" Width="250" Margin="0 20">Izaberi saradnike</Button>
-                        <!--<Button DockPanel.Dock="Top" Click="Ukloni_sekciju_btn_Click" BorderBrush="Transparent" Width="50" Height="50" Padding="0" Background="Transparent">
-                            <Button.Content>-->
-                        <materialDesign:PackIcon HorizontalAlignment="Center" MouseDown="Minus_btn_Click" Foreground="{StaticResource PrimaryHueMidBrush}" Kind="MinusBoxOutline" Width="50" Height="50"></materialDesign:PackIcon>
-                            <!--</Button.Content>
-                        </Button>-->
-                        <TextBlock Width="500" Margin="0 20 0 0" FontSize="16" Text="{Binding SuggestedCollaborators,Converter={StaticResource ListToStringConverter},Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-                    </DockPanel>
-                    <!--<ListView HorizontalAlignment="Center" HorizontalContentAlignment="Center" MinWidth="200" MinHeight="25" ItemsSource="{Binding Saradnici}" ItemTemplate="{StaticResource SaradniciTemplate}">
-                </ListView>-->
-                    <!--<Line Stroke="Black" StrokeThickness="1" X1="0" X2="800" Y1="20" Y2="20"></Line>-->
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <TextBox Width="400" FontWeight="Bold" FontSize="20" materialDesign:HintAssist.Hint="Naziv sekcije" Text="{Binding CategoryTitle,Mode=TwoWay}" />
+                    <!--<ScrollViewer Background="White" Margin="10" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">-->
+                    <StackPanel Width="400">
+                        <TextBlock FontSize="14" Text="{Binding SuggestedCollaborators,Converter={StaticResource ListToStringConverter},Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+                    </StackPanel>
+                    <!--</ScrollViewer>-->
                 </StackPanel>
-            </Border>
+                <Button Click="Dodaj_saradnike_btn_Click">Izaberi saradnike</Button>
+                <materialDesign:PackIcon VerticalAlignment="Center" MouseDown="Minus_btn_Click" Background="Transparent" Kind="MinusBoxOutline" Width="35" Height="35"></materialDesign:PackIcon>
+            </StackPanel>
         </DataTemplate>
+        
         <Style x:Key="LvItemStyle" TargetType="ListViewItem">
             <Setter Property="Template">
                 <Setter.Value>
@@ -78,37 +73,33 @@
     </Page.Resources>
     <Grid>
         <DockPanel>
-
+            <StackPanel DockPanel.Dock="Top">
+                <WrapPanel HorizontalAlignment="Right">
+                    <materialDesign:PackIcon Margin="-20 0 30 0" Background="Transparent" MouseDown="Plus_btn_Click" 
+                                ToolTip="Dodaj novu sekciju" FontSize="20" Kind="PlusBoxOutline" Width="35" Height="35">
+                    </materialDesign:PackIcon>
+                    <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                ToolTip="Odjava" FontSize="20" Kind="Logout" Width="30" Height="30">
+                    </materialDesign:PackIcon>
+                </WrapPanel>
+                <Separator Margin="20 0 25 25"/>
+            </StackPanel>
             <StackPanel DockPanel.Dock="Bottom">
-                <!--<Button x:Name="Plus_btn" Click="Plus_btn_Click" BorderThickness="5" Padding="0 0 0 7" FontSize="40" Content="+" Width="100" Height="100"></Button>-->
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Margin="10" Grid.Column="0" Style="{DynamicResource MaterialDesignOutlinedButton}">Otkaži</Button>
-                    <Button Margin="10" Grid.Column="1" Style="{DynamicResource MaterialDesignOutlinedButton}">Sačuvaj predlog</Button>
+                    <Button x:Name="OtkaziBtn" Margin="10" Grid.Column="0" Click="OtkaziBtn_Click" Style="{DynamicResource MaterialDesignOutlinedButton}">Otkaži</Button>
+                    <!--<Button x:Name="SacuvajNeSalji" Margin="10" Grid.Column="1" Click="SacuvajNeSalji_Click" Style="{DynamicResource MaterialDesignOutlinedButton}">Sačuvaj predlog</Button>-->
                     <Button x:Name="PosaljiBtn" Margin="10" Grid.Column="2" Click="PosaljiBtn_Click">Pošalji predlog</Button>
                 </Grid>
             </StackPanel>
-            <ScrollViewer Background="White" Margin="10" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <ScrollViewer Background="Transparent" Margin="10" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                 <StackPanel>
-                    <ListView Width="800" ItemContainerStyle="{StaticResource LvItemStyle}" HorizontalAlignment="Center" Name="listView" ItemsSource="{Binding MainWindowSekcije}" ItemTemplate="{StaticResource SekcijaTemplate}"></ListView>
-                    <!--<Button Margin="0 10" BorderBrush="Transparent" Background="Transparent" x:Name="Plus_btn" Click="Plus_btn_Click" Padding="0 0 0 0" Width="100" Height="100">
-                        <Button.Content>-->
-                    <materialDesign:PackIcon MouseDown="Plus_btn_Click" HorizontalAlignment="Center" Foreground="{StaticResource PrimaryHueMidBrush}" Kind="PlusBoxOutline" Width="100" Height="100"></materialDesign:PackIcon>
-                    <!--</Button.Content>
-                    </Button>-->
-
-                    <!-- Button Style="{DynamicResource MaterialDesignFlatButton}"
-                    <Button BorderBrush="Transparent" Width="100" Height="100" Padding="0" Background="Transparent">
-                        <Button.Content>
-                            <materialDesign:PackIcon HorizontalAlignment="Center" Foreground="{StaticResource PrimaryHueMidBrush}" Kind="PlusBoxOutline" Width="100" Height="100"></materialDesign:PackIcon>
-                        </Button.Content>
-                    </Button>-->
-                    
-                    <!--<Line Stroke="Black" StrokeThickness="1" X1="500" X2="800" Y1="20" Y2="20"></Line>-->
+                    <!--ItemContainerStyle="{StaticResource LvItemStyle}"-->
+                        <ListView Width="800" HorizontalAlignment="Center" Name="listView" ItemsSource="{Binding MainWindowSekcije}" ItemTemplate="{StaticResource SekcijaTemplate}"></ListView>
                 </StackPanel>
             </ScrollViewer>
         </DockPanel>

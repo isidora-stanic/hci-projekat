@@ -14,9 +14,9 @@
         <DataTemplate x:Key="SocialGatheringTemplate" DataType="{x:Type backend:SocialGathering}">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
                     <TextBlock FontSize="20" Text="{Binding Path=Name}" />
@@ -32,6 +32,21 @@
                         <TextBlock FontSize="14" FontWeight="Bold" Text="Datum odrzavanja: " />
                         <TextBlock FontSize="14" Text="{Binding Path=DateTime, StringFormat=f}" />
                     </WrapPanel>
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Opis: " />
+                        <TextBlock FontSize="14" Text="{Binding Path=Description, StringFormat=f}" />
+                    </WrapPanel>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Margin="10" Orientation="Horizontal" VerticalAlignment="Center">
+                    <materialDesign:PackIcon Kind="DotsHorizontal" Background="Transparent"
+                                             ToolTip="Detalji" Width="35" Height="35"
+                                             MouseDown="PackIcon_MouseDown"></materialDesign:PackIcon>
+                    <!--<materialDesign:PackIcon Kind="Pencil" Background="Transparent"
+                                             ToolTip="Izmeni" Width="35" Height="35"
+                                             MouseDown="Edit_MouseDown"></materialDesign:PackIcon>-->
+                    <materialDesign:PackIcon Kind="FileEditOutline" Background="Transparent"
+                                             ToolTip="Kreiraj novu poput ove" Width="35" Height="35"
+                                             MouseDown="NewLikeThis_MouseDown"></materialDesign:PackIcon>
                 </StackPanel>
             </Grid>
         </DataTemplate>
@@ -65,7 +80,7 @@
 
                     <StackPanel DockPanel.Dock="Top">
                         <WrapPanel HorizontalAlignment="Right">
-                            <materialDesign:PackIcon Margin="-20 0 30 0" Background="Transparent"
+                            <materialDesign:PackIcon x:Name="DodajManifBtn" Margin="-20 0 30 0" Background="Transparent" MouseDown="DodajManifBtn_MouseDown"
                                 ToolTip="Add new manifestation" FontSize="20" Kind="PlusBoxOutline" Width="35" Height="35">
                             </materialDesign:PackIcon>
                             <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"

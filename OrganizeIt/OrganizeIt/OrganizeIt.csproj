@@ -134,6 +134,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SocialGatheringInfo.xaml.cs">
+      <DependentUpon>SocialGatheringInfo.xaml</DependentUpon>
+    </Compile>
     <Page Include="AccountsList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -233,6 +236,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NewEventForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NewOrganizer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -242,6 +249,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="OrganizerHomePage.xaml">
+    <Page Include="SocialGatheringInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrganizersCheckList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -249,6 +261,9 @@
   <ItemGroup>
     <Compile Include="ManifestationList.xaml.cs">
       <DependentUpon>ManifestationList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewEventForm.xaml.cs">
+      <DependentUpon>NewEventForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewOrganizer.xaml.cs">
       <DependentUpon>NewOrganizer.xaml</DependentUpon>
@@ -258,6 +273,8 @@
     </Compile>
     <Compile Include="OrganizerHomePage.xaml.cs">
       <DependentUpon>OrganizerHomePage.xaml</DependentUpon>
+    <Compile Include="OrganizersCheckList.xaml.cs">
+      <DependentUpon>OrganizersCheckList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

@@ -11,7 +11,7 @@ namespace OrganizeIt.backend.social_gatherings
         [JsonIgnore]
         public SocialGatheringSuggestion SocialGatheringSuggestion { get; set; }
 
-        public Dictionary<SocialGatheringCategorySuggestion, string> CategoryComments { get; set; }
+        public Dictionary<string, string> CategoryComments { get; set; }
 
         private bool _suggestionsAccepted;
 
@@ -19,7 +19,7 @@ namespace OrganizeIt.backend.social_gatherings
         public bool SuggestionsAccepted
         {
             get { return _suggestionsAccepted; }
-            set { _suggestionsAccepted = value; SocialGatheringSuggestion.SocialGathering.AcceptedSuggestions = _suggestionsAccepted; }
+            set { _suggestionsAccepted = value; }
         }
     }
 }

@@ -42,11 +42,11 @@ namespace OrganizeIt
 
             Predlog = predlog;
             Odgovor = new SocialGatheringSuggestionReply {
-                CategoryComments = new Dictionary<SocialGatheringCategorySuggestion, string>(),
-                SuggestionsAccepted = false,
+                CategoryComments = new Dictionary<string, string>(),
                 ReplyDate = DateTime.Now,
                 SocialGatheringSuggestion = Predlog
             };
+            Odgovor.SuggestionsAccepted = false;
 
             InitSekcijeDTOs();
 
@@ -61,11 +61,11 @@ namespace OrganizeIt
 
             Odgovor = new SocialGatheringSuggestionReply
             {
-                CategoryComments = new Dictionary<SocialGatheringCategorySuggestion, string>(),
-                SuggestionsAccepted = true,
+                CategoryComments = new Dictionary<string, string>(),
                 ReplyDate = DateTime.Now,
                 SocialGatheringSuggestion = Predlog
             };
+            Odgovor.SuggestionsAccepted = false;
             InitSekcijeDTOs();
 
             ListToStringConverter = new ListToStringConverter();
@@ -88,14 +88,18 @@ namespace OrganizeIt
         public void NamestiOdgovor()
         {
             foreach (SekcijaKomentarDTO sekcijaKom in SekcijeDTOsKojeSeVide)
-                Odgovor.CategoryComments[sekcijaKom.Sekcija] = sekcijaKom.Komentar;
+                Odgovor.CategoryComments[sekcijaKom.Sekcija.CategoryTitle] = sekcijaKom.Komentar;
         }
 
         private void PosaljiBtn_Click(object sender, RoutedEventArgs e)
         {
             // cuvanje odgovora i navigacija do sledeceg prozora
             NamestiOdgovor();
+
             MessageBox.Show("Slanje (cuvanje) odgovora");
+
+            backend.Backend.AddSuggestionReply(Odgovor, Predlog);
+            NavigationService.Navigate(new ManifestationList());
         }
 
         private void PrihvatiBtn_Click(object sender, RoutedEventArgs e)
@@ -103,6 +107,7 @@ namespace OrganizeIt
             // cuvanje odgovora i navigacija do sledeceg prozora
             NamestiOdgovor();
             Odgovor.SuggestionsAccepted = true;
+            backend.Backend.AddSuggestionReply(Odgovor, Predlog);
             MessageBox.Show("Slanje (cuvanje) odgovora i prihvatanje");
         }
 
