@@ -1,0 +1,103 @@
+﻿<Page x:Class="OrganizeIt.EventSuggReplyView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:OrganizeIt"
+      xmlns:c="clr-namespace:OrganizeIt"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EventSuggestionView">
+
+    <Page.Resources>
+        <c:ListToStringConverter x:Key="ListToStringConverter"/>
+
+        <DataTemplate x:Key="SaradniciTemplate">
+            <StackPanel MinWidth="200" Orientation="Horizontal">
+                <CheckBox Content="{Binding Name}"></CheckBox>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="SekcijaTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="700"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel HorizontalAlignment="Stretch" Margin="10">
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" Text="{Binding Sekcija.CategoryTitle,Mode=TwoWay}" />
+                    <TextBlock Margin="0 20 0 0" FontSize="14" HorizontalAlignment="Center" Text="{Binding Sekcija.SuggestedCollaborators,Converter={StaticResource ListToStringConverter},Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+                    <StackPanel Margin="0 20" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal">
+                        <materialDesign:PackIcon Foreground="{StaticResource PrimaryHueLightBrush}" Kind="Comment"></materialDesign:PackIcon>
+                        <TextBlock TextWrapping="Wrap"
+                                 HorizontalAlignment="Stretch"
+                                 Text="{Binding Komentar,Mode=TwoWay}"
+                                 FontSize="14"
+                                 Width="600"
+                                 MaxHeight="100"
+                                 Margin="10 -2 0 10"
+                                 />
+                    </StackPanel>
+                    <!--<Separator Margin="0 0"></Separator>-->
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+        <Style x:Key="LvItemStyle" TargetType="ListViewItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <Border x:Name="border" Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Disabled" />
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <VisualState x:Name="Unselected" />
+                                    <VisualState x:Name="Selected">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="border"
+                                                              Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
+                                                <EasingColorKeyFrame KeyTime="0" Value="Transparent" />
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="SelectedUnfocused">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="border"
+                                                              Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
+                                                <EasingColorKeyFrame KeyTime="0" Value="Transparent" />
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Bottom">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="NazadBtn" Margin="10" Grid.Column="0" Click="NazadBtn_Click" Style="{DynamicResource MaterialDesignOutlinedButton}">Nazad</Button>
+                    <Button x:Name="NoviPredlogBtn" Margin="10" Grid.Column="1" Click="NoviPredlogBtn_Click" Style="{DynamicResource MaterialDesignOutlinedButton}">Novi predlog</Button>
+                    <Button x:Name="IzmeniPredlogBtn" Margin="10" Grid.Column="2" Click="IzmeniPredlogBtn_Click">Izmeni predlog</Button>
+                </Grid>
+            </StackPanel>
+            <ScrollViewer Margin="10" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <ListView HorizontalContentAlignment="Stretch" ItemContainerStyle="{StaticResource LvItemStyle}" HorizontalAlignment="Center" Name="listView" ItemsSource="{Binding SekcijeDTOsKojeSeVide}" ItemTemplate="{StaticResource SekcijaTemplate}"></ListView>
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+</Page>
