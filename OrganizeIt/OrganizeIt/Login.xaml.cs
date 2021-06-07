@@ -39,7 +39,7 @@ namespace OrganizeIt
             else if (user.UserType.Equals(UserType.Administrator))
                 NavigationService.Navigate(new AccountsList());
             else if (user.UserType.Equals(UserType.Organizer))
-                NavigationService.Navigate(new CreateAccount());
+                NavigationService.Navigate(new OrganizerHomePage());
             else if (user.UserType.Equals(UserType.Client))
                 NavigationService.Navigate(new ManifestationList());
         }

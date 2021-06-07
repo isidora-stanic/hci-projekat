@@ -229,10 +229,12 @@ namespace OrganizeIt.backend
 
         public static void SaveTodoList(List<ToDoCard> toDoCards)
         {
-            var dict = new Dictionary<string, ToDoCard>();
+            var dict = new Dictionary<string, List<ToDoCard>>();
             foreach (var card in toDoCards)
             {
-                dict.Add(card.Organizer.Username, card);
+                if (!dict.ContainsKey(card.Organizer.Username))
+                    dict[card.Organizer.Username] = new List<ToDoCard>();
+                dict[card.Organizer.Username].Add(card);
             }
             var todoDataDir = DataDir + "todo.json";
             var toDoString = JsonSerializer.Serialize(dict, serializerOptions);
@@ -243,14 +245,20 @@ namespace OrganizeIt.backend
         {
             var todoDataDir = DataDir + "todo.json";
             var jsonString = File.ReadAllText(todoDataDir);
-            var todoCardDict = JsonSerializer.Deserialize<Dictionary<string, ToDoCard>>(jsonString);
+            var todoCardDict = JsonSerializer.Deserialize<Dictionary<string, List<ToDoCard>>>(jsonString);
+
+            var allTodos = new List<ToDoCard>();
 
             foreach (var organizerUsername in todoCardDict.Keys)
             {
-                todoCardDict[organizerUsername].Organizer = usersDict[organizerUsername];
+                foreach (var todoCard in todoCardDict[organizerUsername])
+                {
+                    todoCard.Organizer = usersDict[organizerUsername];
+                    allTodos.Add(todoCard);
+                }
             }
 
-            return new List<ToDoCard>(todoCardDict.Values);
+            return allTodos;
         }
 
         public static List<ToDoCard> GetTodoCardByStatus(List<ToDoCard> todoCards, ToDoStatus status)

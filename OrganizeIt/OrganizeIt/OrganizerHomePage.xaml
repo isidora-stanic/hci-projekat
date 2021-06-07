@@ -7,6 +7,7 @@
       xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
       xmlns:local="clr-namespace:OrganizeIt"
       xmlns:soical="clr-namespace:OrganizeIt.backend.social_gatherings"
+      xmlns:todo="clr-namespace:OrganizeIt.backend.todo"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="800"
       Title="OrganizerHomePage">
@@ -44,7 +45,28 @@
                 </StackPanel>
             </Grid>
         </DataTemplate>
+        <DataTemplate x:Key="TodoTemplate" DataType="{x:Type todo:ToDoCard}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock FontWeight="Bold" Text="{Binding Name}" />
+                    <TextBlock MaxWidth="150" TextWrapping="Wrap" Text="{Binding Description}" />
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
     </Page.Resources>
+
+    <Page.InputBindings>
+        <KeyBinding Command="{Binding UndoCommand}">
+            <KeyBinding.Gesture>
+                <KeyGesture>Ctrl+Z</KeyGesture>
+            </KeyBinding.Gesture>
+        </KeyBinding>
+    </Page.InputBindings>
 
     <Grid>
         <dragablz:TabablzControl x:Name="TabCtrl" TabStripPlacement="Left" Background="White">
@@ -55,7 +77,8 @@
                 <DockPanel>
                     <StackPanel DockPanel.Dock="Top">
                         <WrapPanel HorizontalAlignment="Right">
-                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                            <materialDesign:PackIcon x:Name="LogoutIcon1" MouseDown="LogoutIcon_MouseDown"
+                                Margin="-10 3 30 0" Background="Transparent"
                                 ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
@@ -83,7 +106,8 @@
                 <DockPanel>
                     <StackPanel DockPanel.Dock="Top">
                         <WrapPanel HorizontalAlignment="Right">
-                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                            <materialDesign:PackIcon x:Name="LogoutIcon2" MouseDown="LogoutIcon_MouseDown"
+                                Margin="-10 3 30 0" Background="Transparent"
                                 ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
@@ -108,7 +132,60 @@
             </TabItem>
 
             <TabItem Header="ToDo">
-                
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top">
+                        <WrapPanel HorizontalAlignment="Right">
+                            <materialDesign:PackIcon x:Name="AddTodoIcon" MouseDown="AddTodoIcon_MouseDown"
+                                    Margin="-20 0 30 0" Background="Transparent"
+                                    ToolTip="Dodaj zadatak" FontSize="20" Kind="PlusBoxOutline" Width="35" Height="35">
+                            </materialDesign:PackIcon>
+                            <materialDesign:PackIcon x:Name="LogoutIcon3" MouseDown="LogoutIcon_MouseDown"
+                                Margin="-10 3 30 0" Background="Transparent"
+                                ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
+                            </materialDesign:PackIcon>
+                        </WrapPanel>
+                        <Separator Margin="20 0 25 25"/>
+                    </StackPanel>
+                    <Grid Margin="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <DockPanel Grid.Column="0">
+                            <TextBlock Text="Novo" DockPanel.Dock="Top" FontWeight="Bold" />
+                            <ListView x:Name="todoListView" ItemsSource="{Binding todosToDo}" 
+                                      MouseDoubleClick="todoListView_MouseDoubleClick"
+                                      ItemTemplate="{StaticResource TodoTemplate}"/>
+                        </DockPanel>
+                        <DockPanel Grid.Column="1">
+                            <TextBlock Text="U obradi" DockPanel.Dock="Top" FontWeight="Bold" />
+                            <ListView x:Name="processingListView" ItemsSource="{Binding todosProcessing}"
+                                      MouseDoubleClick="processingListView_MouseDoubleClick"
+                                      ItemTemplate="{StaticResource TodoTemplate}"/>
+                        </DockPanel>
+                        <DockPanel Grid.Column="2">
+                            <TextBlock Text="Poslato" DockPanel.Dock="Top" FontWeight="Bold" />
+                            <ListView x:Name="sentListView" ItemsSource="{Binding todosSent}" 
+                                      MouseDoubleClick="sentListView_MouseDoubleClick"
+                                      ItemTemplate="{StaticResource TodoTemplate}"/>
+                        </DockPanel>
+                        <DockPanel Grid.Column="3">
+                            <TextBlock Text="Prihvaceno" DockPanel.Dock="Top" FontWeight="Bold" />
+                            <ListView x:Name="acceptedListView" ItemsSource="{Binding todosAccepted}" 
+                                      MouseDoubleClick="acceptedListView_MouseDoubleClick"
+                                      ItemTemplate="{StaticResource TodoTemplate}"/>
+                        </DockPanel>
+                        <DockPanel Grid.Column="4">
+                            <TextBlock Text="Odbijeno" DockPanel.Dock="Top" FontWeight="Bold" />
+                            <ListView x:Name="declinedListView" ItemsSource="{Binding todosRejected}" 
+                                      MouseDoubleClick="declinedListView_MouseDoubleClick"
+                                      ItemTemplate="{StaticResource TodoTemplate}"/>
+                        </DockPanel>
+                    </Grid>
+                </DockPanel>
             </TabItem>
         </dragablz:TabablzControl>
     </Grid>

@@ -6,6 +6,7 @@ namespace OrganizeIt.backend.todo
         Processing,
         Sent,
         Accepted,
-        Rejected
+        Rejected,
+        Deleted
     }
 }

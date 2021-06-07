@@ -1,4 +1,6 @@
-﻿using OrganizeIt.backend.social_gatherings;
+﻿using OrganizeIt.backend;
+using OrganizeIt.backend.social_gatherings;
+using OrganizeIt.backend.todo;
 using OrganizeIt.backend.users;
 using System;
 using System.Collections.Generic;
@@ -23,8 +25,44 @@ namespace OrganizeIt
     /// </summary>
     public partial class OrganizerHomePage : Page
     {
+
+        private class UndoCommandObject : ICommand
+        {
+            private readonly OrganizerHomePage _target;
+
+            public UndoCommandObject(OrganizerHomePage target)
+            {
+                _target = target;
+            }
+
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+            public void Execute(object parameter)
+            {
+                _target.DoCommand();
+            }
+        }
+
+
+
         public ObservableCollection<SocialGathering> requests { get; set; }
         public ObservableCollection<SocialGatheringSuggestionReply> responses { get; set; }
+        public ObservableCollection<ToDoCard> todosToDo { get; set; } 
+        public ObservableCollection<ToDoCard> todosProcessing { get; set; }
+        public ObservableCollection<ToDoCard> todosSent { get; set; }
+        public ObservableCollection<ToDoCard> todosAccepted { get; set; }
+        public ObservableCollection<ToDoCard> todosRejected { get; set; }
+
+        private readonly ICommand _undoCommand;
+        public ICommand UndoCommand { get { return _undoCommand; } }
+
+        public Stack<ToDoCard> deletedToDos = new Stack<ToDoCard>();
+
 
         public OrganizerHomePage()
         {
@@ -37,13 +75,23 @@ namespace OrganizeIt
                 = allGatherings /* Only not accepted gatherings, for this organizer are new requests*/ 
                     .Where(x => !x.AcceptedSuggestions && x.OrganizerUsername == loggedIn.Username)
                     .ToList();
+            List<ToDoCard> allTodoCards = backend.Backend.LoadTodoList(users);
+
 
             responses = new ObservableCollection<SocialGatheringSuggestionReply>(loggedIn.SocialGatheringSuggestionReplies);
             requests = new ObservableCollection<SocialGathering>(filteredGatherings);
 
+            todosToDo = new ObservableCollection<ToDoCard>(backend.Backend.GetTodoCardByStatusForOrganizer(allTodoCards, ToDoStatus.ToDo, loggedIn.Username));
+            todosProcessing = new ObservableCollection<ToDoCard>(backend.Backend.GetTodoCardByStatusForOrganizer(allTodoCards, ToDoStatus.Processing, loggedIn.Username));
+            todosSent = new ObservableCollection<ToDoCard>(backend.Backend.GetTodoCardByStatusForOrganizer(allTodoCards, ToDoStatus.Sent, loggedIn.Username));
+            todosAccepted = new ObservableCollection<ToDoCard>(backend.Backend.GetTodoCardByStatusForOrganizer(allTodoCards, ToDoStatus.Accepted, loggedIn.Username));
+            todosRejected = new ObservableCollection<ToDoCard>(backend.Backend.GetTodoCardByStatusForOrganizer(allTodoCards, ToDoStatus.Rejected, loggedIn.Username));
+
             RequestListView.ItemsSource = requests;
             ResponseListView.ItemsSource = responses;
             this.DataContext = this;
+
+            _undoCommand = new UndoCommandObject(this);
         }
 
         private void RequestSearch_TextChanged(object sender, TextChangedEventArgs e)
@@ -95,6 +143,162 @@ namespace OrganizeIt
             /* TODO: Izmeniti da se prikaze stvarni prozor */
             var selectedResponse = (e.OriginalSource as FrameworkElement).DataContext as SocialGatheringSuggestionReply;
             MessageBox.Show($"Showing data for request for {selectedResponse.SocialGatheringSuggestion.SocialGathering.Name}");
+        }
+
+        private void AddTodoIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new AddTodo());
+        }
+
+        private void LogoutIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            string messageBoxText = $"Da li zelite da se odjavite";
+            string caption = "Odjava";
+            MessageBoxButton btn = MessageBoxButton.YesNo;
+            MessageBoxImage img = MessageBoxImage.Question;
+
+            var result = MessageBox.Show(messageBoxText, caption, btn, img, MessageBoxResult.No);
+            if (result == MessageBoxResult.No)
+                return;
+
+            backend.Backend.LoggedInUser = null;
+            NavigationService.Navigate(new Login());
+        }
+
+        private void processingListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selectedItem = (e.OriginalSource as FrameworkElement).DataContext as ToDoCard;
+            TodoEdit edit = new TodoEdit(selectedItem);
+            if (edit.ShowDialog() == true)
+            {
+                this.todosProcessing.Remove(edit.Answer);
+
+                if (edit.Answer.Status == ToDoStatus.Deleted)
+                {
+                    edit.Answer.Status = ToDoStatus.Processing;
+                    deletedToDos.Push(edit.Answer);
+                    return;
+                }
+
+                putAppropriate(edit.Answer);
+            }
+
+        }
+
+        private void todoListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selectedItem = (e.OriginalSource as FrameworkElement).DataContext as ToDoCard;
+            TodoEdit edit = new TodoEdit(selectedItem);
+            if (edit.ShowDialog() == true)
+            {
+                this.todosToDo.Remove(edit.Answer);
+
+                if (edit.Answer.Status == ToDoStatus.Deleted)
+                {
+                    edit.Answer.Status = ToDoStatus.ToDo;
+                    deletedToDos.Push(edit.Answer);
+                    return;
+                }
+
+                putAppropriate(edit.Answer);
+            }
+        }
+
+        private void sentListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selectedItem = (e.OriginalSource as FrameworkElement).DataContext as ToDoCard;
+            TodoEdit edit = new TodoEdit(selectedItem);
+            if (edit.ShowDialog() == true)
+            {
+                this.todosSent.Remove(edit.Answer);
+
+                if (edit.Answer.Status == ToDoStatus.Deleted)
+                {
+                    edit.Answer.Status = ToDoStatus.Sent;
+                    deletedToDos.Push(edit.Answer);
+                    return;
+                }
+
+                putAppropriate(edit.Answer);
+            }
+        }
+
+        private void acceptedListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selectedItem = (e.OriginalSource as FrameworkElement).DataContext as ToDoCard;
+            TodoEdit edit = new TodoEdit(selectedItem);
+            if (edit.ShowDialog() == true)
+            {
+                this.todosAccepted.Remove(edit.Answer);
+
+                if (edit.Answer.Status == ToDoStatus.Deleted)
+                {
+                    edit.Answer.Status = ToDoStatus.Accepted;
+                    deletedToDos.Push(edit.Answer);
+                    return;
+                }
+
+                putAppropriate(edit.Answer);
+            }
+        }
+
+        private void declinedListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selectedItem = (e.OriginalSource as FrameworkElement).DataContext as ToDoCard;
+            TodoEdit edit = new TodoEdit(selectedItem);
+            if (edit.ShowDialog() == true)
+            {
+                this.todosRejected.Remove(edit.Answer);
+
+
+                if (edit.Answer.Status == ToDoStatus.Deleted)
+                {
+                    edit.Answer.Status = ToDoStatus.Processing;
+                    deletedToDos.Push(edit.Answer);
+                    return;
+                }
+
+                putAppropriate(edit.Answer);
+            }
+        }
+
+        private void putAppropriate(ToDoCard card)
+        {
+            if (card.Status == ToDoStatus.ToDo)
+                todosToDo.Add(card);
+            else if (card.Status == ToDoStatus.Sent)
+                todosSent.Add(card);
+            else if (card.Status == ToDoStatus.Processing)
+                todosProcessing.Add(card);
+            else if (card.Status == ToDoStatus.Accepted)
+                todosAccepted.Add(card);
+            else if (card.Status == ToDoStatus.Rejected)
+                todosRejected.Add(card);
+
+            saveToDos();
+        }
+
+        private void DoCommand()
+        {
+            putAppropriate(deletedToDos.Pop());
+        }
+
+        private void saveToDos()
+        {
+            List<ToDoCard> allTodos = new List<ToDoCard>();
+            foreach (ToDoCard card in this.todosToDo)
+                allTodos.Add(card);
+            foreach (ToDoCard card in this.todosSent)
+                allTodos.Add(card);
+            foreach (ToDoCard card in this.todosProcessing)
+                allTodos.Add(card);
+            foreach (ToDoCard card in this.todosAccepted)
+                allTodos.Add(card);
+            foreach (ToDoCard card in this.todosRejected)
+                allTodos.Add(card);
+            int len = allTodos.Count;
+
+            backend.Backend.SaveTodoList(allTodos);
         }
     }
 }

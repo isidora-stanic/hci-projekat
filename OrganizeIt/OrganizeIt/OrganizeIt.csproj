@@ -138,6 +138,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AddTodo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TodoEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CreateAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -173,6 +181,9 @@
     <Compile Include="AccountsList.xaml.cs">
       <DependentUpon>AccountsList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddTodo.xaml.cs">
+      <DependentUpon>AddTodo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -184,6 +195,9 @@
     <Compile Include="backend\social_gatherings\SocialGatheringSeating.cs" />
     <Compile Include="backend\social_gatherings\SocialGatheringSuggestion.cs" />
     <Compile Include="backend\social_gatherings\SocialGatheringSuggestionReply.cs" />
+    <Compile Include="TodoEdit.xaml.cs">
+      <DependentUpon>TodoEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="backend\todo\ToDoCard.cs" />
     <Compile Include="backend\todo\ToDoStatus.cs" />
     <Compile Include="backend\users\Gender.cs" />
@@ -264,6 +278,7 @@
     </EmbeddedResource>
     <None Include="backend\data\collaborators.json" />
     <None Include="backend\data\social_gatherings.json" />
+    <None Include="backend\data\todo.json" />
     <None Include="backend\data\users.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
