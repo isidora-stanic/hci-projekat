@@ -427,5 +427,12 @@ namespace OrganizeIt.backend
                             select card;
             return new List<ToDoCard>(toDoCards);
         }
+
+        public static List<string> LoadGuestsFromCSV(string csv_path)
+        {
+            var lines = File.ReadAllLines(csv_path);
+            var guests = lines[0].Split(',');
+            return new List<string>(guests);
+        }
     }
 }
