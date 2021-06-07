@@ -51,7 +51,8 @@
         "SocialGatheringSeating": null,
         "SuggestionReplies": []
       }
-    ]
+    ],
+    "AcceptedSuggestions": false
   },
   "1": {
     "RequestDate": "2021-06-04T22:10:31.4334102+02:00",
@@ -88,6 +89,712 @@
         "SocialGatheringSeating": null,
         "SuggestionReplies": []
       }
-    ]
+    ],
+    "AcceptedSuggestions": false
+  },
+  "2": {
+    "RequestDate": "2021-06-07T12:31:02.9001314+02:00",
+    "Name": "bla",
+    "Type": "bla",
+    "DateTime": "2021-06-07T00:00:00",
+    "NumberOfGuests": 40,
+    "Description": "bla",
+    "GuestList": [],
+    "OrganizerUsername": "knezevicborislava",
+    "ClientUsername": "jadranka88",
+    "SocialGatheringSuggestions": [],
+    "AcceptedSuggestions": false
+  },
+  "3": {
+    "RequestDate": "2021-06-07T12:36:28.0451988+02:00",
+    "Name": "Proslava bree",
+    "Type": null,
+    "DateTime": "2021-06-07T12:36:28.0451988+02:00",
+    "NumberOfGuests": 3,
+    "Description": "blabla opis",
+    "GuestList": null,
+    "OrganizerUsername": "mmartinovic",
+    "ClientUsername": "jadranka88",
+    "SocialGatheringSuggestions": [
+      {
+        "SuggestionDate": "0001-01-01T00:00:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "eto 1",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Slatkoteka",
+                "Id": 3,
+                "Description": "Dobro do\u0161li. Ovo je Slatkoteka pri\u010Da. Ugasite svetlo i  u\u0161u\u0161kajte se, jer ulazite u \u010Darobni svet krofni, slatki\u0161a i iznena\u0111enja.\nSlatkoteka je ljubavna pri\u010Da. U toj pri\u010Di, princeza se zaljubila u krofne i tako je nastala Slatkoteka. Dok princeza \u010Deka svog princa, ona vredno radi i otkriva nove ukuse, oblike i dekoracije koje \u010Dine Slatkoteka krofne jedinstvenim.\nKrofne koje nastaju iz ljubavi princeze imaju tu mo\u0107 da spoje krajnosti u savr\u0161eno zadovoljstvo, gde tradicionalni recepti na\u0161ih baka i najkvalitetniji sastojci i prelivi, uz moderno pakovanje i dekoraciju osvajaju na prvi pogled.\nSlatkoteka krofne osvajaju i na\u0161e bake, \u010Dije smo tradicionalne recepte pretvorili u poslasticu koja sve vra\u0107a u detinjstvo. Sada ovde \u017Eive krofne, slatke i slane, svih ukusa i oblika: dostupne svima za degustaciju ili preterivanje, u svakom slu\u010Daju za u\u017Eivanje."
+              },
+              {
+                "Name": "Ketering\u0026Catering",
+                "Id": 4,
+                "Description": "UKUSNA JELA \u0026 KVALITETNI SASTOJCI\nSvako jelo pripremamo s ljubavlju i samo koriste\u0107i najkvalitetnije sastojke.\nDosta vremena provodimo kako bi Va\u0161u proslavu u\u010Dinili jedinstvenom.\nOrganizujemo sve od po\u010Detka do kraja, a rezultat je ukusna hrana, izvrsna usluga i vrhunska prezentacija."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": []
+      },
+      {
+        "SuggestionDate": "0001-01-01T00:00:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "eto 1",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Slatkoteka",
+                "Id": 3,
+                "Description": "Dobro do\u0161li. Ovo je Slatkoteka pri\u010Da. Ugasite svetlo i  u\u0161u\u0161kajte se, jer ulazite u \u010Darobni svet krofni, slatki\u0161a i iznena\u0111enja.\nSlatkoteka je ljubavna pri\u010Da. U toj pri\u010Di, princeza se zaljubila u krofne i tako je nastala Slatkoteka. Dok princeza \u010Deka svog princa, ona vredno radi i otkriva nove ukuse, oblike i dekoracije koje \u010Dine Slatkoteka krofne jedinstvenim.\nKrofne koje nastaju iz ljubavi princeze imaju tu mo\u0107 da spoje krajnosti u savr\u0161eno zadovoljstvo, gde tradicionalni recepti na\u0161ih baka i najkvalitetniji sastojci i prelivi, uz moderno pakovanje i dekoraciju osvajaju na prvi pogled.\nSlatkoteka krofne osvajaju i na\u0161e bake, \u010Dije smo tradicionalne recepte pretvorili u poslasticu koja sve vra\u0107a u detinjstvo. Sada ovde \u017Eive krofne, slatke i slane, svih ukusa i oblika: dostupne svima za degustaciju ili preterivanje, u svakom slu\u010Daju za u\u017Eivanje."
+              },
+              {
+                "Name": "Ketering\u0026Catering",
+                "Id": 4,
+                "Description": "UKUSNA JELA \u0026 KVALITETNI SASTOJCI\nSvako jelo pripremamo s ljubavlju i samo koriste\u0107i najkvalitetnije sastojke.\nDosta vremena provodimo kako bi Va\u0161u proslavu u\u010Dinili jedinstvenom.\nOrganizujemo sve od po\u010Detka do kraja, a rezultat je ukusna hrana, izvrsna usluga i vrhunska prezentacija."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": []
+      }
+    ],
+    "AcceptedSuggestions": false
+  },
+  "4": {
+    "RequestDate": "2021-06-07T12:40:54.036217+02:00",
+    "Name": "Proslava bree",
+    "Type": null,
+    "DateTime": "2021-06-07T12:40:54.036217+02:00",
+    "NumberOfGuests": 3,
+    "Description": "blabla opis",
+    "GuestList": null,
+    "OrganizerUsername": "mmartinovic",
+    "ClientUsername": "jadranka88",
+    "SocialGatheringSuggestions": [
+      {
+        "SuggestionDate": "0001-01-01T00:00:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Muzika",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Medino bend",
+                "Id": 5,
+                "Description": "MEDINO BEND je nastao 01. septembra 2006. godine u Beogradu. Svojim radom, uporno\u0161\u0107u i posve\u0107eno\u0161\u0107u poslu, uspeli smo da izgradimo brend i ime koje je prepoznatljivo! Za Vas sviramo sve vrste sve\u010Danosti i nudimo provod po kome \u0107ete nas dugo pamtiti! Pozitivna energija, osmeh i profesionalnost su odlike ljudi koji \u010Dine ovaj bend. Svako od nas, na sebi svojstven na\u010Din ovu pri\u010Du izdvaja od drugih. www.medinobend.rs je mesto gde mozete pogledati najbolji BEND ZA SVADBE , bend za punoletstva , bend za korporativne proslave - Medino bend"
+              },
+              {
+                "Name": "Negro bend",
+                "Id": 8,
+                "Description": "NEGRO je bend za Va\u0161e proslave, bend za svadbe, bend za \u017Eurke, bend za prve i 18-te ro\u0111endane, bend za korporativne proslave, bend za klubove."
+              },
+              {
+                "Name": "O\u010Dajne Doma\u0107ice bend",
+                "Id": 9,
+                "Description": "Bend je nastao po\u010Detkom 2011. godine kao realizacija originalne ideje o isklju\u010Divo \u017Eenskom bendu.\nNekoliko muzi\u010Dki \u0161kolovanih devojaka se skupilo i krenulo u izvanredan projekat koji ubrzo posti\u017Ee veliki uspeh.\nDanas nastupaju svuda po Srbiji, ali se ne zadr\u017Eavaju samo u okviru njenih granica, ve\u0107 nastupaju i po biv\u0161im republikama Jugoslavije, kao i u Evropi."
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Prostor",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Hotel Park Novi Sad",
+                "Id": 10,
+                "Description": "Hotel Park se nalazi u Novom Sadu, na ivici velikog parka u mirnom okru\u017Eenju i u neposrednoj blizini centra grada. Hotel je u potpunosti klimatizovan i nudi elegantno ure\u0111en sme\u0161taj sa besplatnim internetom i kablovskom televizijom. U pojedinim sme\u0161tajnim jedinicama je dostupna hidromasa\u017Ena kada.\nU restoranu Park koji ima terasu za najvi\u0161e 500 ljudi slu\u017Ee se jela internacionalne i doma\u0107e kuhinje. Ekskluzivni restoran Tito ima \u0161armantni ambijent. U njemu je boravio mar\u0161al Tito 1977. godine.\nVelnes centar hotela Park nudi hidromasa\u017Enu kadu, zatvoreni bazen, saune i raznovrsne masa\u017Ene tretmane. Gostima su na raspolaganju fitnes sadr\u017Eaji i programi ve\u017Ebanja sa li\u010Dnim trenerom. Kazino i 2 no\u0107na kluba se tako\u0111e nalaze u okviru objekta.\nHotel Park se nalazi na pe\u0161a\u010Dkoj udaljenosti od Novosadskog sajma. U okviru objekta gosti mogu koristiti besplatan parking sa obezbe\u0111enjem. Aerodromski prevoz se mo\u017Ee organizovati uz doplatu."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": []
+      },
+      {
+        "SuggestionDate": "0001-01-01T00:00:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Muzika",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Medino bend",
+                "Id": 5,
+                "Description": "MEDINO BEND je nastao 01. septembra 2006. godine u Beogradu. Svojim radom, uporno\u0161\u0107u i posve\u0107eno\u0161\u0107u poslu, uspeli smo da izgradimo brend i ime koje je prepoznatljivo! Za Vas sviramo sve vrste sve\u010Danosti i nudimo provod po kome \u0107ete nas dugo pamtiti! Pozitivna energija, osmeh i profesionalnost su odlike ljudi koji \u010Dine ovaj bend. Svako od nas, na sebi svojstven na\u010Din ovu pri\u010Du izdvaja od drugih. www.medinobend.rs je mesto gde mozete pogledati najbolji BEND ZA SVADBE , bend za punoletstva , bend za korporativne proslave - Medino bend"
+              },
+              {
+                "Name": "Negro bend",
+                "Id": 8,
+                "Description": "NEGRO je bend za Va\u0161e proslave, bend za svadbe, bend za \u017Eurke, bend za prve i 18-te ro\u0111endane, bend za korporativne proslave, bend za klubove."
+              },
+              {
+                "Name": "O\u010Dajne Doma\u0107ice bend",
+                "Id": 9,
+                "Description": "Bend je nastao po\u010Detkom 2011. godine kao realizacija originalne ideje o isklju\u010Divo \u017Eenskom bendu.\nNekoliko muzi\u010Dki \u0161kolovanih devojaka se skupilo i krenulo u izvanredan projekat koji ubrzo posti\u017Ee veliki uspeh.\nDanas nastupaju svuda po Srbiji, ali se ne zadr\u017Eavaju samo u okviru njenih granica, ve\u0107 nastupaju i po biv\u0161im republikama Jugoslavije, kao i u Evropi."
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Prostor",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Hotel Park Novi Sad",
+                "Id": 10,
+                "Description": "Hotel Park se nalazi u Novom Sadu, na ivici velikog parka u mirnom okru\u017Eenju i u neposrednoj blizini centra grada. Hotel je u potpunosti klimatizovan i nudi elegantno ure\u0111en sme\u0161taj sa besplatnim internetom i kablovskom televizijom. U pojedinim sme\u0161tajnim jedinicama je dostupna hidromasa\u017Ena kada.\nU restoranu Park koji ima terasu za najvi\u0161e 500 ljudi slu\u017Ee se jela internacionalne i doma\u0107e kuhinje. Ekskluzivni restoran Tito ima \u0161armantni ambijent. U njemu je boravio mar\u0161al Tito 1977. godine.\nVelnes centar hotela Park nudi hidromasa\u017Enu kadu, zatvoreni bazen, saune i raznovrsne masa\u017Ene tretmane. Gostima su na raspolaganju fitnes sadr\u017Eaji i programi ve\u017Ebanja sa li\u010Dnim trenerom. Kazino i 2 no\u0107na kluba se tako\u0111e nalaze u okviru objekta.\nHotel Park se nalazi na pe\u0161a\u010Dkoj udaljenosti od Novosadskog sajma. U okviru objekta gosti mogu koristiti besplatan parking sa obezbe\u0111enjem. Aerodromski prevoz se mo\u017Ee organizovati uz doplatu."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": []
+      }
+    ],
+    "AcceptedSuggestions": false
+  },
+  "5": {
+    "RequestDate": "2021-06-07T12:43:01.299341+02:00",
+    "Name": "Proslava bree",
+    "Type": null,
+    "DateTime": "2021-06-07T12:43:01.299341+02:00",
+    "NumberOfGuests": 3,
+    "Description": "blabla opis",
+    "GuestList": null,
+    "OrganizerUsername": "mmartinovic",
+    "ClientUsername": "jadranka88",
+    "SocialGatheringSuggestions": [
+      {
+        "SuggestionDate": "0001-01-01T00:00:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Ketering",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Catering\u002B",
+                "Id": 1,
+                "Description": "Profesionalna usluga keteringa\nSve\u017Ee, brzo, ukusno\nNa tr\u017Ei\u0161tu Srbije postojimo od 2003. godine. Od samog osnivanja cilj na\u0161eg poslovanja je obezbe\u0111ivanje usluga keteringa na najvi\u0161em nivou za klijente koji prepoznaju kvalitet. Stoga smo posebnu pa\u017Enju posvetili infrastrukturi i organizaciji poslovanja. Posedujemo savremenu kuhinju velikog kapaciteta, opremljenu najkvalitetnijom profesionalnom opremom, koja ispunjava sve HACCP standarde za pripremu hrane.\nZa vas kuvamo i organizujemo, kada planirate:\n-koktele, proslave, poslovne ru\u010Dkove i sve\u010Dane ve\u010Dere na lokacijama po \u017Eelji, uz uslugu profesionalnih i uniformisanih konobara\n-ishranu zaposlenih na dnevnoj bazi(sa pripremom u na\u0161oj kuhinji za manji broj ljudi i sa pripremom u kuhinji na lokaciji za ve\u0107i broj ljudi)\n-organizaciju dnevne dostave pi\u0107a, sokova, kafe, sanitarnih proizvoda, kao i svih ostalih proizvoda iz maloprodajne lokacije klijenata, po maloprodajnim cenama."
+              },
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Ketering\u0026Catering",
+                "Id": 4,
+                "Description": "UKUSNA JELA \u0026 KVALITETNI SASTOJCI\nSvako jelo pripremamo s ljubavlju i samo koriste\u0107i najkvalitetnije sastojke.\nDosta vremena provodimo kako bi Va\u0161u proslavu u\u010Dinili jedinstvenom.\nOrganizujemo sve od po\u010Detka do kraja, a rezultat je ukusna hrana, izvrsna usluga i vrhunska prezentacija."
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Animatori",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Negro bend",
+                "Id": 8,
+                "Description": "NEGRO je bend za Va\u0161e proslave, bend za svadbe, bend za \u017Eurke, bend za prve i 18-te ro\u0111endane, bend za korporativne proslave, bend za klubove."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": []
+      },
+      {
+        "SuggestionDate": "0001-01-01T00:00:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Ketering",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Catering\u002B",
+                "Id": 1,
+                "Description": "Profesionalna usluga keteringa\nSve\u017Ee, brzo, ukusno\nNa tr\u017Ei\u0161tu Srbije postojimo od 2003. godine. Od samog osnivanja cilj na\u0161eg poslovanja je obezbe\u0111ivanje usluga keteringa na najvi\u0161em nivou za klijente koji prepoznaju kvalitet. Stoga smo posebnu pa\u017Enju posvetili infrastrukturi i organizaciji poslovanja. Posedujemo savremenu kuhinju velikog kapaciteta, opremljenu najkvalitetnijom profesionalnom opremom, koja ispunjava sve HACCP standarde za pripremu hrane.\nZa vas kuvamo i organizujemo, kada planirate:\n-koktele, proslave, poslovne ru\u010Dkove i sve\u010Dane ve\u010Dere na lokacijama po \u017Eelji, uz uslugu profesionalnih i uniformisanih konobara\n-ishranu zaposlenih na dnevnoj bazi(sa pripremom u na\u0161oj kuhinji za manji broj ljudi i sa pripremom u kuhinji na lokaciji za ve\u0107i broj ljudi)\n-organizaciju dnevne dostave pi\u0107a, sokova, kafe, sanitarnih proizvoda, kao i svih ostalih proizvoda iz maloprodajne lokacije klijenata, po maloprodajnim cenama."
+              },
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Ketering\u0026Catering",
+                "Id": 4,
+                "Description": "UKUSNA JELA \u0026 KVALITETNI SASTOJCI\nSvako jelo pripremamo s ljubavlju i samo koriste\u0107i najkvalitetnije sastojke.\nDosta vremena provodimo kako bi Va\u0161u proslavu u\u010Dinili jedinstvenom.\nOrganizujemo sve od po\u010Detka do kraja, a rezultat je ukusna hrana, izvrsna usluga i vrhunska prezentacija."
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Animatori",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Negro bend",
+                "Id": 8,
+                "Description": "NEGRO je bend za Va\u0161e proslave, bend za svadbe, bend za \u017Eurke, bend za prve i 18-te ro\u0111endane, bend za korporativne proslave, bend za klubove."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": []
+      }
+    ],
+    "AcceptedSuggestions": false
+  },
+  "6": {
+    "RequestDate": "2021-06-07T12:44:43.9119525+02:00",
+    "Name": "Proslava bree",
+    "Type": null,
+    "DateTime": "2021-06-07T12:44:43.9119525+02:00",
+    "NumberOfGuests": 3,
+    "Description": "blabla opis",
+    "GuestList": null,
+    "OrganizerUsername": "mmartinovic",
+    "ClientUsername": "jadranka88",
+    "SocialGatheringSuggestions": [
+      {
+        "SuggestionDate": "0001-01-01T00:00:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "AAAAAAAAAAAAAAAAAAAa",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Fabrika kiflica",
+                "Id": 0,
+                "Description": "Uvek sve\u017Ee kiflice\nDoma\u0107e kiflice bez aditiva i industrijskog kvasca, uvek sve\u017Ee, ru\u010Dno motane i bogato punjene.\nUkoliko se odlu\u010Dite za 4 ili vi\u0161e kilograma, ne morate da razmi\u0161ljate o pla\u0107anju dostave, bi\u0107e besplatna na teritoriji grada. Naravno, ukoliko vam je lak\u0161e, va\u0161e spremne i vru\u0107e kiflice vas mogu \u010Dekati i kod nas u Bra\u0107e Ribnikar 56. Uverite se sami u kvalitet na\u0161ih proizvoda."
+              },
+              {
+                "Name": "Catering\u002B",
+                "Id": 1,
+                "Description": "Profesionalna usluga keteringa\nSve\u017Ee, brzo, ukusno\nNa tr\u017Ei\u0161tu Srbije postojimo od 2003. godine. Od samog osnivanja cilj na\u0161eg poslovanja je obezbe\u0111ivanje usluga keteringa na najvi\u0161em nivou za klijente koji prepoznaju kvalitet. Stoga smo posebnu pa\u017Enju posvetili infrastrukturi i organizaciji poslovanja. Posedujemo savremenu kuhinju velikog kapaciteta, opremljenu najkvalitetnijom profesionalnom opremom, koja ispunjava sve HACCP standarde za pripremu hrane.\nZa vas kuvamo i organizujemo, kada planirate:\n-koktele, proslave, poslovne ru\u010Dkove i sve\u010Dane ve\u010Dere na lokacijama po \u017Eelji, uz uslugu profesionalnih i uniformisanih konobara\n-ishranu zaposlenih na dnevnoj bazi(sa pripremom u na\u0161oj kuhinji za manji broj ljudi i sa pripremom u kuhinji na lokaciji za ve\u0107i broj ljudi)\n-organizaciju dnevne dostave pi\u0107a, sokova, kafe, sanitarnih proizvoda, kao i svih ostalih proizvoda iz maloprodajne lokacije klijenata, po maloprodajnim cenama."
+              },
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Slatkoteka",
+                "Id": 3,
+                "Description": "Dobro do\u0161li. Ovo je Slatkoteka pri\u010Da. Ugasite svetlo i  u\u0161u\u0161kajte se, jer ulazite u \u010Darobni svet krofni, slatki\u0161a i iznena\u0111enja.\nSlatkoteka je ljubavna pri\u010Da. U toj pri\u010Di, princeza se zaljubila u krofne i tako je nastala Slatkoteka. Dok princeza \u010Deka svog princa, ona vredno radi i otkriva nove ukuse, oblike i dekoracije koje \u010Dine Slatkoteka krofne jedinstvenim.\nKrofne koje nastaju iz ljubavi princeze imaju tu mo\u0107 da spoje krajnosti u savr\u0161eno zadovoljstvo, gde tradicionalni recepti na\u0161ih baka i najkvalitetniji sastojci i prelivi, uz moderno pakovanje i dekoraciju osvajaju na prvi pogled.\nSlatkoteka krofne osvajaju i na\u0161e bake, \u010Dije smo tradicionalne recepte pretvorili u poslasticu koja sve vra\u0107a u detinjstvo. Sada ovde \u017Eive krofne, slatke i slane, svih ukusa i oblika: dostupne svima za degustaciju ili preterivanje, u svakom slu\u010Daju za u\u017Eivanje."
+              },
+              {
+                "Name": "Ketering\u0026Catering",
+                "Id": 4,
+                "Description": "UKUSNA JELA \u0026 KVALITETNI SASTOJCI\nSvako jelo pripremamo s ljubavlju i samo koriste\u0107i najkvalitetnije sastojke.\nDosta vremena provodimo kako bi Va\u0161u proslavu u\u010Dinili jedinstvenom.\nOrganizujemo sve od po\u010Detka do kraja, a rezultat je ukusna hrana, izvrsna usluga i vrhunska prezentacija."
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "bbbbbbbbbbbbbbbbbb",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Slatkoteka",
+                "Id": 3,
+                "Description": "Dobro do\u0161li. Ovo je Slatkoteka pri\u010Da. Ugasite svetlo i  u\u0161u\u0161kajte se, jer ulazite u \u010Darobni svet krofni, slatki\u0161a i iznena\u0111enja.\nSlatkoteka je ljubavna pri\u010Da. U toj pri\u010Di, princeza se zaljubila u krofne i tako je nastala Slatkoteka. Dok princeza \u010Deka svog princa, ona vredno radi i otkriva nove ukuse, oblike i dekoracije koje \u010Dine Slatkoteka krofne jedinstvenim.\nKrofne koje nastaju iz ljubavi princeze imaju tu mo\u0107 da spoje krajnosti u savr\u0161eno zadovoljstvo, gde tradicionalni recepti na\u0161ih baka i najkvalitetniji sastojci i prelivi, uz moderno pakovanje i dekoraciju osvajaju na prvi pogled.\nSlatkoteka krofne osvajaju i na\u0161e bake, \u010Dije smo tradicionalne recepte pretvorili u poslasticu koja sve vra\u0107a u detinjstvo. Sada ovde \u017Eive krofne, slatke i slane, svih ukusa i oblika: dostupne svima za degustaciju ili preterivanje, u svakom slu\u010Daju za u\u017Eivanje."
+              },
+              {
+                "Name": "Ketering\u0026Catering",
+                "Id": 4,
+                "Description": "UKUSNA JELA \u0026 KVALITETNI SASTOJCI\nSvako jelo pripremamo s ljubavlju i samo koriste\u0107i najkvalitetnije sastojke.\nDosta vremena provodimo kako bi Va\u0161u proslavu u\u010Dinili jedinstvenom.\nOrganizujemo sve od po\u010Detka do kraja, a rezultat je ukusna hrana, izvrsna usluga i vrhunska prezentacija."
+              },
+              {
+                "Name": "Medino bend",
+                "Id": 5,
+                "Description": "MEDINO BEND je nastao 01. septembra 2006. godine u Beogradu. Svojim radom, uporno\u0161\u0107u i posve\u0107eno\u0161\u0107u poslu, uspeli smo da izgradimo brend i ime koje je prepoznatljivo! Za Vas sviramo sve vrste sve\u010Danosti i nudimo provod po kome \u0107ete nas dugo pamtiti! Pozitivna energija, osmeh i profesionalnost su odlike ljudi koji \u010Dine ovaj bend. Svako od nas, na sebi svojstven na\u010Din ovu pri\u010Du izdvaja od drugih. www.medinobend.rs je mesto gde mozete pogledati najbolji BEND ZA SVADBE , bend za punoletstva , bend za korporativne proslave - Medino bend"
+              },
+              {
+                "Name": "Aleksandar Sofronijevi\u0107",
+                "Id": 6,
+                "Description": "Aleksandar Aca Sofronijevi\u0107 je jedan od trenutno najpopularnijih mladih muzi\u010Dara u Srbiji, bez \u010Dijeg se orkestra ne mo\u017Ee zamisliti ni jedan koncert doma\u0107ih zvezda narodne i folk muzike, kao ni svadbe, kr\u0161tenja, i druga slavlja."
+              },
+              {
+                "Name": "Orkestar End\u017Eija Mavri\u0107a",
+                "Id": 7,
+                "Description": "End\u017Ei Mavri\u0107 sa svojom muzi\u010Dkim saradnicima \u010Desto gostuje u Grand emsijama. Sa druge strane pored brojnih gostovanja bio je jedan od aran\u017Eera na projektu Zvezde Granda Hitovi Za Sva Vremena.\nOrkestar End\u017Eija Mavri\u0107a mo\u017Eete anga\u017Eovati za razli\u010Dite tipova veselja, kako u Srbiji tako \u0161irom Evrope."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": []
+      },
+      {
+        "SuggestionDate": "0001-01-01T00:00:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "AAAAAAAAAAAAAAAAAAAa",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Fabrika kiflica",
+                "Id": 0,
+                "Description": "Uvek sve\u017Ee kiflice\nDoma\u0107e kiflice bez aditiva i industrijskog kvasca, uvek sve\u017Ee, ru\u010Dno motane i bogato punjene.\nUkoliko se odlu\u010Dite za 4 ili vi\u0161e kilograma, ne morate da razmi\u0161ljate o pla\u0107anju dostave, bi\u0107e besplatna na teritoriji grada. Naravno, ukoliko vam je lak\u0161e, va\u0161e spremne i vru\u0107e kiflice vas mogu \u010Dekati i kod nas u Bra\u0107e Ribnikar 56. Uverite se sami u kvalitet na\u0161ih proizvoda."
+              },
+              {
+                "Name": "Catering\u002B",
+                "Id": 1,
+                "Description": "Profesionalna usluga keteringa\nSve\u017Ee, brzo, ukusno\nNa tr\u017Ei\u0161tu Srbije postojimo od 2003. godine. Od samog osnivanja cilj na\u0161eg poslovanja je obezbe\u0111ivanje usluga keteringa na najvi\u0161em nivou za klijente koji prepoznaju kvalitet. Stoga smo posebnu pa\u017Enju posvetili infrastrukturi i organizaciji poslovanja. Posedujemo savremenu kuhinju velikog kapaciteta, opremljenu najkvalitetnijom profesionalnom opremom, koja ispunjava sve HACCP standarde za pripremu hrane.\nZa vas kuvamo i organizujemo, kada planirate:\n-koktele, proslave, poslovne ru\u010Dkove i sve\u010Dane ve\u010Dere na lokacijama po \u017Eelji, uz uslugu profesionalnih i uniformisanih konobara\n-ishranu zaposlenih na dnevnoj bazi(sa pripremom u na\u0161oj kuhinji za manji broj ljudi i sa pripremom u kuhinji na lokaciji za ve\u0107i broj ljudi)\n-organizaciju dnevne dostave pi\u0107a, sokova, kafe, sanitarnih proizvoda, kao i svih ostalih proizvoda iz maloprodajne lokacije klijenata, po maloprodajnim cenama."
+              },
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Slatkoteka",
+                "Id": 3,
+                "Description": "Dobro do\u0161li. Ovo je Slatkoteka pri\u010Da. Ugasite svetlo i  u\u0161u\u0161kajte se, jer ulazite u \u010Darobni svet krofni, slatki\u0161a i iznena\u0111enja.\nSlatkoteka je ljubavna pri\u010Da. U toj pri\u010Di, princeza se zaljubila u krofne i tako je nastala Slatkoteka. Dok princeza \u010Deka svog princa, ona vredno radi i otkriva nove ukuse, oblike i dekoracije koje \u010Dine Slatkoteka krofne jedinstvenim.\nKrofne koje nastaju iz ljubavi princeze imaju tu mo\u0107 da spoje krajnosti u savr\u0161eno zadovoljstvo, gde tradicionalni recepti na\u0161ih baka i najkvalitetniji sastojci i prelivi, uz moderno pakovanje i dekoraciju osvajaju na prvi pogled.\nSlatkoteka krofne osvajaju i na\u0161e bake, \u010Dije smo tradicionalne recepte pretvorili u poslasticu koja sve vra\u0107a u detinjstvo. Sada ovde \u017Eive krofne, slatke i slane, svih ukusa i oblika: dostupne svima za degustaciju ili preterivanje, u svakom slu\u010Daju za u\u017Eivanje."
+              },
+              {
+                "Name": "Ketering\u0026Catering",
+                "Id": 4,
+                "Description": "UKUSNA JELA \u0026 KVALITETNI SASTOJCI\nSvako jelo pripremamo s ljubavlju i samo koriste\u0107i najkvalitetnije sastojke.\nDosta vremena provodimo kako bi Va\u0161u proslavu u\u010Dinili jedinstvenom.\nOrganizujemo sve od po\u010Detka do kraja, a rezultat je ukusna hrana, izvrsna usluga i vrhunska prezentacija."
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "bbbbbbbbbbbbbbbbbb",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Slatkoteka",
+                "Id": 3,
+                "Description": "Dobro do\u0161li. Ovo je Slatkoteka pri\u010Da. Ugasite svetlo i  u\u0161u\u0161kajte se, jer ulazite u \u010Darobni svet krofni, slatki\u0161a i iznena\u0111enja.\nSlatkoteka je ljubavna pri\u010Da. U toj pri\u010Di, princeza se zaljubila u krofne i tako je nastala Slatkoteka. Dok princeza \u010Deka svog princa, ona vredno radi i otkriva nove ukuse, oblike i dekoracije koje \u010Dine Slatkoteka krofne jedinstvenim.\nKrofne koje nastaju iz ljubavi princeze imaju tu mo\u0107 da spoje krajnosti u savr\u0161eno zadovoljstvo, gde tradicionalni recepti na\u0161ih baka i najkvalitetniji sastojci i prelivi, uz moderno pakovanje i dekoraciju osvajaju na prvi pogled.\nSlatkoteka krofne osvajaju i na\u0161e bake, \u010Dije smo tradicionalne recepte pretvorili u poslasticu koja sve vra\u0107a u detinjstvo. Sada ovde \u017Eive krofne, slatke i slane, svih ukusa i oblika: dostupne svima za degustaciju ili preterivanje, u svakom slu\u010Daju za u\u017Eivanje."
+              },
+              {
+                "Name": "Ketering\u0026Catering",
+                "Id": 4,
+                "Description": "UKUSNA JELA \u0026 KVALITETNI SASTOJCI\nSvako jelo pripremamo s ljubavlju i samo koriste\u0107i najkvalitetnije sastojke.\nDosta vremena provodimo kako bi Va\u0161u proslavu u\u010Dinili jedinstvenom.\nOrganizujemo sve od po\u010Detka do kraja, a rezultat je ukusna hrana, izvrsna usluga i vrhunska prezentacija."
+              },
+              {
+                "Name": "Medino bend",
+                "Id": 5,
+                "Description": "MEDINO BEND je nastao 01. septembra 2006. godine u Beogradu. Svojim radom, uporno\u0161\u0107u i posve\u0107eno\u0161\u0107u poslu, uspeli smo da izgradimo brend i ime koje je prepoznatljivo! Za Vas sviramo sve vrste sve\u010Danosti i nudimo provod po kome \u0107ete nas dugo pamtiti! Pozitivna energija, osmeh i profesionalnost su odlike ljudi koji \u010Dine ovaj bend. Svako od nas, na sebi svojstven na\u010Din ovu pri\u010Du izdvaja od drugih. www.medinobend.rs je mesto gde mozete pogledati najbolji BEND ZA SVADBE , bend za punoletstva , bend za korporativne proslave - Medino bend"
+              },
+              {
+                "Name": "Aleksandar Sofronijevi\u0107",
+                "Id": 6,
+                "Description": "Aleksandar Aca Sofronijevi\u0107 je jedan od trenutno najpopularnijih mladih muzi\u010Dara u Srbiji, bez \u010Dijeg se orkestra ne mo\u017Ee zamisliti ni jedan koncert doma\u0107ih zvezda narodne i folk muzike, kao ni svadbe, kr\u0161tenja, i druga slavlja."
+              },
+              {
+                "Name": "Orkestar End\u017Eija Mavri\u0107a",
+                "Id": 7,
+                "Description": "End\u017Ei Mavri\u0107 sa svojom muzi\u010Dkim saradnicima \u010Desto gostuje u Grand emsijama. Sa druge strane pored brojnih gostovanja bio je jedan od aran\u017Eera na projektu Zvezde Granda Hitovi Za Sva Vremena.\nOrkestar End\u017Eija Mavri\u0107a mo\u017Eete anga\u017Eovati za razli\u010Dite tipova veselja, kako u Srbiji tako \u0161irom Evrope."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": []
+      }
+    ],
+    "AcceptedSuggestions": false
+  },
+  "7": {
+    "RequestDate": "2021-06-07T12:45:57.1000727+02:00",
+    "Name": "Proslava bree",
+    "Type": null,
+    "DateTime": "2021-06-07T12:45:57.1000727+02:00",
+    "NumberOfGuests": 3,
+    "Description": "blabla opis",
+    "GuestList": null,
+    "OrganizerUsername": "mmartinovic",
+    "ClientUsername": "jadranka88",
+    "SocialGatheringSuggestions": [
+      {
+        "SuggestionDate": "0001-01-01T00:00:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "CCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Catering\u002B",
+                "Id": 1,
+                "Description": "Profesionalna usluga keteringa\nSve\u017Ee, brzo, ukusno\nNa tr\u017Ei\u0161tu Srbije postojimo od 2003. godine. Od samog osnivanja cilj na\u0161eg poslovanja je obezbe\u0111ivanje usluga keteringa na najvi\u0161em nivou za klijente koji prepoznaju kvalitet. Stoga smo posebnu pa\u017Enju posvetili infrastrukturi i organizaciji poslovanja. Posedujemo savremenu kuhinju velikog kapaciteta, opremljenu najkvalitetnijom profesionalnom opremom, koja ispunjava sve HACCP standarde za pripremu hrane.\nZa vas kuvamo i organizujemo, kada planirate:\n-koktele, proslave, poslovne ru\u010Dkove i sve\u010Dane ve\u010Dere na lokacijama po \u017Eelji, uz uslugu profesionalnih i uniformisanih konobara\n-ishranu zaposlenih na dnevnoj bazi(sa pripremom u na\u0161oj kuhinji za manji broj ljudi i sa pripremom u kuhinji na lokaciji za ve\u0107i broj ljudi)\n-organizaciju dnevne dostave pi\u0107a, sokova, kafe, sanitarnih proizvoda, kao i svih ostalih proizvoda iz maloprodajne lokacije klijenata, po maloprodajnim cenama."
+              },
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Slatkoteka",
+                "Id": 3,
+                "Description": "Dobro do\u0161li. Ovo je Slatkoteka pri\u010Da. Ugasite svetlo i  u\u0161u\u0161kajte se, jer ulazite u \u010Darobni svet krofni, slatki\u0161a i iznena\u0111enja.\nSlatkoteka je ljubavna pri\u010Da. U toj pri\u010Di, princeza se zaljubila u krofne i tako je nastala Slatkoteka. Dok princeza \u010Deka svog princa, ona vredno radi i otkriva nove ukuse, oblike i dekoracije koje \u010Dine Slatkoteka krofne jedinstvenim.\nKrofne koje nastaju iz ljubavi princeze imaju tu mo\u0107 da spoje krajnosti u savr\u0161eno zadovoljstvo, gde tradicionalni recepti na\u0161ih baka i najkvalitetniji sastojci i prelivi, uz moderno pakovanje i dekoraciju osvajaju na prvi pogled.\nSlatkoteka krofne osvajaju i na\u0161e bake, \u010Dije smo tradicionalne recepte pretvorili u poslasticu koja sve vra\u0107a u detinjstvo. Sada ovde \u017Eive krofne, slatke i slane, svih ukusa i oblika: dostupne svima za degustaciju ili preterivanje, u svakom slu\u010Daju za u\u017Eivanje."
+              },
+              {
+                "Name": "Ketering\u0026Catering",
+                "Id": 4,
+                "Description": "UKUSNA JELA \u0026 KVALITETNI SASTOJCI\nSvako jelo pripremamo s ljubavlju i samo koriste\u0107i najkvalitetnije sastojke.\nDosta vremena provodimo kako bi Va\u0161u proslavu u\u010Dinili jedinstvenom.\nOrganizujemo sve od po\u010Detka do kraja, a rezultat je ukusna hrana, izvrsna usluga i vrhunska prezentacija."
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "DDDDDDDDDDDDDdddd",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Fabrika kiflica",
+                "Id": 0,
+                "Description": "Uvek sve\u017Ee kiflice\nDoma\u0107e kiflice bez aditiva i industrijskog kvasca, uvek sve\u017Ee, ru\u010Dno motane i bogato punjene.\nUkoliko se odlu\u010Dite za 4 ili vi\u0161e kilograma, ne morate da razmi\u0161ljate o pla\u0107anju dostave, bi\u0107e besplatna na teritoriji grada. Naravno, ukoliko vam je lak\u0161e, va\u0161e spremne i vru\u0107e kiflice vas mogu \u010Dekati i kod nas u Bra\u0107e Ribnikar 56. Uverite se sami u kvalitet na\u0161ih proizvoda."
+              },
+              {
+                "Name": "Catering\u002B",
+                "Id": 1,
+                "Description": "Profesionalna usluga keteringa\nSve\u017Ee, brzo, ukusno\nNa tr\u017Ei\u0161tu Srbije postojimo od 2003. godine. Od samog osnivanja cilj na\u0161eg poslovanja je obezbe\u0111ivanje usluga keteringa na najvi\u0161em nivou za klijente koji prepoznaju kvalitet. Stoga smo posebnu pa\u017Enju posvetili infrastrukturi i organizaciji poslovanja. Posedujemo savremenu kuhinju velikog kapaciteta, opremljenu najkvalitetnijom profesionalnom opremom, koja ispunjava sve HACCP standarde za pripremu hrane.\nZa vas kuvamo i organizujemo, kada planirate:\n-koktele, proslave, poslovne ru\u010Dkove i sve\u010Dane ve\u010Dere na lokacijama po \u017Eelji, uz uslugu profesionalnih i uniformisanih konobara\n-ishranu zaposlenih na dnevnoj bazi(sa pripremom u na\u0161oj kuhinji za manji broj ljudi i sa pripremom u kuhinji na lokaciji za ve\u0107i broj ljudi)\n-organizaciju dnevne dostave pi\u0107a, sokova, kafe, sanitarnih proizvoda, kao i svih ostalih proizvoda iz maloprodajne lokacije klijenata, po maloprodajnim cenama."
+              },
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Slatkoteka",
+                "Id": 3,
+                "Description": "Dobro do\u0161li. Ovo je Slatkoteka pri\u010Da. Ugasite svetlo i  u\u0161u\u0161kajte se, jer ulazite u \u010Darobni svet krofni, slatki\u0161a i iznena\u0111enja.\nSlatkoteka je ljubavna pri\u010Da. U toj pri\u010Di, princeza se zaljubila u krofne i tako je nastala Slatkoteka. Dok princeza \u010Deka svog princa, ona vredno radi i otkriva nove ukuse, oblike i dekoracije koje \u010Dine Slatkoteka krofne jedinstvenim.\nKrofne koje nastaju iz ljubavi princeze imaju tu mo\u0107 da spoje krajnosti u savr\u0161eno zadovoljstvo, gde tradicionalni recepti na\u0161ih baka i najkvalitetniji sastojci i prelivi, uz moderno pakovanje i dekoraciju osvajaju na prvi pogled.\nSlatkoteka krofne osvajaju i na\u0161e bake, \u010Dije smo tradicionalne recepte pretvorili u poslasticu koja sve vra\u0107a u detinjstvo. Sada ovde \u017Eive krofne, slatke i slane, svih ukusa i oblika: dostupne svima za degustaciju ili preterivanje, u svakom slu\u010Daju za u\u017Eivanje."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": []
+      },
+      {
+        "SuggestionDate": "0001-01-01T00:00:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "CCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Catering\u002B",
+                "Id": 1,
+                "Description": "Profesionalna usluga keteringa\nSve\u017Ee, brzo, ukusno\nNa tr\u017Ei\u0161tu Srbije postojimo od 2003. godine. Od samog osnivanja cilj na\u0161eg poslovanja je obezbe\u0111ivanje usluga keteringa na najvi\u0161em nivou za klijente koji prepoznaju kvalitet. Stoga smo posebnu pa\u017Enju posvetili infrastrukturi i organizaciji poslovanja. Posedujemo savremenu kuhinju velikog kapaciteta, opremljenu najkvalitetnijom profesionalnom opremom, koja ispunjava sve HACCP standarde za pripremu hrane.\nZa vas kuvamo i organizujemo, kada planirate:\n-koktele, proslave, poslovne ru\u010Dkove i sve\u010Dane ve\u010Dere na lokacijama po \u017Eelji, uz uslugu profesionalnih i uniformisanih konobara\n-ishranu zaposlenih na dnevnoj bazi(sa pripremom u na\u0161oj kuhinji za manji broj ljudi i sa pripremom u kuhinji na lokaciji za ve\u0107i broj ljudi)\n-organizaciju dnevne dostave pi\u0107a, sokova, kafe, sanitarnih proizvoda, kao i svih ostalih proizvoda iz maloprodajne lokacije klijenata, po maloprodajnim cenama."
+              },
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Slatkoteka",
+                "Id": 3,
+                "Description": "Dobro do\u0161li. Ovo je Slatkoteka pri\u010Da. Ugasite svetlo i  u\u0161u\u0161kajte se, jer ulazite u \u010Darobni svet krofni, slatki\u0161a i iznena\u0111enja.\nSlatkoteka je ljubavna pri\u010Da. U toj pri\u010Di, princeza se zaljubila u krofne i tako je nastala Slatkoteka. Dok princeza \u010Deka svog princa, ona vredno radi i otkriva nove ukuse, oblike i dekoracije koje \u010Dine Slatkoteka krofne jedinstvenim.\nKrofne koje nastaju iz ljubavi princeze imaju tu mo\u0107 da spoje krajnosti u savr\u0161eno zadovoljstvo, gde tradicionalni recepti na\u0161ih baka i najkvalitetniji sastojci i prelivi, uz moderno pakovanje i dekoraciju osvajaju na prvi pogled.\nSlatkoteka krofne osvajaju i na\u0161e bake, \u010Dije smo tradicionalne recepte pretvorili u poslasticu koja sve vra\u0107a u detinjstvo. Sada ovde \u017Eive krofne, slatke i slane, svih ukusa i oblika: dostupne svima za degustaciju ili preterivanje, u svakom slu\u010Daju za u\u017Eivanje."
+              },
+              {
+                "Name": "Ketering\u0026Catering",
+                "Id": 4,
+                "Description": "UKUSNA JELA \u0026 KVALITETNI SASTOJCI\nSvako jelo pripremamo s ljubavlju i samo koriste\u0107i najkvalitetnije sastojke.\nDosta vremena provodimo kako bi Va\u0161u proslavu u\u010Dinili jedinstvenom.\nOrganizujemo sve od po\u010Detka do kraja, a rezultat je ukusna hrana, izvrsna usluga i vrhunska prezentacija."
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "DDDDDDDDDDDDDdddd",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Fabrika kiflica",
+                "Id": 0,
+                "Description": "Uvek sve\u017Ee kiflice\nDoma\u0107e kiflice bez aditiva i industrijskog kvasca, uvek sve\u017Ee, ru\u010Dno motane i bogato punjene.\nUkoliko se odlu\u010Dite za 4 ili vi\u0161e kilograma, ne morate da razmi\u0161ljate o pla\u0107anju dostave, bi\u0107e besplatna na teritoriji grada. Naravno, ukoliko vam je lak\u0161e, va\u0161e spremne i vru\u0107e kiflice vas mogu \u010Dekati i kod nas u Bra\u0107e Ribnikar 56. Uverite se sami u kvalitet na\u0161ih proizvoda."
+              },
+              {
+                "Name": "Catering\u002B",
+                "Id": 1,
+                "Description": "Profesionalna usluga keteringa\nSve\u017Ee, brzo, ukusno\nNa tr\u017Ei\u0161tu Srbije postojimo od 2003. godine. Od samog osnivanja cilj na\u0161eg poslovanja je obezbe\u0111ivanje usluga keteringa na najvi\u0161em nivou za klijente koji prepoznaju kvalitet. Stoga smo posebnu pa\u017Enju posvetili infrastrukturi i organizaciji poslovanja. Posedujemo savremenu kuhinju velikog kapaciteta, opremljenu najkvalitetnijom profesionalnom opremom, koja ispunjava sve HACCP standarde za pripremu hrane.\nZa vas kuvamo i organizujemo, kada planirate:\n-koktele, proslave, poslovne ru\u010Dkove i sve\u010Dane ve\u010Dere na lokacijama po \u017Eelji, uz uslugu profesionalnih i uniformisanih konobara\n-ishranu zaposlenih na dnevnoj bazi(sa pripremom u na\u0161oj kuhinji za manji broj ljudi i sa pripremom u kuhinji na lokaciji za ve\u0107i broj ljudi)\n-organizaciju dnevne dostave pi\u0107a, sokova, kafe, sanitarnih proizvoda, kao i svih ostalih proizvoda iz maloprodajne lokacije klijenata, po maloprodajnim cenama."
+              },
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Slatkoteka",
+                "Id": 3,
+                "Description": "Dobro do\u0161li. Ovo je Slatkoteka pri\u010Da. Ugasite svetlo i  u\u0161u\u0161kajte se, jer ulazite u \u010Darobni svet krofni, slatki\u0161a i iznena\u0111enja.\nSlatkoteka je ljubavna pri\u010Da. U toj pri\u010Di, princeza se zaljubila u krofne i tako je nastala Slatkoteka. Dok princeza \u010Deka svog princa, ona vredno radi i otkriva nove ukuse, oblike i dekoracije koje \u010Dine Slatkoteka krofne jedinstvenim.\nKrofne koje nastaju iz ljubavi princeze imaju tu mo\u0107 da spoje krajnosti u savr\u0161eno zadovoljstvo, gde tradicionalni recepti na\u0161ih baka i najkvalitetniji sastojci i prelivi, uz moderno pakovanje i dekoraciju osvajaju na prvi pogled.\nSlatkoteka krofne osvajaju i na\u0161e bake, \u010Dije smo tradicionalne recepte pretvorili u poslasticu koja sve vra\u0107a u detinjstvo. Sada ovde \u017Eive krofne, slatke i slane, svih ukusa i oblika: dostupne svima za degustaciju ili preterivanje, u svakom slu\u010Daju za u\u017Eivanje."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": []
+      }
+    ],
+    "AcceptedSuggestions": false
+  },
+  "8": {
+    "RequestDate": "2021-06-07T12:49:47.9690521+02:00",
+    "Name": "Proslava bree",
+    "Type": null,
+    "DateTime": "2021-06-07T12:49:47.9690521+02:00",
+    "NumberOfGuests": 3,
+    "Description": "blabla opis",
+    "GuestList": null,
+    "OrganizerUsername": "mmartinovic",
+    "ClientUsername": "jadranka88",
+    "SocialGatheringSuggestions": [
+      {
+        "SuggestionDate": "0001-01-01T00:00:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "EEEEEEEEEEEEEEEEEEEEEEEEEEEE",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Slatkoteka",
+                "Id": 3,
+                "Description": "Dobro do\u0161li. Ovo je Slatkoteka pri\u010Da. Ugasite svetlo i  u\u0161u\u0161kajte se, jer ulazite u \u010Darobni svet krofni, slatki\u0161a i iznena\u0111enja.\nSlatkoteka je ljubavna pri\u010Da. U toj pri\u010Di, princeza se zaljubila u krofne i tako je nastala Slatkoteka. Dok princeza \u010Deka svog princa, ona vredno radi i otkriva nove ukuse, oblike i dekoracije koje \u010Dine Slatkoteka krofne jedinstvenim.\nKrofne koje nastaju iz ljubavi princeze imaju tu mo\u0107 da spoje krajnosti u savr\u0161eno zadovoljstvo, gde tradicionalni recepti na\u0161ih baka i najkvalitetniji sastojci i prelivi, uz moderno pakovanje i dekoraciju osvajaju na prvi pogled.\nSlatkoteka krofne osvajaju i na\u0161e bake, \u010Dije smo tradicionalne recepte pretvorili u poslasticu koja sve vra\u0107a u detinjstvo. Sada ovde \u017Eive krofne, slatke i slane, svih ukusa i oblika: dostupne svima za degustaciju ili preterivanje, u svakom slu\u010Daju za u\u017Eivanje."
+              },
+              {
+                "Name": "Ketering\u0026Catering",
+                "Id": 4,
+                "Description": "UKUSNA JELA \u0026 KVALITETNI SASTOJCI\nSvako jelo pripremamo s ljubavlju i samo koriste\u0107i najkvalitetnije sastojke.\nDosta vremena provodimo kako bi Va\u0161u proslavu u\u010Dinili jedinstvenom.\nOrganizujemo sve od po\u010Detka do kraja, a rezultat je ukusna hrana, izvrsna usluga i vrhunska prezentacija."
+              },
+              {
+                "Name": "Medino bend",
+                "Id": 5,
+                "Description": "MEDINO BEND je nastao 01. septembra 2006. godine u Beogradu. Svojim radom, uporno\u0161\u0107u i posve\u0107eno\u0161\u0107u poslu, uspeli smo da izgradimo brend i ime koje je prepoznatljivo! Za Vas sviramo sve vrste sve\u010Danosti i nudimo provod po kome \u0107ete nas dugo pamtiti! Pozitivna energija, osmeh i profesionalnost su odlike ljudi koji \u010Dine ovaj bend. Svako od nas, na sebi svojstven na\u010Din ovu pri\u010Du izdvaja od drugih. www.medinobend.rs je mesto gde mozete pogledati najbolji BEND ZA SVADBE , bend za punoletstva , bend za korporativne proslave - Medino bend"
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Medino bend",
+                "Id": 5,
+                "Description": "MEDINO BEND je nastao 01. septembra 2006. godine u Beogradu. Svojim radom, uporno\u0161\u0107u i posve\u0107eno\u0161\u0107u poslu, uspeli smo da izgradimo brend i ime koje je prepoznatljivo! Za Vas sviramo sve vrste sve\u010Danosti i nudimo provod po kome \u0107ete nas dugo pamtiti! Pozitivna energija, osmeh i profesionalnost su odlike ljudi koji \u010Dine ovaj bend. Svako od nas, na sebi svojstven na\u010Din ovu pri\u010Du izdvaja od drugih. www.medinobend.rs je mesto gde mozete pogledati najbolji BEND ZA SVADBE , bend za punoletstva , bend za korporativne proslave - Medino bend"
+              },
+              {
+                "Name": "Aleksandar Sofronijevi\u0107",
+                "Id": 6,
+                "Description": "Aleksandar Aca Sofronijevi\u0107 je jedan od trenutno najpopularnijih mladih muzi\u010Dara u Srbiji, bez \u010Dijeg se orkestra ne mo\u017Ee zamisliti ni jedan koncert doma\u0107ih zvezda narodne i folk muzike, kao ni svadbe, kr\u0161tenja, i druga slavlja."
+              },
+              {
+                "Name": "Orkestar End\u017Eija Mavri\u0107a",
+                "Id": 7,
+                "Description": "End\u017Ei Mavri\u0107 sa svojom muzi\u010Dkim saradnicima \u010Desto gostuje u Grand emsijama. Sa druge strane pored brojnih gostovanja bio je jedan od aran\u017Eera na projektu Zvezde Granda Hitovi Za Sva Vremena.\nOrkestar End\u017Eija Mavri\u0107a mo\u017Eete anga\u017Eovati za razli\u010Dite tipova veselja, kako u Srbiji tako \u0161irom Evrope."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": []
+      },
+      {
+        "SuggestionDate": "0001-01-01T00:00:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "EEEEEEEEEEEEEEEEEEEEEEEEEEEE",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Slatkoteka",
+                "Id": 3,
+                "Description": "Dobro do\u0161li. Ovo je Slatkoteka pri\u010Da. Ugasite svetlo i  u\u0161u\u0161kajte se, jer ulazite u \u010Darobni svet krofni, slatki\u0161a i iznena\u0111enja.\nSlatkoteka je ljubavna pri\u010Da. U toj pri\u010Di, princeza se zaljubila u krofne i tako je nastala Slatkoteka. Dok princeza \u010Deka svog princa, ona vredno radi i otkriva nove ukuse, oblike i dekoracije koje \u010Dine Slatkoteka krofne jedinstvenim.\nKrofne koje nastaju iz ljubavi princeze imaju tu mo\u0107 da spoje krajnosti u savr\u0161eno zadovoljstvo, gde tradicionalni recepti na\u0161ih baka i najkvalitetniji sastojci i prelivi, uz moderno pakovanje i dekoraciju osvajaju na prvi pogled.\nSlatkoteka krofne osvajaju i na\u0161e bake, \u010Dije smo tradicionalne recepte pretvorili u poslasticu koja sve vra\u0107a u detinjstvo. Sada ovde \u017Eive krofne, slatke i slane, svih ukusa i oblika: dostupne svima za degustaciju ili preterivanje, u svakom slu\u010Daju za u\u017Eivanje."
+              },
+              {
+                "Name": "Ketering\u0026Catering",
+                "Id": 4,
+                "Description": "UKUSNA JELA \u0026 KVALITETNI SASTOJCI\nSvako jelo pripremamo s ljubavlju i samo koriste\u0107i najkvalitetnije sastojke.\nDosta vremena provodimo kako bi Va\u0161u proslavu u\u010Dinili jedinstvenom.\nOrganizujemo sve od po\u010Detka do kraja, a rezultat je ukusna hrana, izvrsna usluga i vrhunska prezentacija."
+              },
+              {
+                "Name": "Medino bend",
+                "Id": 5,
+                "Description": "MEDINO BEND je nastao 01. septembra 2006. godine u Beogradu. Svojim radom, uporno\u0161\u0107u i posve\u0107eno\u0161\u0107u poslu, uspeli smo da izgradimo brend i ime koje je prepoznatljivo! Za Vas sviramo sve vrste sve\u010Danosti i nudimo provod po kome \u0107ete nas dugo pamtiti! Pozitivna energija, osmeh i profesionalnost su odlike ljudi koji \u010Dine ovaj bend. Svako od nas, na sebi svojstven na\u010Din ovu pri\u010Du izdvaja od drugih. www.medinobend.rs je mesto gde mozete pogledati najbolji BEND ZA SVADBE , bend za punoletstva , bend za korporativne proslave - Medino bend"
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Medino bend",
+                "Id": 5,
+                "Description": "MEDINO BEND je nastao 01. septembra 2006. godine u Beogradu. Svojim radom, uporno\u0161\u0107u i posve\u0107eno\u0161\u0107u poslu, uspeli smo da izgradimo brend i ime koje je prepoznatljivo! Za Vas sviramo sve vrste sve\u010Danosti i nudimo provod po kome \u0107ete nas dugo pamtiti! Pozitivna energija, osmeh i profesionalnost su odlike ljudi koji \u010Dine ovaj bend. Svako od nas, na sebi svojstven na\u010Din ovu pri\u010Du izdvaja od drugih. www.medinobend.rs je mesto gde mozete pogledati najbolji BEND ZA SVADBE , bend za punoletstva , bend za korporativne proslave - Medino bend"
+              },
+              {
+                "Name": "Aleksandar Sofronijevi\u0107",
+                "Id": 6,
+                "Description": "Aleksandar Aca Sofronijevi\u0107 je jedan od trenutno najpopularnijih mladih muzi\u010Dara u Srbiji, bez \u010Dijeg se orkestra ne mo\u017Ee zamisliti ni jedan koncert doma\u0107ih zvezda narodne i folk muzike, kao ni svadbe, kr\u0161tenja, i druga slavlja."
+              },
+              {
+                "Name": "Orkestar End\u017Eija Mavri\u0107a",
+                "Id": 7,
+                "Description": "End\u017Ei Mavri\u0107 sa svojom muzi\u010Dkim saradnicima \u010Desto gostuje u Grand emsijama. Sa druge strane pored brojnih gostovanja bio je jedan od aran\u017Eera na projektu Zvezde Granda Hitovi Za Sva Vremena.\nOrkestar End\u017Eija Mavri\u0107a mo\u017Eete anga\u017Eovati za razli\u010Dite tipova veselja, kako u Srbiji tako \u0161irom Evrope."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": []
+      }
+    ],
+    "AcceptedSuggestions": false
   }
 }
