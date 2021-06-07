@@ -27,6 +27,20 @@ namespace OrganizeIt.backend
             loadSocialGatherings();
         }
 
+        public static void LoadAll()
+        {
+            Users = LoadUsers();
+            Collaborators = LoadCollaborators();
+            loadSocialGatherings();
+        }
+
+        public static void SaveAll()
+        {
+            SaveUsers();
+            SaveCollaborators();
+            saveSocialGatherings();
+        }
+
         public static Dictionary<string, User> LoadUsers()
         {
             var usersDataDir = DataDir + "users.json";
@@ -268,18 +282,15 @@ namespace OrganizeIt.backend
 
         public static void AddGathering(SocialGathering socialGathering)
         {
-            var users = LoadUsers();
-            loadSocialGatherings(users);
-            users[socialGathering.Client.Username].SocialGatherings.Add(socialGathering);
-            users[socialGathering.Organizer.Username].SocialGatherings.Add(socialGathering);
-            //socialGathering.Client.SocialGatherings.Add(socialGathering);
-            //socialGathering.Organizer.SocialGatherings.Add(socialGathering);
-            SaveUsers(users);
-            saveSocialGatherings(users);
+            LoadAll();
+            Users[socialGathering.Client.Username].SocialGatherings.Add(socialGathering);
+            Users[socialGathering.Organizer.Username].SocialGatherings.Add(socialGathering);
+            SaveAll();
         }
 
         public static void AddSuggestion(SocialGatheringSuggestion socialGatheringSuggestion, SocialGathering socialGathering)
         {
+            LoadAll();
             var clientUsername = socialGathering.Client.Username;
             var organizerUsername = socialGathering.Organizer.Username;
 
@@ -305,18 +316,50 @@ namespace OrganizeIt.backend
 
             Users[clientUsername].SocialGatherings = gatheringsClient;
             Users[organizerUsername].SocialGatherings = gatheringsOrganizer;
+            SaveAll();
         }
 
         public static void AddSuggestionReply(SocialGatheringSuggestionReply socialGatheringSuggestionReply, SocialGatheringSuggestion socialGatheringSuggestion)
         {
-            var socialGathering = socialGatheringSuggestion.SocialGathering;
-            var client = socialGathering.Client;
-            var organizer = socialGathering.Organizer;
+            LoadAll();
+            var clientUsername = socialGatheringSuggestion.SocialGathering.Client.Username;
+            var organizerUsername = socialGatheringSuggestion.SocialGathering.Organizer.Username;
 
-            socialGatheringSuggestion.SuggestionReplies.Add(socialGatheringSuggestionReply);
+            var gatheringsClient = Users[clientUsername].SocialGatherings;
 
-            client.SocialGatheringSuggestionReplies.Add(socialGatheringSuggestionReply);
-            organizer.SocialGatheringSuggestionReplies.Add(socialGatheringSuggestionReply);
+            foreach (var gathering in gatheringsClient)
+            {
+                if (gathering.RequestDate == socialGatheringSuggestion.SocialGathering.RequestDate)
+                {
+                    foreach (var sugggestion in gathering.SocialGatheringSuggestions)
+                    {
+                        if (sugggestion == socialGatheringSuggestion)
+                        {
+                            sugggestion.SuggestionReplies.Add(socialGatheringSuggestionReply);
+                        }
+                    }
+                }
+            }
+
+            var gatheringsOrganizer = Users[organizerUsername].SocialGatherings;
+
+            foreach (var gathering in gatheringsOrganizer)
+            {
+                if (gathering.RequestDate == socialGatheringSuggestion.SocialGathering.RequestDate)
+                {
+                    foreach (var sugggestion in gathering.SocialGatheringSuggestions)
+                    {
+                        if (sugggestion == socialGatheringSuggestion)
+                        {
+                            sugggestion.SuggestionReplies.Add(socialGatheringSuggestionReply);
+                        }
+                    }
+                }
+            }
+
+            Users[clientUsername].SocialGatherings = gatheringsClient;
+            Users[organizerUsername].SocialGatherings = gatheringsOrganizer;
+            SaveAll();
         }
 
         public static List<SocialGathering> GetGatheringsByStatus(List<SocialGathering> socialGatherings, bool acceptedSuggestions)
