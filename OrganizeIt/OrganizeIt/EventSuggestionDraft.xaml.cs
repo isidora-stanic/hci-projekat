@@ -105,12 +105,23 @@ namespace OrganizeIt
         {
             Predlog.CategorySuggestions = MainWindowSekcije.ToList();
 
+
+            backend.Backend.LoadAll();
+
+            
+
+
+
+
+
+
+
             var users = backend.Backend.LoadUsers();
             var user = backend.Backend.LoggedInUser;
             if (user == null) { user = users["mmartinovic"]; }
             var cl = users["jadranka88"];
             var manif = new SocialGathering { Client = cl, Organizer = user, DateTime = DateTime.Now, Description = "blabla opis", Name = "Proslava bree", NumberOfGuests = 3, RequestDate = DateTime.Now, SocialGatheringSuggestions = new List<SocialGatheringSuggestion>() };
-            manif.SocialGatheringSuggestions.Add(Predlog);
+            /*manif.SocialGatheringSuggestions.Add(Predlog);
             backend.Backend.loadSocialGatherings(users);
             cl.SocialGatherings.Add(manif);
             Predlog.SocialGathering = manif;
@@ -121,9 +132,13 @@ namespace OrganizeIt
 
             // ovo ce ici u drugi prozor--------------
             backend.Backend.loadSocialGatherings(users);
-            cl = users["jadranka88"];
+            cl = users["jadranka88"];*/
 
-            NavigationService.Navigate(new EventSuggestionView(cl.SocialGatherings[0].SocialGatheringSuggestions[0]));
+            backend.Backend.AddGathering(manif);
+            Predlog.SocialGathering = manif;
+            backend.Backend.AddSuggestion(Predlog, manif);
+
+            NavigationService.Navigate(new EventSuggestionView(Predlog));
         }
 
         private void OtkaziBtn_Click(object sender, RoutedEventArgs e)
