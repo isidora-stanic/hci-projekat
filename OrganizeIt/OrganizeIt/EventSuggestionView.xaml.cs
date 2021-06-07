@@ -42,7 +42,7 @@ namespace OrganizeIt
 
             Predlog = predlog;
             Odgovor = new SocialGatheringSuggestionReply {
-                CategoryComments = new Dictionary<SocialGatheringCategorySuggestion, string>(),
+                CategoryComments = new Dictionary<string, string>(),
                 ReplyDate = DateTime.Now,
                 SocialGatheringSuggestion = Predlog
             };
@@ -61,7 +61,7 @@ namespace OrganizeIt
 
             Odgovor = new SocialGatheringSuggestionReply
             {
-                CategoryComments = new Dictionary<SocialGatheringCategorySuggestion, string>(),
+                CategoryComments = new Dictionary<string, string>(),
                 ReplyDate = DateTime.Now,
                 SocialGatheringSuggestion = Predlog,
                 SuggestionsAccepted = true,
@@ -88,7 +88,7 @@ namespace OrganizeIt
         public void NamestiOdgovor()
         {
             foreach (SekcijaKomentarDTO sekcijaKom in SekcijeDTOsKojeSeVide)
-                Odgovor.CategoryComments[sekcijaKom.Sekcija] = sekcijaKom.Komentar;
+                Odgovor.CategoryComments[sekcijaKom.Sekcija.CategoryTitle] = sekcijaKom.Komentar;
         }
 
         private void PosaljiBtn_Click(object sender, RoutedEventArgs e)
