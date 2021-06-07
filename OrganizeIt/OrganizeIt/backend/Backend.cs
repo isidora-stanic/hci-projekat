@@ -333,7 +333,7 @@ namespace OrganizeIt.backend
                 {
                     foreach (var sugggestion in gathering.SocialGatheringSuggestions)
                     {
-                        if (sugggestion == socialGatheringSuggestion)
+                        if (sugggestion.SuggestionDate == socialGatheringSuggestion.SuggestionDate)
                         {
                             sugggestion.SuggestionReplies.Add(socialGatheringSuggestionReply);
                         }
@@ -349,7 +349,7 @@ namespace OrganizeIt.backend
                 {
                     foreach (var sugggestion in gathering.SocialGatheringSuggestions)
                     {
-                        if (sugggestion == socialGatheringSuggestion)
+                        if (sugggestion.SuggestionDate == socialGatheringSuggestion.SuggestionDate)
                         {
                             sugggestion.SuggestionReplies.Add(socialGatheringSuggestionReply);
                         }
