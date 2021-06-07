@@ -24,6 +24,7 @@ namespace OrganizeIt.backend
         {
             Users = LoadUsers();
             Collaborators = LoadCollaborators();
+            loadSocialGatherings();
         }
 
         public static Dictionary<string, User> LoadUsers()
@@ -37,6 +38,13 @@ namespace OrganizeIt.backend
         {
             var usersDataDir = DataDir + "users.json";
             var usersString = JsonSerializer.Serialize(usersDict, serializerOptions);
+            File.WriteAllText(usersDataDir, usersString);
+        }
+
+        public static void SaveUsers()
+        {
+            var usersDataDir = DataDir + "users.json";
+            var usersString = JsonSerializer.Serialize(Users, serializerOptions);
             File.WriteAllText(usersDataDir, usersString);
         }
 
@@ -68,6 +76,13 @@ namespace OrganizeIt.backend
         {
             var collaboratorsDataDir = DataDir + "collaborators.json";
             var collaboratorsString = JsonSerializer.Serialize(collaboratorsDict, serializerOptions);
+            File.WriteAllText(collaboratorsDataDir, collaboratorsString);
+        }
+
+        public static void SaveCollaborators()
+        {
+            var collaboratorsDataDir = DataDir + "collaborators.json";
+            var collaboratorsString = JsonSerializer.Serialize(Collaborators, serializerOptions);
             File.WriteAllText(collaboratorsDataDir, collaboratorsString);
         }
 
@@ -160,6 +175,29 @@ namespace OrganizeIt.backend
             File.WriteAllText(socialGatheringsDataDir, socialGatheringsString);
         }
 
+        public static void saveSocialGatherings()
+        {
+            var clientsList = getUsersOfType(UserType.Client, Users);
+            var socialGatheringsDict = new Dictionary<int, SocialGathering>();
+            var num = 0;
+            foreach (var client in clientsList)
+            {
+                if (client.SocialGatherings == null)
+                {
+                    continue;
+                }
+                foreach (var socialGathering in client.SocialGatherings)
+                {
+                    socialGatheringsDict.Add(num, socialGathering);
+                    num++;
+                }
+            }
+
+            var socialGatheringsDataDir = DataDir + "social_gatherings.json";
+            var socialGatheringsString = JsonSerializer.Serialize(socialGatheringsDict, serializerOptions);
+            File.WriteAllText(socialGatheringsDataDir, socialGatheringsString);
+        }
+
         public static void loadSocialGatherings(Dictionary<string, User> usersDict)
         {
             var socialGatheringsDataDir = DataDir + Path.DirectorySeparatorChar + "social_gatherings.json";
@@ -172,6 +210,40 @@ namespace OrganizeIt.backend
                 socialGathering.Client = client;
 
                 var organizer = usersDict[socialGathering.OrganizerUsername];
+                socialGathering.Organizer = organizer;
+
+                client.SocialGatherings.Add(socialGathering);
+                organizer.SocialGatherings.Add(socialGathering);
+
+                foreach (var suggestion in socialGathering.SocialGatheringSuggestions)
+                {
+                    suggestion.SocialGathering = socialGathering;
+                    suggestion.Client = client;
+                    suggestion.Organizer = organizer;
+                    foreach (var reply in suggestion.SuggestionReplies)
+                    {
+                        reply.SocialGatheringSuggestion = suggestion;
+                        client.SocialGatheringSuggestionReplies.Add(reply);
+                        organizer.SocialGatheringSuggestionReplies.Add(reply);
+                    }
+                    client.SocialGatheringSuggestions.Add(suggestion);
+                    organizer.SocialGatheringSuggestions.Add(suggestion);
+                }
+            }
+        }
+
+        public static void loadSocialGatherings()
+        {
+            var socialGatheringsDataDir = DataDir + Path.DirectorySeparatorChar + "social_gatherings.json";
+            var jsonString = File.ReadAllText(socialGatheringsDataDir);
+            var socialGatheringsDict = JsonSerializer.Deserialize<Dictionary<int, SocialGathering>>(jsonString);
+
+            foreach (var socialGathering in socialGatheringsDict.Values)
+            {
+                var client = Users[socialGathering.ClientUsername];
+                socialGathering.Client = client;
+
+                var organizer = Users[socialGathering.OrganizerUsername];
                 socialGathering.Organizer = organizer;
 
                 client.SocialGatherings.Add(socialGathering);
@@ -208,13 +280,31 @@ namespace OrganizeIt.backend
 
         public static void AddSuggestion(SocialGatheringSuggestion socialGatheringSuggestion, SocialGathering socialGathering)
         {
-            var client = socialGathering.Client;
-            var organizer = socialGathering.Organizer;
+            var clientUsername = socialGathering.Client.Username;
+            var organizerUsername = socialGathering.Organizer.Username;
 
-            socialGathering.SocialGatheringSuggestions.Add(socialGatheringSuggestion);
+            var gatheringsClient = Users[clientUsername].SocialGatherings;
 
-            client.SocialGatheringSuggestions.Add(socialGatheringSuggestion);
-            organizer.SocialGatheringSuggestions.Add(socialGatheringSuggestion);
+            foreach (var gathering in gatheringsClient)
+            {
+                if (gathering.RequestDate == socialGathering.RequestDate)
+                {
+                    gathering.SocialGatheringSuggestions.Add(socialGatheringSuggestion);
+                }
+            }
+
+            var gatheringsOrganizer = Users[organizerUsername].SocialGatherings;
+
+            foreach (var gathering in gatheringsOrganizer)
+            {
+                if (gathering.RequestDate == socialGathering.RequestDate)
+                {
+                    gathering.SocialGatheringSuggestions.Add(socialGatheringSuggestion);
+                }
+            }
+
+            Users[clientUsername].SocialGatherings = gatheringsClient;
+            Users[organizerUsername].SocialGatherings = gatheringsOrganizer;
         }
 
         public static void AddSuggestionReply(SocialGatheringSuggestionReply socialGatheringSuggestionReply, SocialGatheringSuggestion socialGatheringSuggestion)
