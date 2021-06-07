@@ -1,4 +1,5 @@
-﻿using OrganizeIt.backend.social_gatherings;
+﻿using MaterialDesignThemes.Wpf;
+using OrganizeIt.backend.social_gatherings;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -91,6 +92,18 @@ namespace OrganizeIt
         private void DodajManifBtn_MouseDown(object sender, MouseButtonEventArgs e)
         {
             NavigationService.Navigate(new NewEventForm());
+        }
+
+        private void PackIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            SocialGathering proslava = (SocialGathering)((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
+            NavigationService.Navigate(new SocialGatheringInfo(proslava));
+        }
+
+        private void NewLikeThis_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            SocialGathering proslava = (SocialGathering)((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
+            NavigationService.Navigate(new NewEventForm(proslava));
         }
     }
 }

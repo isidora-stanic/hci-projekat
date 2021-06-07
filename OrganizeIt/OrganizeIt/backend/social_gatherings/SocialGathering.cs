@@ -35,6 +35,7 @@ namespace OrganizeIt.backend.social_gatherings
 
         public List<SocialGatheringSuggestion> SocialGatheringSuggestions { get; set; }
 
+        [JsonIgnore]
         public bool AcceptedSuggestions { get; set; }
     }
 }

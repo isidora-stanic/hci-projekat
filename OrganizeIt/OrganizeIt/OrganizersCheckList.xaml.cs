@@ -46,17 +46,19 @@ namespace OrganizeIt
                 {
                     OrganizatorDTO dto;
                     if (o.Username.Equals(selektovanOrganizator.Username))
-                        dto = new OrganizatorDTO { Organizator = o, SlikaPutanja = backend.Backend.GetUserImagePath(o.Username), IsSelected = true};
+                        dto = new OrganizatorDTO { Organizator = o, SlikaPutanja = backend.Backend.GetUserImagePath(o.Username), IsSelected = true };
                     else
                         dto = new OrganizatorDTO { Organizator = o, SlikaPutanja = backend.Backend.GetUserImagePath(o.Username), IsSelected = false };
                     organizatori.Add(dto);
                 }
             }
-
-            foreach (User o in organizers)
+            else 
             {
-                var dto = new OrganizatorDTO { Organizator = o, SlikaPutanja = backend.Backend.GetUserImagePath(o.Username), IsSelected = false };
-                organizatori.Add(dto);
+                foreach (User o in organizers)
+                {
+                    var dto = new OrganizatorDTO { Organizator = o, SlikaPutanja = backend.Backend.GetUserImagePath(o.Username), IsSelected = false };
+                    organizatori.Add(dto);
+                }
             }
 
             OrganizerListView.ItemsSource = organizatori;
@@ -149,8 +151,8 @@ namespace OrganizeIt
         {
             if (odabranOrganizator != null)
                 Proslava.Organizer = odabranOrganizator;
-            else
-            { 
+            else if (Proslava.Organizer == null)
+            {
                 MessageBox.Show("Niste odabrali organizatora!");
                 return;
             }

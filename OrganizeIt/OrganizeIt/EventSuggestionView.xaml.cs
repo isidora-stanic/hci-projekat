@@ -63,9 +63,9 @@ namespace OrganizeIt
             {
                 CategoryComments = new Dictionary<string, string>(),
                 ReplyDate = DateTime.Now,
-                SocialGatheringSuggestion = Predlog,
-                SuggestionsAccepted = true,
+                SocialGatheringSuggestion = Predlog
             };
+            Odgovor.SuggestionsAccepted = false;
             InitSekcijeDTOs();
 
             ListToStringConverter = new ListToStringConverter();
@@ -99,6 +99,7 @@ namespace OrganizeIt
             MessageBox.Show("Slanje (cuvanje) odgovora");
 
             backend.Backend.AddSuggestionReply(Odgovor, Predlog);
+            NavigationService.Navigate(new ManifestationList());
         }
 
         private void PrihvatiBtn_Click(object sender, RoutedEventArgs e)
@@ -106,6 +107,7 @@ namespace OrganizeIt
             // cuvanje odgovora i navigacija do sledeceg prozora
             NamestiOdgovor();
             Odgovor.SuggestionsAccepted = true;
+            backend.Backend.AddSuggestionReply(Odgovor, Predlog);
             MessageBox.Show("Slanje (cuvanje) odgovora i prihvatanje");
         }
 
