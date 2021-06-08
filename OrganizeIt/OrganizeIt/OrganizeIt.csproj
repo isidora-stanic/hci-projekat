@@ -366,10 +366,10 @@
   <ItemGroup>
     <Content Include="Help\error.htm" />
     <Resource Include="Help\graph2.png" />
-    <Content Include="Help\Ime.htm" />
-    <Content Include="Help\Indeks.htm" />
+    <Content Include="Help\LoginUsername.htm" />
+    <Content Include="Help\LoginPage.htm" />
     <Content Include="Help\index.htm" />
-    <Content Include="Help\Prezime.htm" />
+    <Content Include="Help\LoginPassword.htm" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />

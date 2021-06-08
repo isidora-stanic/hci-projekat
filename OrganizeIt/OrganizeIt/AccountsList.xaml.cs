@@ -24,7 +24,6 @@ namespace OrganizeIt
     /// </summary>
     public partial class AccountsList : Page
     {
-
         private class UndoCommandObject : ICommand
         {
             private readonly AccountsList _target;
@@ -46,8 +45,6 @@ namespace OrganizeIt
                 _target.DoCommand();
             }
         }
-
-
 
         private readonly ICommand _undoCommand;
         public ICommand UndoCommand { get { return _undoCommand; } }
@@ -80,20 +77,22 @@ namespace OrganizeIt
             _undoCommand = new UndoCommandObject(this);
         }
 
-
         /* Funkcija za promenu teksta pri pretrazi klijenata */
+
         private void ClientSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             SearchClients(ClientSearch.Text);
         }
 
         /* Funkcija za promenu teksta pri pretrazi organizatora */
+
         private void OrganizerSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             SearchOrganizers(OrganizerSearch.Text);
         }
 
         /* Funkija za promenu teksta pri pretrazi klijenata */
+
         private void CollaboratorSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             SearchCollaborators(CollaboratorSearch.Text);
@@ -102,6 +101,7 @@ namespace OrganizeIt
         /* Funkcija za brisanje korisnika, poziva se pri klikom na ikonicu */
         /* Gleda tip korisnika, i na osnovu toga brise iz odredjene liste */
         /* Na osnovu tipa ubacuje u stack obrisanih, kako bi mogao undo */
+
         private void DeleteButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             User u = (User)((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
@@ -137,15 +137,16 @@ namespace OrganizeIt
                             OrganizerListView.ItemsSource = organizers;
                             deletedOrganizers.Push(u);
                             break;
-                        }   
+                        }
                     }
                 }
             }
         }
 
-        /* Doscstring 
+        /* Doscstring
          * Funkcija za brisanje saradnika iz liste saradnika
          */
+
         private void DeleteCollabButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             SocialGatheringCollaborator u = (SocialGatheringCollaborator)
@@ -174,6 +175,7 @@ namespace OrganizeIt
         }
 
         /* Funkcija koja se poziva kad se odabere izmena korisnika */
+
         private void EditButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             User v = (User)((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
@@ -181,17 +183,18 @@ namespace OrganizeIt
         }
 
         /* Funkcija koja se pozove kad se odabere izmena saradnika */
+
         private void EditCollabButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            SocialGatheringCollaborator collab 
+            SocialGatheringCollaborator collab
                 = (SocialGatheringCollaborator)((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
             NavigationService.Navigate(new EditSaradnik()); //collab
         }
-        
 
         /* Ova funkcija se poziva kada se pozove Undo komanda */
         /* Pozivom ove komande se sa steka vraca u listu korisnika */
         /* poslednji obrisani. Stack se bira u zavisnosti od aktivnog taba */
+
         private void DoCommand()
         {
             TabItem ti = TabCtrl.SelectedItem as TabItem;
@@ -219,6 +222,7 @@ namespace OrganizeIt
         }
 
         /* Ova funkcija se poziva pri pozivu pretrage */
+
         public void SearchClients(string query)
         {
             var filteredClients =
@@ -234,6 +238,7 @@ namespace OrganizeIt
         }
 
         /* Ova funkcija se poziva pri pozivu pretrage */
+
         public void SearchOrganizers(string query)
         {
             var filteredOrganizers =
@@ -259,7 +264,6 @@ namespace OrganizeIt
                 = new ObservableCollection<SocialGatheringCollaborator>(filteredCollaborators);
             CollaboratorListView.ItemsSource = filteredCollaboratorsObservable;
         }
-
 
         private void AddClientIcon_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -290,9 +294,7 @@ namespace OrganizeIt
             backend.Backend.LoggedInUser = null;
             NavigationService.Navigate(new Login());
         }
-
     }
-
 
     public class GenderToStringConverter : IValueConverter
     {
@@ -310,5 +312,4 @@ namespace OrganizeIt
             return Gender.Female;
         }
     }
-
 }

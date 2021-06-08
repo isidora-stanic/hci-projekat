@@ -1,16 +1,17 @@
 ﻿<Page x:Class="OrganizeIt.AccountsList"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+      xmlns:l="clr-namespace:HelpSistem"
       xmlns:local="clr-namespace:OrganizeIt"
-      xmlns:backend="clr-namespace:OrganizeIt.backend.users"
       xmlns:colaborators="clr-namespace:OrganizeIt.backend.social_gatherings"
-      mc:Ignorable="d" 
+      xmlns:backend="clr-namespace:OrganizeIt.backend.users"
+      mc:Ignorable="d"
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="AccountsList">
+      Title="AccountsList" l:HelpProvider.HelpKey="AccountsListPage">
     <Page.Resources>
         <local:GenderToStringConverter x:Key="GenderToStringConverter" />
         <DataTemplate x:Key="PersonTemplate" DataType="{x:Type backend:User}">
@@ -41,17 +42,17 @@
                     </WrapPanel>
                 </StackPanel>
                 <WrapPanel Grid.Column="2" HorizontalAlignment="Right">
-                    <materialDesign:PackIcon x:Name="DeleteButton" 
+                    <materialDesign:PackIcon x:Name="DeleteButton"
                                          Margin="15" FontSize="20" Kind="GarbageCan" MouseDown="DeleteButton_MouseDown"
                                          Width="20" Height="20" Background="Transparent"></materialDesign:PackIcon>
                     <Separator></Separator>
-                    <materialDesign:PackIcon x:Name="EditButton"  
+                    <materialDesign:PackIcon x:Name="EditButton"
                                          Margin="15" FontSize="20" Kind="Pencil" MouseDown="EditButton_MouseDown"
                                          Width="20" Height="20" Background="Transparent"></materialDesign:PackIcon>
                 </WrapPanel>
             </Grid>
         </DataTemplate>
-        
+
         <DataTemplate x:Key="CollaboratorTemplate" DataType="{x:Type colaborators:SocialGatheringCollaborator}">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -67,18 +68,18 @@
                     </WrapPanel>
                 </StackPanel>
                 <WrapPanel Grid.Column="2" HorizontalAlignment="Right">
-                    <materialDesign:PackIcon x:Name="DeleteCollabButton" 
+                    <materialDesign:PackIcon x:Name="DeleteCollabButton"
                                          Margin="15" FontSize="20" Kind="GarbageCan" MouseDown="DeleteCollabButton_MouseDown"
                                          Width="20" Height="20" Background="Transparent"></materialDesign:PackIcon>
                     <Separator></Separator>
-                    <materialDesign:PackIcon x:Name="EditCollabButton"  
+                    <materialDesign:PackIcon x:Name="EditCollabButton"
                                          Margin="15" FontSize="20" Kind="Pencil" MouseDown="EditCollabButton_MouseDown"
                                          Width="20" Height="20" Background="Transparent"></materialDesign:PackIcon>
                 </WrapPanel>
             </Grid>
         </DataTemplate>
     </Page.Resources>
-    
+
     <Page.InputBindings>
         <KeyBinding Command="{Binding UndoCommand}">
             <KeyBinding.Gesture>
@@ -86,17 +87,17 @@
             </KeyBinding.Gesture>
         </KeyBinding>
     </Page.InputBindings>
-    
-    <Grid>
+
+    <Grid FocusManager.FocusedElement="{Binding ElementName=ClientSearch}">
         <dragablz:TabablzControl x:Name="TabCtrl" TabStripPlacement="Left" Background="White">
             <dragablz:TabablzControl.InterTabController>
-                <dragablz:InterTabController/>
+                <dragablz:InterTabController />
             </dragablz:TabablzControl.InterTabController>
 
             <TabItem Header="Klijenti">
                 <DockPanel>
 
-                    <StackPanel DockPanel.Dock="Top" >
+                    <StackPanel DockPanel.Dock="Top">
                         <WrapPanel HorizontalAlignment="Right">
                             <materialDesign:PackIcon x:Name="AddClientIcon" MouseDown="AddClientIcon_MouseDown"
                                     Margin="-20 0 30 0" Background="Transparent"
@@ -107,7 +108,7 @@
                                     ToolTip="Odjava" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
-                        <Separator Margin="20 0 25 25"/>
+                        <Separator Margin="20 0 25 25" />
 
                         <WrapPanel Margin="20 0 0 7">
                             <TextBox Grid.Column="0"
@@ -115,24 +116,22 @@
                                     MinWidth="500"
                                     FontSize="20"
                                     materialDesign:HintAssist.Hint="Pretrazi klijente..."
-                                    VerticalAlignment="Center" CaretBrush="{x:Null}" 
-                                    TextChanged="ClientSearch_TextChanged"/>
+                                    VerticalAlignment="Center" CaretBrush="{x:Null}"
+                                    TextChanged="ClientSearch_TextChanged" />
                             <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
                         </WrapPanel>
                     </StackPanel>
 
-                    <ListView x:Name="ClientListView" HorizontalContentAlignment="Stretch" 
-                            ItemsSource="{Binding clients, UpdateSourceTrigger=Explicit}" 
-                            ItemTemplate="{StaticResource PersonTemplate}"/>
-                    
+                    <ListView x:Name="ClientListView" HorizontalContentAlignment="Stretch"
+                            ItemsSource="{Binding clients, UpdateSourceTrigger=Explicit}"
+                            ItemTemplate="{StaticResource PersonTemplate}" />
                 </DockPanel>
             </TabItem>
 
-            
             <TabItem Header="Organizatori">
                 <DockPanel>
-                    
-                    <StackPanel DockPanel.Dock="Top" >
+
+                    <StackPanel DockPanel.Dock="Top">
                         <WrapPanel HorizontalAlignment="Right">
                             <materialDesign:PackIcon x:Name="AddOrganizerIcon" MouseDown="AddOrganizerIcon_MouseDown"
                                     Margin="-20 0 30 0" Background="Transparent"
@@ -143,7 +142,7 @@
                                     ToolTip="Odjava" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
-                        <Separator Margin="20 0 25 25"/>
+                        <Separator Margin="20 0 25 25" />
 
                         <WrapPanel  Margin="20 0 0 7">
                             <TextBox Grid.Column="0"
@@ -151,24 +150,22 @@
                                 MinWidth="500"
                                 FontSize="20"
                                 materialDesign:HintAssist.Hint="Pretrazi organizatore..."
-                                VerticalAlignment="Center" CaretBrush="{x:Null}" 
-                                TextChanged="OrganizerSearch_TextChanged"/>
+                                VerticalAlignment="Center" CaretBrush="{x:Null}"
+                                TextChanged="OrganizerSearch_TextChanged" />
                             <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
                         </WrapPanel>
                     </StackPanel>
 
-                    <ListView x:Name="OrganizerListView" HorizontalContentAlignment="Stretch" 
-                              ItemsSource="{Binding organizers, UpdateSourceTrigger=Explicit}" 
-                              ItemTemplate="{StaticResource PersonTemplate}"/>
-
+                    <ListView x:Name="OrganizerListView" HorizontalContentAlignment="Stretch"
+                              ItemsSource="{Binding organizers, UpdateSourceTrigger=Explicit}"
+                              ItemTemplate="{StaticResource PersonTemplate}" />
                 </DockPanel>
             </TabItem>
 
-            
             <TabItem Header="Saradnici">
                 <DockPanel>
 
-                    <StackPanel DockPanel.Dock="Top" >
+                    <StackPanel DockPanel.Dock="Top">
                         <WrapPanel HorizontalAlignment="Right">
                             <materialDesign:PackIcon x:Name="AddCollaboratorIcon" MouseDown="AddCollaboratorIcon_MouseDown"
                                     Margin="-20 0 30 0" Background="Transparent"
@@ -179,7 +176,7 @@
                                     ToolTip="Odjava" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
-                        <Separator Margin="20 0 25 25"/>
+                        <Separator Margin="20 0 25 25" />
 
                         <WrapPanel  Margin="20 0 0 7">
                             <TextBox Grid.Column="0"
@@ -187,16 +184,15 @@
                                 MinWidth="500"
                                 FontSize="20"
                                 materialDesign:HintAssist.Hint="Pretrazi saradnike..."
-                                VerticalAlignment="Center" CaretBrush="{x:Null}" 
-                                TextChanged="CollaboratorSearch_TextChanged"/>
+                                VerticalAlignment="Center" CaretBrush="{x:Null}"
+                                TextChanged="CollaboratorSearch_TextChanged" />
                             <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
                         </WrapPanel>
                     </StackPanel>
 
-                    <ListView x:Name="CollaboratorListView" HorizontalContentAlignment="Stretch" 
-                              ItemsSource="{Binding collaborators, UpdateSourceTrigger=Explicit}" 
-                              ItemTemplate="{StaticResource CollaboratorTemplate}"/>
-
+                    <ListView x:Name="CollaboratorListView" HorizontalContentAlignment="Stretch"
+                              ItemsSource="{Binding collaborators, UpdateSourceTrigger=Explicit}"
+                              ItemTemplate="{StaticResource CollaboratorTemplate}" />
                 </DockPanel>
             </TabItem>
         </dragablz:TabablzControl>

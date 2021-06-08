@@ -5,22 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:OrganizeIt"
+        xmlns:l="clr-namespace:HelpSistem"
         mc:Ignorable="d"
-        Title="TodoEdit" Height="500" Width="300">
-    <DockPanel>
+        Title="TodoEdit" Height="500" Width="300" l:HelpProvider.HelpKey="TodoEditPage">
+    <DockPanel FocusManager.FocusedElement="{Binding ElementName=NameBox}">
         <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Bottom">
             <Button x:Name="CancelBtn"
-                    Margin="20" 
+                    Margin="20"
                     Content="Otkazi"
                     Click="CancelBtn_Click"
                     Style="{DynamicResource MaterialDesignOutlinedButton}" />
-            <Button x:Name="EditBtn"  
-                    Margin="20"  
-                    Content="Izmeni" 
+            <Button x:Name="EditBtn"
+                    Margin="20"
+                    Content="Izmeni"
                     Click="EditBtn_Click" />
         </WrapPanel>
         <StackPanel>
-            <TextBox x:Name="NameBox" 
+            <TextBox x:Name="NameBox"
                      materialDesign:HintAssist.Hint="Naziv zadatka"
                      Margin="20 0 20 20"
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
@@ -30,8 +31,8 @@
                      TextWrapping="Wrap"
                      AcceptsReturn="True"
                      VerticalScrollBarVisibility="Visible"
-                     materialDesign:HintAssist.Hint="Tekst stavke" 
-                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                     materialDesign:HintAssist.Hint="Tekst stavke"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      Text="{Binding Path=Description, Mode=OneWay}" />
             <ComboBox materialDesign:HintAssist.Hint="Status" Margin="20 0 20 20" x:Name="StatusBox">
                 <ComboBoxItem IsSelected="True">Status stavke</ComboBoxItem>
