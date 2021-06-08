@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrganizeIt.backend.social_gatherings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,33 @@ namespace OrganizeIt
         public NewSaradnik()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(this.username.Text == "")
+            {
+                BindingExpression binding = username.GetBindingExpression(TextBox.TextProperty);
+                binding.UpdateSource();
+                return;
+            }
+            SocialGatheringCollaborator sgc = new SocialGatheringCollaborator();
+            sgc.Description = this.description.Text;
+            sgc.Name = this.username.Text;
+
+            Dictionary<int, SocialGatheringCollaborator> collaborators = backend.Backend.LoadCollaborators();
+            sgc.Id = collaborators.Last().Key + 1;
+            collaborators.Add(sgc.Id, sgc);
+
+            backend.Backend.Collaborators = collaborators;
+
+            backend.Backend.SaveCollaborators();
+            NavigationService.Navigate(new AccountsList());
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AccountsList());
         }
     }
 }

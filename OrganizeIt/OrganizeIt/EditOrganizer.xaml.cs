@@ -45,12 +45,8 @@ namespace OrganizeIt
             string caption = "Izmena korisnika";
             MessageBoxButton btn = MessageBoxButton.YesNo;
             MessageBoxImage img = MessageBoxImage.Question;
-            if (User.Username == "" || User.FirstName == "" || User.LastName == "" || User.Email == "" || User.PhoneNumber == "")
+            if (User.Username.Length < 5 || User.FirstName == "" || User.LastName == "" || User.Email == "" || User.PhoneNumber == "")
             {
-                //this.username.BorderBrush = Brushes.Red;
-                //this.username.Text = "";
-                //this.username.Foreground = Brushes.Red;
-                //MessageBox.Show("Nijedno polje ne smije biti null");
                 return;
             }
             var result = MessageBox.Show(messageBoxText, caption, btn, img, MessageBoxResult.No);
