@@ -363,6 +363,14 @@
   <ItemGroup>
     <Resource Include="backend\data\logged_in_user.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Help\error.htm" />
+    <Resource Include="Help\graph2.png" />
+    <Content Include="Help\Ime.htm" />
+    <Content Include="Help\Indeks.htm" />
+    <Content Include="Help\index.htm" />
+    <Content Include="Help\Prezime.htm" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
