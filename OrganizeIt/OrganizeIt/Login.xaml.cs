@@ -1,4 +1,5 @@
 ﻿using OrganizeIt.backend;
+using OrganizeIt.backend.social_gatherings;
 using OrganizeIt.backend.users;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,10 @@ namespace OrganizeIt
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            //NavigationService.Navigate(new EventSuggestionDraft());
+            backend.Backend.LoadAll();
+            SocialGatheringSuggestionReply odgovor = backend.Backend.Users["jadranka88"].SocialGatheringSuggestionReplies[4];
+
+            NavigationService.Navigate(new EventSuggReplyView(odgovor));
         }
     }
 }
