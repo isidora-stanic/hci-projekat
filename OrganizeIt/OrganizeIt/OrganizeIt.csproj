@@ -368,7 +368,6 @@
     <Resource Include="Help\graph2.png" />
     <Content Include="Help\LoginUsername.htm" />
     <Content Include="Help\LoginPage.htm" />
-    <Content Include="Help\index.htm" />
     <Content Include="Help\LoginPassword.htm" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
