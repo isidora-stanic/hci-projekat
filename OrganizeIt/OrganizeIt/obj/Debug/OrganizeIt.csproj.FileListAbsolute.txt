@@ -311,3 +311,9 @@ C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\
 C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\OrganizersCheckList.g.cs
 C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\NewEventForm.baml
 C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\OrganizersCheckList.baml
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\EventSuggReplyView.g.cs
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\EventSuggReplyView.baml
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\SeatingArrangement.g.cs
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\SeatingArrangement.baml
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\SeatingReview.g.cs
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\SeatingReview.baml

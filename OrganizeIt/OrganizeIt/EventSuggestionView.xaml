@@ -90,13 +90,15 @@
             <StackPanel DockPanel.Dock="Bottom">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Button x:Name="OtkaziBtn" Margin="10" Grid.Column="0" Click="OtkaziBtn_Click" Style="{DynamicResource MaterialDesignOutlinedButton}">Otkaži</Button>
                     <Button x:Name="PrihvatiBtn" Margin="10" Grid.Column="1" Click="PrihvatiBtn_Click" Style="{DynamicResource MaterialDesignOutlinedButton}">Prihvati predlog</Button>
-                    <Button x:Name="PosaljiBtn" Margin="10" Grid.Column="2" Click="PosaljiBtn_Click">Pošalji odgovor</Button>
+                    <Button x:Name="RasporedBtn" Margin="10" Grid.Column="2" Click="RasporedBtn_Click" Style="{DynamicResource MaterialDesignOutlinedButton}">Raspored sedenja</Button>
+                    <Button x:Name="PosaljiBtn" Margin="10" Grid.Column="3" Click="PosaljiBtn_Click">Pošalji odgovor</Button>
                 </Grid>
             </StackPanel>
             <ScrollViewer Margin="10" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">

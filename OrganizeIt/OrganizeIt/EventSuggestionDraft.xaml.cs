@@ -59,7 +59,8 @@ namespace OrganizeIt
                 SocialGathering = predlog.SocialGathering,
                 Client = predlog.Client,
                 Organizer = predlog.Organizer,
-                SuggestionDate = DateTime.Now
+                SuggestionDate = DateTime.Now,
+                SocialGatheringSeating = predlog.SocialGatheringSeating
             };
 
             ListToStringConverter = new ListToStringConverter();
@@ -113,8 +114,8 @@ namespace OrganizeIt
             var user = backend.Backend.LoggedInUser;
             //user = users["mmartinovic"];
             var cl = Predlog.Client;
-            MessageBox.Show(cl.Username);
-            MessageBox.Show(user.UserType.ToString());
+            //MessageBox.Show(cl.Username);
+            //MessageBox.Show(user.UserType.ToString());
             //var manif = new SocialGathering { Client = cl, Organizer = user, DateTime = DateTime.Now, Description = "blabla opis", Name = "Proslava bree", NumberOfGuests = 3, RequestDate = DateTime.Now, SocialGatheringSuggestions = new List<SocialGatheringSuggestion>() };
             /*manif.SocialGatheringSuggestions.Add(Predlog);
             backend.Backend.loadSocialGatherings(users);
@@ -146,6 +147,12 @@ namespace OrganizeIt
         private void SacuvajNeSalji_Click(object sender, RoutedEventArgs e)
         {
             // ako implementiramo draft (nije obavezno, vrv necemo)
+        }
+
+        private void RasporedBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Predlog.CategorySuggestions = MainWindowSekcije.ToList();
+            NavigationService.Navigate(new SeatingArrangement(Predlog));
         }
     }
 

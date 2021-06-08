@@ -93,7 +93,7 @@
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Button x:Name="OtkaziBtn" Margin="10" Grid.Column="0" Click="OtkaziBtn_Click" Style="{DynamicResource MaterialDesignOutlinedButton}">Otkaži</Button>
-                    <!--<Button x:Name="SacuvajNeSalji" Margin="10" Grid.Column="1" Click="SacuvajNeSalji_Click" Style="{DynamicResource MaterialDesignOutlinedButton}">Sačuvaj predlog</Button>-->
+                    <Button x:Name="RasporedBtn" Margin="10" Grid.Column="1" Click="RasporedBtn_Click" Style="{DynamicResource MaterialDesignOutlinedButton}">Raspored sedenja</Button>
                     <Button x:Name="PosaljiBtn" Margin="10" Grid.Column="2" Click="PosaljiBtn_Click">Pošalji predlog</Button>
                 </Grid>
             </StackPanel>

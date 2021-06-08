@@ -146,6 +146,11 @@ namespace OrganizeIt.backend
             return DataDir + "img" + Path.DirectorySeparatorChar + "collaborators" + Path.DirectorySeparatorChar + collaborator.Id + ".jpg";
         }
 
+        public static string GetTableImagePath()
+        {
+            return DataDir + "img" + Path.DirectorySeparatorChar + "table" + Path.DirectorySeparatorChar + "astal.jpg";
+        }
+
         public static int GenerateCollaboratorID()
         {
             return Collaborators.Count;
