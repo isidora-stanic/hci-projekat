@@ -45,7 +45,7 @@ namespace OrganizeIt
             string caption = "Izmena korisnika";
             MessageBoxButton btn = MessageBoxButton.YesNo;
             MessageBoxImage img = MessageBoxImage.Question;
-            if (User.Username == "" || User.FirstName == "" || User.LastName == "" || User.Email == "" || User.PhoneNumber == "") { }
+            if (User.Username == "" || User.FirstName == "" || User.LastName == "" || User.Email == "" || User.PhoneNumber == "")
             {
                 //this.username.BorderBrush = Brushes.Red;
                 //this.username.Text = "";

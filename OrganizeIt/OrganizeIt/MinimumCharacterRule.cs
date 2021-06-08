@@ -15,7 +15,8 @@ namespace OrganizeIt
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             string charString = value as string;
-
+            if(charString is null)
+                return new ValidationResult(false, $"User atleast {MinimumCharacters} characters.");
             if (charString.Length < MinimumCharacters)
                 return new ValidationResult(false, $"User atleast {MinimumCharacters} characters.");
 

@@ -29,9 +29,21 @@ namespace OrganizeIt
         {
             backend.Backend bb = new backend.Backend();
 
+            BindingExpression binding = username.GetBindingExpression(TextBox.TextProperty);
+            binding.UpdateSource();
+
+            if (this.username.Text == "" || this.password.Password == "" 
+                || this.name.Text == "" || this.lastname.Text == "" || this.phone.Text == "" || this.email.Text == "")
+            {
+                //this.username.BorderBrush = Brushes.Red;
+                //this.username.Text = "";
+                //this.username.Foreground = Brushes.Red;
+                //MessageBox.Show("Nijedno polje ne smije biti null");
+                return;
+            }
             User user = new User();
             user.Username = this.username.Text;
-            user.Username = this.password.Password;
+            user.Password = this.password.Password;
             user.FirstName = this.name.Text;
             user.LastName = this.lastname.Text;
             user.PhoneNumber = this.phone.Text;

@@ -34,13 +34,6 @@
                 <PasswordBox materialDesign:HintAssist.Hint="Lozinka" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" x:Name="password" Margin="200 0 200 5"/>
                 <Grid Margin="0 0 0 20">
                     <TextBox materialDesign:HintAssist.Hint="Ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="name" Margin="0 0 401 5">
-                        <TextBox.Text>
-                            <Binding Path="Username" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
                     </TextBox>
                     <TextBox materialDesign:HintAssist.Hint="Prezime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="lastname" Margin="401 0 0 5"/>
                 </Grid>
