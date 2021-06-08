@@ -30,8 +30,20 @@ namespace OrganizeIt.backend
         public static void LoadAll()
         {
             Users = LoadUsers();
+            var loggedInUsername = File.ReadAllText(DataDir + "logged_in_user.txt");
+            if (Users.ContainsKey(loggedInUsername))
+            {
+                LoggedInUser = Users[loggedInUsername];
+            }
+
             Collaborators = LoadCollaborators();
             loadSocialGatherings();
+        }
+
+        public static void RememberMe(string username)
+        {
+            var loggedInUserDataDir = DataDir + "logged_in_user.txt";
+            File.WriteAllText(loggedInUserDataDir, username);
         }
 
         public static void SaveAll()
@@ -39,6 +51,13 @@ namespace OrganizeIt.backend
             SaveUsers();
             SaveCollaborators();
             saveSocialGatherings();
+        }
+
+        public static void LogOut()
+        {
+            LoggedInUser = null;
+            var loggedInUserDataDir = DataDir + "logged_in_user.txt";
+            File.WriteAllText(loggedInUserDataDir, "");
         }
 
         public static Dictionary<string, User> LoadUsers()
