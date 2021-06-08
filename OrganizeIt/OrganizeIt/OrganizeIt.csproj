@@ -137,6 +137,11 @@
     <Compile Include="EventSuggReplyView.xaml.cs">
       <DependentUpon>EventSuggReplyView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HelpProvider.cs" />
+    <Compile Include="HelpViewer.xaml.cs">
+      <DependentUpon>HelpViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JavaScriptControlHelper.cs" />
     <Compile Include="SocialGatheringInfo.xaml.cs">
       <DependentUpon>SocialGatheringInfo.xaml</DependentUpon>
     </Compile>
@@ -145,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddTodo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HelpViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -332,6 +341,7 @@
   <ItemGroup>
     <Folder Include="backend\data\social_gatherings\replies\" />
     <Folder Include="backend\data\social_gatherings\suggestions\" />
+    <Folder Include="backend\help\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="backend\data\img\collaborators\0.jpg" />
@@ -352,6 +362,14 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="backend\data\logged_in_user.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Help\error.htm" />
+    <Resource Include="Help\graph2.png" />
+    <Content Include="Help\LoginUsername.htm" />
+    <Content Include="Help\LoginPage.htm" />
+    <Content Include="Help\index.htm" />
+    <Content Include="Help\LoginPassword.htm" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />

@@ -1,71 +1,72 @@
 ﻿<Page x:Class="OrganizeIt.NewEventForm"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:OrganizeIt"
-      mc:Ignorable="d" 
+      xmlns:l="clr-namespace:HelpSistem"
+      mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="NewEventForm">
-    <DockPanel Margin="10 0">
+      Title="NewEventForm" l:HelpProvider.HelpKey="NewEventFormPage">
+    <DockPanel Margin="10 0" FocusManager.FocusedElement="{Binding ElementName=NazivProslave}">
         <StackPanel DockPanel.Dock="Top">
-        <TextBlock Margin="0 10 0 0" FontWeight="Bold" FontSize="30">1. Korak: Detalji o proslavi</TextBlock>
-        <Separator Margin="0 10 25 25"/>
+            <TextBlock Margin="0 10 0 0" FontWeight="Bold" FontSize="30">1. Korak: Detalji o proslavi</TextBlock>
+            <Separator Margin="0 10 25 25" />
         </StackPanel>
         <Button DockPanel.Dock="Bottom" Width="200" Margin="10" Click="Button_Click">Izaberi organizatora</Button>
         <Grid Margin="80 0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
-            <TextBox Margin="10" Grid.Row="0" 
-                     materialDesign:HintAssist.Hint="Naziv proslave" 
+            <TextBox Margin="10" Grid.Row="0"
+                     materialDesign:HintAssist.Hint="Naziv proslave"
                      Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
                      FontSize="14"
+                     x:Name="NazivProslave"
                      Text="{Binding Proslava.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             </TextBox>
-            <TextBox Margin="10" Grid.Row="1" 
-                     materialDesign:HintAssist.Hint="Tip proslave" 
+            <TextBox Margin="10" Grid.Row="1"
+                     materialDesign:HintAssist.Hint="Tip proslave"
                      Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
                      FontSize="14"
                      Text="{Binding Proslava.Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             </TextBox>
-            <DatePicker Margin="10" Grid.Row="2" 
-                     materialDesign:HintAssist.Hint="Datum proslave" 
+            <DatePicker Margin="10" Grid.Row="2"
+                     materialDesign:HintAssist.Hint="Datum proslave"
                      Style="{DynamicResource MaterialDesignDatePicker}"
                      FontSize="14"
                      Text="{Binding Proslava.DateTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             </DatePicker>
-            <TextBox Margin="10" Grid.Row="3" 
-                     materialDesign:HintAssist.Hint="Broj gostiju" 
+            <TextBox Margin="10" Grid.Row="3"
+                     materialDesign:HintAssist.Hint="Broj gostiju"
                      Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
                      FontSize="14"
                      Text="{Binding Proslava.NumberOfGuests, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             </TextBox>
-            <TextBox Margin="10" Grid.Row="4" 
+            <TextBox Margin="10" Grid.Row="4"
                      VerticalScrollBarVisibility="auto"
                      AcceptsReturn="True" AcceptsTab="True"
-                     materialDesign:HintAssist.Hint="Opis [zahtevi]" 
+                     materialDesign:HintAssist.Hint="Opis [zahtevi]"
                      Style="{DynamicResource MaterialDesignOutlinedTextBox}"
                      FontSize="14" VerticalAlignment="Stretch"
                      Text="{Binding Proslava.Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             </TextBox>
             <StackPanel Grid.Row="5" Orientation="Vertical" HorizontalAlignment="Center">
-            <Button HorizontalAlignment="Center" Width="200"  Click="CSVButton_Click" 
+                <Button HorizontalAlignment="Center" Width="200"  Click="CSVButton_Click"
                     Style="{DynamicResource MaterialDesignOutlinedButton}">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock>Izaberite CSV fajl</TextBlock>
-                    <materialDesign:PackIcon Kind="UploadOutline" Margin="20 0" Width="25" Height="25" Foreground="{StaticResource PrimaryHueDarkBrush}"></materialDesign:PackIcon>
-                </StackPanel>
-            </Button>
-            <TextBlock x:Name="filenameTextBox" Grid.Row="5" Text="{Binding filename, Mode=OneWay, UpdateSourceTrigger=Explicit}"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Izaberite CSV fajl</TextBlock>
+                        <materialDesign:PackIcon Kind="UploadOutline" Margin="20 0" Width="25" Height="25" Foreground="{StaticResource PrimaryHueDarkBrush}"></materialDesign:PackIcon>
+                    </StackPanel>
+                </Button>
+                <TextBlock x:Name="filenameTextBox" Grid.Row="5" Text="{Binding filename, Mode=OneWay, UpdateSourceTrigger=Explicit}"></TextBlock>
             </StackPanel>
         </Grid>
-        
     </DockPanel>
 </Page>
