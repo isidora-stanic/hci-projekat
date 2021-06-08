@@ -23,7 +23,7 @@ namespace OrganizeIt
         public MainWindow()
         {
             InitializeComponent();
-            frame.NavigationService.Navigate(new Login());
+            frame.NavigationService.Navigate(new NewOrganizer());
         }
     }
 }

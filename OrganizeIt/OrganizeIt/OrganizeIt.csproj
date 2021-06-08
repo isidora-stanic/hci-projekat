@@ -134,6 +134,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MinimumCharacterRule.cs" />
+    <Compile Include="ObservableObject.cs" />
+    <Compile Include="RegistrationVM.cs" />
     <Compile Include="SocialGatheringInfo.xaml.cs">
       <DependentUpon>SocialGatheringInfo.xaml</DependentUpon>
     </Compile>
