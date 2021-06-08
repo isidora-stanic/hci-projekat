@@ -137,6 +137,12 @@
     <Compile Include="EventSuggReplyView.xaml.cs">
       <DependentUpon>EventSuggReplyView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HelpProvider.cs" />
+    <Compile Include="HelpSistem.cs" />
+    <Compile Include="HelpViewer.xaml.cs">
+      <DependentUpon>HelpViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JavaScriptControlHelper.cs" />
     <Compile Include="SocialGatheringInfo.xaml.cs">
       <DependentUpon>SocialGatheringInfo.xaml</DependentUpon>
     </Compile>
@@ -145,6 +151,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddTodo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HelpViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -332,6 +342,7 @@
   <ItemGroup>
     <Folder Include="backend\data\social_gatherings\replies\" />
     <Folder Include="backend\data\social_gatherings\suggestions\" />
+    <Folder Include="backend\help\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="backend\data\img\collaborators\0.jpg" />
