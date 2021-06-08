@@ -185,7 +185,7 @@ namespace OrganizeIt
         {
             SocialGatheringCollaborator collab 
                 = (SocialGatheringCollaborator)((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
-            NavigationService.Navigate(new EditSaradnik()); //collab
+            NavigationService.Navigate(new EditSaradnik(collab)); //collab
         }
         
 

@@ -15,15 +15,7 @@
             <StackPanel>
                 <Image Height="100"  Source="C:\Users\Jovana\Desktop\sl.PNG"/>
 
-                <Grid Margin="0 0 0 20">
-                    <TextBox materialDesign:HintAssist.Hint="Naziv" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 0 401 5"/>
-                    <TextBox materialDesign:HintAssist.Hint="Telefon" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="401 0 0 5"/>
-                </Grid>
-
-                <Grid Margin="0 0 0 20">
-                    <TextBox materialDesign:HintAssist.Hint="Grad" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 0 401 5"/>
-                    <TextBox materialDesign:HintAssist.Hint="Adresa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="401 0 0 5"/>
-                </Grid>
+                <TextBox materialDesign:HintAssist.Hint="Naziv" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Name, Mode = TwoWay}" Margin="0 0 0 5"/>
 
                 <TextBox
                   Name="tbMultiLine"
@@ -32,12 +24,17 @@
                   VerticalScrollBarVisibility="Visible"
                   Padding="10"
                   materialDesign:HintAssist.Hint="Opis"
-                   Margin="0 0 0 20"
->
-
+                 
+                  MinHeight="20"
+                  Text="{Binding Description, Mode = TwoWay}"
+                  Margin="0 0 0 20"
+                >
                 </TextBox>
 
-                <Button Content="Izmeni organizatora" Width ="200" Margin="0 20" />
+                <Grid Margin="0 0 0 20">
+                    <Button HorizontalAlignment="Left" Content="Otkaži" Width ="200" Margin="0 0 401 5" Click="Button_Click_1"/>
+                    <Button HorizontalAlignment="Right" Content="Izmeni saradnika" Width ="200"  Margin="401 0 0 5" Click="Button_Click"/>
+                </Grid>
 
             </StackPanel>
         </Border>
