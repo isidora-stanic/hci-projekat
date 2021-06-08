@@ -77,5 +77,16 @@ namespace OrganizeIt
                 OnPropertyChanged(ref _email, value);
             }
         }
+
+        private string _data;
+        public string BirthData
+        {
+            get { return _data; }
+            set
+            {
+                
+                OnPropertyChanged(ref _data, value);
+            }
+        }
     }
 }
