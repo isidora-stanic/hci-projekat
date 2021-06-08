@@ -138,7 +138,6 @@
       <DependentUpon>EventSuggReplyView.xaml</DependentUpon>
     </Compile>
     <Compile Include="HelpProvider.cs" />
-    <Compile Include="HelpSistem.cs" />
     <Compile Include="HelpViewer.xaml.cs">
       <DependentUpon>HelpViewer.xaml</DependentUpon>
     </Compile>
