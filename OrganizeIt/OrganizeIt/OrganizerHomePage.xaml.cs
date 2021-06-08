@@ -306,7 +306,7 @@ namespace OrganizeIt
 
     public class BooleanConverter : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             switch (value.ToString().ToUpper())
             {
@@ -319,13 +319,14 @@ namespace OrganizeIt
             }
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is bool)
             {
-                if ((bool)value)
+                if ((bool)value == true)
                     return "DA";
-                return "NE";
+                else
+                    return "NE";
             }
             return "NE";
         }

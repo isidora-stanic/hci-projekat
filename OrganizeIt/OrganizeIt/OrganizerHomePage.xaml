@@ -70,7 +70,7 @@
                     </WrapPanel>
                     <WrapPanel>
                         <TextBlock FontSize="14" FontWeight="Bold" Text="Predlog prihvacen: " />
-                        <TextBlock FontSize="14" Text="{Binding Path=CategoryComments.Count}" />
+                        <TextBlock FontSize="14" Text="{Binding Path=SuggestionsAccepted, Converter={StaticResource BooleanConverter}}" />
                     </WrapPanel>
                 </StackPanel>
             </Grid>
