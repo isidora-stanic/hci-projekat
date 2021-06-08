@@ -137,6 +137,9 @@
     <Compile Include="EventSuggReplyView.xaml.cs">
       <DependentUpon>EventSuggReplyView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MinimumCharacterRule.cs" />
+    <Compile Include="ObservableObject.cs" />
+    <Compile Include="RegistrationVM.cs" />
     <Compile Include="SeatingArrangement.xaml.cs">
       <DependentUpon>SeatingArrangement.xaml</DependentUpon>
     </Compile>

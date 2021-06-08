@@ -47,10 +47,12 @@ namespace OrganizeIt
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new CreateAccount());
+            /*
             backend.Backend.LoadAll();
             SocialGatheringSuggestionReply odgovor = backend.Backend.Users["jadranka88"].SocialGatheringSuggestionReplies[4];
 
-            NavigationService.Navigate(new EventSuggReplyView(odgovor));
+            NavigationService.Navigate(new EventSuggReplyView(odgovor));*/
         }
     }
 }

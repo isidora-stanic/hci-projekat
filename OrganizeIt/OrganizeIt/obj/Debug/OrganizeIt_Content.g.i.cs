@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("backend/data/logged_in_user.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("help/error.htm")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("help/loginusername.htm")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("help/loginpage.htm")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("help/loginpassword.htm")]
 
 

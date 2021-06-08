@@ -10,37 +10,43 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="NewSaradnik" l:HelpProvider.HelpKey="NewSaradnikPage">
 
-    <Grid Background="White" FocusManager.FocusedElement="{Binding ElementName=Naziv}">
-        <Button Content="Nazad" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFlatButton}" />
+    <Page.DataContext>
+        <local:RegistrationVM/>
+    </Page.DataContext>
+    <Grid Background="White">
+        <Button Content="Nazad" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFlatButton}"/>
         <Border Margin="15" MinWidth="600" MinHeight="00" Background="White" VerticalAlignment="Center" Padding="10" CornerRadius="10" MaxWidth="800">
             <StackPanel>
-                <Image Height="100"  Source="C:\Users\Jovana\Desktop\sl.PNG" />
+                <Image Height="100"  Source="C:\Users\Jovana\Desktop\sl.PNG"/>
 
-                <Grid Margin="0 0 0 20">
-                    <TextBox x:Name="Naziv" materialDesign:HintAssist.Hint="Naziv" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 0 401 5" />
-                    <TextBox materialDesign:HintAssist.Hint="Telefon" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="401 0 0 5" />
-                </Grid>
-
-                <Grid Margin="0 0 0 20">
-                    <TextBox materialDesign:HintAssist.Hint="Grad" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 0 401 5" />
-                    <TextBox materialDesign:HintAssist.Hint="Adresa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="401 0 0 5" />
-                </Grid>
+                <TextBox materialDesign:HintAssist.Hint="Naziv" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="username" Margin="0 0 0 5">
+                    <TextBox.Text>
+                        <Binding Path="Username" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <local:MinimumCharacterRule MinimumCharacters="1"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
 
                 <TextBox
-                  Name="tbMultiLine"
                   TextWrapping="Wrap"
                   AcceptsReturn="True"
                   VerticalScrollBarVisibility="Visible"
                   Padding="10"
                   materialDesign:HintAssist.Hint="Opis"
-                   Margin="0 0 0 20"
->
+                 
+                  MinHeight="20"
+                  x:Name="description"
+                  Margin="0 0 0 20"
+                >
                 </TextBox>
 
-                <Grid Margin="0 0 0 20">
-                    <Button HorizontalAlignment="Left" Content="Otkaži" Width ="200" Margin="0 0 401 5" />
-                    <Button HorizontalAlignment="Right" Content="Dodaj saradnika" Width ="200"  Margin="401 0 0 5" />
+                <Grid Margin="0 0 0 20" >
+                    <Button HorizontalAlignment="Left" Content="Otkaži" Width ="200" Margin="0 0 401 5" Click="Button_Click_1"/>
+                    <Button HorizontalAlignment="Right" Content="Dodaj saradnika" Width ="200"  Margin="401 0 0 5" Click="Button_Click"/>
                 </Grid>
+
             </StackPanel>
         </Border>
     </Grid>
