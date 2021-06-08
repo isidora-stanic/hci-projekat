@@ -118,6 +118,11 @@ namespace OrganizeIt
             // samo vracanje na prethodni prozor bez odgovaranja
             NavigationService.GoBack();
         }
+
+        private void RasporedBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SeatingReview(Predlog.SocialGatheringSeating));
+        }
     }
 
     public class SekcijaKomentarDTO

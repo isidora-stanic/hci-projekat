@@ -137,6 +137,12 @@
     <Compile Include="EventSuggReplyView.xaml.cs">
       <DependentUpon>EventSuggReplyView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SeatingArrangement.xaml.cs">
+      <DependentUpon>SeatingArrangement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SeatingReview.xaml.cs">
+      <DependentUpon>SeatingReview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SocialGatheringInfo.xaml.cs">
       <DependentUpon>SocialGatheringInfo.xaml</DependentUpon>
     </Compile>
@@ -145,6 +151,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddTodo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SeatingArrangement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SeatingReview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -352,6 +366,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="backend\data\logged_in_user.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="backend\data\img\table\astal.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />
