@@ -7,6 +7,9 @@
         xmlns:local="clr-namespace:OrganizeIt"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1080">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Help" Executed="CommandBinding_Executed"/>
+    </Window.CommandBindings>
     <Grid>
         <Frame x:Name="frame" Content="Frame">
         </Frame>

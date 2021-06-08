@@ -35,6 +35,7 @@ namespace HelpSistem
             ch = new JavaScriptControlHelper(originator);
             wbHelp.ObjectForScripting = ch;
             wbHelp.Navigate(u);
+
         }
 
         private void BrowseBack_CanExecute(object sender, CanExecuteRoutedEventArgs e)
