@@ -12,6 +12,7 @@
       d:DesignHeight="300" d:DesignWidth="800"
       Title="OrganizerHomePage">
     <Page.Resources>
+        <local:BooleanConverter x:Key="BooleanConverter" />
         <DataTemplate x:Key="RequestTemplate" DataType="{x:Type soical:SocialGathering}">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -45,6 +46,36 @@
                 </StackPanel>
             </Grid>
         </DataTemplate>
+
+        <DataTemplate x:Key="ResponseTemplate" DataType="{x:Type soical:SocialGatheringSuggestionReply}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="{Binding Path=SocialGatheringSuggestion.SocialGathering.Name}" FontSize="20" />
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Klijent: " />
+                        <TextBlock FontSize="14" Text="{Binding Path=SocialGatheringSuggestion.Client.Username}" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Odgovor poslat: " />
+                        <TextBlock FontSize="14" Text="{Binding Path=ReplyDate, StringFormat=f}" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Broj komentara: " />
+                        <TextBlock FontSize="14" Text="{Binding Path=CategoryComments.Count}" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Predlog prihvacen: " />
+                        <TextBlock FontSize="14" Text="{Binding Path=CategoryComments.Count}" />
+                    </WrapPanel>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+        
         <DataTemplate x:Key="TodoTemplate" DataType="{x:Type todo:ToDoCard}">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -126,8 +157,8 @@
 
                     <ListView x:Name="ResponseListView" HorizontalContentAlignment="Stretch"
                               MouseDoubleClick="ResponseListView_MouseDoubleClick"
-                              ItemsSource="{Binding requests, UpdateSourceTrigger=Explicit}"
-                              ItemTemplate="{StaticResource RequestTemplate}" />
+                              ItemsSource="{Binding responses, UpdateSourceTrigger=Explicit}"
+                              ItemTemplate="{StaticResource ResponseTemplate}" />
                 </DockPanel>
             </TabItem>
 

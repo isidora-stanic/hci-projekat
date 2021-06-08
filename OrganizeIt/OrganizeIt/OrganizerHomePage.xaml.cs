@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Globalization;
 
 namespace OrganizeIt
 {
@@ -78,7 +79,8 @@ namespace OrganizeIt
             List<ToDoCard> allTodoCards = backend.Backend.LoadTodoList(users);
 
 
-            responses = new ObservableCollection<SocialGatheringSuggestionReply>(loggedIn.SocialGatheringSuggestionReplies);
+            responses = new ObservableCollection<SocialGatheringSuggestionReply>
+                 (users[loggedIn.Username].SocialGatheringSuggestionReplies);
             requests = new ObservableCollection<SocialGathering>(filteredGatherings);
 
             todosToDo = new ObservableCollection<ToDoCard>(backend.Backend.GetTodoCardByStatusForOrganizer(allTodoCards, ToDoStatus.ToDo, loggedIn.Username));
@@ -135,7 +137,7 @@ namespace OrganizeIt
 
             ObservableCollection<SocialGatheringSuggestionReply> filteredResponsesObservable
                = new ObservableCollection<SocialGatheringSuggestionReply>(filteredResponses);
-            RequestListView.ItemsSource = filteredResponsesObservable;
+            ResponseListView.ItemsSource = filteredResponsesObservable;
         }
 
         private void ResponseListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -253,7 +255,7 @@ namespace OrganizeIt
 
                 if (edit.Answer.Status == ToDoStatus.Deleted)
                 {
-                    edit.Answer.Status = ToDoStatus.Processing;
+                    edit.Answer.Status = ToDoStatus.Rejected;
                     deletedToDos.Push(edit.Answer);
                     return;
                 }
@@ -299,6 +301,33 @@ namespace OrganizeIt
             int len = allTodos.Count;
 
             backend.Backend.SaveTodoList(allTodos);
+        }
+    }
+
+    public class BooleanConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            switch (value.ToString().ToUpper())
+            {
+                case "DA":
+                    return true;
+                case "NE":
+                    return false;
+                default:
+                    return false;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is bool)
+            {
+                if ((bool)value)
+                    return "DA";
+                return "NE";
+            }
+            return "NE";
         }
     }
 }
