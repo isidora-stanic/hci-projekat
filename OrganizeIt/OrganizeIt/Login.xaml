@@ -8,14 +8,14 @@
       mc:Ignorable="d"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Login">
+      Title="Login" l:HelpProvider.HelpKey="loginWindow">
 
     <Grid Background="White">
         <Button Content="Nazad" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFlatButton}" />
         <Border Margin="15" MinWidth="600" MinHeight="00" Background="White" VerticalAlignment="Center" Padding="10" CornerRadius="10" MaxWidth="800">
             <StackPanel>
-                <TextBox materialDesign:HintAssist.Hint="Korisničko ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="username" l:HelpProvider.HelpKey="Indeks" Margin="200 0 200 5" />
-                <PasswordBox materialDesign:HintAssist.Hint="Lozinka" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" x:Name="password" Margin="200 0 200 5" />
+                <TextBox materialDesign:HintAssist.Hint="Korisničko ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="username" l:HelpProvider.HelpKey="username" Margin="200 0 200 5" />
+                <PasswordBox materialDesign:HintAssist.Hint="Lozinka" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" x:Name="password" l:HelpProvider.HelpKey="password" Margin="200 0 200 5" />
 
                 <Grid Margin="0 0 0 20">
                     <CheckBox  Margin="200 0 200 5" FontWeight = "Light">Zapamti me</CheckBox>
