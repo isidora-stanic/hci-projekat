@@ -32,13 +32,27 @@ namespace OrganizeIt
             BindingExpression binding = username.GetBindingExpression(TextBox.TextProperty);
             binding.UpdateSource();
 
-            if (this.username.Text == "" || this.password.Password == "" 
+            BindingExpression binding1 = name.GetBindingExpression(TextBox.TextProperty);
+            binding1.UpdateSource();
+
+            BindingExpression binding2 = lastname.GetBindingExpression(TextBox.TextProperty);
+            binding2.UpdateSource();
+
+            BindingExpression binding3 = phone.GetBindingExpression(TextBox.TextProperty);
+            binding3.UpdateSource();
+
+            BindingExpression binding4 = email.GetBindingExpression(TextBox.TextProperty);
+            binding4.UpdateSource();
+
+            BindingExpression binding5 = address.GetBindingExpression(TextBox.TextProperty);
+            binding5.UpdateSource();
+
+            BindingExpression binding6 = city.GetBindingExpression(TextBox.TextProperty);
+            binding6.UpdateSource();
+
+            if (this.username.Text == "" || this.password.Password == "" || this.address.Text == "" || this.city.Text == ""
                 || this.name.Text == "" || this.lastname.Text == "" || this.phone.Text == "" || this.email.Text == "")
             {
-                //this.username.BorderBrush = Brushes.Red;
-                //this.username.Text = "";
-                //this.username.Foreground = Brushes.Red;
-                //MessageBox.Show("Nijedno polje ne smije biti null");
                 return;
             }
             User user = new User();
