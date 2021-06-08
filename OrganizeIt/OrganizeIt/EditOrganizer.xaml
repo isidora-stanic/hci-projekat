@@ -28,6 +28,7 @@
                 </Grid>
                 <Grid Margin="0 0 0 20">
                     <TextBox materialDesign:HintAssist.Hint="Grad" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Address.City, Mode = TwoWay}" Margin="0 0 401 5"/>
+
                     <TextBox materialDesign:HintAssist.Hint="Adresa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Address.StreetAddress, Mode = TwoWay}" Margin="401 0 0 5"/>
                 </Grid>
                 <Grid Margin="0 0 0 20">
@@ -39,7 +40,7 @@
                     <Button HorizontalAlignment="Left" Content="Otkaži" Width ="200" Margin="0 0 401 5" Click="Button_Click_1"/>
                     <Button HorizontalAlignment="Right" Content="Izmeni organizatora" Width ="200"  Margin="401 0 0 5" Click="Button_Click"/>
                 </Grid>
-                   
+
             </StackPanel>
         </Border>
     </Grid>

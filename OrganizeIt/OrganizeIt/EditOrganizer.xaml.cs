@@ -41,13 +41,30 @@ namespace OrganizeIt
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            int selectedItem = pol.SelectedIndex;
-            if (selectedItem == 0)
-                this.User.Gender = Gender.Female;
-            else
-                this.User.Gender = Gender.Male;
+            string messageBoxText = $"Da li ste sigurni da želite da izmenite korisnika {this.User.Username}?";
+            string caption = "Izmena korisnika";
+            MessageBoxButton btn = MessageBoxButton.YesNo;
+            MessageBoxImage img = MessageBoxImage.Question;
+            if (User.Username == "" || User.FirstName == "" || User.LastName == "" || User.Email == "" || User.PhoneNumber == "") { }
+            {
+                //this.username.BorderBrush = Brushes.Red;
+                //this.username.Text = "";
+                //this.username.Foreground = Brushes.Red;
+                //MessageBox.Show("Nijedno polje ne smije biti null");
+                return;
+            }
+            var result = MessageBox.Show(messageBoxText, caption, btn, img, MessageBoxResult.No);
+            if (result == MessageBoxResult.Yes)
+            {
+                int selectedItem = pol.SelectedIndex;
+                if (selectedItem == 0)
+                    this.User.Gender = Gender.Female;
+                else
+                    this.User.Gender = Gender.Male;
 
-            backend.Backend.SaveUsers(this.allUsers);
+                backend.Backend.SaveUsers(this.allUsers);
+
+            }
             NavigationService.Navigate(new AccountsList());
         }
 
