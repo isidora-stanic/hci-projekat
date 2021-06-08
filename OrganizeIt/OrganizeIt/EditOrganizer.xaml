@@ -8,15 +8,28 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EditOrganizer">
-   
+    <Page.DataContext>
+        <local:RegistrationVM/>
+    </Page.DataContext>
+    
     <Grid Background="White">
         <Button Content="Nazad" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFlatButton}"/>
         <Border Margin="15" MinWidth="600" MinHeight="00" Background="White" VerticalAlignment="Center" Padding="10" CornerRadius="10" MaxWidth="800">
             <StackPanel>
                 <Image Height="100"  Source="C:\Users\Jovana\Desktop\sl.PNG"/>
-                <TextBox materialDesign:HintAssist.Hint="Korisničko ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="username" Text="{Binding Username, Mode = TwoWay}" Margin="200 0 200 5"/>
+                <TextBox materialDesign:HintAssist.Hint="Korisničko ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="username"  Margin="200 0 200 5">
+                    <TextBox.Text>
+                        <Binding Path="Username" Mode="TwoWay" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <local:MinimumCharacterRule MinimumCharacters="5"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
                 <Grid Margin="0 0 0 20">
-                    <TextBox materialDesign:HintAssist.Hint="Ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding FirstName, Mode = TwoWay}" Margin="0 0 401 5"/>
+                    <TextBox materialDesign:HintAssist.Hint="Ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding FirstName, Mode = TwoWay}" Margin="0 0 401 5">
+                        
+                    </TextBox>
                     <TextBox materialDesign:HintAssist.Hint="Prezime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding LastName, Mode = TwoWay}" Margin="401 0 0 5"/>
                 </Grid>
                 <Grid Margin="0 0 0 20">

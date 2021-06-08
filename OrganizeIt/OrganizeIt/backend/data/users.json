@@ -174,5 +174,37 @@
     "PhoneNumber": "\u002B381693740603",
     "Email": "kzzzvezdana@rocketmail.com",
     "ToDoCards": []
+  },
+  "nona_1": {
+    "UserType": 0,
+    "Username": "nona_1",
+    "Password": "123",
+    "FirstName": "Sonja",
+    "LastName": "Petrov",
+    "Address": {
+      "City": "Sarajevo",
+      "StreetAddress": "Principovo naselje 10"
+    },
+    "Gender": 1,
+    "BirthDate": "1997-06-10T00:00:00",
+    "PhoneNumber": "\u002B38766166539",
+    "Email": "nona@gmail.com",
+    "ToDoCards": []
+  },
+  "strale": {
+    "UserType": 0,
+    "Username": "strale",
+    "Password": "123",
+    "FirstName": "Strahinja",
+    "LastName": "Strahinjic",
+    "Address": {
+      "City": "Zrenjanin",
+      "StreetAddress": "Bulevar Veljka Vlahovica 65a"
+    },
+    "Gender": 0,
+    "BirthDate": "2000-06-09T00:00:00",
+    "PhoneNumber": "\u002B381642788387",
+    "Email": "strale@gmail.com",
+    "ToDoCards": []
   }
 }

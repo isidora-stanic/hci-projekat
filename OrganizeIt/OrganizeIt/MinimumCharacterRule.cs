@@ -10,12 +10,16 @@ namespace OrganizeIt
 {
     class MinimumCharacterRule : ValidationRule
     {
+        
         public int MinimumCharacters { get; set; }
 
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
+
             string charString = value as string;
-            if(charString is null)
+            /*if (backend.Backend.LoadUsers().ContainsKey(charString))
+                return new ValidationResult(false, $"Korisnicko ime vec postoji");*/
+            if (charString is null)
                 return new ValidationResult(false, $"User atleast {MinimumCharacters} characters.");
             if (charString.Length < MinimumCharacters)
                 return new ValidationResult(false, $"User atleast {MinimumCharacters} characters.");
