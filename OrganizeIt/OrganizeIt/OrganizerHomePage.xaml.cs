@@ -119,7 +119,9 @@ namespace OrganizeIt
         {
             /* TODO: Izmeniti da se prikaze stvarni prozor */
             var selectedRequest = (e.OriginalSource as FrameworkElement).DataContext as SocialGathering;
-            MessageBox.Show($"Showing data for request for {selectedRequest.Name}");
+            //MessageBox.Show($"Showing data for request for {selectedRequest.Name}");
+            
+            NavigationService.Navigate(new SocialGatheringInfo(selectedRequest));
         }
 
         private void ResponseSearch_TextChanged(object sender, TextChangedEventArgs e)
@@ -142,9 +144,10 @@ namespace OrganizeIt
 
         private void ResponseListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            /* TODO: Izmeniti da se prikaze stvarni prozor */
             var selectedResponse = (e.OriginalSource as FrameworkElement).DataContext as SocialGatheringSuggestionReply;
-            MessageBox.Show($"Showing data for request for {selectedResponse.SocialGatheringSuggestion.SocialGathering.Name}");
+            //MessageBox.Show($"Showing data for request for {selectedResponse.SocialGatheringSuggestion.SocialGathering.Name}");
+
+            NavigationService.Navigate(new EventSuggReplyView(selectedResponse));
         }
 
         private void AddTodoIcon_MouseDown(object sender, MouseButtonEventArgs e)
@@ -302,6 +305,15 @@ namespace OrganizeIt
 
             backend.Backend.SaveTodoList(allTodos);
         }
+
+        /* funkcija za otvaranje detalja o proslavi */
+        private void PackIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            SocialGathering proslava = (SocialGathering)((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
+            NavigationService.Navigate(new SocialGatheringInfo(proslava));
+        }
+
+
     }
 
     public class BooleanConverter : IValueConverter

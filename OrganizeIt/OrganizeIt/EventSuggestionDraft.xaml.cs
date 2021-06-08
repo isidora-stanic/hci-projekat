@@ -111,7 +111,7 @@ namespace OrganizeIt
 
             var users = backend.Backend.LoadUsers();
             var user = backend.Backend.LoggedInUser;
-            user = users["mmartinovic"];
+            //user = users["mmartinovic"];
             var cl = Predlog.Client;
             MessageBox.Show(cl.Username);
             MessageBox.Show(user.UserType.ToString());
@@ -135,7 +135,7 @@ namespace OrganizeIt
             backend.Backend.AddSuggestion(Predlog, manif);
 
             //NavigationService.Navigate(new EventSuggestionView(Predlog));
-            NavigationService.Navigate(new ManifestationList());
+            NavigationService.Navigate(new OrganizerHomePage());
         }
 
         private void OtkaziBtn_Click(object sender, RoutedEventArgs e)

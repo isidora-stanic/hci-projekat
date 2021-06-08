@@ -111,5 +111,175 @@
         ]
       }
     ]
+  },
+  "1": {
+    "RequestDate": "2021-06-08T13:36:20.8719364+02:00",
+    "Name": "Svadba",
+    "Type": "svadba",
+    "DateTime": "2021-06-08T00:00:00",
+    "NumberOfGuests": 250,
+    "Description": "Moraju se po\u0161tovati svi obi\u010Daji!!1 Mora biti truba\u010Da i svatova i da se ide u Crvku i da se puca u jabuku i da se otkupljuje mlada.\r\nMora biti mnogo sarme i pe\u010Denja i predjela i kola\u010Da i torta mora da bude velika. Bez 50 litara alkohola ni\u0161ta. I mora neka dobra\r\npevaljka da bude, a ne da se poja\u010Dava muzika vi\u0161e nego \u0161to treba da se ne bi \u010Dulo kako fal\u0161ira.",
+    "GuestList": [],
+    "OrganizerUsername": "mmartinovic",
+    "ClientUsername": "jadranka88",
+    "SocialGatheringSuggestions": [
+      {
+        "SuggestionDate": "2021-06-08T14:02:32.7983984+02:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Prostor",
+            "SuggestedCollaborators": [
+              {
+                "Name": "HOTEL BALA\u0160EVI\u0106 Velika Sve\u010Dana Sala",
+                "Id": 11,
+                "Description": "Dugu tradiciju koju ima restoran za ven\u010Danja Bala\u0161evi\u0107 upotpunjavaju fleksibilno i predusretljivo osoblje, gostoljubiva atmosfera i romanti\u010Dni ambijent. Kompletan restoran za ven\u010Danja je klimatizovan i izuzetno akusti\u010Dan tako da je svaki deo restorana ispunjen sjajnom atmosferom. Enterijer je elegantan i komforan, spreman da svojom modernim standardima iza\u0111e u susret svim \u017Eeljama gostiju."
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Muzika",
+            "SuggestedCollaborators": [
+              {
+                "Name": "O\u010Dajne Doma\u0107ice bend",
+                "Id": 9,
+                "Description": "Bend je nastao po\u010Detkom 2011. godine kao realizacija originalne ideje o isklju\u010Divo \u017Eenskom bendu.\nNekoliko muzi\u010Dki \u0161kolovanih devojaka se skupilo i krenulo u izvanredan projekat koji ubrzo posti\u017Ee veliki uspeh.\nDanas nastupaju svuda po Srbiji, ali se ne zadr\u017Eavaju samo u okviru njenih granica, ve\u0107 nastupaju i po biv\u0161im republikama Jugoslavije, kao i u Evropi."
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Hrana i pice",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Ketering\u0026Catering",
+                "Id": 4,
+                "Description": "UKUSNA JELA \u0026 KVALITETNI SASTOJCI\nSvako jelo pripremamo s ljubavlju i samo koriste\u0107i najkvalitetnije sastojke.\nDosta vremena provodimo kako bi Va\u0161u proslavu u\u010Dinili jedinstvenom.\nOrganizujemo sve od po\u010Detka do kraja, a rezultat je ukusna hrana, izvrsna usluga i vrhunska prezentacija."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": [
+          {
+            "ReplyDate": "2021-06-08T14:03:31.5988798+02:00",
+            "CategoryComments": {
+              "Prostor": "UU moze",
+              "Muzika": "daj nadji neku pevaljku kakve crne ocajne domacice",
+              "Hrana i pice": "malo je to vrv, dodaj jos"
+            },
+            "SuggestionsAccepted": false
+          }
+        ]
+      },
+      {
+        "SuggestionDate": "2021-06-08T14:08:31.997942+02:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Prostor",
+            "SuggestedCollaborators": [
+              {
+                "Name": "HOTEL BALA\u0160EVI\u0106 Velika Sve\u010Dana Sala",
+                "Id": 11,
+                "Description": "Dugu tradiciju koju ima restoran za ven\u010Danja Bala\u0161evi\u0107 upotpunjavaju fleksibilno i predusretljivo osoblje, gostoljubiva atmosfera i romanti\u010Dni ambijent. Kompletan restoran za ven\u010Danja je klimatizovan i izuzetno akusti\u010Dan tako da je svaki deo restorana ispunjen sjajnom atmosferom. Enterijer je elegantan i komforan, spreman da svojom modernim standardima iza\u0111e u susret svim \u017Eeljama gostiju."
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Muzika",
+            "SuggestedCollaborators": [
+              {
+                "Name": "O\u010Dajne Doma\u0107ice bend",
+                "Id": 9,
+                "Description": "Bend je nastao po\u010Detkom 2011. godine kao realizacija originalne ideje o isklju\u010Divo \u017Eenskom bendu.\nNekoliko muzi\u010Dki \u0161kolovanih devojaka se skupilo i krenulo u izvanredan projekat koji ubrzo posti\u017Ee veliki uspeh.\nDanas nastupaju svuda po Srbiji, ali se ne zadr\u017Eavaju samo u okviru njenih granica, ve\u0107 nastupaju i po biv\u0161im republikama Jugoslavije, kao i u Evropi."
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Hrana i pice",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Ketering\u0026Catering",
+                "Id": 4,
+                "Description": "UKUSNA JELA \u0026 KVALITETNI SASTOJCI\nSvako jelo pripremamo s ljubavlju i samo koriste\u0107i najkvalitetnije sastojke.\nDosta vremena provodimo kako bi Va\u0161u proslavu u\u010Dinili jedinstvenom.\nOrganizujemo sve od po\u010Detka do kraja, a rezultat je ukusna hrana, izvrsna usluga i vrhunska prezentacija."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": [
+          {
+            "ReplyDate": "2021-06-08T14:09:58.4916971+02:00",
+            "CategoryComments": {
+              "Prostor": "",
+              "Muzika": "i dalje ocajno.",
+              "Hrana i pice": "e bolje"
+            },
+            "SuggestionsAccepted": false
+          }
+        ]
+      },
+      {
+        "SuggestionDate": "2021-06-08T14:09:17.668216+02:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "AAABBBBCCCCC",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Fabrika kiflica",
+                "Id": 0,
+                "Description": "Uvek sve\u017Ee kiflice\nDoma\u0107e kiflice bez aditiva i industrijskog kvasca, uvek sve\u017Ee, ru\u010Dno motane i bogato punjene.\nUkoliko se odlu\u010Dite za 4 ili vi\u0161e kilograma, ne morate da razmi\u0161ljate o pla\u0107anju dostave, bi\u0107e besplatna na teritoriji grada. Naravno, ukoliko vam je lak\u0161e, va\u0161e spremne i vru\u0107e kiflice vas mogu \u010Dekati i kod nas u Bra\u0107e Ribnikar 56. Uverite se sami u kvalitet na\u0161ih proizvoda."
+              },
+              {
+                "Name": "Catering\u002B",
+                "Id": 1,
+                "Description": "Profesionalna usluga keteringa\nSve\u017Ee, brzo, ukusno\nNa tr\u017Ei\u0161tu Srbije postojimo od 2003. godine. Od samog osnivanja cilj na\u0161eg poslovanja je obezbe\u0111ivanje usluga keteringa na najvi\u0161em nivou za klijente koji prepoznaju kvalitet. Stoga smo posebnu pa\u017Enju posvetili infrastrukturi i organizaciji poslovanja. Posedujemo savremenu kuhinju velikog kapaciteta, opremljenu najkvalitetnijom profesionalnom opremom, koja ispunjava sve HACCP standarde za pripremu hrane.\nZa vas kuvamo i organizujemo, kada planirate:\n-koktele, proslave, poslovne ru\u010Dkove i sve\u010Dane ve\u010Dere na lokacijama po \u017Eelji, uz uslugu profesionalnih i uniformisanih konobara\n-ishranu zaposlenih na dnevnoj bazi(sa pripremom u na\u0161oj kuhinji za manji broj ljudi i sa pripremom u kuhinji na lokaciji za ve\u0107i broj ljudi)\n-organizaciju dnevne dostave pi\u0107a, sokova, kafe, sanitarnih proizvoda, kao i svih ostalih proizvoda iz maloprodajne lokacije klijenata, po maloprodajnim cenama."
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Hmmmmm",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Catering\u002B",
+                "Id": 1,
+                "Description": "Profesionalna usluga keteringa\nSve\u017Ee, brzo, ukusno\nNa tr\u017Ei\u0161tu Srbije postojimo od 2003. godine. Od samog osnivanja cilj na\u0161eg poslovanja je obezbe\u0111ivanje usluga keteringa na najvi\u0161em nivou za klijente koji prepoznaju kvalitet. Stoga smo posebnu pa\u017Enju posvetili infrastrukturi i organizaciji poslovanja. Posedujemo savremenu kuhinju velikog kapaciteta, opremljenu najkvalitetnijom profesionalnom opremom, koja ispunjava sve HACCP standarde za pripremu hrane.\nZa vas kuvamo i organizujemo, kada planirate:\n-koktele, proslave, poslovne ru\u010Dkove i sve\u010Dane ve\u010Dere na lokacijama po \u017Eelji, uz uslugu profesionalnih i uniformisanih konobara\n-ishranu zaposlenih na dnevnoj bazi(sa pripremom u na\u0161oj kuhinji za manji broj ljudi i sa pripremom u kuhinji na lokaciji za ve\u0107i broj ljudi)\n-organizaciju dnevne dostave pi\u0107a, sokova, kafe, sanitarnih proizvoda, kao i svih ostalih proizvoda iz maloprodajne lokacije klijenata, po maloprodajnim cenama."
+              },
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              },
+              {
+                "Name": "Slatkoteka",
+                "Id": 3,
+                "Description": "Dobro do\u0161li. Ovo je Slatkoteka pri\u010Da. Ugasite svetlo i  u\u0161u\u0161kajte se, jer ulazite u \u010Darobni svet krofni, slatki\u0161a i iznena\u0111enja.\nSlatkoteka je ljubavna pri\u010Da. U toj pri\u010Di, princeza se zaljubila u krofne i tako je nastala Slatkoteka. Dok princeza \u010Deka svog princa, ona vredno radi i otkriva nove ukuse, oblike i dekoracije koje \u010Dine Slatkoteka krofne jedinstvenim.\nKrofne koje nastaju iz ljubavi princeze imaju tu mo\u0107 da spoje krajnosti u savr\u0161eno zadovoljstvo, gde tradicionalni recepti na\u0161ih baka i najkvalitetniji sastojci i prelivi, uz moderno pakovanje i dekoraciju osvajaju na prvi pogled.\nSlatkoteka krofne osvajaju i na\u0161e bake, \u010Dije smo tradicionalne recepte pretvorili u poslasticu koja sve vra\u0107a u detinjstvo. Sada ovde \u017Eive krofne, slatke i slane, svih ukusa i oblika: dostupne svima za degustaciju ili preterivanje, u svakom slu\u010Daju za u\u017Eivanje."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": null,
+        "SuggestionReplies": []
+      }
+    ]
   }
 }

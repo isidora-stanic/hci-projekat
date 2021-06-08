@@ -94,11 +94,7 @@ namespace OrganizeIt
             NavigationService.Navigate(new NewEventForm());
         }
 
-        private void PackIcon_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            SocialGathering proslava = (SocialGathering)((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
-            NavigationService.Navigate(new SocialGatheringInfo(proslava));
-        }
+        
 
         private void NewLikeThis_MouseDown(object sender, MouseButtonEventArgs e)
         {

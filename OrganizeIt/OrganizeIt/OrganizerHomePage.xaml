@@ -44,6 +44,12 @@
                     </WrapPanel>
                     <TextBlock FontSize="14" FontWeight="Light" Text="Dvoklik za detalje..." />
                 </StackPanel>
+                <!--<StackPanel Grid.Column="2" Margin="10" Orientation="Horizontal" VerticalAlignment="Center">
+                    <materialDesign:PackIcon Kind="InformationOutline" Background="Transparent"
+                                             ToolTip="Detalji" Width="35" Height="35"
+                                             MouseDown="PackIcon_MouseDown"></materialDesign:PackIcon>
+                </StackPanel>-->
+                
             </Grid>
         </DataTemplate>
 

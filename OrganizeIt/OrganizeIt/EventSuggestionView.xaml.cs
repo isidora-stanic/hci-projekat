@@ -96,7 +96,7 @@ namespace OrganizeIt
             // cuvanje odgovora i navigacija do sledeceg prozora
             NamestiOdgovor();
 
-            MessageBox.Show("Slanje (cuvanje) odgovora");
+            //MessageBox.Show("Slanje (cuvanje) odgovora");
 
             backend.Backend.AddSuggestionReply(Odgovor, Predlog);
             NavigationService.Navigate(new ManifestationList());
@@ -107,8 +107,10 @@ namespace OrganizeIt
             // cuvanje odgovora i navigacija do sledeceg prozora
             NamestiOdgovor();
             Odgovor.SuggestionsAccepted = true;
+            Odgovor.SocialGatheringSuggestion.SocialGathering.AcceptedSuggestions = true;
             backend.Backend.AddSuggestionReply(Odgovor, Predlog);
-            MessageBox.Show("Slanje (cuvanje) odgovora i prihvatanje");
+            //MessageBox.Show("Slanje (cuvanje) odgovora i prihvatanje");
+            NavigationService.Navigate(new ManifestationList());
         }
 
         private void OtkaziBtn_Click(object sender, RoutedEventArgs e)
