@@ -8,15 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("backend/data/img/users/aljox.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("backend/data/img/users/djole-loz.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("backend/data/img/users/jadranka88.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("backend/data/img/users/knezevicborislava.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("backend/data/img/users/kovacevicd.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("backend/data/img/users/milos.stankic.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("backend/data/img/users/mmartinovic.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("backend/data/img/users/sinisa.ivankovic.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("backend/data/img/users/suncana.zora.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("backend/data/img/users/zvezdaaa16.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("backend/data/logged_in_user.txt")]
 
 

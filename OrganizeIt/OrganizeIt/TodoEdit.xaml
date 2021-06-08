@@ -1,0 +1,47 @@
+﻿<Window x:Class="OrganizeIt.backend.TodoEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:OrganizeIt"
+        mc:Ignorable="d"
+        Title="TodoEdit" Height="500" Width="300">
+    <DockPanel>
+        <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Bottom">
+            <Button x:Name="CancelBtn"
+                    Margin="20" 
+                    Content="Otkazi"
+                    Click="CancelBtn_Click"
+                    Style="{DynamicResource MaterialDesignOutlinedButton}" />
+            <Button x:Name="EditBtn"  
+                    Margin="20"  
+                    Content="Izmeni" 
+                    Click="EditBtn_Click" />
+        </WrapPanel>
+        <StackPanel>
+            <TextBox x:Name="NameBox" 
+                     materialDesign:HintAssist.Hint="Naziv zadatka"
+                     Margin="20 0 20 20"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     Text="{Binding Path=Name, Mode=OneWay}" />
+            <TextBox x:Name="DescriptionBox"
+                     Margin="20 0 20 20"
+                     TextWrapping="Wrap"
+                     AcceptsReturn="True"
+                     VerticalScrollBarVisibility="Visible"
+                     materialDesign:HintAssist.Hint="Tekst stavke" 
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                     Text="{Binding Path=Description, Mode=OneWay}" />
+            <ComboBox materialDesign:HintAssist.Hint="Status" Margin="20 0 20 20" x:Name="StatusBox">
+                <ComboBoxItem IsSelected="True">Status stavke</ComboBoxItem>
+                <ComboBoxItem>Novo</ComboBoxItem>
+                <ComboBoxItem>Poslato</ComboBoxItem>
+                <ComboBoxItem>U obradi</ComboBoxItem>
+                <ComboBoxItem>Prihvaceno</ComboBoxItem>
+                <ComboBoxItem>Odbijeno</ComboBoxItem>
+                <ComboBoxItem>ARHIVIRAJ</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+    </DockPanel>
+</Window>

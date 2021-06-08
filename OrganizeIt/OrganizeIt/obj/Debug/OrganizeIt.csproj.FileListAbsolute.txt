@@ -299,3 +299,15 @@ C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\
 C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\EventSuggestionDraft.baml
 C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\EventSuggestionView.baml
 C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\NewSaradnik.baml
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\OrganizerHomePage.g.cs
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\OrganizerHomePage.baml
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\AddTodo.g.cs
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\AddTodo.baml
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\TodoEdit.g.cs
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\TodoEdit.baml
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\SocialGatheringInfo.baml
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\NewEventForm.g.cs
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\SocialGatheringInfo.g.cs
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\OrganizersCheckList.g.cs
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\NewEventForm.baml
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\OrganizersCheckList.baml
