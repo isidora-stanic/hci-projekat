@@ -174,6 +174,10 @@ namespace OrganizeIt
         private void processingListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var selectedItem = (e.OriginalSource as FrameworkElement).DataContext as ToDoCard;
+            if (selectedItem == null)
+            {
+                return;
+            }
             TodoEdit edit = new TodoEdit(selectedItem);
             if (edit.ShowDialog() == true)
             {
@@ -194,6 +198,10 @@ namespace OrganizeIt
         private void todoListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var selectedItem = (e.OriginalSource as FrameworkElement).DataContext as ToDoCard;
+            if (selectedItem == null)
+            {
+                return;
+            }
             TodoEdit edit = new TodoEdit(selectedItem);
             if (edit.ShowDialog() == true)
             {
@@ -213,6 +221,10 @@ namespace OrganizeIt
         private void sentListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var selectedItem = (e.OriginalSource as FrameworkElement).DataContext as ToDoCard;
+            if (selectedItem == null)
+            {
+                return;
+            }
             TodoEdit edit = new TodoEdit(selectedItem);
             if (edit.ShowDialog() == true)
             {
@@ -232,6 +244,10 @@ namespace OrganizeIt
         private void acceptedListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var selectedItem = (e.OriginalSource as FrameworkElement).DataContext as ToDoCard;
+            if (selectedItem == null)
+            {
+                return;
+            }
             TodoEdit edit = new TodoEdit(selectedItem);
             if (edit.ShowDialog() == true)
             {
@@ -251,6 +267,10 @@ namespace OrganizeIt
         private void declinedListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var selectedItem = (e.OriginalSource as FrameworkElement).DataContext as ToDoCard;
+            if (selectedItem == null)
+            {
+                return;
+            }
             TodoEdit edit = new TodoEdit(selectedItem);
             if (edit.ShowDialog() == true)
             {

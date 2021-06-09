@@ -5,6 +5,7 @@ using System.Text;
 using System.Security.Permissions;
 using System.Runtime.InteropServices;
 using OrganizeIt;
+using System.Windows;
 
 namespace HelpSistem
 {
@@ -12,9 +13,9 @@ namespace HelpSistem
     [ComVisible(true)]
     public class JavaScriptControlHelper
     {
-        MainWindow prozor;
+        Window prozor;
 
-        public JavaScriptControlHelper(MainWindow w)
+        public JavaScriptControlHelper(Window w)
         {
             prozor = w;
         }

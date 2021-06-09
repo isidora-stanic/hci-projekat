@@ -89,8 +89,8 @@ namespace OrganizeIt.backend
                 if (user.Password == password)
                 {
                     LoggedInUser = user;
-                    var loggedInUserDataDir = DataDir + "logged_in_user.txt";
-                    File.WriteAllText(loggedInUserDataDir, username);
+                    //var loggedInUserDataDir = DataDir + "logged_in_user.txt";
+                    //File.WriteAllText(loggedInUserDataDir, username);
                     return user;
                 }
             }
@@ -100,9 +100,10 @@ namespace OrganizeIt.backend
 
         public static User GetLoggedInUser(Dictionary<string, User> usersDict)
         {
-            var loggedInUserDataDir = DataDir + "logged_in_user.txt";
-            var username = File.ReadAllText(loggedInUserDataDir);
-            return usersDict[username];
+            //var loggedInUserDataDir = DataDir + "logged_in_user.txt";
+            //var username = File.ReadAllText(loggedInUserDataDir);
+            return LoggedInUser;
+            //return usersDict[username];
         }
 
         public static void SaveCollaborators(Dictionary<int, SocialGatheringCollaborator> collaboratorsDict)

@@ -43,19 +43,19 @@ namespace OrganizeIt
             }
             else if (user.UserType.Equals(UserType.Administrator))
             {
-                if ((bool)Zapamti.IsChecked)
+                if (Zapamti.IsChecked.HasValue && (bool)Zapamti.IsChecked)
                     backend.Backend.RememberMe(username.Text);
                 NavigationService.Navigate(new AccountsList());
             }
             else if (user.UserType.Equals(UserType.Organizer))
             {
-                if ((bool)Zapamti.IsChecked)
+                if (Zapamti.IsChecked.HasValue && (bool)Zapamti.IsChecked)
                     backend.Backend.RememberMe(username.Text);
                 NavigationService.Navigate(new OrganizerHomePage());
             }
             else if (user.UserType.Equals(UserType.Client))
             {
-                if ((bool)Zapamti.IsChecked)
+                if (Zapamti.IsChecked.HasValue && (bool)Zapamti.IsChecked)
                     backend.Backend.RememberMe(username.Text);
                 NavigationService.Navigate(new ManifestationList());
             }

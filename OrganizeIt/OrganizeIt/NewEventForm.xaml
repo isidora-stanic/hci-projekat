@@ -20,7 +20,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="2" Width="200" Margin="10" Click="Button_Click">Izaberi organizatora</Button>
+            <Button Grid.Column="2" Margin="10" Click="Button_Click">Izaberi organizatora</Button>
             <Button Grid.Column="0" x:Name="OtkaziBtn" Click="OtkaziBtn_Click" Style="{StaticResource MaterialDesignOutlinedButton}">Otkaži</Button>
         </Grid>
         <Grid Margin="80 0">
@@ -36,8 +36,14 @@
                      materialDesign:HintAssist.Hint="Naziv proslave"
                      Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
                      FontSize="14"
-                     x:Name="NazivProslave"
-                     Text="{Binding Proslava.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                     x:Name="NazivProslave">
+                <TextBox.Text>
+                    <Binding Path="Proslava.Name" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <local:MinimumCharacterRule MinimumCharacters="1"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
             </TextBox>
             <TextBox Margin="10" Grid.Row="1"
                      materialDesign:HintAssist.Hint="Tip proslave"
@@ -55,8 +61,14 @@
                      materialDesign:HintAssist.Hint="Broj gostiju"
                      Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
                      FontSize="14"
-                     x:Name="brGostiju"
-                     Text="{Binding Proslava.NumberOfGuests, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
+                     x:Name="brGostiju">
+                <TextBox.Text>
+                    <Binding Path="Proslava.NumberOfGuests" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <local:MinimumCharacterRule MinimumCharacters="1"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
             </TextBox>
             <TextBox Margin="10" Grid.Row="4"
                      VerticalScrollBarVisibility="auto"

@@ -25,7 +25,7 @@ namespace HelpSistem
 
         private static string DataDir = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
 
-        public HelpViewer(string key, MainWindow originator)
+        public HelpViewer(string key, Window originator)
         {
             InitializeComponent();
             string curDir = Directory.GetCurrentDirectory();

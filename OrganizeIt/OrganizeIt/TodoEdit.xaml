@@ -8,6 +8,9 @@
         xmlns:l="clr-namespace:HelpSistem"
         mc:Ignorable="d"
         Title="TodoEdit" Height="500" Width="300" l:HelpProvider.HelpKey="TodoEditPage">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Help" Executed="CommandBinding_Executed"/>
+    </Window.CommandBindings>
     <DockPanel FocusManager.FocusedElement="{Binding ElementName=NameBox}">
         <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Bottom">
             <Button x:Name="CancelBtn"
@@ -24,8 +27,15 @@
             <TextBox x:Name="NameBox"
                      materialDesign:HintAssist.Hint="Naziv zadatka"
                      Margin="20 0 20 20"
-                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                     Text="{Binding Path=Name, Mode=OneWay}" />
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                <TextBox.Text>
+                    <Binding Path="Name" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <local:MinimumCharacterRule MinimumCharacters="1"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
             <TextBox x:Name="DescriptionBox"
                      Margin="20 0 20 20"
                      TextWrapping="Wrap"
@@ -33,7 +43,7 @@
                      VerticalScrollBarVisibility="Visible"
                      materialDesign:HintAssist.Hint="Tekst stavke"
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                     Text="{Binding Path=Description, Mode=OneWay}" />
+                     Text="{Binding Path=Description, Mode=OneWay}"/>
             <ComboBox materialDesign:HintAssist.Hint="Status" Margin="20 0 20 20" x:Name="StatusBox">
                 <ComboBoxItem IsSelected="True">Status stavke</ComboBoxItem>
                 <ComboBoxItem>Novo</ComboBoxItem>

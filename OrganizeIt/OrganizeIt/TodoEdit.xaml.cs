@@ -1,4 +1,5 @@
-﻿using OrganizeIt.backend.todo;
+﻿using HelpSistem;
+using OrganizeIt.backend.todo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,17 @@ namespace OrganizeIt.backend
         {
             InitializeComponent();
             this.DataContext = card;
+        }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            IInputElement focusedControl = FocusManager.GetFocusedElement(Application.Current.Windows[0]);
+            if (focusedControl is DependencyObject)
+            {
+                //string str = HelpProvider.GetHelpKey((DependencyObject)focusedControl);
+                string str = "TodoEditPage";
+                HelpProvider.ShowHelp(str, this);
+            }
         }
 
         public ToDoCard Answer
