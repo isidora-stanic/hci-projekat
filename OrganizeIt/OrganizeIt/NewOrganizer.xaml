@@ -57,7 +57,7 @@
                         <ComboBoxItem IsSelected="True">Muški</ComboBoxItem>
                     </ComboBox>
                     <DatePicker  materialDesign:HintAssist.Hint="Datum rodjenja" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" x:Name="date" Margin="401 0 0 5">
-                        
+                       
                     </DatePicker>
                 </Grid>
                 <Grid Margin="0 0 0 20">
