@@ -21,7 +21,7 @@
                     <TextBox.Text>
                         <Binding Path="Username" Mode="TwoWay" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
-                                <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                <local:MinimumCharacterRule MinimumCharacters="1"/>
                             </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
@@ -31,7 +31,7 @@
                         <TextBox.Text>
                             <Binding Path="Name" Mode="TwoWay" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -40,7 +40,7 @@
                         <TextBox.Text>
                             <Binding Path="Lastname" Mode="TwoWay" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -66,7 +66,7 @@
                         <TextBox.Text>
                             <Binding Path="City" Mode="TwoWay" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -76,7 +76,7 @@
                         <TextBox.Text>
                             <Binding Path="Address" Mode="TwoWay" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -87,7 +87,7 @@
                         <TextBox.Text>
                             <Binding Path="Phone" Mode="TwoWay" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -96,7 +96,7 @@
                         <TextBox.Text>
                             <Binding Path="Email" Mode="TwoWay" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>

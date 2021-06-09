@@ -17,14 +17,12 @@
         <Button Content="Nazad" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFlatButton}"/>
         <Border Margin="15" MinWidth="600" MinHeight="00" Background="White" VerticalAlignment="Center" Padding="10" CornerRadius="10" MaxWidth="800">
             <StackPanel>
-                <Image Height="100"  Source="C:\Users\Jovana\Desktop\sl.PNG"/>
-
                 <TextBox materialDesign:HintAssist.Hint="Korisničko ime"
                          Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="username"  Margin="200 0 200 5">
                     <TextBox.Text>
                         <Binding Path="Username" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
-                                <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                <local:MinimumCharacterRule MinimumCharacters="1"/>
                             </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
@@ -66,7 +64,7 @@
                         <TextBox.Text>
                             <Binding Path="City" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -75,7 +73,7 @@
                         <TextBox.Text>
                             <Binding Path="Address" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -86,7 +84,7 @@
                         <TextBox.Text>
                             <Binding Path="Phone" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="6"/>
+                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -95,7 +93,7 @@
                         <TextBox.Text>
                             <Binding Path="Email" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>

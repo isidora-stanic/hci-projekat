@@ -77,16 +77,25 @@ namespace OrganizeIt
             BindingExpression binding6 = City.GetBindingExpression(TextBox.TextProperty);
             binding6.UpdateSource();
 
-            string messageBoxText = $"Da li ste sigurni da želite da izmenite korisnika {this.User.Username}?";
-            string caption = "Izmena korisnika";
-            MessageBoxButton btn = MessageBoxButton.YesNo;
-            MessageBoxImage img = MessageBoxImage.Question;
+            BindingExpression binding7 = BirthDate.GetBindingExpression(DatePicker.SelectedDateProperty);
+            binding7.UpdateSource();
+
+            String bla = this.BirthDate.Text;
+            try { DateTime oDate = Convert.ToDateTime(this.BirthDate.Text); }
+            catch (Exception) { return; }
 
             if (User.Username.Length < 5 || this.City.Text == "" || this.Address.Text == "" || User.Email == "" || User.PhoneNumber == "" || this.Phone.Text == ""
                 || this.Firstname.Text == "" || this.Lastname.Text == "")
             {
                 return;
             }
+
+            string messageBoxText = $"Da li ste sigurni da želite da izmenite korisnika {this.User.Username}?";
+            string caption = "Izmena korisnika";
+            MessageBoxButton btn = MessageBoxButton.YesNo;
+            MessageBoxImage img = MessageBoxImage.Question;
+
+            
             var result = MessageBox.Show(messageBoxText, caption, btn, img, MessageBoxResult.No);
             if (result == MessageBoxResult.Yes)
             {

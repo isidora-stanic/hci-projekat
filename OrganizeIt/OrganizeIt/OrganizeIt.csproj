@@ -137,6 +137,7 @@
     <Compile Include="ChangePassword.xaml.cs">
       <DependentUpon>ChangePassword.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DateRule.cs" />
     <Compile Include="EventSuggReplyView.xaml.cs">
       <DependentUpon>EventSuggReplyView.xaml</DependentUpon>
     </Compile>

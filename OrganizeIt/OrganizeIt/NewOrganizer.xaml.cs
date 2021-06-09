@@ -52,8 +52,8 @@ namespace OrganizeIt
             BindingExpression binding6 = city.GetBindingExpression(TextBox.TextProperty);
             binding6.UpdateSource();
 
-            /*BindingExpression binding7 = date.GetBindingExpression(DatePicker.SelectedDateProperty);
-            binding7.UpdateSource();*/
+            BindingExpression binding7 = date.GetBindingExpression(DatePicker.SelectedDateProperty);
+            binding7.UpdateSource();
 
             try { DateTime oDate = Convert.ToDateTime(this.date.Text); }
             catch (Exception) { return; }

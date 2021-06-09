@@ -23,7 +23,7 @@
                     <TextBox.Text>
                         <Binding Path="Username" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
-                                <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                <local:MinimumCharacterRule MinimumCharacters="1"/>
                             </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
@@ -57,7 +57,13 @@
                         <ComboBoxItem IsSelected="True">Muški</ComboBoxItem>
                     </ComboBox>
                     <DatePicker  materialDesign:HintAssist.Hint="Datum rodjenja" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" x:Name="date" Margin="401 0 0 5">
-                       
+                        <DatePicker.SelectedDate>
+                            <Binding Path="BirthData" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <local:DateRule MinimumCharacters="1"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </DatePicker.SelectedDate>
                     </DatePicker>
                 </Grid>
                 <Grid Margin="0 0 0 20">
@@ -65,7 +71,7 @@
                         <TextBox.Text>
                             <Binding Path="City" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -74,7 +80,7 @@
                         <TextBox.Text>
                             <Binding Path="Address" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -85,7 +91,7 @@
                         <TextBox.Text>
                             <Binding Path="Phone" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="6"/>
+                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -94,7 +100,7 @@
                         <TextBox.Text>
                             <Binding Path="Email" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>

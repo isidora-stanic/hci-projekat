@@ -19,7 +19,7 @@
                     <TextBox.Text>
                         <Binding Path="Username" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
-                                <local:MinimumCharacterRule MinimumCharacters="5"/>
+                                <local:MinimumCharacterRule MinimumCharacters="1"/>
                             </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
