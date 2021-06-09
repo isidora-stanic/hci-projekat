@@ -19,7 +19,7 @@ namespace OrganizeIt
             string charString = value as string;
             /*if (backend.Backend.LoadUsers().ContainsKey(charString))
                 return new ValidationResult(false, $"Korisnicko ime vec postoji");*/
-            if (charString is null)
+            if (charString == null)
                 return new ValidationResult(false, $"Polje mora da sadrži minimum {MinimumCharacters} karakter");
             if (charString.Length < MinimumCharacters)
                 return new ValidationResult(false, $"Polje mora da sadrži minimum {MinimumCharacters} karakter");

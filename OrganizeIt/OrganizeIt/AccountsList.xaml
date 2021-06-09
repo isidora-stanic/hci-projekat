@@ -87,6 +87,12 @@
                 <KeyGesture>Ctrl+Z</KeyGesture>
             </KeyBinding.Gesture>
         </KeyBinding>
+
+        <KeyBinding Command="{Binding NewCommand}">
+            <KeyBinding.Gesture>
+                <KeyGesture>Ctrl+N</KeyGesture>
+            </KeyBinding.Gesture>
+        </KeyBinding>
     </Page.InputBindings>
 
     <Grid FocusManager.FocusedElement="{Binding ElementName=ClientSearch}">

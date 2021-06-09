@@ -13,7 +13,7 @@ namespace OrganizeIt
         public string MinimumCharacters { get; set; }
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
-            if(value is null)
+            if(value == null)
                 return new ValidationResult(false, $"Datum se unosi u formatu datum\\mesec\\vreme");
 
             string charString = value as string;

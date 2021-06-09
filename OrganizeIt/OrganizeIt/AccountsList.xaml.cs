@@ -47,8 +47,33 @@ namespace OrganizeIt
             }
         }
 
+        private class NewCommandObject : ICommand
+        {
+            private readonly AccountsList _target;
+
+            public NewCommandObject(AccountsList target)
+            {
+                _target = target;
+            }
+
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+            public void Execute(object parameter)
+            {
+                _target.DoNewCommand();
+            }
+        }
+
         private readonly ICommand _undoCommand;
         public ICommand UndoCommand { get { return _undoCommand; } }
+
+        private readonly ICommand _newCommand;
+        public ICommand NewCommand { get { return _newCommand; } }
 
         public ObservableCollection<User> clients = new ObservableCollection<User>();
         public ObservableCollection<User> organizers = new ObservableCollection<User>();
@@ -76,6 +101,7 @@ namespace OrganizeIt
             CollaboratorListView.ItemsSource = collaborators;
 
             _undoCommand = new UndoCommandObject(this);
+            _newCommand = new NewCommandObject(this);
         }
 
         /* Funkcija za promenu teksta pri pretrazi klijenata */
@@ -221,6 +247,24 @@ namespace OrganizeIt
                 }
             }
         }
+
+        private void DoNewCommand()
+        {
+            TabItem ti = TabCtrl.SelectedItem as TabItem;
+            if (ti.Header as string == "Klijenti")
+            {
+                NavigationService.Navigate(new NewOrganizer(true));
+            }
+            else if (ti.Header as string == "Organizatori")
+            {
+                NavigationService.Navigate(new NewOrganizer(true));
+            }
+            else if (ti.Header as string == "Saradnici")
+            {
+                NavigationService.Navigate(new NewSaradnik());
+            }
+        }
+
 
         /* Ova funkcija se poziva pri pozivu pretrage */
 

@@ -45,7 +45,7 @@ namespace OrganizeIt
             BindingExpression binding = name.GetBindingExpression(TextBox.TextProperty);
             binding.UpdateSource();
 
-            if (this.Collab.Name == "" || this.Collab.Name is null)
+            if (this.Collab.Name == "" || this.Collab.Name == null)
                 return;
             MessageBoxButton btn = MessageBoxButton.YesNo;
             MessageBoxImage img = MessageBoxImage.Question;

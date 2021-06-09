@@ -254,3 +254,7 @@ C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\
 C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\SeatingArrangement.baml
 C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\SeatingReview.g.cs
 C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\SeatingReview.baml
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\HelpViewer.baml
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\ChangePassword.g.cs
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\HelpViewer.g.cs
+C:\Users\Matija\Desktop\Miscellanous\Programiranje\HCI\HCIProjekat\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\ChangePassword.baml
