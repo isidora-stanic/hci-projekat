@@ -38,7 +38,27 @@ namespace OrganizeIt
         public MainWindow()
         {
             InitializeComponent();
-            frame.NavigationService.Navigate(new Login());
+            backend.Backend.LoadAll();
+            var user = backend.Backend.LoggedInUser;
+            if (user == null)
+            {
+                frame.NavigationService.Navigate(new Login());
+            }
+            else
+            {
+                if (user.UserType == backend.users.UserType.Administrator)
+                {
+                    frame.NavigationService.Navigate(new AccountsList());
+                }
+                else if (user.UserType == backend.users.UserType.Organizer)
+                {
+                    frame.NavigationService.Navigate(new OrganizerHomePage());
+                }
+                else if (user.UserType == backend.users.UserType.Client)
+                {
+                    frame.NavigationService.Navigate(new ManifestationList());
+                }
+            }
         }
     }
 }

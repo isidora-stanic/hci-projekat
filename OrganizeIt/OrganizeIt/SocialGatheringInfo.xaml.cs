@@ -38,7 +38,7 @@ namespace OrganizeIt
 
         private void NazadBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            NavigationService.Navigate(new OrganizerHomePage());
         }
     }
 }

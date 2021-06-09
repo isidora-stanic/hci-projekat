@@ -167,6 +167,7 @@ namespace OrganizeIt
                 return;
 
             backend.Backend.LoggedInUser = null;
+            backend.Backend.LogOut();
             NavigationService.Navigate(new Login());
         }
 

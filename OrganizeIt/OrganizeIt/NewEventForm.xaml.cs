@@ -95,6 +95,8 @@ namespace OrganizeIt
                 var listaGostiju = backend.Backend.LoadGuestsFromCSV(filename);
                 Proslava.NumberOfGuests = listaGostiju.Count();
                 Proslava.GuestList = listaGostiju;
+                brGostiju.Text = Proslava.NumberOfGuests.ToString();
+                brGostiju.IsEnabled = false;
             }
             catch
             {

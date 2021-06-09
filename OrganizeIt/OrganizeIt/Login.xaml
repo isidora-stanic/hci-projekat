@@ -18,7 +18,7 @@
                 <PasswordBox materialDesign:HintAssist.Hint="Lozinka" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" x:Name="password" Margin="200 0 200 5" />
 
                 <Grid Margin="0 0 0 20">
-                    <CheckBox  Margin="200 0 200 5" FontWeight = "Light">Zapamti me</CheckBox>
+                    <CheckBox x:Name="Zapamti" Margin="200 0 200 5" FontWeight = "Light">Zapamti me</CheckBox>
                     <Label x:Name = "label1" Content = "Za pomoć kliknite ? ili F1" HorizontalAlignment="Right" Margin="0 0 200 5" FontWeight = "Light" />
                 </Grid>
 

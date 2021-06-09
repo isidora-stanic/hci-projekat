@@ -101,5 +101,21 @@ namespace OrganizeIt
             SocialGathering proslava = (SocialGathering)((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
             NavigationService.Navigate(new NewEventForm(proslava));
         }
+
+        private void OdjavaBtn_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            string messageBoxText = $"Da li želite da se odjavite";
+            string caption = "Odjava";
+            MessageBoxButton btn = MessageBoxButton.YesNo;
+            MessageBoxImage img = MessageBoxImage.Question;
+
+            var result = MessageBox.Show(messageBoxText, caption, btn, img, MessageBoxResult.No);
+            if (result == MessageBoxResult.No)
+                return;
+
+            backend.Backend.LoggedInUser = null;
+            backend.Backend.LogOut();
+            NavigationService.Navigate(new Login());
+        }
     }
 }

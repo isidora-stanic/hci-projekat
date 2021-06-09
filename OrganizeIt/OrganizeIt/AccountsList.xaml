@@ -26,6 +26,7 @@
                     <WrapPanel>
                         <TextBlock FontSize="14" FontWeight="Bold" Text="Ime: " />
                         <TextBlock FontSize="14" Text="{Binding Path=FirstName}" />
+                        <TextBlock FontSize="14" Text=" "></TextBlock>
                         <TextBlock FontSize="14" Text="{Binding Path=LastName}" />
                     </WrapPanel>
                     <WrapPanel>
@@ -41,14 +42,14 @@
                         <TextBlock FontSize="14" Text="{Binding Path=Email}" />
                     </WrapPanel>
                 </StackPanel>
-                <WrapPanel Grid.Column="2" HorizontalAlignment="Right">
+                <WrapPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">
                     <materialDesign:PackIcon x:Name="DeleteButton"
                                          Margin="15" FontSize="20" Kind="GarbageCan" MouseDown="DeleteButton_MouseDown"
-                                         Width="20" Height="20" Background="Transparent"></materialDesign:PackIcon>
+                                         Width="35" Height="35" Background="Transparent"></materialDesign:PackIcon>
                     <Separator></Separator>
                     <materialDesign:PackIcon x:Name="EditButton"
                                          Margin="15" FontSize="20" Kind="Pencil" MouseDown="EditButton_MouseDown"
-                                         Width="20" Height="20" Background="Transparent"></materialDesign:PackIcon>
+                                         Width="35" Height="35" Background="Transparent"></materialDesign:PackIcon>
                 </WrapPanel>
             </Grid>
         </DataTemplate>

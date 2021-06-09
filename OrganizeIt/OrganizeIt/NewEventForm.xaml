@@ -55,7 +55,8 @@
                      materialDesign:HintAssist.Hint="Broj gostiju"
                      Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
                      FontSize="14"
-                     Text="{Binding Proslava.NumberOfGuests, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                     x:Name="brGostiju"
+                     Text="{Binding Proslava.NumberOfGuests, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
             </TextBox>
             <TextBox Margin="10" Grid.Row="4"
                      VerticalScrollBarVisibility="auto"

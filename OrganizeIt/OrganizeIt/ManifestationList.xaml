@@ -73,16 +73,16 @@
                 <dragablz:InterTabController />
             </dragablz:TabablzControl.InterTabController>
 
-            <TabItem Header="PROSLAVE">
+            <TabItem Header="Proslave">
                 <DockPanel>
 
                     <StackPanel DockPanel.Dock="Top">
                         <WrapPanel HorizontalAlignment="Right">
                             <materialDesign:PackIcon x:Name="DodajManifBtn" Margin="-20 0 30 0" Background="Transparent" MouseDown="DodajManifBtn_MouseDown"
-                                ToolTip="Add new manifestation" FontSize="20" Kind="PlusBoxOutline" Width="35" Height="35">
+                                ToolTip="Dodaj novu proslavu" FontSize="20" Kind="PlusBoxOutline" Width="35" Height="35">
                             </materialDesign:PackIcon>
-                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
-                                ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
+                            <materialDesign:PackIcon x:Name="OdjavaBtn" Margin="-10 3 30 0" Background="Transparent"
+                                ToolTip="Odjava" MouseDown="OdjavaBtn_MouseDown" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
                         <Separator Margin="20 0 25 25" />
@@ -91,7 +91,7 @@
                                     x:Name="ManifestationSearch"
                                     MinWidth="500"
                                     FontSize="20"
-                                    materialDesign:HintAssist.Hint="Pretrazuj proslave..."
+                                    materialDesign:HintAssist.Hint="Pretražuj proslave..."
                                     VerticalAlignment="Center" CaretBrush="{x:Null}"
                                     TextChanged="ManifestationSearch_TextChanged" />
                             <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
@@ -104,12 +104,12 @@
                 </DockPanel>
             </TabItem>
 
-            <TabItem Header="PREDLOZI">
+            <TabItem Header="Predlozi">
                 <DockPanel>
                     <StackPanel DockPanel.Dock="Top">
                         <WrapPanel HorizontalAlignment="Right">
                             <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
-                                ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
+                                ToolTip="Odjava" MouseDown="OdjavaBtn_MouseDown" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
                         <Separator Margin="20 0 25 25" />
@@ -118,7 +118,7 @@
                                     x:Name="SuggestionsSearch"
                                     MinWidth="500"
                                     FontSize="20"
-                                    materialDesign:HintAssist.Hint="Pretrazuj predloge..."
+                                    materialDesign:HintAssist.Hint="Pretražuj predloge..."
                                     VerticalAlignment="Center" CaretBrush="{x:Null}"
                                     TextChanged="SuggestionSearch_TextChanged" />
                             <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
