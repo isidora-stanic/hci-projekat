@@ -47,6 +47,12 @@ namespace OrganizeIt
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (this.NameBox.Text == "")
+            {
+                MessageBox.Show("Unesite naziv stavke!", "Nepravilan unos");
+                return;
+            }
+
             string name = NameBox.Text;
             string description = DescriptionBox.Text;
             string status = (StatusBox.SelectedItem as ComboBoxItem).Content as string;
