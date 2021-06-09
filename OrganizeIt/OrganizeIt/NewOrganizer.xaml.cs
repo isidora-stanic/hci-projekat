@@ -19,17 +19,31 @@ namespace OrganizeIt
     /// <summary>
     /// Interaction logic for NewOrganizer.xaml
     /// </summary>
-    public partial class NewOrganizer : Page
+    public partial class NewOrganizer : Page, Saveable
     {
         private Boolean IsClient { get; set; }
+
         public NewOrganizer(Boolean isClient)
         {
+            this.DataContext = new RegistrationVM(this);
             InitializeComponent();
             this.IsClient = isClient;
             if (this.IsClient)
                 this.Btn2.Content = "Dodaj korisnika";
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SaveCommand();
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AccountsList());
+        }
+
+        public void SaveCommand()
         {
             backend.Backend bb = new backend.Backend();
 
@@ -68,6 +82,17 @@ namespace OrganizeIt
             {
                 return;
             }
+
+            string messageBoxText = $"Da li ste sigurni da želite da dodate novog korisnika?";
+            string caption = "Dodavanje korisnika";
+            MessageBoxButton btn = MessageBoxButton.YesNo;
+            MessageBoxImage img = MessageBoxImage.Question;
+
+
+            var result = MessageBox.Show(messageBoxText, caption, btn, img, MessageBoxResult.No);
+            if (result == MessageBoxResult.No)
+                return;
+
             User user = new User();
             if (this.IsClient)
                 user.UserType = UserType.Client;
@@ -93,12 +118,6 @@ namespace OrganizeIt
             var allUsers = backend.Backend.LoadUsers();
             allUsers.Add(user.Username, user);
             backend.Backend.SaveUsers(allUsers);
-            NavigationService.Navigate(new AccountsList());
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
             NavigationService.Navigate(new AccountsList());
         }
     }

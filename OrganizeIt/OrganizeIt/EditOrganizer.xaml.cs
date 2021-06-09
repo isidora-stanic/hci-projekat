@@ -19,19 +19,21 @@ namespace OrganizeIt
     /// <summary>
     /// Interaction logic for EditOrganizer.xaml
     /// </summary>
-    public partial class EditOrganizer : Page
+    public partial class EditOrganizer : Page, Saveable
     {
+
         public User User { get; set; }
         public Dictionary<string, User> allUsers { get; set; }
+
         public EditOrganizer(User user, Dictionary<string, User> allUsers)
         {
             this.allUsers = allUsers;
             this.User = user;
+            this.DataContext = new RegistrationVM(this);
 
 
             InitializeComponent();
 
-            //this.DataContext = User;
             if (user.UserType == UserType.Client) { this.Btn2.Content = "Izmeni korisnika"; }
 
             this.City.Text = user.Address.City;
@@ -51,6 +53,22 @@ namespace OrganizeIt
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SaveCommand();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AccountsList());
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            ChangePassword cp = new ChangePassword(this.User);
+            cp.Show();
+        }
+
+        public void SaveCommand()
         {
             this.User.Address.City = this.City.Text;
             this.User.Address.StreetAddress = this.Address.Text;
@@ -95,7 +113,7 @@ namespace OrganizeIt
             MessageBoxButton btn = MessageBoxButton.YesNo;
             MessageBoxImage img = MessageBoxImage.Question;
 
-            
+
             var result = MessageBox.Show(messageBoxText, caption, btn, img, MessageBoxResult.No);
             if (result == MessageBoxResult.Yes)
             {
@@ -109,17 +127,6 @@ namespace OrganizeIt
 
             }
             NavigationService.Navigate(new AccountsList());
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new AccountsList());
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            ChangePassword cp = new ChangePassword(this.User);
-            cp.Show();
         }
     }
 }

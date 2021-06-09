@@ -19,7 +19,7 @@ namespace OrganizeIt
     /// <summary>
     /// Interaction logic for EditSaradnik.xaml
     /// </summary>
-    public partial class EditSaradnik : Page
+    public partial class EditSaradnik : Page, Saveable
     {
         public SocialGatheringCollaborator Collab;
         public Dictionary<int, SocialGatheringCollaborator> Collaborators;
@@ -28,14 +28,14 @@ namespace OrganizeIt
         {
             this.Collaborators = backend.Backend.LoadCollaborators();
             this.Collab = collab;
-            this.DataContext = collab;
+            this.DataContext = new RegistrationVM(this);
 
             InitializeComponent();
             this.name.Text = this.Collab.Name;
             this.description.Text = this.Collab.Description;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void SaveCommand()
         {
             string messageBoxText = $"Da li ste sigurni da želite da izmenite saradnika {this.Collab.Name}?";
             string caption = "Izmena saradnika";
@@ -59,6 +59,11 @@ namespace OrganizeIt
             }
 
             NavigationService.Navigate(new AccountsList());
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SaveCommand();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

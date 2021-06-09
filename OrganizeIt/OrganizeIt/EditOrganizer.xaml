@@ -10,9 +10,14 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EditOrganizer" l:HelpProvider.HelpKey="EditOrganizerPage">
 
-    <Page.DataContext>
-        <local:RegistrationVM/>
-    </Page.DataContext>
+
+    <Page.InputBindings>
+        <KeyBinding Command="{Binding SaveCommand}">
+            <KeyBinding.Gesture>
+                <KeyGesture>Ctrl+S</KeyGesture>
+            </KeyBinding.Gesture>
+        </KeyBinding>
+    </Page.InputBindings>
 
     <Grid Background="White">
         <Border Margin="15" MinWidth="600" MinHeight="00" Background="White" VerticalAlignment="Center" Padding="10" CornerRadius="10" MaxWidth="800">
@@ -21,7 +26,7 @@
                     <TextBox.Text>
                         <Binding Path="Username" Mode="TwoWay" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
-                                <local:UsernameRule MinimumCharacters='username'/>
+                                <local:MinimumCharacterRule MinimumCharacters="1"/>
                             </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>

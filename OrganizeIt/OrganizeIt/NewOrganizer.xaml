@@ -10,9 +10,13 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="NewOrganizer" l:HelpProvider.HelpKey="NewOrganizerPage">
 
-    <Page.DataContext>
-        <local:RegistrationVM/>
-    </Page.DataContext>
+    <Page.InputBindings>
+        <KeyBinding Command="{Binding SaveCommand}">
+            <KeyBinding.Gesture>
+                <KeyGesture>Ctrl+S</KeyGesture>
+            </KeyBinding.Gesture>
+        </KeyBinding>
+    </Page.InputBindings>
 
     <Grid Background="White">
 

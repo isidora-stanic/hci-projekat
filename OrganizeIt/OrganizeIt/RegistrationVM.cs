@@ -3,11 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace OrganizeIt
 {
     class RegistrationVM : ObservableObject
     {
+
+        private class SaveCommandObject : ICommand
+        {
+            private readonly Saveable _target;
+
+            public SaveCommandObject(Saveable target)
+            {
+                _target = target;
+            }
+
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+            public void Execute(object parameter)
+            {
+                _target.SaveCommand();
+            }
+        }
+
+        private readonly ICommand _saveCommand;
+        public ICommand SaveCommand { get { return _saveCommand; } }
+
+        public RegistrationVM(Saveable ancestor)
+        {
+            _saveCommand = new SaveCommandObject(ancestor);
+        }
+
+        public RegistrationVM() {}
+
+
         private string _username;
         public string Username
         {

@@ -145,6 +145,7 @@
     <Compile Include="ObservableObject.cs" />
     <Compile Include="PasswordBoxAssistant.cs" />
     <Compile Include="RegistrationVM.cs" />
+    <Compile Include="Saveable.cs" />
     <Compile Include="SeatingArrangement.xaml.cs">
       <DependentUpon>SeatingArrangement.xaml</DependentUpon>
     </Compile>

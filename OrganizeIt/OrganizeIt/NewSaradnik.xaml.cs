@@ -19,14 +19,15 @@ namespace OrganizeIt
     /// <summary>
     /// Interaction logic for NewSaradnik.xaml
     /// </summary>
-    public partial class NewSaradnik : Page
+    public partial class NewSaradnik : Page, Saveable
     {
         public NewSaradnik()
         {
+            this.DataContext = new RegistrationVM(this);
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void SaveCommand()
         {
             if (this.username.Text == "")
             {
@@ -34,6 +35,17 @@ namespace OrganizeIt
                 binding.UpdateSource();
                 return;
             }
+
+            string messageBoxText = $"Da li ste sigurni da želite da dodate novog saradnika?";
+            string caption = "Dodavanje saradnika";
+            MessageBoxButton btn = MessageBoxButton.YesNo;
+            MessageBoxImage img = MessageBoxImage.Question;
+
+
+            var result = MessageBox.Show(messageBoxText, caption, btn, img, MessageBoxResult.No);
+            if (result == MessageBoxResult.No)
+                return;
+
             SocialGatheringCollaborator sgc = new SocialGatheringCollaborator();
             sgc.Description = this.description.Text;
             sgc.Name = this.username.Text;
@@ -50,6 +62,11 @@ namespace OrganizeIt
                 NavigationService.Navigate(new AccountsList());
             else
                 NavigationService.Navigate(new OrganizerHomePage());
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SaveCommand();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
