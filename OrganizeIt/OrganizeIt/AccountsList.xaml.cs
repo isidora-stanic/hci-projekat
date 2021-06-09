@@ -267,12 +267,12 @@ namespace OrganizeIt
 
         private void AddClientIcon_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Not yet implemented");
+            NavigationService.Navigate(new NewOrganizer(true));
         }
 
         private void AddOrganizerIcon_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            NavigationService.Navigate(new NewOrganizer());
+            NavigationService.Navigate(new NewOrganizer(false));
         }
 
         private void AddCollaboratorIcon_MouseDown(object sender, MouseButtonEventArgs e)

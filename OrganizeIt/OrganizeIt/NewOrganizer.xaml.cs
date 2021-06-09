@@ -21,9 +21,11 @@ namespace OrganizeIt
     /// </summary>
     public partial class NewOrganizer : Page
     {
-        public NewOrganizer()
+        private Boolean IsClient { get; set; }
+        public NewOrganizer(Boolean isClient)
         {
             InitializeComponent();
+            this.IsClient = isClient;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -62,6 +64,11 @@ namespace OrganizeIt
                 return;
             }
             User user = new User();
+            if (this.IsClient)
+                user.UserType = UserType.Client;
+            else
+                user.UserType = UserType.Organizer;
+
             user.Username = this.username.Text;
             user.Password = this.password.Password;
             user.FirstName = this.name.Text;
@@ -82,11 +89,17 @@ namespace OrganizeIt
             var allUsers = backend.Backend.LoadUsers();
             allUsers.Add(user.Username, user);
             backend.Backend.SaveUsers(allUsers);
+            NavigationService.Navigate(new AccountsList());
 
             //this.username.BorderBrush = Brushes.Red;
             //this.username.Text = "";
             //this.username.Foreground = Brushes.Red;
 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AccountsList());
         }
     }
 }
