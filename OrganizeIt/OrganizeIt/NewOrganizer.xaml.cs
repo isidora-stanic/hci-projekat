@@ -94,7 +94,7 @@ namespace OrganizeIt
             //this.username.BorderBrush = Brushes.Red;
             //this.username.Text = "";
             //this.username.Foreground = Brushes.Red;
-
+            NavigationService.Navigate(new AccountsList());
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
