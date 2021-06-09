@@ -106,7 +106,7 @@ namespace OrganizeIt
         {
             User u = (User)((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
 
-            string messageBoxText = $"Da li zelite da izbrisete korisnika {u.Username}?";
+            string messageBoxText = $"Da li želite da izbrišete korisnika {u.Username}?";
             string caption = "Brisanje korisnika";
             MessageBoxButton btn = MessageBoxButton.YesNo;
             MessageBoxImage img = MessageBoxImage.Question;
@@ -152,8 +152,8 @@ namespace OrganizeIt
             SocialGatheringCollaborator u = (SocialGatheringCollaborator)
                 ((MaterialDesignThemes.Wpf.PackIcon)sender).DataContext;
 
-            string messageBoxText = $"Da li zelite da izbrisete korisnika {u.Name}?";
-            string caption = "Brisanje korisnika";
+            string messageBoxText = $"Da li želite da izbrišete saradnika {u.Name}?";
+            string caption = "Brisanje saradnika";
             MessageBoxButton btn = MessageBoxButton.YesNo;
             MessageBoxImage img = MessageBoxImage.Question;
 
