@@ -143,6 +143,7 @@
     </Compile>
     <Compile Include="MinimumCharacterRule.cs" />
     <Compile Include="ObservableObject.cs" />
+    <Compile Include="PasswordBoxAssistant.cs" />
     <Compile Include="RegistrationVM.cs" />
     <Compile Include="SeatingArrangement.xaml.cs">
       <DependentUpon>SeatingArrangement.xaml</DependentUpon>
@@ -158,6 +159,7 @@
     <Compile Include="SocialGatheringInfo.xaml.cs">
       <DependentUpon>SocialGatheringInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UsernameRule.cs" />
     <Page Include="AccountsList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -26,6 +26,8 @@ namespace OrganizeIt
         {
             InitializeComponent();
             this.IsClient = isClient;
+            if (this.IsClient)
+                this.Btn2.Content = "Dodaj korisnika";
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -54,6 +56,9 @@ namespace OrganizeIt
 
             BindingExpression binding7 = date.GetBindingExpression(DatePicker.SelectedDateProperty);
             binding7.UpdateSource();
+
+            BindingExpression binding8 = password.GetBindingExpression(PasswordBoxAssistant.BoundPassword);
+            binding8.UpdateSource();
 
             try { DateTime oDate = Convert.ToDateTime(this.date.Text); }
             catch (Exception) { return; }
@@ -89,10 +94,6 @@ namespace OrganizeIt
             allUsers.Add(user.Username, user);
             backend.Backend.SaveUsers(allUsers);
             NavigationService.Navigate(new AccountsList());
-
-            //this.username.BorderBrush = Brushes.Red;
-            //this.username.Text = "";
-            //this.username.Foreground = Brushes.Red;
 
         }
 

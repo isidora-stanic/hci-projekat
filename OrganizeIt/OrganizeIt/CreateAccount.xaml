@@ -14,7 +14,7 @@
         <local:RegistrationVM/>
     </Page.DataContext>
     <Grid Background="White">
-        <Button Content="Nazad" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFlatButton}"/>
+        <Button Content="Nazad" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFlatButton}" Click="Button_Click_1"/>
         <Border Margin="15" MinWidth="600" MinHeight="00" Background="White" VerticalAlignment="Center" Padding="10" CornerRadius="10" MaxWidth="800">
             <StackPanel>
                 <TextBox materialDesign:HintAssist.Hint="Korisničko ime"
@@ -22,13 +22,20 @@
                     <TextBox.Text>
                         <Binding Path="Username" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
-                                <local:MinimumCharacterRule MinimumCharacters="1"/>
+                                <local:UsernameRule MinimumCharacters='username'/>
                             </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
 
-                <PasswordBox materialDesign:HintAssist.Hint="Lozinka" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" x:Name="password" Margin="200 0 200 5">
+                <PasswordBox materialDesign:HintAssist.Hint="Lozinka" local:PasswordBoxAssistant.BindPassword="True" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" x:Name="password" Margin="200 0 200 5">
+                    <local:PasswordBoxAssistant.BoundPassword>
+                            <Binding Path="Password" Mode="TwoWay">
+                                <Binding.ValidationRules>
+                                <local:MinimumCharacterRule MinimumCharacters="1"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </local:PasswordBoxAssistant.BoundPassword>
                 </PasswordBox>
                 <Grid Margin="0 0 0 20">
                     <TextBox materialDesign:HintAssist.Hint="Ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="name" Margin="0 0 401 5">
@@ -56,7 +63,13 @@
                         <ComboBoxItem IsSelected="True">Muški</ComboBoxItem>
                     </ComboBox>
                     <DatePicker  materialDesign:HintAssist.Hint="Datum rodjenja" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" x:Name="date" Margin="401 0 0 5">
-
+                        <DatePicker.SelectedDate>
+                            <Binding Path="BirthData" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <local:DateRule MinimumCharacters="1"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </DatePicker.SelectedDate>
                     </DatePicker>
                 </Grid>
                 <Grid Margin="0 0 0 20">

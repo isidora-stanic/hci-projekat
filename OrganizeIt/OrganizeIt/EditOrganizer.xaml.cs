@@ -32,6 +32,7 @@ namespace OrganizeIt
             InitializeComponent();
 
             //this.DataContext = User;
+            if (user.UserType == UserType.Client) { this.Btn2.Content = "Izmeni korisnika"; }
 
             this.City.Text = user.Address.City;
             this.Address.Text = user.Address.StreetAddress;
@@ -80,7 +81,6 @@ namespace OrganizeIt
             BindingExpression binding7 = BirthDate.GetBindingExpression(DatePicker.SelectedDateProperty);
             binding7.UpdateSource();
 
-            String bla = this.BirthDate.Text;
             try { DateTime oDate = Convert.ToDateTime(this.BirthDate.Text); }
             catch (Exception) { return; }
 

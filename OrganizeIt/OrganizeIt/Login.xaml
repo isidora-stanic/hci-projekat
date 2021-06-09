@@ -17,6 +17,13 @@
                 <TextBox materialDesign:HintAssist.Hint="Korisničko ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="username" Margin="200 0 200 5" />
                 <PasswordBox materialDesign:HintAssist.Hint="Lozinka" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" x:Name="password" Margin="200 0 200 5" />
 
+                <Label Name="Label1"  
+                        Content="Nevalidno korisničko ime ili lozinka"  
+                         Margin="200 0 200 5"
+                        Foreground="Red"
+                        FontSize="12"
+                       Visibility="Hidden"
+                        />    
                 <Grid Margin="0 0 0 20">
                     <CheckBox x:Name="Zapamti" Margin="200 0 200 5" FontWeight = "Light">Zapamti me</CheckBox>
                     <Label x:Name = "label1" Content = "Za pomoć kliknite ? ili F1" HorizontalAlignment="Right" Margin="0 0 200 5" FontWeight = "Light" />

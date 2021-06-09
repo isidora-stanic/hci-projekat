@@ -51,6 +51,16 @@ namespace OrganizeIt
             BindingExpression binding6 = city.GetBindingExpression(TextBox.TextProperty);
             binding6.UpdateSource();
 
+            BindingExpression binding7 = date.GetBindingExpression(DatePicker.SelectedDateProperty);
+            binding7.UpdateSource();
+
+            BindingExpression binding8 = password.GetBindingExpression(PasswordBoxAssistant.BoundPassword);
+            binding8.UpdateSource();
+
+            try { DateTime oDate = Convert.ToDateTime(this.date.Text); }
+            catch (Exception) { return; }
+
+
             if (this.username.Text == "" || this.password.Password == "" || this.address.Text == "" || this.city.Text == ""
                 || this.name.Text == "" || this.lastname.Text == "" || this.phone.Text == "" || this.email.Text == "")
             {
@@ -81,6 +91,11 @@ namespace OrganizeIt
 
             backend.Backend.LogIn(this.username.Text, this.password.Password, allUsers);
             NavigationService.Navigate(new ManifestationList());
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Login());
         }
     }
 }

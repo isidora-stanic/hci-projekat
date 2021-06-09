@@ -29,6 +29,10 @@ namespace OrganizeIt
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            BindingExpression binding8 = password.GetBindingExpression(PasswordBoxAssistant.BoundPassword);
+            binding8.UpdateSource();
+            if (this.password.Password == "")
+                return;
             this.User.Password = this.password.Password;
             Dictionary<string, User> users = backend.Backend.LoadUsers();
             users[this.User.Username].Password = this.password.Password;

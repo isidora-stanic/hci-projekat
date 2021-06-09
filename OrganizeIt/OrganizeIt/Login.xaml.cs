@@ -35,9 +35,12 @@ namespace OrganizeIt
         {
             Dictionary<string, User> users = Backend.LoadUsers();
             User user = Backend.LogIn(this.username.Text, this.password.Password, users);
-            
+
             if (user == null)
+            {
+                Label1.Visibility = Visibility.Visible;
                 return; //NavigationService.Navigate(new CreateAccount());  //NavigationService.Navigate(new EditOrganizer());
+            }
             else if (user.UserType.Equals(UserType.Administrator))
             {
                 if ((bool)Zapamti.IsChecked)
@@ -49,7 +52,7 @@ namespace OrganizeIt
                 if ((bool)Zapamti.IsChecked)
                     backend.Backend.RememberMe(username.Text);
                 NavigationService.Navigate(new OrganizerHomePage());
-            }   
+            }
             else if (user.UserType.Equals(UserType.Client))
             {
                 if ((bool)Zapamti.IsChecked)
