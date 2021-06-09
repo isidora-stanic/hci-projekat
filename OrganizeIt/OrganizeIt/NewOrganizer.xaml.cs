@@ -50,6 +50,12 @@ namespace OrganizeIt
             BindingExpression binding6 = city.GetBindingExpression(TextBox.TextProperty);
             binding6.UpdateSource();
 
+            BindingExpression binding7 = date.GetBindingExpression(DatePicker.SelectedDateProperty);
+            binding7.UpdateSource();
+
+            try { DateTime oDate = Convert.ToDateTime(this.date); }
+            catch (Exception) { return; }
+
             if (this.username.Text == "" || this.password.Password == "" || this.address.Text == "" || this.city.Text == ""
                 || this.name.Text == "" || this.lastname.Text == "" || this.phone.Text == "" || this.email.Text == "")
             {

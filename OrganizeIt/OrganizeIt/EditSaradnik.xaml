@@ -9,25 +9,30 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EditSaradnik" l:HelpProvider.HelpKey="EditSaradnikPage">
-
+    <Page.DataContext>
+        <local:RegistrationVM/>
+    </Page.DataContext>
     <Grid Background="White">
-        <Button Content="Nazad" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFlatButton}"/>
         <Border Margin="15" MinWidth="600" MinHeight="00" Background="White" VerticalAlignment="Center" Padding="10" CornerRadius="10" MaxWidth="800">
             <StackPanel>
-                <Image Height="100"  Source="C:\Users\Jovana\Desktop\sl.PNG"/>
-
-                <TextBox materialDesign:HintAssist.Hint="Naziv" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Name, Mode = TwoWay}" Margin="0 0 0 5"/>
+                <TextBox materialDesign:HintAssist.Hint="Naziv" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="name" Margin="0 0 0 5">
+                    <TextBox.Text>
+                        <Binding Path="Username" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <local:MinimumCharacterRule MinimumCharacters="5"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
 
                 <TextBox
-                  Name="tbMultiLine"
+                  Name="description"
                   TextWrapping="Wrap"
                   AcceptsReturn="True"
                   VerticalScrollBarVisibility="Visible"
                   Padding="10"
                   materialDesign:HintAssist.Hint="Opis"
-                 
                   MinHeight="20"
-                  Text="{Binding Description, Mode = TwoWay}"
                   Margin="0 0 0 20"
                 >
                 </TextBox>

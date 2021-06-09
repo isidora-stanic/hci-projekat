@@ -31,12 +31,22 @@ namespace OrganizeIt
             this.DataContext = collab;
 
             InitializeComponent();
+            this.name.Text = this.Collab.Name;
+            this.description.Text = this.Collab.Description;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string messageBoxText = $"Da li ste sigurni da želite da izmenite saradnika {this.Collab.Name}?";
             string caption = "Izmena saradnika";
+            this.Collab.Name = this.name.Text;
+            this.Collab.Description = this.description.Text;
+
+            BindingExpression binding = name.GetBindingExpression(TextBox.TextProperty);
+            binding.UpdateSource();
+
+            if (this.Collab.Name == "" || this.Collab.Name is null)
+                return;
             MessageBoxButton btn = MessageBoxButton.YesNo;
             MessageBoxImage img = MessageBoxImage.Question;
 

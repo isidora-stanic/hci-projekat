@@ -20,9 +20,9 @@ namespace OrganizeIt
             /*if (backend.Backend.LoadUsers().ContainsKey(charString))
                 return new ValidationResult(false, $"Korisnicko ime vec postoji");*/
             if (charString is null)
-                return new ValidationResult(false, $"User atleast {MinimumCharacters} characters.");
+                return new ValidationResult(false, $"Polje mora da sadrži minimum {MinimumCharacters} karaktera.");
             if (charString.Length < MinimumCharacters)
-                return new ValidationResult(false, $"User atleast {MinimumCharacters} characters.");
+                return new ValidationResult(false, $"Polje mora da sadrži minimum {MinimumCharacters} karaktera.");
 
             return new ValidationResult(true, null);
         }

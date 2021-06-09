@@ -84,8 +84,18 @@ namespace OrganizeIt
             get { return _data; }
             set
             {
-
                 OnPropertyChanged(ref _data, value);
+            }
+        }
+
+
+        private string _password;
+        public string Password
+        {
+            get { return _password; }
+            set
+            {
+                OnPropertyChanged(ref _password, value);
             }
         }
     }

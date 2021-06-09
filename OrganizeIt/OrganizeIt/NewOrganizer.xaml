@@ -16,11 +16,8 @@
 
     <Grid Background="White">
 
-        <Button Content="Nazad" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFlatButton}"/>
         <Border Margin="15" MinWidth="600" MinHeight="00" Background="White" VerticalAlignment="Center" Padding="10" CornerRadius="10" MaxWidth="800">
             <StackPanel>
-                <Image Height="100"  Source="C:\Users\Jovana\Desktop\sl.PNG"/>
-
                 <TextBox materialDesign:HintAssist.Hint="Korisničko ime"
                          Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="username"  Margin="200 0 200 5">
                     <TextBox.Text>
@@ -60,13 +57,7 @@
                         <ComboBoxItem IsSelected="True">Muški</ComboBoxItem>
                     </ComboBox>
                     <DatePicker  materialDesign:HintAssist.Hint="Datum rodjenja" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" x:Name="date" Margin="401 0 0 5">
-                        <DatePicker.SelectedDate>
-                            <Binding Path="Address" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>
-                                    <local:MinimumCharacterRule MinimumCharacters="1"/>
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DatePicker.SelectedDate>
+                        
                     </DatePicker>
                 </Grid>
                 <Grid Margin="0 0 0 20">

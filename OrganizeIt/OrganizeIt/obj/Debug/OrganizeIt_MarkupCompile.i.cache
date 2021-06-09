@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Jovana\Source\Repos\hci-projekat\OrganizeIt\OrganizeIt\obj\Debug\
+C:\Users\Jovana\source\repos\hci-projekat2\OrganizeIt\OrganizeIt\obj\Debug\
 OrganizeIt
 none
 false
 DEBUG;TRACE
-C:\Users\Jovana\Source\Repos\hci-projekat\OrganizeIt\OrganizeIt\App.xaml
-22-1582624748
-4-1377766609
-45-112461450
-26277785075
-AccountsList.xaml;AddTodo.xaml;SeatingArrangement.xaml;SeatingReview.xaml;HelpViewer.xaml;TodoEdit.xaml;CreateAccount.xaml;EditOrganizer.xaml;EditSaradnik.xaml;EventCollabsCheckList.xaml;EventSuggestionDraft.xaml;EventSuggestionView.xaml;EventSuggReplyView.xaml;Login.xaml;MainWindow.xaml;ManifestationList.xaml;NewEventForm.xaml;NewOrganizer.xaml;NewSaradnik.xaml;OrganizerHomePage.xaml;SocialGatheringInfo.xaml;OrganizersCheckList.xaml;
+C:\Users\Jovana\source\repos\hci-projekat2\OrganizeIt\OrganizeIt\App.xaml
+23-967128359
 
-False
+46-1804127651
+261284116294
+AccountsList.xaml;AddTodo.xaml;ChangePassword.xaml;SeatingArrangement.xaml;SeatingReview.xaml;HelpViewer.xaml;TodoEdit.xaml;CreateAccount.xaml;EditOrganizer.xaml;EditSaradnik.xaml;EventCollabsCheckList.xaml;EventSuggestionDraft.xaml;EventSuggestionView.xaml;EventSuggReplyView.xaml;Login.xaml;MainWindow.xaml;ManifestationList.xaml;NewEventForm.xaml;NewOrganizer.xaml;NewSaradnik.xaml;OrganizerHomePage.xaml;SocialGatheringInfo.xaml;OrganizersCheckList.xaml;
+
+True
 
