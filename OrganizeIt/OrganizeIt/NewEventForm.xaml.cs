@@ -69,10 +69,20 @@ namespace OrganizeIt
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (Proslava.Name.Length == 0)
-                MessageBox.Show("Napisite naslov.");
-            else
-                NavigationService.Navigate(new OrganizersCheckList(Proslava));
+            BindingExpression binding = NazivProslave.GetBindingExpression(TextBox.TextProperty);
+            binding.UpdateSource();
+
+            BindingExpression binding1 = brGostiju.GetBindingExpression(TextBox.TextProperty);
+            binding1.UpdateSource();
+
+            try { DateTime oDate = Convert.ToDateTime(this.DatumProslave.Text); }
+            catch (Exception) { return; }
+
+            if (this.NazivProslave.Text == "" || this.brGostiju.Text == "")
+            {
+                return;
+            }
+            NavigationService.Navigate(new OrganizersCheckList(Proslava));
         }
 
         private void CSVButton_Click(object sender, RoutedEventArgs e)

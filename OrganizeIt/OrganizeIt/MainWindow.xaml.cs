@@ -21,7 +21,7 @@ namespace OrganizeIt
     /// </summary>
     public partial class MainWindow : Window
     {
-        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        public void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             IInputElement focusedControl = FocusManager.GetFocusedElement(Application.Current.Windows[0]);
             if (focusedControl is DependencyObject)

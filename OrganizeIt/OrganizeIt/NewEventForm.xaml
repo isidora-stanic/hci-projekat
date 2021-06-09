@@ -55,6 +55,7 @@
                      materialDesign:HintAssist.Hint="Datum proslave"
                      Style="{DynamicResource MaterialDesignDatePicker}"
                      FontSize="14"
+                        x:Name="DatumProslave"
                      Text="{Binding Proslava.DateTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             </DatePicker>
             <TextBox Margin="10" Grid.Row="3"

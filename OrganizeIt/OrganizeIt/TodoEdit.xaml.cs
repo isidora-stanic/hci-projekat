@@ -53,6 +53,15 @@ namespace OrganizeIt.backend
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
+
+            BindingExpression binding1 = NameBox.GetBindingExpression(TextBox.TextProperty);
+            binding1.UpdateSource();
+
+            
+            if (this.NameBox.Text == "")
+            {
+                return;
+            }
             string status = (StatusBox.SelectedItem as ComboBoxItem).Content as string;
             var card = this.DataContext as ToDoCard;
 

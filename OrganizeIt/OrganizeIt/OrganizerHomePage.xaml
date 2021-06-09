@@ -119,6 +119,9 @@
                                 Margin="-10 3 30 0" Background="Transparent"
                                 ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>
+                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                ToolTip="Pomoć" MouseDown="Help_MouseDown" FontSize="20" Kind="Help" Width="30" Height="30">
+                            </materialDesign:PackIcon>
                         </WrapPanel>
                         <Separator Margin="20 0 25 25" />
                         <WrapPanel Margin="20 0 0 7">
@@ -147,6 +150,9 @@
                             <materialDesign:PackIcon x:Name="LogoutIcon2" MouseDown="LogoutIcon_MouseDown"
                                 Margin="-10 3 30 0" Background="Transparent"
                                 ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
+                            </materialDesign:PackIcon>
+                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                ToolTip="Pomoć" MouseDown="Help_MouseDown" FontSize="20" Kind="Help" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
                         <Separator Margin="20 0 25 25" />
@@ -180,6 +186,9 @@
                             <materialDesign:PackIcon x:Name="LogoutIcon3" MouseDown="LogoutIcon_MouseDown"
                                 Margin="-10 3 30 0" Background="Transparent"
                                 ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
+                            </materialDesign:PackIcon>
+                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                ToolTip="Pomoć" MouseDown="Help_MouseDown" FontSize="20" Kind="Help" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
                         <Separator Margin="20 0 25 25" />

@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Globalization;
 using OrganizeIt.backend.social_gatherings;
+using HelpSistem;
 
 namespace OrganizeIt
 {
@@ -294,6 +295,12 @@ namespace OrganizeIt
             backend.Backend.LoggedInUser = null;
             backend.Backend.LogOut();
             NavigationService.Navigate(new Login());
+        }
+
+        private void Help_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            string str = "AccountsListPage";
+            HelpProvider.ShowHelp(str, Window.GetWindow(this));
         }
     }
 

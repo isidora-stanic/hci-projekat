@@ -84,6 +84,9 @@
                             <materialDesign:PackIcon x:Name="OdjavaBtn" Margin="-10 3 30 0" Background="Transparent"
                                 ToolTip="Odjava" MouseDown="OdjavaBtn_MouseDown" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>
+                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                ToolTip="Pomoć" MouseDown="Help_MouseDown" FontSize="20" Kind="Help" Width="30" Height="30">
+                            </materialDesign:PackIcon>
                         </WrapPanel>
                         <Separator Margin="20 0 25 25" />
                         <WrapPanel Margin="20 0 0 7">
@@ -110,6 +113,9 @@
                         <WrapPanel HorizontalAlignment="Right">
                             <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
                                 ToolTip="Odjava" MouseDown="OdjavaBtn_MouseDown" FontSize="20" Kind="Logout" Width="30" Height="30">
+                            </materialDesign:PackIcon>
+                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                ToolTip="Pomoć" MouseDown="Help_MouseDown" FontSize="20" Kind="Help" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
                         <Separator Margin="20 0 25 25" />

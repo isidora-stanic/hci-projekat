@@ -1,4 +1,5 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using HelpSistem;
+using MaterialDesignThemes.Wpf;
 using OrganizeIt.backend.social_gatherings;
 using System;
 using System.Collections.Generic;
@@ -116,6 +117,12 @@ namespace OrganizeIt
             backend.Backend.LoggedInUser = null;
             backend.Backend.LogOut();
             NavigationService.Navigate(new Login());
+        }
+
+        private void Help_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            string str = "ManifestationListPage";
+            HelpProvider.ShowHelp(str, Window.GetWindow(this));
         }
     }
 }

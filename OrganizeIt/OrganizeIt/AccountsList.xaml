@@ -68,14 +68,14 @@
                         <TextBlock FontSize="14" MaxWidth="500" TextWrapping="Wrap" Text="{Binding Path=Description}" />
                     </WrapPanel>
                 </StackPanel>
-                <WrapPanel Grid.Column="2" HorizontalAlignment="Right">
+                <WrapPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">
                     <materialDesign:PackIcon x:Name="DeleteCollabButton"
                                          Margin="15" FontSize="20" Kind="GarbageCan" MouseDown="DeleteCollabButton_MouseDown"
-                                         Width="20" Height="20" Background="Transparent"></materialDesign:PackIcon>
+                                         Width="35" Height="35" Background="Transparent"></materialDesign:PackIcon>
                     <Separator></Separator>
                     <materialDesign:PackIcon x:Name="EditCollabButton"
                                          Margin="15" FontSize="20" Kind="Pencil" MouseDown="EditCollabButton_MouseDown"
-                                         Width="20" Height="20" Background="Transparent"></materialDesign:PackIcon>
+                                         Width="35" Height="35" Background="Transparent"></materialDesign:PackIcon>
                 </WrapPanel>
             </Grid>
         </DataTemplate>
@@ -107,6 +107,9 @@
                             <materialDesign:PackIcon x:Name="LogoutIcon1" MouseDown="LogoutIcon_MouseDown"
                                     Margin="-10 3 30 0" Background="Transparent"
                                     ToolTip="Odjava" FontSize="20" Kind="Logout" Width="30" Height="30">
+                            </materialDesign:PackIcon>
+                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                ToolTip="Pomoć" MouseDown="Help_MouseDown" FontSize="20" Kind="Help" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
                         <Separator Margin="20 0 25 25" />
@@ -142,6 +145,9 @@
                                     Margin="-10 3 30 0" Background="Transparent"
                                     ToolTip="Odjava" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>
+                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                ToolTip="Pomoć" MouseDown="Help_MouseDown" FontSize="20" Kind="Help" Width="30" Height="30">
+                            </materialDesign:PackIcon>
                         </WrapPanel>
                         <Separator Margin="20 0 25 25" />
 
@@ -175,6 +181,9 @@
                             <materialDesign:PackIcon x:Name="LogoutIcon3" MouseDown="LogoutIcon_MouseDown"
                                     Margin="-10 3 30 0" Background="Transparent"
                                     ToolTip="Odjava" FontSize="20" Kind="Logout" Width="30" Height="30">
+                            </materialDesign:PackIcon>
+                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                ToolTip="Pomoć" MouseDown="Help_MouseDown" FontSize="20" Kind="Help" Width="30" Height="30">
                             </materialDesign:PackIcon>
                         </WrapPanel>
                         <Separator Margin="20 0 25 25" />

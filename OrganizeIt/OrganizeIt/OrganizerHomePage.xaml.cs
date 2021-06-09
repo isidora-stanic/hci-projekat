@@ -18,6 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Globalization;
+using HelpSistem;
 
 namespace OrganizeIt
 {
@@ -334,6 +335,11 @@ namespace OrganizeIt
             NavigationService.Navigate(new SocialGatheringInfo(proslava));
         }
 
+        private void Help_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            string str = "OrganizerHomePagePage";
+            HelpProvider.ShowHelp(str, Window.GetWindow(this));
+        }
 
     }
 

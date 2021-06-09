@@ -9,7 +9,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SocialGatheringInfo" l:HelpProvider.HelpKey="SocialGatheringInfoPage">
 
-    <Grid Background="Transparent" Margin="0,0,0,0" FocusManager.FocusedElement="{Binding ElementName=Slika}">
+    <Grid Background="White" Margin="0,0,0,0" FocusManager.FocusedElement="{Binding ElementName=Slika}">
         <!--<Button  HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFlatButton}">
             <Button.Content>
                 <materialDesign:PackIcon Kind="ArrowLeft" Width="35" Height="35"></materialDesign:PackIcon>
