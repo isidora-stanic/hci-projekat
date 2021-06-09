@@ -42,7 +42,7 @@
                         <TextBlock FontSize="14" Text="{Binding Path=Organizator.Email}" />
                     </WrapPanel>
                 </StackPanel>
-                <WrapPanel Grid.Column="3" HorizontalAlignment="Right">
+                <WrapPanel Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Right">
                     <!--<CheckBox Click="CheckBox_MouseDown" IsChecked="{Binding IsSelected}" VerticalAlignment="Center">
                         <CheckBox.LayoutTransform>
                             <ScaleTransform ScaleX="4" ScaleY="4" />

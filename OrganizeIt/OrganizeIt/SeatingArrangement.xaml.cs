@@ -145,7 +145,7 @@ namespace OrganizeIt
         private void CancelBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            string messageBoxText = $"Da li ste sigurni da zelite da otkazete rasporedjivanje gostiju";
+            string messageBoxText = $"Da li ste sigurni da zelite da otkazete raspoređivanje gostiju?";
             string caption = "Otkazivanje";
             MessageBoxButton btn = MessageBoxButton.YesNo;
             MessageBoxImage img = MessageBoxImage.Question;

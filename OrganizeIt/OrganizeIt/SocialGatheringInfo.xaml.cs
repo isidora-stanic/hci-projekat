@@ -35,5 +35,10 @@ namespace OrganizeIt
         {
             NavigationService.Navigate(new EventSuggestionDraft(Proslava));
         }
+
+        private void NazadBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

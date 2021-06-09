@@ -91,6 +91,16 @@ namespace OrganizeIt
                 filename = dialog.FileName;
                 filenameTextBox.Text = filename;
             }
+            try { 
+                var listaGostiju = backend.Backend.LoadGuestsFromCSV(filename);
+                Proslava.NumberOfGuests = listaGostiju.Count();
+                Proslava.GuestList = listaGostiju;
+            }
+            catch
+            {
+                MessageBox.Show("Greška prilikom učitavanja fajla sa gostima.", "Greška");
+                return;
+            }
         }
 
         private void OtkaziBtn_Click(object sender, RoutedEventArgs e)
