@@ -10,7 +10,7 @@ Clanovi tima
 
 Postupak pokretanja aplikacije
 ------------------------------
-1. Otici u hci-projekat/OrganizeIt/OrganizeIt/bin/Release
+1. Otici u ./OrganizeIt/OrganizeIt/bin/Release
 2. Pokrenuti OrganizeIt.exe
 3. ???
 4. Profit
