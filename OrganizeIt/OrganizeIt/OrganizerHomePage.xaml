@@ -8,6 +8,7 @@
       xmlns:local="clr-namespace:OrganizeIt"
       xmlns:soical="clr-namespace:OrganizeIt.backend.social_gatherings"
       xmlns:todo="clr-namespace:OrganizeIt.backend.todo"
+      xmlns:colaborators="clr-namespace:OrganizeIt.backend.social_gatherings"
       xmlns:l="clr-namespace:HelpSistem"
       mc:Ignorable="d"
       d:DesignHeight="300" d:DesignWidth="800"
@@ -96,6 +97,23 @@
                 </StackPanel>
             </Grid>
         </DataTemplate>
+
+        <DataTemplate x:Key="CollaboratorTemplate" DataType="{x:Type colaborators:SocialGatheringCollaborator}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock FontSize="20" Text="{Binding Path=Name}" />
+                    <WrapPanel>
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="Opis: " />
+                        <TextBlock FontSize="14" MaxWidth="500" TextWrapping="Wrap" Text="{Binding Path=Description}" />
+                    </WrapPanel>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
     </Page.Resources>
 
     <Page.InputBindings>
@@ -175,6 +193,43 @@
                 </DockPanel>
             </TabItem>
 
+            <TabItem Header="Saradnici">
+                <DockPanel>
+
+                    <StackPanel DockPanel.Dock="Top">
+                        <WrapPanel HorizontalAlignment="Right">
+                            <materialDesign:PackIcon x:Name="AddCollaboratorIcon" MouseDown="AddCollaboratorIcon_MouseDown"
+                                    Margin="-20 0 30 0" Background="Transparent"
+                                    ToolTip="Dodaj organizatora" FontSize="20" Kind="AccountPlus" Width="35" Height="35">
+                            </materialDesign:PackIcon>
+                            <materialDesign:PackIcon x:Name="LogoutIcon3" MouseDown="LogoutIcon_MouseDown"
+                                    Margin="-10 3 30 0" Background="Transparent"
+                                    ToolTip="Odjava" FontSize="20" Kind="Logout" Width="30" Height="30">
+                            </materialDesign:PackIcon>
+                            <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
+                                ToolTip="Pomoć" MouseDown="Help_MouseDown" FontSize="20" Kind="Help" Width="30" Height="30">
+                            </materialDesign:PackIcon>
+                        </WrapPanel>
+                        <Separator Margin="20 0 25 25" />
+
+                        <WrapPanel  Margin="20 0 0 7">
+                            <TextBox Grid.Column="0"
+                                x:Name="CollaboratorSearch"
+                                MinWidth="500"
+                                FontSize="20"
+                                materialDesign:HintAssist.Hint="Pretrazi saradnike..."
+                                VerticalAlignment="Center" CaretBrush="{x:Null}"
+                                TextChanged="CollaboratorSearch_TextChanged" />
+                            <materialDesign:PackIcon Margin="-20 10 0 0" FontSize="20" Kind="Magnify" Width="20" Height="20"></materialDesign:PackIcon>
+                        </WrapPanel>
+                    </StackPanel>
+
+                    <ListView x:Name="CollaboratorListView" HorizontalContentAlignment="Stretch"
+                              ItemsSource="{Binding collaborators, UpdateSourceTrigger=Explicit}"
+                              ItemTemplate="{StaticResource CollaboratorTemplate}" />
+                </DockPanel>
+            </TabItem>
+
             <TabItem Header="ToDo">
                 <DockPanel>
                     <StackPanel DockPanel.Dock="Top">
@@ -183,7 +238,7 @@
                                     Margin="-20 0 30 0" Background="Transparent"
                                     ToolTip="Dodaj zadatak" FontSize="20" Kind="PlusBoxOutline" Width="35" Height="35">
                             </materialDesign:PackIcon>
-                            <materialDesign:PackIcon x:Name="LogoutIcon3" MouseDown="LogoutIcon_MouseDown"
+                            <materialDesign:PackIcon x:Name="LogoutIcon4" MouseDown="LogoutIcon_MouseDown"
                                 Margin="-10 3 30 0" Background="Transparent"
                                 ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>

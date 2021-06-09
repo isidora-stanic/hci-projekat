@@ -60,6 +60,8 @@ namespace OrganizeIt
         public ObservableCollection<ToDoCard> todosAccepted { get; set; }
         public ObservableCollection<ToDoCard> todosRejected { get; set; }
 
+        public ObservableCollection<SocialGatheringCollaborator> collaborators = new ObservableCollection<SocialGatheringCollaborator>();
+
         private readonly ICommand _undoCommand;
         public ICommand UndoCommand { get { return _undoCommand; } }
 
@@ -89,6 +91,10 @@ namespace OrganizeIt
             todosSent = new ObservableCollection<ToDoCard>(backend.Backend.GetTodoCardByStatusForOrganizer(allTodoCards, ToDoStatus.Sent, loggedIn.Username));
             todosAccepted = new ObservableCollection<ToDoCard>(backend.Backend.GetTodoCardByStatusForOrganizer(allTodoCards, ToDoStatus.Accepted, loggedIn.Username));
             todosRejected = new ObservableCollection<ToDoCard>(backend.Backend.GetTodoCardByStatusForOrganizer(allTodoCards, ToDoStatus.Rejected, loggedIn.Username));
+
+            var collabDict = backend.Backend.LoadCollaborators().Values.ToList();
+            collaborators = new ObservableCollection<SocialGatheringCollaborator>(collabDict);
+            CollaboratorListView.ItemsSource = collaborators;
 
             RequestListView.ItemsSource = requests;
             ResponseListView.ItemsSource = responses;
@@ -339,6 +345,28 @@ namespace OrganizeIt
         {
             string str = "OrganizerHomePagePage";
             HelpProvider.ShowHelp(str, Window.GetWindow(this));
+        }
+
+        private void CollaboratorSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SearchCollaborators(CollaboratorSearch.Text);
+        }
+
+        public void SearchCollaborators(string query)
+        {
+            var filteredCollaborators =
+                from collaborator in collaborators
+                where collaborator.Name.ToUpper().Contains(query.ToUpper().Trim())
+                select collaborator;
+
+            ObservableCollection<SocialGatheringCollaborator> filteredCollaboratorsObservable
+                = new ObservableCollection<SocialGatheringCollaborator>(filteredCollaborators);
+            CollaboratorListView.ItemsSource = filteredCollaboratorsObservable;
+        }
+
+        private void AddCollaboratorIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new NewSaradnik());
         }
 
     }

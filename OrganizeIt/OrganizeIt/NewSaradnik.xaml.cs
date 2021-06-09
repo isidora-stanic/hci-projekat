@@ -45,12 +45,19 @@ namespace OrganizeIt
             backend.Backend.Collaborators = collaborators;
 
             backend.Backend.SaveCollaborators();
-            NavigationService.Navigate(new AccountsList());
+
+            if (backend.Backend.LoggedInUser.UserType == backend.users.UserType.Administrator)
+                NavigationService.Navigate(new AccountsList());
+            else
+                NavigationService.Navigate(new OrganizerHomePage());
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AccountsList());
+            if (backend.Backend.LoggedInUser.UserType == backend.users.UserType.Administrator)
+                NavigationService.Navigate(new AccountsList());
+            else
+                NavigationService.Navigate(new OrganizerHomePage());
         }
     }
 }
