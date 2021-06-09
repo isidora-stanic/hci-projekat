@@ -55,7 +55,7 @@ namespace OrganizeIt
             /*BindingExpression binding7 = date.GetBindingExpression(DatePicker.SelectedDateProperty);
             binding7.UpdateSource();*/
 
-            try { DateTime oDate = Convert.ToDateTime(this.date); }
+            try { DateTime oDate = Convert.ToDateTime(this.date.Text); }
             catch (Exception) { return; }
 
             if (this.username.Text == "" || this.password.Password == "" || this.address.Text == "" || this.city.Text == ""
@@ -68,7 +68,6 @@ namespace OrganizeIt
                 user.UserType = UserType.Client;
             else
                 user.UserType = UserType.Organizer;
-
             user.Username = this.username.Text;
             user.Password = this.password.Password;
             user.FirstName = this.name.Text;
@@ -94,7 +93,7 @@ namespace OrganizeIt
             //this.username.BorderBrush = Brushes.Red;
             //this.username.Text = "";
             //this.username.Foreground = Brushes.Red;
-            NavigationService.Navigate(new AccountsList());
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
