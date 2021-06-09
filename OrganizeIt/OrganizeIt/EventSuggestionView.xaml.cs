@@ -106,6 +106,11 @@ namespace OrganizeIt
         {
             // cuvanje odgovora i navigacija do sledeceg prozora
             NamestiOdgovor();
+            if (Odgovor.SocialGatheringSuggestion.SocialGathering.AcceptedSuggestions)
+            {
+                MessageBox.Show("Proslava već ima prihvaćen predlog ogranizacije.", "Već prihvaćeno");
+                return;
+            }
             Odgovor.SuggestionsAccepted = true;
             Odgovor.SocialGatheringSuggestion.SocialGathering.AcceptedSuggestions = true;
             backend.Backend.AddSuggestionReply(Odgovor, Predlog);
@@ -121,6 +126,11 @@ namespace OrganizeIt
 
         private void RasporedBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (Predlog.SocialGatheringSeating == null)
+            {
+                MessageBox.Show("Nema predloga rasporeda sedenja.", "Nema rasporeda");
+                return;
+            }
             NavigationService.Navigate(new SeatingReview(Predlog.SocialGatheringSeating));
         }
     }

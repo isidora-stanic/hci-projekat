@@ -13,5 +13,7 @@
     <Grid>
         <Frame x:Name="frame" Content="Frame">
         </Frame>
+        <!-- ovo ispod moze u bilo koji element da se stavi, pa ne mora scrollviewer da se dodaje okolo :D -->
+        <!-- ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" -->
     </Grid>
 </Window>

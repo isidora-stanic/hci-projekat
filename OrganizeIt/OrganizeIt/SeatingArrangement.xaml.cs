@@ -43,11 +43,23 @@ namespace OrganizeIt
 
             GatheringSuggestion = gatheringSuggestion;
             TableImage = backend.Backend.GetTableImagePath(); 
-            Guests = new ObservableCollection<string>(gatheringSuggestion.SocialGathering.GuestList);
-            Table1 = new ObservableCollection<string>();
-            Table2 = new ObservableCollection<string>();
-            Table3 = new ObservableCollection<string>();
-            Table4 = new ObservableCollection<string>();
+            
+            if (gatheringSuggestion.SocialGatheringSeating == null)
+            {
+                Guests = new ObservableCollection<string>(gatheringSuggestion.SocialGathering.GuestList);
+                Table1 = new ObservableCollection<string>();
+                Table2 = new ObservableCollection<string>();
+                Table3 = new ObservableCollection<string>();
+                Table4 = new ObservableCollection<string>();
+            }
+            else
+            {
+                Guests = new ObservableCollection<string>();
+                Table1 = new ObservableCollection<string>(gatheringSuggestion.SocialGatheringSeating.Table1);
+                Table2 = new ObservableCollection<string>(gatheringSuggestion.SocialGatheringSeating.Table2);
+                Table3 = new ObservableCollection<string>(gatheringSuggestion.SocialGatheringSeating.Table3);
+                Table4 = new ObservableCollection<string>(gatheringSuggestion.SocialGatheringSeating.Table4);
+            }
         }
 
         private void ListView_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -115,7 +127,7 @@ namespace OrganizeIt
 
                 if (droppedList != Guests && droppedList.Count >= 4)
                 {
-                    string messageBoxText = $"Ovaj sto je vec popunjen";
+                    string messageBoxText = $"Ovaj sto je već popunjen";
                     string caption = "Popunjen sto";
                     MessageBoxButton btn = MessageBoxButton.OK;
                     MessageBoxImage img = MessageBoxImage.Information;
@@ -145,8 +157,14 @@ namespace OrganizeIt
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-            string messageBoxText = $"Da li ste sigurni da zelite da sacuvate raspored gostiju";
-            string caption = "Zavrsi rasporedjivanje";
+            if (Guests.Count != 0)
+            {
+                MessageBox.Show("Niste rasporedili sve goste.", "Raspored");
+                return;
+            }
+
+            string messageBoxText = "Da li ste sigurni da želite da sačuvate raspored gostiju?";
+            string caption = "Završi raspoređivanje";
             MessageBoxButton btn = MessageBoxButton.YesNo;
             MessageBoxImage img = MessageBoxImage.Question;
 

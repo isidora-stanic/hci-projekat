@@ -14,7 +14,15 @@
             <TextBlock Margin="0 10 0 0" FontWeight="Bold" FontSize="30">1. Korak: Detalji o proslavi</TextBlock>
             <Separator Margin="0 10 25 25" />
         </StackPanel>
-        <Button DockPanel.Dock="Bottom" Width="200" Margin="10" Click="Button_Click">Izaberi organizatora</Button>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="2" Width="200" Margin="10" Click="Button_Click">Izaberi organizatora</Button>
+            <Button Grid.Column="0" x:Name="OtkaziBtn" Click="OtkaziBtn_Click" Style="{StaticResource MaterialDesignOutlinedButton}">Otkaži</Button>
+        </Grid>
         <Grid Margin="80 0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />

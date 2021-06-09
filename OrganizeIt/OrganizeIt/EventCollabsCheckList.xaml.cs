@@ -44,21 +44,7 @@ namespace OrganizeIt
 
         public void InitSaradnici()
         {
-            // ovde trebaju podaci iz baze
-            //SocialGatheringCollaborator sc1 = new SocialGatheringCollaborator { Id = 1, Name = "MC Stojan", Description = "smesan DJ" };
-            //SocialGatheringCollaborator sc2 = new SocialGatheringCollaborator { Id = 2, Name = "DJ Stasa", Description = "dobar DJ" };
-            //SocialGatheringCollaborator sc3 = new SocialGatheringCollaborator { Id = 3, Name = "MJ Krmak", Description = "debeo DJ" };
-            //SocialGatheringCollaborator sc4 = new SocialGatheringCollaborator { Id = 4, Name = "Mimi Mercedes", Description = "Guda iz Huda" };
-
             SviSaradniciNormalni = backend.Backend.LoadCollaborators().Values.ToList();
-
-            // ovde se prave DTO-ovi
-
-
-            //SviSaradniciNormalni.Add(sc1);
-            //SviSaradniciNormalni.Add(sc2);
-            //SviSaradniciNormalni.Add(sc3);
-            //SviSaradniciNormalni.Add(sc4);
 
             ProdjiListuINamestiBulove();
 
@@ -99,7 +85,7 @@ namespace OrganizeIt
             CheckBox check = (CheckBox)sender;
             SocialGatheringCollaborator saradnik = ((SaradnikSelectDTO)check.DataContext).Collaborator;
             NadjiSaradnikaIPostaviMuBool(saradnik, (bool)check.IsChecked);
-            
+
         }
 
         private void NadjiSaradnikaIPostaviMuBool(SocialGatheringCollaborator saradnik, bool bul)
@@ -113,16 +99,31 @@ namespace OrganizeIt
             }
         }
 
+        private void NadjiSaradnikaIToggleMuBool(SocialGatheringCollaborator saradnik)
+        {
+            foreach (SaradnikSelectDTO dto in SviSaradnici)
+            {
+                if (dto.Collaborator.Id.Equals(saradnik.Id))
+                {
+                    if (dto.IsSelected)
+                        dto.IsSelected = false;
+                    else
+                        dto.IsSelected = true;
+                }
+            }
+        }
+
         private void ProdjiListuINamestiBulove()
         {
             foreach (SocialGatheringCollaborator sar in SviSaradniciNormalni)
             {
-                SaradnikSelectDTO dto = new SaradnikSelectDTO { Collaborator = sar, IsSelected=false};
-                foreach (SocialGatheringCollaborator coll in Sekcija.SuggestedCollaborators) {
+                SaradnikSelectDTO dto = new SaradnikSelectDTO { Collaborator = sar, IsSelected = false };
+                foreach (SocialGatheringCollaborator coll in Sekcija.SuggestedCollaborators)
+                {
                     if (coll.Id.Equals(sar.Id))
-                        {
-                            dto.IsSelected = true;
-                        }
+                    {
+                        dto.IsSelected = true;
+                    }
                 }
                 SviSaradnici.Add(dto);
             }

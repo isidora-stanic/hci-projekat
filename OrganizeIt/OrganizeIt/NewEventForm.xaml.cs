@@ -92,5 +92,10 @@ namespace OrganizeIt
                 filenameTextBox.Text = filename;
             }
         }
+
+        private void OtkaziBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

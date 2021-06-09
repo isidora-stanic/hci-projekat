@@ -27,6 +27,10 @@ namespace OrganizeIt
             if (focusedControl is DependencyObject)
             {
                 string str = HelpProvider.GetHelpKey((DependencyObject)focusedControl);
+                if (str.Equals("index"))
+                {
+                    str = frame.Content.ToString().Split('.')[1] + "Page";
+                }
                 HelpProvider.ShowHelp(str, this);
             }
         }
