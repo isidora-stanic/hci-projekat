@@ -148,6 +148,8 @@ namespace OrganizeIt
                         if (usr.Username == u.Username)
                         {
                             clients.Remove(usr);
+                            allUsers.Remove(usr.Username);
+                            backend.Backend.SaveUsers(allUsers);
                             ClientListView.ItemsSource = clients;
                             deletedClients.Push(u);
                             break;
@@ -161,6 +163,8 @@ namespace OrganizeIt
                         if (usr.Username == u.Username)
                         {
                             organizers.Remove(usr);
+                            allUsers.Remove(usr.Username);
+                            backend.Backend.SaveUsers(allUsers);
                             OrganizerListView.ItemsSource = organizers;
                             deletedOrganizers.Push(u);
                             break;
@@ -229,14 +233,20 @@ namespace OrganizeIt
             {
                 if (deletedClients.Count != 0)
                 {
-                    clients.Add(deletedClients.Pop());
+                    var deletedClient = deletedClients.Pop();
+                    clients.Add(deletedClient);
+                    allUsers.Add(deletedClient.Username, deletedClient);
+                    backend.Backend.SaveUsers(allUsers);
                 }
             }
             else if (ti.Header as string == "Organizatori")
             {
                 if (deletedOrganizers.Count != 0)
                 {
-                    organizers.Add(deletedOrganizers.Pop());
+                    var deletedClient = deletedOrganizers.Pop();
+                    organizers.Add(deletedClient);
+                    allUsers.Add(deletedClient.Username, deletedClient);
+                    backend.Backend.SaveUsers(allUsers);
                 }
             }
             else if (ti.Header as string == "Saradnici")
