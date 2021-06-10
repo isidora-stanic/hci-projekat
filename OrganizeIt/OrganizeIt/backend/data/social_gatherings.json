@@ -1,118 +1,5 @@
 {
   "0": {
-    "RequestDate": "2021-06-07T18:33:31.2035498+02:00",
-    "Name": "AAAAAAAAAAA",
-    "Type": "AAAAAAAAAAAAA",
-    "DateTime": "2021-06-07T00:00:00",
-    "NumberOfGuests": 66,
-    "Description": "Aaaa",
-    "GuestList": [],
-    "OrganizerUsername": "mmartinovic",
-    "ClientUsername": "jadranka88",
-    "SocialGatheringSuggestions": [
-      {
-        "SuggestionDate": "2021-06-07T18:34:03.518852+02:00",
-        "CategorySuggestions": [
-          {
-            "SocialGathering": null,
-            "CategoryTitle": "BBBBBBBBBBB",
-            "SuggestedCollaborators": [
-              {
-                "Name": "Fabrika kiflica",
-                "Id": 0,
-                "Description": "Uvek sve\u017Ee kiflice\nDoma\u0107e kiflice bez aditiva i industrijskog kvasca, uvek sve\u017Ee, ru\u010Dno motane i bogato punjene.\nUkoliko se odlu\u010Dite za 4 ili vi\u0161e kilograma, ne morate da razmi\u0161ljate o pla\u0107anju dostave, bi\u0107e besplatna na teritoriji grada. Naravno, ukoliko vam je lak\u0161e, va\u0161e spremne i vru\u0107e kiflice vas mogu \u010Dekati i kod nas u Bra\u0107e Ribnikar 56. Uverite se sami u kvalitet na\u0161ih proizvoda."
-              }
-            ],
-            "Id": "0"
-          }
-        ],
-        "SocialGatheringSeating": null,
-        "SuggestionReplies": [
-          {
-            "ReplyDate": "2021-06-07T18:34:15.5289958+02:00",
-            "CategoryComments": {
-              "BBBBBBBBBBB": "CCCCCCCCCCCCCCCCCc"
-            },
-            "SuggestionsAccepted": false
-          },
-          {
-            "ReplyDate": "2021-06-07T18:35:19.4715141+02:00",
-            "CategoryComments": {
-              "BBBBBBBBBBB": "DDDDDDDDDDDDDDDDDDd"
-            },
-            "SuggestionsAccepted": false
-          },
-          {
-            "ReplyDate": "2021-06-07T18:39:05.1289803+02:00",
-            "CategoryComments": {
-              "BBBBBBBBBBB": "moze....................."
-            },
-            "SuggestionsAccepted": false
-          }
-        ]
-      },
-      {
-        "SuggestionDate": "2021-06-07T19:47:01.3901544+02:00",
-        "CategorySuggestions": [
-          {
-            "SocialGathering": null,
-            "CategoryTitle": "BBBBBBBBBBB",
-            "SuggestedCollaborators": [
-              {
-                "Name": "Fabrika kiflica",
-                "Id": 0,
-                "Description": "Uvek sve\u017Ee kiflice\nDoma\u0107e kiflice bez aditiva i industrijskog kvasca, uvek sve\u017Ee, ru\u010Dno motane i bogato punjene.\nUkoliko se odlu\u010Dite za 4 ili vi\u0161e kilograma, ne morate da razmi\u0161ljate o pla\u0107anju dostave, bi\u0107e besplatna na teritoriji grada. Naravno, ukoliko vam je lak\u0161e, va\u0161e spremne i vru\u0107e kiflice vas mogu \u010Dekati i kod nas u Bra\u0107e Ribnikar 56. Uverite se sami u kvalitet na\u0161ih proizvoda."
-              },
-              {
-                "Name": "Catering\u002B",
-                "Id": 1,
-                "Description": "Profesionalna usluga keteringa\nSve\u017Ee, brzo, ukusno\nNa tr\u017Ei\u0161tu Srbije postojimo od 2003. godine. Od samog osnivanja cilj na\u0161eg poslovanja je obezbe\u0111ivanje usluga keteringa na najvi\u0161em nivou za klijente koji prepoznaju kvalitet. Stoga smo posebnu pa\u017Enju posvetili infrastrukturi i organizaciji poslovanja. Posedujemo savremenu kuhinju velikog kapaciteta, opremljenu najkvalitetnijom profesionalnom opremom, koja ispunjava sve HACCP standarde za pripremu hrane.\nZa vas kuvamo i organizujemo, kada planirate:\n-koktele, proslave, poslovne ru\u010Dkove i sve\u010Dane ve\u010Dere na lokacijama po \u017Eelji, uz uslugu profesionalnih i uniformisanih konobara\n-ishranu zaposlenih na dnevnoj bazi(sa pripremom u na\u0161oj kuhinji za manji broj ljudi i sa pripremom u kuhinji na lokaciji za ve\u0107i broj ljudi)\n-organizaciju dnevne dostave pi\u0107a, sokova, kafe, sanitarnih proizvoda, kao i svih ostalih proizvoda iz maloprodajne lokacije klijenata, po maloprodajnim cenama."
-              }
-            ],
-            "Id": "0"
-          }
-        ],
-        "SocialGatheringSeating": null,
-        "SuggestionReplies": [
-          {
-            "ReplyDate": "2021-06-07T19:48:14.6390722+02:00",
-            "CategoryComments": {
-              "BBBBBBBBBBB": "Bolje."
-            },
-            "SuggestionsAccepted": false
-          }
-        ]
-      },
-      {
-        "SuggestionDate": "2021-06-07T19:48:51.7436479+02:00",
-        "CategorySuggestions": [
-          {
-            "SocialGathering": null,
-            "CategoryTitle": "Nesto novo",
-            "SuggestedCollaborators": [
-              {
-                "Name": "Restoran Poco Loco",
-                "Id": 2,
-                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
-              }
-            ],
-            "Id": "0"
-          }
-        ],
-        "SocialGatheringSeating": null,
-        "SuggestionReplies": [
-          {
-            "ReplyDate": "2021-06-07T19:48:58.8208976+02:00",
-            "CategoryComments": {
-              "Nesto novo": "opalaa moze"
-            },
-            "SuggestionsAccepted": true
-          }
-        ]
-      }
-    ]
-  },
-  "1": {
     "RequestDate": "2021-06-08T13:36:20.8719364+02:00",
     "Name": "Svadba",
     "Type": "svadba",
@@ -340,8 +227,109 @@
             "Dejo Dejic",
             "Aco Acic"
           ]
-        }
+        },
+        "SuggestionReplies": []
+      },
+      {
+        "SuggestionDate": "2021-06-10T02:37:37.0516734+02:00",
+        "CategorySuggestions": [
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Muzika",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Aleksandar Sofronijevi\u0107",
+                "Id": 6,
+                "Description": "Aleksandar Aca Sofronijevi\u0107 je jedan od trenutno najpopularnijih mladih muzi\u010Dara u Srbiji, bez \u010Dijeg se orkestra ne mo\u017Ee zamisliti ni jedan koncert doma\u0107ih zvezda narodne i folk muzike, kao ni svadbe, kr\u0161tenja, i druga slavlja."
+              },
+              {
+                "Name": "Orkestar End\u017Eija Mavri\u0107a",
+                "Id": 7,
+                "Description": "End\u017Ei Mavri\u0107 sa svojom muzi\u010Dkim saradnicima \u010Desto gostuje u Grand emsijama. Sa druge strane pored brojnih gostovanja bio je jedan od aran\u017Eera na projektu Zvezde Granda Hitovi Za Sva Vremena.\nOrkestar End\u017Eija Mavri\u0107a mo\u017Eete anga\u017Eovati za razli\u010Dite tipova veselja, kako u Srbiji tako \u0161irom Evrope."
+              },
+              {
+                "Name": "Negro bend",
+                "Id": 8,
+                "Description": "NEGRO je bend za Va\u0161e proslave, bend za svadbe, bend za \u017Eurke, bend za prve i 18-te ro\u0111endane, bend za korporativne proslave, bend za klubove."
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Ven\u010Danica i mlado\u017Eenjino odelo",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Butik Jeremicak",
+                "Id": 15,
+                "Description": "Najbolja odeca na ovom svetu. Neverovatno je koliko je odeca dobra. Cene su povoljne takodje, uvezeno iz Pakistana."
+              }
+            ],
+            "Id": "0"
+          },
+          {
+            "SocialGathering": null,
+            "CategoryTitle": "Prostor",
+            "SuggestedCollaborators": [
+              {
+                "Name": "Restoran Poco Loco",
+                "Id": 2,
+                "Description": "Restoran Poco loco otvoren je 2005. godine u samom centru Pan\u010Deva na samo 15km od Beograda.\nOdli\u010Dno ure\u0111en i pa\u017Eljivo dekorisan prostor povezuje gostoprimljivo okru\u017Eenje, izvrsnu uslugu i savr\u0161en spoj ukusa. Ma\u0161ta uprave kuhinje i na\u0161a originalna receptura \u010Dine da se izdvajamo od ostalih.\nNa\u0107i \u0107ete nas u va\u0161em svakodnevnom izlasku, ali i prilikom organizovanih proslava poput kr\u0161tenja, ro\u0111endana, ven\u010Danja i drugih vrsta prijema."
+              }
+            ],
+            "Id": "0"
+          }
+        ],
+        "SocialGatheringSeating": {
+          "Table1": [
+            "Heko Hekic",
+            "Fifo Fific",
+            "Aco Acic"
+          ],
+          "Table2": [
+            "Krljo Krljic",
+            "Iko Ikic"
+          ],
+          "Table3": [
+            "Efo Efic",
+            "Cedo Cedic",
+            "Grgo Grgic"
+          ],
+          "Table4": [
+            "Joko Jokic",
+            "Beco Becic",
+            "Dejo Dejic"
+          ]
+        },
+        "SuggestionReplies": []
       }
     ]
+  },
+  "1": {
+    "RequestDate": "2021-06-10T03:12:19.7855353+02:00",
+    "Name": "Moj rodjendan",
+    "Type": "rodjendan",
+    "DateTime": "2021-11-06T00:00:00",
+    "NumberOfGuests": 14,
+    "Description": "Mora biti mnogo sarme i pe\u010Denja i predjela i kola\u010Da i torta mora da bude velika. I da bude lepa sala.",
+    "GuestList": [
+      "\u0110ura\u0111 Kastrioti\u0107",
+      "Jefimija Mrnjav\u010Devi\u0107",
+      "Uglje\u0161a Mrnjav\u010Devi\u0107",
+      "Lazar Hrebeljanovi\u0107",
+      "Vlatko Vukovi\u0107",
+      "Tvrtko Kotromanji\u0107",
+      "Simonida Paleolog",
+      "Irena Kantakuzina",
+      "Jelena An\u017Eujska",
+      "Ana Dandolo",
+      "Jovana Jovanovi\u0107",
+      "Dinu Dragan",
+      "Vlad Cepe\u0161",
+      "Alcina Dimitresku"
+    ],
+    "OrganizerUsername": "mmartinovic",
+    "ClientUsername": "jadranka88",
+    "SocialGatheringSuggestions": []
   }
 }

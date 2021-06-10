@@ -164,7 +164,7 @@ namespace OrganizeIt
 
         private void LogoutIcon_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            string messageBoxText = $"Da li zelite da se odjavite";
+            string messageBoxText = $"Da li želite da se odjavite?";
             string caption = "Odjava";
             MessageBoxButton btn = MessageBoxButton.YesNo;
             MessageBoxImage img = MessageBoxImage.Question;
@@ -313,7 +313,8 @@ namespace OrganizeIt
 
         private void DoCommand()
         {
-            putAppropriate(deletedToDos.Pop());
+            if (deletedToDos.Count > 0)
+                putAppropriate(deletedToDos.Pop());
         }
 
         private void saveToDos()

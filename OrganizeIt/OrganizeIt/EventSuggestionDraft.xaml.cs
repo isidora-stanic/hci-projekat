@@ -123,7 +123,7 @@ namespace OrganizeIt
 
         private void OtkaziBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SocialGatheringInfo(Predlog.SocialGathering));
+            NavigationService.Navigate(new OrganizerHomePage());
         }
 
         private void SacuvajNeSalji_Click(object sender, RoutedEventArgs e)

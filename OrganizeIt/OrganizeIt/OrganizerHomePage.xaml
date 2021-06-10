@@ -44,7 +44,7 @@
                         <TextBlock FontSize="14" FontWeight="Bold" Text="Opis: " />
                         <TextBlock FontSize="14" Text="{Binding Path=Description}" />
                     </WrapPanel>
-                    <TextBlock FontSize="14" FontWeight="Light" Text="Dvoklik za detalje..." />
+                    <TextBlock FontWeight="Light" Text="Dvoklik za detalje..." />
                 </StackPanel>
                 <!--<StackPanel Grid.Column="2" Margin="10" Orientation="Horizontal" VerticalAlignment="Center">
                     <materialDesign:PackIcon Kind="InformationOutline" Background="Transparent"
@@ -79,6 +79,9 @@
                     <WrapPanel>
                         <TextBlock FontSize="14" FontWeight="Bold" Text="Predlog prihvacen: " />
                         <TextBlock FontSize="14" Text="{Binding Path=SuggestionsAccepted, Converter={StaticResource BooleanConverter}}" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <TextBlock FontWeight="Light">Dvoklik za detalje...</TextBlock>
                     </WrapPanel>
                 </StackPanel>
             </Grid>
@@ -135,7 +138,7 @@
                         <WrapPanel HorizontalAlignment="Right">
                             <materialDesign:PackIcon x:Name="LogoutIcon1" MouseDown="LogoutIcon_MouseDown"
                                 Margin="-10 3 30 0" Background="Transparent"
-                                ToolTip="Log out" FontSize="20" Kind="Logout" Width="30" Height="30">
+                                ToolTip="Odjava" FontSize="20" Kind="Logout" Width="30" Height="30">
                             </materialDesign:PackIcon>
                             <materialDesign:PackIcon Margin="-10 3 30 0" Background="Transparent"
                                 ToolTip="Pomoć" MouseDown="Help_MouseDown" FontSize="20" Kind="Help" Width="30" Height="30">

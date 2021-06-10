@@ -108,10 +108,10 @@
                     </TextBox>
                 </Grid>
 
-                <Button Content="Izmeni šifru" Width ="200" Margin="0 20" Click="Button_Click_2" />
+                <Button Content="Izmeni šifru" Style="{StaticResource MaterialDesignOutlinedButton}" Width ="200" Margin="0 20" Click="Button_Click_2" />
 
                 <Grid Margin="0 0 0 20">
-                    <Button HorizontalAlignment="Left" Content="Otkaži" Width ="200" Margin="0 0 401 5" Click="Button_Click_1"/>
+                    <Button HorizontalAlignment="Left" Style="{StaticResource MaterialDesignOutlinedButton}" Content="Otkaži" Width ="200" Margin="0 0 401 5" Click="Button_Click_1"/>
                     <Button HorizontalAlignment="Right" Content="Izmeni organizatora" Width ="200" x:Name="Btn2" Margin="401 0 0 5" Click="Button_Click"/>
                 </Grid>
 

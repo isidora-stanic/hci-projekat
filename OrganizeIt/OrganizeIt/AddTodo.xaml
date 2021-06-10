@@ -18,7 +18,7 @@
         <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Bottom">
             <Button x:Name="CancelBtn"
                     Margin="20"
-                    Content="Otkazi"
+                    Content="Otkaži"
                     Click="CancelBtn_Click"
                     Style="{DynamicResource MaterialDesignOutlinedButton}" />
             <Button x:Name="AddBtn"

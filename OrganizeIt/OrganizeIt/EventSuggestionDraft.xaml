@@ -65,8 +65,15 @@
                         <TextBox Width="500" Margin="0 0 0 10" 
                                  FontSize="20" HorizontalAlignment="Left" 
                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                 materialDesign:HintAssist.Hint="Naziv sekcije" 
-                                 Text="{Binding CategoryTitle,Mode=TwoWay}" />
+                                 materialDesign:HintAssist.Hint="Naziv sekcije" >
+                            <TextBox.Text>
+                                <Binding Path="CategoryTitle" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                        <local:MinimumCharacterRule MinimumCharacters="1"/>
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
 
                         <materialDesign:PackIcon VerticalAlignment="Center"
                                              MouseDown="Minus_btn_Click"
@@ -81,8 +88,8 @@
                     <Button Click="Dodaj_saradnike_btn_Click" HorizontalAlignment="Left">Izaberi saradnike</Button>
 
                 </StackPanel>
-                <ListView Margin="0 0 0 10" 
-                          HorizontalAlignment="Center" 
+                <ListView Margin="0 10 0 10" 
+                          HorizontalAlignment="Center"
                           ItemsSource="{Binding SuggestedCollaborators}" 
                           ItemContainerStyle="{StaticResource LvItemStyle}" 
                           ItemTemplate="{StaticResource SaradniciTemplate}"></ListView>
@@ -94,7 +101,7 @@
         <DockPanel>
             <StackPanel DockPanel.Dock="Top">
                 <WrapPanel HorizontalAlignment="Center">
-                    <materialDesign:PackIcon Margin="-20 0 30 0" 
+                    <materialDesign:PackIcon Margin="0" 
                                 Background="Transparent" MouseDown="Plus_btn_Click"
                                 ToolTip="Dodaj novu sekciju" FontSize="20" 
                                 Kind="PlusBoxOutline" Width="50" Height="50">

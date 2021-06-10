@@ -43,11 +43,11 @@
                     </WrapPanel>
                 </StackPanel>
                 <WrapPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">
-                    <materialDesign:PackIcon x:Name="DeleteButton"
+                    <materialDesign:PackIcon x:Name="DeleteButton" ToolTip="Obriši"
                                          Margin="15" FontSize="20" Kind="GarbageCan" MouseDown="DeleteButton_MouseDown"
                                          Width="35" Height="35" Background="Transparent"></materialDesign:PackIcon>
                     <Separator></Separator>
-                    <materialDesign:PackIcon x:Name="EditButton"
+                    <materialDesign:PackIcon x:Name="EditButton" ToolTip="Izmeni"
                                          Margin="15" FontSize="20" Kind="Pencil" MouseDown="EditButton_MouseDown"
                                          Width="35" Height="35" Background="Transparent"></materialDesign:PackIcon>
                 </WrapPanel>
@@ -69,11 +69,11 @@
                     </WrapPanel>
                 </StackPanel>
                 <WrapPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">
-                    <materialDesign:PackIcon x:Name="DeleteCollabButton"
+                    <materialDesign:PackIcon x:Name="DeleteCollabButton" ToolTip="Obriši"
                                          Margin="15" FontSize="20" Kind="GarbageCan" MouseDown="DeleteCollabButton_MouseDown"
                                          Width="35" Height="35" Background="Transparent"></materialDesign:PackIcon>
                     <Separator></Separator>
-                    <materialDesign:PackIcon x:Name="EditCollabButton"
+                    <materialDesign:PackIcon x:Name="EditCollabButton" ToolTip="Izmeni"
                                          Margin="15" FontSize="20" Kind="Pencil" MouseDown="EditCollabButton_MouseDown"
                                          Width="35" Height="35" Background="Transparent"></materialDesign:PackIcon>
                 </WrapPanel>

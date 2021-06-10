@@ -27,14 +27,8 @@
             <TextBox x:Name="NameBox"
                      materialDesign:HintAssist.Hint="Naziv zadatka"
                      Margin="20 0 20 20"
-                     Style="{StaticResource MaterialDesignFloatingHintTextBox}">
-                <TextBox.Text>
-                    <Binding Path="Name" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
-                        <Binding.ValidationRules>
-                            <local:MinimumCharacterRule MinimumCharacters="1"/>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </TextBox.Text>
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     Text="{Binding Path=Name,Mode=OneWay}">
             </TextBox>
             <TextBox x:Name="DescriptionBox"
                      Margin="20 0 20 20"
@@ -49,7 +43,7 @@
                 <ComboBoxItem>Novo</ComboBoxItem>
                 <ComboBoxItem>Poslato</ComboBoxItem>
                 <ComboBoxItem>U obradi</ComboBoxItem>
-                <ComboBoxItem>Prihvaceno</ComboBoxItem>
+                <ComboBoxItem>Prihvaćeno</ComboBoxItem>
                 <ComboBoxItem>Odbijeno</ComboBoxItem>
                 <ComboBoxItem>ARHIVIRAJ</ComboBoxItem>
             </ComboBox>

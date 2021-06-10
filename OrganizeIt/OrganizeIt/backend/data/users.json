@@ -174,21 +174,5 @@
     "PhoneNumber": "\u002B381693740603",
     "Email": "kzzzvezdana@rocketmail.com",
     "ToDoCards": []
-  },
-  "bfd": {
-    "UserType": 1,
-    "Username": "bfd",
-    "Password": "bf",
-    "FirstName": "bfd",
-    "LastName": "bf",
-    "Address": {
-      "City": "bdbdbd",
-      "StreetAddress": "bfd"
-    },
-    "Gender": 0,
-    "BirthDate": "2021-06-10T00:00:00",
-    "PhoneNumber": "bffbfd",
-    "Email": "fb",
-    "ToDoCards": []
   }
 }

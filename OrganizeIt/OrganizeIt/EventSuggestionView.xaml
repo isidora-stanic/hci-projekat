@@ -13,41 +13,6 @@
 
     <Page.Resources>
         <c:ListToStringConverter x:Key="ListToStringConverter" />
-
-        <DataTemplate x:Key="SaradniciTemplate">
-            <StackPanel MinWidth="200" Orientation="Horizontal">
-                <CheckBox Content="{Binding Name}"></CheckBox>
-            </StackPanel>
-        </DataTemplate>
-        <DataTemplate x:Key="SekcijaTemplate">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="700" />
-                </Grid.ColumnDefinitions>
-                <StackPanel HorizontalAlignment="Stretch" Margin="10">
-                    <TextBlock FontSize="24" HorizontalAlignment="Center" Text="{Binding Sekcija.CategoryTitle,Mode=TwoWay}" />
-                    <TextBlock Margin="0 20 0 0" FontSize="16" HorizontalAlignment="Center" Text="{Binding Sekcija.SuggestedCollaborators,Converter={StaticResource ListToStringConverter},Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-                    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal">
-                        <materialDesign:PackIcon Margin="0 25 0 0" Foreground="{StaticResource PrimaryHueLightBrush}" Kind="Comment"></materialDesign:PackIcon>
-                        <TextBox TextWrapping="Wrap"
-                                 AcceptsReturn="True" AcceptsTab="True"
-                                 VerticalScrollBarVisibility="auto"
-                                 HorizontalAlignment="Stretch"
-                                 materialDesign:HintAssist.Hint="Komentar"
-                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                 Text="{Binding Komentar,Mode=TwoWay}"
-                                 FontSize="16"
-                                 Width="600"
-                                 MaxHeight="100"
-                                 Margin="0 0 0 10" />
-                    </StackPanel>
-                    <Separator Margin="0 10"></Separator>
-                </StackPanel>
-            </Grid>
-        </DataTemplate>
         <Style x:Key="LvItemStyle" TargetType="ListViewItem">
             <Setter Property="Template">
                 <Setter.Value>
@@ -84,6 +49,48 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <DataTemplate x:Key="SaradniciTemplate">
+            <StackPanel Margin="10" MinWidth="200" Orientation="Vertical">
+                <TextBlock FontWeight="Bold" Text="{Binding Name}"></TextBlock>
+                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Width="600"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="SekcijaTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="700" />
+                </Grid.ColumnDefinitions>
+                <StackPanel HorizontalAlignment="Stretch" Margin="10">
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" Text="{Binding Sekcija.CategoryTitle,Mode=TwoWay}" />
+                    <!--<TextBlock Margin="0 20 0 0" FontSize="14" HorizontalAlignment="Center" Text="{Binding Sekcija.SuggestedCollaborators,Converter={StaticResource ListToStringConverter},Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"></TextBlock>-->
+                    <ListView Margin="0 10 0 10" 
+                          HorizontalAlignment="Center"
+                          ItemsSource="{Binding Sekcija.SuggestedCollaborators}" 
+                          ItemContainerStyle="{StaticResource LvItemStyle}" 
+                          ItemTemplate="{StaticResource SaradniciTemplate}"></ListView>
+                    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal">
+                        <materialDesign:PackIcon Margin="0 25 0 0" Foreground="{StaticResource PrimaryHueLightBrush}" Kind="Comment"></materialDesign:PackIcon>
+                        <TextBox TextWrapping="Wrap"
+                                 AcceptsReturn="True" AcceptsTab="True"
+                                 VerticalScrollBarVisibility="auto"
+                                 HorizontalAlignment="Stretch"
+                                 materialDesign:HintAssist.Hint="Komentar"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                 Text="{Binding Komentar,Mode=TwoWay}"
+                                 FontSize="14"
+                                 Width="600"
+                                 MaxHeight="100"
+                                 Margin="0 0 0 10" />
+                    </StackPanel>
+                    <Separator Margin="0 10"></Separator>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+        
     </Page.Resources>
     <Grid FocusManager.FocusedElement="{Binding ElementName=listView}">
         <DockPanel>

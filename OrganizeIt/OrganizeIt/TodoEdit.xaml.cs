@@ -54,12 +54,13 @@ namespace OrganizeIt.backend
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            BindingExpression binding1 = NameBox.GetBindingExpression(TextBox.TextProperty);
-            binding1.UpdateSource();
+            //BindingExpression binding1 = NameBox.GetBindingExpression(TextBox.TextProperty);
+            //binding1.UpdateSource();
 
             
             if (this.NameBox.Text == "")
             {
+                MessageBox.Show("Unesite naziv stavke.", "Nepravilan unos");
                 return;
             }
             string status = (StatusBox.SelectedItem as ComboBoxItem).Content as string;
@@ -78,7 +79,7 @@ namespace OrganizeIt.backend
                 case "Poslato":
                     newStatus = ToDoStatus.Sent;
                     break;
-                case "Prihvaceno":
+                case "Prihvaćeno":
                     newStatus = ToDoStatus.Accepted;
                     break;
                 case "Odbijeno":

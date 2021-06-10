@@ -102,7 +102,7 @@ namespace OrganizeIt
             try { DateTime oDate = Convert.ToDateTime(this.BirthDate.Text); }
             catch (Exception) { return; }
 
-            if (User.Username.Length < 5 || this.City.Text == "" || this.Address.Text == "" || User.Email == "" || User.PhoneNumber == "" || this.Phone.Text == ""
+            if (User.Username == "" || this.City.Text == "" || this.Address.Text == "" || User.Email == "" || User.PhoneNumber == "" || this.Phone.Text == ""
                 || this.Firstname.Text == "" || this.Lastname.Text == "")
             {
                 return;

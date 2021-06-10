@@ -85,12 +85,21 @@ namespace OrganizeIt
                 sourceList = listView.ItemsSource as ObservableCollection<string>;
 
                 // Find the data behind the ListViewItem
-                string guest = (string)listView.ItemContainerGenerator.
-                    ItemFromContainer(listViewItem);
+                try 
+                {
+                    string guest = (string)listView.ItemContainerGenerator.
+                  ItemFromContainer(listViewItem);
+                    // Initialize the drag & drop operation
+                    DataObject dragData = new DataObject("Format", guest);
+                    DragDrop.DoDragDrop(listViewItem, dragData, DragDropEffects.Move);
+                }
+                catch
+                {
+                    return;
+                }
+                
 
-                // Initialize the drag & drop operation
-                DataObject dragData = new DataObject("Format", guest);
-                DragDrop.DoDragDrop(listViewItem, dragData, DragDropEffects.Move);
+                
             }
         }
 
@@ -145,7 +154,7 @@ namespace OrganizeIt
         private void CancelBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            string messageBoxText = $"Da li ste sigurni da zelite da otkazete raspoređivanje gostiju?";
+            string messageBoxText = $"Da li ste sigurni da želite da otkažete raspoređivanje gostiju?";
             string caption = "Otkazivanje";
             MessageBoxButton btn = MessageBoxButton.YesNo;
             MessageBoxImage img = MessageBoxImage.Question;

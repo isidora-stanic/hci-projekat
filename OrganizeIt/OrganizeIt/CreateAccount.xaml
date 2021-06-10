@@ -18,11 +18,12 @@
         <Border Margin="15" MinWidth="600" MinHeight="00" Background="White" VerticalAlignment="Center" Padding="10" CornerRadius="10" MaxWidth="800">
             <StackPanel>
                 <TextBox materialDesign:HintAssist.Hint="Korisničko ime"
-                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="username"  Margin="200 0 200 5">
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="username"  Margin="200 0 200 20">
                     <TextBox.Text>
                         <Binding Path="Username" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
                                 <local:UsernameRule MinimumCharacters='username'/>
+                                <local:MinimumCharacterRule MinimumCharacters="1"/>
                             </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
@@ -92,7 +93,7 @@
                         </TextBox.Text>
                     </TextBox>
                 </Grid>
-                <Grid Margin="0 0 0 20">
+                <Grid Margin="0 20 0 20">
                     <TextBox materialDesign:HintAssist.Hint="Telefon" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="phone" Margin="0 0 401 5">
                         <TextBox.Text>
                             <Binding Path="Phone" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">

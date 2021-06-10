@@ -23,11 +23,12 @@
         <Border Margin="15" MinWidth="600" MinHeight="00" Background="White" VerticalAlignment="Center" Padding="10" CornerRadius="10" MaxWidth="800">
             <StackPanel>
                 <TextBox materialDesign:HintAssist.Hint="Korisničko ime"
-                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="username"  Margin="200 0 200 5">
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="username"  Margin="200 0 200 20">
                     <TextBox.Text>
                         <Binding Path="Username" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
                                 <local:UsernameRule MinimumCharacters='username'/>
+                                <local:MinimumCharacterRule MinimumCharacters="1"/>
                             </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
@@ -43,7 +44,7 @@
                     </local:PasswordBoxAssistant.BoundPassword>
                 </PasswordBox>
                 
-                <Grid Margin="0 0 0 20">
+                <Grid Margin="0 20 0 20">
                     <TextBox materialDesign:HintAssist.Hint="Ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="name" Margin="0 0 401 5">
                         <TextBox.Text>
                             <Binding Path="Name" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
@@ -120,7 +121,7 @@
                 </Grid>
 
                 <Grid Margin="0 0 0 20">
-                    <Button HorizontalAlignment="Left" Content="Otkaži" Width ="200" Margin="0 0 401 5" x:Name="Btn1" Click="Button_Click_1"/>
+                    <Button HorizontalAlignment="Left" Style="{StaticResource MaterialDesignOutlinedButton}" Content="Otkaži" Width ="200" Margin="0 0 401 5" x:Name="Btn1" Click="Button_Click_1"/>
                     <Button HorizontalAlignment="Right" Content="Dodaj organizatora" Width ="200"  Margin="401 0 0 5" x:Name="Btn2" Click="Button_Click"/>
                 </Grid>
 

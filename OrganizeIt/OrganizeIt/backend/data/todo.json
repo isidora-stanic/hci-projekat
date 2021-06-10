@@ -6,11 +6,6 @@
       "Description": "Jos jedan novi"
     },
     {
-      "Status": 0,
-      "Name": "zad1",
-      "Description": "test1. Zanima me da li ce se prelomiti. Verovatno hoce zato sto columns imaju fiksnu velicinu pa se nece desiti prelamanje teksta nikakvo. Ali uvek treba ocekivati neprijatna iznenadjenja"
-    },
-    {
       "Status": 2,
       "Name": "Zad2",
       "Description": "Tekst2"
@@ -34,6 +29,11 @@
       "Status": 3,
       "Name": "Zad9",
       "Description": "Tekstic stavke zadatka 9"
+    },
+    {
+      "Status": 3,
+      "Name": "zad1",
+      "Description": "test1. Zanima me da li ce se prelomiti. Verovatno hoce zato sto columns imaju fiksnu velicinu pa se nece desiti prelamanje teksta nikakvo. Ali uvek treba ocekivati neprijatna iznenadjenja"
     },
     {
       "Status": 4,
