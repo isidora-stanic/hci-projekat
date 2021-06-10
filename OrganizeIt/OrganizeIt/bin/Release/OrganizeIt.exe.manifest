@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OrganizeIt.exe" size="10826208">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OrganizeIt.exe" size="10827232">
       <assemblyIdentity name="OrganizeIt" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AbkBd42FgXgQ7Re4H3WTkqGHIcg27e2zjokyFyUvPXc=</dsig:DigestValue>
+        <dsig:DigestValue>p+Aa0GHptpOZgAGolwgJ0nORbboqmFc2aICxD+FsAo4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
